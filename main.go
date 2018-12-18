@@ -5,7 +5,10 @@ import (
 	"net"
 	"os"
 
+	pbcollector "github.com/Percona-Lab/qan-api/api/collector"
 	pbversion "github.com/Percona-Lab/qan-api/api/version"
+	"github.com/Percona-Lab/qan-api/models"
+	rservice "github.com/Percona-Lab/qan-api/services/receiver"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -22,15 +25,14 @@ func (s *server) HandleVersion(ctx context.Context, in *pbversion.VersionRequest
 func main() {
 	bind, ok := os.LookupEnv("QANAPI_BIND")
 	if !ok {
-		bind = "127.0.0.1:9001"
+		bind = "127.0.0.1:9911"
 	}
 	dsn, ok := os.LookupEnv("QANAPI_DSN")
 	if !ok {
-		dsn = "clickhouse://127.0.0.1:9000?debug=true&database=pmm&x-multi-statement=true"
+		dsn = "clickhouse://127.0.0.1:9000?database=pmm"
 	}
 
 	db, err := NewDB(dsn)
-	_ = db
 	if err != nil {
 		log.Fatal("DB error", err)
 	}
@@ -39,10 +41,15 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-	s := grpc.NewServer()
-	pbversion.RegisterVersionServer(s, &server{})
-	reflection.Register(s)
-	if err := s.Serve(lis); err != nil {
+	qcm := models.NewQueryClass(db)
+	grpcServer := grpc.NewServer()
+	pbversion.RegisterVersionServer(grpcServer, &server{})
+	pbcollector.RegisterAgentServer(grpcServer, rservice.NewService(qcm))
+	reflection.Register(grpcServer)
+	log.Printf("QAN-API serve: %v\n", bind)
+
+	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
+
 }
