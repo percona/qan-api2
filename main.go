@@ -16,6 +16,8 @@ import (
 
 type server struct{}
 
+var version string
+
 // HandleVersion implements version.VersionServer
 func (s *server) HandleVersion(ctx context.Context, in *pbversion.VersionRequest) (*pbversion.VersionReply, error) {
 	log.Println("Version is requested by:", in.Name)
@@ -23,6 +25,7 @@ func (s *server) HandleVersion(ctx context.Context, in *pbversion.VersionRequest
 }
 
 func main() {
+	log.Printf("QAN-API version %v\n", version)
 	bind, ok := os.LookupEnv("QANAPI_BIND")
 	if !ok {
 		bind = "127.0.0.1:9911"
