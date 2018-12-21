@@ -21,7 +21,7 @@ var version string
 // HandleVersion implements version.VersionServer
 func (s *server) HandleVersion(ctx context.Context, in *pbversion.VersionRequest) (*pbversion.VersionReply, error) {
 	log.Println("Version is requested by:", in.Name)
-	return &pbversion.VersionReply{Version: "2.0.0-alpha"}, nil
+	return &pbversion.VersionReply{Version: version}, nil
 }
 
 func main() {
