@@ -24,9 +24,6 @@ func (s *Service) DataInterchange(stream collectorpb.Agent_DataInterchangeServer
 			return nil
 		}
 		if err != nil {
-			return err
-		}
-		if err != nil {
 			return fmt.Errorf("recved from agent: %+v", agentMsg)
 		}
 		err = s.qcm.Save(agentMsg)
@@ -34,13 +31,5 @@ func (s *Service) DataInterchange(stream collectorpb.Agent_DataInterchangeServer
 			return fmt.Errorf("save error: %s", err.Error())
 		}
 		fmt.Printf("Rcvd and saved %v QC\n", len(agentMsg.QueryClass))
-
-		/*
-			// look for msgs to be sent to client
-			msg := collectorpb.ApiMessage{Id: 10}
-			if err := stream.Send(msg); err != nil {
-				return err
-			}
-		*/
 	}
 }
