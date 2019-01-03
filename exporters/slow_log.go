@@ -28,7 +28,7 @@ type closedChannelError struct {
 
 func main() {
 	slowLogPath := flag.String("slowLogPath", "logs/mysql-slow.log", "Path to MySQL slow log file")
-	serverURL := flag.String("server-url", "127.0.0.1:80/qan-api2/", "ULR of QAN-API Server")
+	serverURL := flag.String("server-url", "127.0.0.1:80", "ULR of QAN-API Server")
 	offset := flag.Uint64("offset", 0, "Start Offset of slowlog")
 
 	maxQCtoSent := flag.Int("max-qc-to-sent", 100000, "Maximum query classes  to sent to QAN-API.")

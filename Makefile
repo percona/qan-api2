@@ -1,21 +1,20 @@
 include .env
 
-# Run docker container with ClickHouse and create pmm DB.
-up:
+# Run ClickHouse, MySQL Server and sysbench containers. Create pmm DB in ClickHouse.
+env-up:
 	mkdir logs
-	docker-compose up -d --build
+	docker-compose up ch sysbench-ps 
 	sleep 60
 	docker exec ch-server clickhouse client -h 127.0.0.1 --query="CREATE DATABASE IF NOT EXISTS pmm;"
 
 # Remove docker containers.
-down:
+env-down:
 	docker-compose down --volumes
 	rm -rf logs
 
-
-pmm-up:
-	docker-compose up -d
-
+# Run PMM server, MySQL Server and sysbench containers.
+pmm-env-up:
+	docker-compose up pmm-server sysbench-ps
 
 deploy:
 	# docker exec pmm-server supervisorctl reload
