@@ -8,13 +8,14 @@ import (
 	"path/filepath"
 	"time"
 
-	pb "github.com/Percona-Lab/qan-api/api/collector"
 	slowlog "github.com/percona/go-mysql/log"
 	parser "github.com/percona/go-mysql/log/slow"
 	"github.com/percona/go-mysql/query"
 	"github.com/pkg/errors"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
+
+	pb "github.com/Percona-Lab/qan-api/api/collector"
 )
 
 const agentUUID = "dc889ca7be92a66f0a00f616f69ffa7b"

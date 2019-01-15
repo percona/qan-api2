@@ -5,10 +5,11 @@ import (
 	"strings"
 	"time"
 
-	collectorpb "github.com/Percona-Lab/qan-api/api/collector"
 	"github.com/jmoiron/sqlx"
 	"github.com/jmoiron/sqlx/reflectx"
 	"github.com/pkg/errors"
+
+	collectorpb "github.com/Percona-Lab/qan-api/api/collector"
 )
 
 const insertSQL = `

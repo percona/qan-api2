@@ -9,12 +9,13 @@ import (
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	collectorpb "github.com/Percona-Lab/qan-api/api/collector"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/kshvakov/clickhouse"
 	"github.com/kshvakov/clickhouse/lib/column"
 	"github.com/kshvakov/clickhouse/lib/types"
 	"github.com/stretchr/testify/assert"
+
+	collectorpb "github.com/Percona-Lab/qan-api/api/collector"
 )
 
 // Any is a stub for any argument in SQL query or exec.

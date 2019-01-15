@@ -7,6 +7,9 @@ linters-settings:
     packages:
       - errors
 
+  goimports:
+    local-prefixes: github.com/Percona-Lab/qan-api
+
   lll:
     line-length: 140
     tab-width: 4

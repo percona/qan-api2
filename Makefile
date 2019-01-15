@@ -72,3 +72,6 @@ lint:
 # Run tests
 test:
 	go test -v -p 1 -race ./...
+
+format:                         ## Run `goimports`.
+	goimports -local github.com/Percona-Lab/qan-api -l -w $(shell find . -type f -name '*.go' -not -path "./vendor/*")

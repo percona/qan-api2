@@ -5,13 +5,14 @@ import (
 	"net"
 	"os"
 
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
+
 	pbcollector "github.com/Percona-Lab/qan-api/api/collector"
 	pbversion "github.com/Percona-Lab/qan-api/api/version"
 	"github.com/Percona-Lab/qan-api/models"
 	rservice "github.com/Percona-Lab/qan-api/services/receiver"
-	"golang.org/x/net/context"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
 )
 
 type server struct{}
