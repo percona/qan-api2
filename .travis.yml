@@ -16,6 +16,7 @@ script:
   # TODO
   - make init
   - make go-build
+  - make test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -X fix
