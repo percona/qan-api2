@@ -41,8 +41,7 @@ go-generate:
 	go-bindata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
 	go install -v ./vendor/github.com/golang/protobuf/protoc-gen-go ./vendor/github.com/mwitkow/go-proto-validators/protoc-gen-govalidators
 
-	protoc api/version/version.proto --go_out=plugins=grpc:.
-	protoc api/collector/collector.proto --go_out=plugins=grpc:.
+	prototool all
 
 # Build binary.
 linux-go-build: go-generate
@@ -60,5 +59,4 @@ api-version:
 
 
 lint:
-	 prototool all
-	 # gometalinter --deadline=5m
+	gometalinter --deadline=5m
