@@ -1,6 +1,7 @@
 package models
 
 import (
+	"errors"
 	"fmt"
 	"strings"
 	"time"
@@ -326,46 +327,49 @@ func NewQueryClass(db *sqlx.DB) QueryClass {
 	return QueryClass{db: db}
 }
 
+type QueryClassExtended struct {
+	PeriodStart   time.Time `json:"period_start_ts"`
+	ExampleType   string    `json:"example_type_s"`
+	ExampleFormat string    `json:"example_format_s"`
+	LabelsKey     []string  `json:"labels_key"`
+	LabelsValues  []string  `json:"labels_value"`
+	WarningsCode  []string  `json:"warnings_code"`
+	WarningsCount []uint64  `json:"warnings_count"`
+	ErrorsCode    []string  `json:"errors_code"`
+	ErrorsCount   []uint64  `json:"errors_count"`
+	LabintKey     []uint32  `json:"labint_key"`
+	LabintValue   []uint32  `json:"labint_value"`
+	*collectorpb.QueryClass
+}
+
 func (qc *QueryClass) Save(agentMsg *collectorpb.AgentMessage) error {
-	type QueryClass struct {
-		PeriodStart   time.Time `json:"period_start_ts"`
-		ExampleType   string    `json:"example_type_s"`
-		ExampleFormat string    `json:"example_format_s"`
-		LabelsKey     []string  `json:"labels_key"`
-		LabelsValues  []string  `json:"labels_value"`
-		WarningsCode  []string  `json:"warnings_code"`
-		WarningsCount []uint64  `json:"warnings_count"`
-		ErrorsCode    []string  `json:"errors_code"`
-		ErrorsCount   []uint64  `json:"errors_count"`
-		LabintKey     []uint32  `json:"labint_key"`
-		LabintValue   []uint32  `json:"labint_value"`
-		*collectorpb.QueryClass
+
+	if len(agentMsg.QueryClass) == 0 {
+		return errors.New("Nothing to save - no query classes")
 	}
 
+	// TODO: find solution with better performance
 	qc.db.Mapper = reflectx.NewMapperTagFunc("json", strings.ToUpper, func(value string) string {
 		if strings.Contains(value, ",") {
 			return strings.Split(value, ",")[0]
 		}
 		return value
 	})
-
 	tx, err := qc.db.Beginx()
 	if err != nil {
 		return fmt.Errorf("begin transaction: %s", err.Error())
 	}
-
 	stmt, err := tx.PrepareNamed(insertSQL)
 	if err != nil {
 		return fmt.Errorf("prepare named: %s", err.Error())
 	}
-
 	var errs error
-	for _, qc := range agentMsg.QueryClass {
+	for i, qc := range agentMsg.QueryClass {
 		lk, lv := MapToArrsStrStr(qc.Labels)
 		wk, wv := MapToArrsStrInt(qc.Warnings)
 		ek, ev := MapToArrsStrInt(qc.Errors)
 		labintk, labintv := MapToArrsIntInt(qc.Labint)
-		q := QueryClass{
+		q := QueryClassExtended{
 			time.Unix(int64(qc.GetPeriodStart()), 0),
 			qc.GetExampleType().String(),
 			qc.GetExampleFormat().String(),
@@ -379,16 +383,15 @@ func (qc *QueryClass) Save(agentMsg *collectorpb.AgentMessage) error {
 			labintv,
 			qc,
 		}
-		_, err := stmt.Exec(q)
+		v, err := stmt.Exec(q)
 
 		if err != nil {
 			errs = fmt.Errorf("%v; execute: %v;", errs, err)
 		}
 	}
 	if errs != nil {
-		return errs 
+		return errs
 	}
-
 	err = stmt.Close()
 	if err != nil {
 		return fmt.Errorf("close statement: %s", err.Error())
@@ -398,7 +401,6 @@ func (qc *QueryClass) Save(agentMsg *collectorpb.AgentMessage) error {
 	if err != nil {
 		return fmt.Errorf("transaction commit %s", err.Error())
 	}
-
 	return nil
 }
 
@@ -430,12 +432,4 @@ func MapToArrsIntInt(m map[uint32]uint32) (keys []uint32, values []uint32) {
 		values = append(values, v)
 	}
 	return keys, values
-}
-
-func HandleJson(tagName string, value string) string {
-	if strings.Contains(value, ",") {
-		return strings.Split(value, ",")[0]
-	} else {
-		return value
-	}
 }

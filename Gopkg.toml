@@ -1,3 +1,10 @@
+# tools
+required = [
+  "github.com/golang/protobuf/protoc-gen-go",
+  "github.com/mwitkow/go-proto-validators/protoc-gen-govalidators",
+]
+
+
 [prune]
   go-tests = true
   non-go = true

@@ -3,7 +3,7 @@ include .env
 # Run ClickHouse, MySQL Server and sysbench containers. Create pmm DB in ClickHouse.
 env-up:
 	mkdir logs
-	docker-compose up ch sysbench-ps 
+	docker-compose up $(DCLAGS) ch sysbench-ps
 	sleep 60
 	docker exec ch-server clickhouse client -h 127.0.0.1 --query="CREATE DATABASE IF NOT EXISTS pmm;"
 
@@ -33,12 +33,14 @@ ps-client:
 # env $(cat .env | xargs) go run *.go
 go-run:
 	@echo "  > Runing with envs..." 
-	go run *.go
+	GRPC_VERBOSITY=DEBUG GRPC_TRACE=all go run *.go
 
 # Pack ClickHouse migrations into go file.
 go-generate:
 	@echo "  >  Generating dependency files..."
 	go-bindata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
+	go install -v ./vendor/github.com/golang/protobuf/protoc-gen-go ./vendor/github.com/mwitkow/go-proto-validators/protoc-gen-govalidators
+
 	protoc api/version/version.proto --go_out=plugins=grpc:.
 	protoc api/collector/collector.proto --go_out=plugins=grpc:.
 
@@ -53,6 +55,10 @@ go-build: go-generate
 	go build -o percona-qan-api2 *.go
 
 # Request API version.
-# require https://github.com/uber/prototool
 api-version:
-	prototool grpc api/version --address 0.0.0.0:9911 --method version.Version/HandleVersion --data '{"name": "me"}'
+	prototool grpc api/version --address 0.0.0.0:9911 --method version.Version/HandleVersion --data '{"name": "john"}'
+
+
+lint:
+	 prototool all
+	 # gometalinter --deadline=5m

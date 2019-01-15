@@ -2,33 +2,44 @@ syntax = "proto3";
 
 package collector;
 
+option go_package = "collector";
+
+// Agent service contains RPCs to implement communication mechanism with qan-agent.
+// Namely query metrics, query explain etc.
 service Agent {
+  // DataInterchange defines duplex communication between Query analytics API and Agent.
   rpc DataInterchange(stream AgentMessage) returns (stream ApiMessage);
 }
 
+// AgentMessage contains several Query Classes for one period of time.
 message AgentMessage {
   repeated QueryClass query_class = 1;
 }
 
+// QueryClass is aggregated message created by qan-agent.
+// Contains information about one query selected in defined way from query class in specific period of time.
 message QueryClass {
   uint32 id = 1;
-  string digest = 2;
-  string digest_text = 3;
+  string digest = 2; // md5 of digest_text
+  string digest_text = 3; // digest_text - query signature. Query without values.
+  // Dimension Group.
   string db_server = 4;
   string db_schema = 5;
   string db_username = 6;
-  string client_host  = 7;
+  string client_host = 7;
   map<string, string> labels = 8;
   string agent_uuid = 9;
   int64 period_start = 10;
   uint32 period_length = 11;
   string example = 12;
+  // ExampleFormat is formant of query example: real or query without values
   enum ExampleFormat {
     EXAMPLE = 0;
     DIGEST = 1;
   }
   ExampleFormat example_format = 13;
   uint32 is_truncated = 14;
+  // ExampleType is a type of query example selected for this query class in given period of time.
   enum ExampleType {
     RANDOM = 0;
     SLOWEST = 1;
@@ -37,6 +48,7 @@ message QueryClass {
   }
   ExampleType example_type = 15;
   string example_metrics = 16;
+  // Metrics.
   uint64 num_query_with_warnings = 17;
   // {code: count }
   map<string, uint64> warnings = 18;
@@ -173,5 +185,5 @@ message QueryClass {
 }
 
 message ApiMessage {
-  uint32 id = 1;
+  uint32 saved_amount = 2; // how many query classes ware saved.
 }

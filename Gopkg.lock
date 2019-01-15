@@ -2,6 +2,24 @@
 
 
 [[projects]]
+  branch = "master"
+  name = "github.com/DATA-DOG/go-sqlmock"
+  packages = ["."]
+  revision = "2a5889fc86505da3080d80031b68d4ba8804f82a"
+
+[[projects]]
+  name = "github.com/davecgh/go-spew"
+  packages = ["spew"]
+  revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
+  version = "v1.1.1"
+
+[[projects]]
+  name = "github.com/gogo/protobuf"
+  packages = ["gogoproto","proto","protoc-gen-gogo/descriptor","protoc-gen-gogo/generator","protoc-gen-gogo/generator/internal/remap","protoc-gen-gogo/plugin","vanity"]
+  revision = "4cbf7e384e768b4e01799441fdf2a706a5635ae7"
+  version = "v1.2.0"
+
+[[projects]]
   name = "github.com/golang-migrate/migrate"
   packages = [".","database","database/clickhouse","source","source/go_bindata"]
   revision = "4937cd088f7c7193ee59b319c1c2caa7482aae8e"
@@ -9,7 +27,7 @@
 
 [[projects]]
   name = "github.com/golang/protobuf"
-  packages = ["proto","protoc-gen-go/descriptor","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
+  packages = ["proto","protoc-gen-go","protoc-gen-go/descriptor","protoc-gen-go/generator","protoc-gen-go/generator/internal/remap","protoc-gen-go/grpc","protoc-gen-go/plugin","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
   revision = "aa810b61a9c79d51363740d207bb46cf8e620ed5"
   version = "v1.2.0"
 
@@ -27,21 +45,39 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/mwitkow/go-proto-validators"
+  packages = [".","plugin","protoc-gen-govalidators"]
+  revision = "0950a79900071e9f3f5979b78078c599376422fd"
+
+[[projects]]
+  branch = "master"
   name = "github.com/percona/go-mysql"
   packages = ["log","log/slow","query"]
   revision = "fcc02662957597587e907ae09d5f61957de9cee9"
 
 [[projects]]
+  name = "github.com/pmezard/go-difflib"
+  packages = ["difflib"]
+  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
+  version = "v1.0.0"
+
+[[projects]]
+  name = "github.com/stretchr/testify"
+  packages = ["assert"]
+  revision = "ffdc059bfe9ce6a4e144ba849dbedead332c6053"
+  version = "v1.3.0"
+
+[[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","http/httpguts","http2","http2/hpack","idna","internal/timeseries","trace"]
-  revision = "e147a9138326bc0e9d4e179541ffd8af41cff8a9"
+  revision = "be1c187aa6c66b9daa1d9461c228d17e9dd2cab7"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "dcdaa6325bcb8d3c07805583fe12153f08a41e2b"
+  revision = "48ac38b7c8cbedd50b1613c0fccacfc7d88dfcdf"
 
 [[projects]]
   name = "golang.org/x/text"
@@ -53,7 +89,7 @@
   branch = "master"
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
-  revision = "67d6565462c5a0d99b88193d59fefa10ca7e3010"
+  revision = "ae2f86662275e140f395167f1dab7081a5bd5fa8"
 
 [[projects]]
   name = "google.golang.org/grpc"
@@ -64,6 +100,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5da4a51a61c79f9411c56b61f519990c35de01990e0f13e1c5167e9690de6121"
+  inputs-digest = "a0afae4e2d3da651585d8c764b293d484f1320faee5d018f4bedeb9be7f228a4"
   solver-name = "gps-cdcl"
   solver-version = 1

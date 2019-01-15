@@ -10,12 +10,11 @@ import (
 	"time"
 
 	pb "github.com/Percona-Lab/qan-api/api/collector"
-	"golang.org/x/net/context"
-	"google.golang.org/grpc"
-
 	slowlog "github.com/percona/go-mysql/log"
 	parser "github.com/percona/go-mysql/log/slow"
 	"github.com/percona/go-mysql/query"
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
 )
 
 const agentUUID = "dc889ca7be92a66f0a00f616f69ffa7b"
@@ -27,7 +26,7 @@ type closedChannelError struct {
 }
 
 func main() {
-	slowLogPath := flag.String("slowLogPath", "logs/mysql-slow.log", "Path to MySQL slow log file")
+	slowLogPath := flag.String("slow-log", "logs/mysql-slow.log", "Path to MySQL slow log file")
 	serverURL := flag.String("server-url", "127.0.0.1:80", "ULR of QAN-API Server")
 	offset := flag.Uint64("offset", 0, "Start Offset of slowlog")
 
@@ -49,7 +48,6 @@ func main() {
 	defer conn.Close()
 	client := pb.NewAgentClient(conn)
 
-
 	events := parseSlowLog(*slowLogPath, logOpt)
 
 	ctx := context.TODO()
@@ -64,7 +62,7 @@ func main() {
 			if err != nil {
 				continue
 			}
-			log.Printf("Got message from Api id: %d", in.Id)
+			log.Printf("Got message from Api. Saved %d query class(es)", in.SavedAmount)
 		}
 	}()
 
@@ -143,7 +141,7 @@ func bulkSend(stream pb.Agent_DataInterchangeClient, fn func(*pb.AgentMessage) e
 func parseSlowLog(filename string, o slowlog.Options) <-chan *slowlog.Event {
 	file, err := os.Open(filepath.Clean(filename))
 	if err != nil {
-		log.Fatal("cannot open slowlog", err)
+		log.Fatal("cannot open slowlog. Use --slow-log=/path/to/slow.log", err)
 	}
 	p := parser.NewSlowLogParser(file, o)
 	go func() {
