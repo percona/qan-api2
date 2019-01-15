@@ -16,7 +16,8 @@ import (
 
 type server struct{}
 
-var version string
+//nolint
+var version string // will be set by pkg tool.
 
 // HandleVersion implements version.VersionServer
 func (s *server) HandleVersion(ctx context.Context, in *pbversion.VersionRequest) (*pbversion.VersionReply, error) {
