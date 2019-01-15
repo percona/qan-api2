@@ -8,14 +8,17 @@ import (
 	"github.com/Percona-Lab/qan-api/models"
 )
 
+// Service implements gRPC service to communicate with agent.
 type Service struct {
 	qcm models.QueryClass
 }
 
+// NewService create new insstance of Service.
 func NewService(qcm models.QueryClass) *Service {
 	return &Service{qcm}
 }
 
+// DataInterchange implements rpc to exchange data between API and agent.
 func (s *Service) DataInterchange(stream collectorpb.Agent_DataInterchangeServer) error {
 	fmt.Println("Start...")
 	for {

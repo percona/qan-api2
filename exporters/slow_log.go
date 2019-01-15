@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"flag"
 	"fmt"
 	"log"
@@ -13,6 +12,7 @@ import (
 	slowlog "github.com/percona/go-mysql/log"
 	parser "github.com/percona/go-mysql/log/slow"
 	"github.com/percona/go-mysql/query"
+	"github.com/pkg/errors"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )

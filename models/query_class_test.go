@@ -136,9 +136,9 @@ func TestSave(t *testing.T) {
 			ret[i] = Any{}
 		}
 		ret[0] = qc.Digest
-		ret[6], ret[7] = MapToArrsStrStr(qc.Labels) // Query class labels.
+		ret[6], ret[7] = MapToArrsStrStr(qc.Labels)     // Query class labels.
 		ret[17], ret[18] = MapToArrsStrInt(qc.Warnings) // Query class warnings.
-		ret[20], ret[21] = MapToArrsStrInt(qc.Errors) // Query class errors.
+		ret[20], ret[21] = MapToArrsStrInt(qc.Errors)   // Query class errors.
 		ret[148], ret[149] = MapToArrsIntInt(qc.Labint) // Query class labint.
 		a.ExpectExec().WithArgs(ret...).WillReturnResult(sqlmock.NewResult(1, 1))
 	}

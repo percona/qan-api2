@@ -2,8 +2,8 @@ include .env
 
 # Run ClickHouse, MySQL Server and sysbench containers. Create pmm DB in ClickHouse.
 env-up:
-	mkdir logs
-	docker-compose up $(DCLAGS) ch sysbench-ps
+	mkdir -p logs
+	docker-compose up $(DCFLAGS) ch sysbench-ps
 	sleep 60
 	docker exec ch-server clickhouse client -h 127.0.0.1 --query="CREATE DATABASE IF NOT EXISTS pmm;"
 
@@ -59,4 +59,4 @@ api-version:
 
 
 lint:
-	gometalinter --deadline=5m
+	golangci-lint run

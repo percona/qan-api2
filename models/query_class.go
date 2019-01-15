@@ -1,7 +1,6 @@
 package models
 
 import (
-	"errors"
 	"fmt"
 	"strings"
 	"time"
@@ -9,6 +8,7 @@ import (
 	collectorpb "github.com/Percona-Lab/qan-api/api/collector"
 	"github.com/jmoiron/sqlx"
 	"github.com/jmoiron/sqlx/reflectx"
+	"github.com/pkg/errors"
 )
 
 const insertSQL = `
@@ -319,14 +319,17 @@ const insertSQL = `
   )
 `
 
+// QueryClass implements models to store query classes
 type QueryClass struct {
 	db *sqlx.DB
 }
 
+// NewQueryClass initialize QueryClass with db instance.
 func NewQueryClass(db *sqlx.DB) QueryClass {
 	return QueryClass{db: db}
 }
 
+// QueryClassExtended  extends proto QueryClass to store converted data into db.
 type QueryClassExtended struct {
 	PeriodStart   time.Time `json:"period_start_ts"`
 	ExampleType   string    `json:"example_type_s"`
@@ -342,6 +345,7 @@ type QueryClassExtended struct {
 	*collectorpb.QueryClass
 }
 
+// Save store cquery classes received from agent into db.
 func (qc *QueryClass) Save(agentMsg *collectorpb.AgentMessage) error {
 
 	if len(agentMsg.QueryClass) == 0 {
@@ -370,7 +374,7 @@ func (qc *QueryClass) Save(agentMsg *collectorpb.AgentMessage) error {
 		ek, ev := MapToArrsStrInt(qc.Errors)
 		labintk, labintv := MapToArrsIntInt(qc.Labint)
 		q := QueryClassExtended{
-			time.Unix(int64(qc.GetPeriodStart()), 0),
+			time.Unix(qc.GetPeriodStart(), 0),
 			qc.GetExampleType().String(),
 			qc.GetExampleFormat().String(),
 			lk,
@@ -404,6 +408,7 @@ func (qc *QueryClass) Save(agentMsg *collectorpb.AgentMessage) error {
 	return nil
 }
 
+// MapToArrsStrStr converts map into two lists.
 func MapToArrsStrStr(m map[string]string) (keys []string, values []string) {
 	keys = []string{}
 	values = []string{}
@@ -414,6 +419,7 @@ func MapToArrsStrStr(m map[string]string) (keys []string, values []string) {
 	return keys, values
 }
 
+// MapToArrsStrInt converts map into two lists.
 func MapToArrsStrInt(m map[string]uint64) (keys []string, values []uint64) {
 	keys = []string{}
 	values = []uint64{}
@@ -424,6 +430,7 @@ func MapToArrsStrInt(m map[string]uint64) (keys []string, values []uint64) {
 	return keys, values
 }
 
+// MapToArrsIntInt converts map into two lists.
 func MapToArrsIntInt(m map[uint32]uint32) (keys []uint32, values []uint32) {
 	keys = []uint32{}
 	values = []uint32{}

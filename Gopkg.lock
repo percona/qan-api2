@@ -32,10 +32,22 @@
   version = "v1.2.0"
 
 [[projects]]
+  name = "github.com/inconshreveable/mousetrap"
+  packages = ["."]
+  revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
+  version = "v1.0"
+
+[[projects]]
   name = "github.com/jmoiron/sqlx"
   packages = [".","reflectx"]
   revision = "d161d7a76b5661016ad0b085869f77fd410f3e6a"
   version = "v1.2.0"
+
+[[projects]]
+  name = "github.com/jteeuwen/go-bindata"
+  packages = ["."]
+  revision = "bbd0c6e271208dce66d8fda4bc536453cd27fc4a"
+  version = "v3.0.7"
 
 [[projects]]
   name = "github.com/kshvakov/clickhouse"
@@ -44,10 +56,40 @@
   version = "v1.3.5"
 
 [[projects]]
+  name = "github.com/mattn/go-runewidth"
+  packages = ["."]
+  revision = "3ee7d812e62a0804a7d0a324e0249ca2db3476d3"
+  version = "v0.0.4"
+
+[[projects]]
   branch = "master"
   name = "github.com/mwitkow/go-proto-validators"
   packages = [".","plugin","protoc-gen-govalidators"]
   revision = "0950a79900071e9f3f5979b78078c599376422fd"
+
+[[projects]]
+  branch = "develop"
+  name = "github.com/nmiyake/pkg"
+  packages = ["errorstringer"]
+  revision = "ae0375219445def9b33b6fcbf5eb8f4dd68ea561"
+
+[[projects]]
+  name = "github.com/palantir/go-generate"
+  packages = [".","cmd","commoncmd","gogenerate","gogenerate/config","gogenerate/config/internal/legacy","gogenerate/config/internal/v0"]
+  revision = "fc109310071aea37382552c26c9cb963226739a6"
+  version = "v1.0.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/palantir/godel"
+  packages = ["framework/artifactresolver","framework/builtintasks/installupdate/layout","framework/godel","framework/godellauncher","framework/pluginapi","framework/verifyorder","godelgetter","pkg/osarch","pkg/versionedconfig"]
+  revision = "85de7e42d57bc027bb6f65a49718207643be3b65"
+
+[[projects]]
+  name = "github.com/palantir/pkg"
+  packages = ["cobracli","matcher","specdir"]
+  revision = "b2b34217111b014adb22fa992d96f52aefea654d"
+  version = "0.9.3"
 
 [[projects]]
   branch = "master"
@@ -56,10 +98,28 @@
   revision = "fcc02662957597587e907ae09d5f61957de9cee9"
 
 [[projects]]
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
+  version = "v0.8.1"
+
+[[projects]]
   name = "github.com/pmezard/go-difflib"
   packages = ["difflib"]
   revision = "792786c7400a136282c1664665ae0a8db921c6c2"
   version = "v1.0.0"
+
+[[projects]]
+  name = "github.com/spf13/cobra"
+  packages = ["."]
+  revision = "ef82de70bb3f60c65fb8eebacbb2d122ef517385"
+  version = "v0.0.3"
+
+[[projects]]
+  name = "github.com/spf13/pflag"
+  packages = ["."]
+  revision = "298182f68c66c05229eb03ac171abe6e309ee79a"
+  version = "v1.0.3"
 
 [[projects]]
   name = "github.com/stretchr/testify"
@@ -97,9 +157,21 @@
   revision = "df014850f6dee74ba2fc94874043a9f3f75fbfd8"
   version = "v1.17.0"
 
+[[projects]]
+  name = "gopkg.in/cheggaaa/pb.v1"
+  packages = ["."]
+  revision = "1cc5bbe20449079337944d56292c7383510c534c"
+  version = "v1.0.27"
+
+[[projects]]
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  revision = "51d6538a90f86fe93ac480b35f37b2be17fef232"
+  version = "v2.2.2"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "a0afae4e2d3da651585d8c764b293d484f1320faee5d018f4bedeb9be7f228a4"
+  inputs-digest = "dc8523e33d1e7eefffa0eb94e465d6f5de0c51fcd2572900403d11e4d23426e3"
   solver-name = "gps-cdcl"
   solver-version = 1
