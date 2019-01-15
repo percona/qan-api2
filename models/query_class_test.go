@@ -44,7 +44,7 @@ func (c *converter) ConvertValue(v interface{}) (driver.Value, error) {
 	case int32:
 		return int64(value), nil
 	case int64:
-		return int64(value), nil
+		return value, nil
 	case uint:
 		return int64(value), nil
 	case uint8:
@@ -126,7 +126,7 @@ func TestSave(t *testing.T) {
 	if err != nil {
 		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
 	}
-	defer db.Close()
+
 	mock.ExpectBegin()
 	a := mock.ExpectPrepare("^INSERT INTO queries .*")
 	for _, qc := range agentMsg.QueryClass {
@@ -150,6 +150,7 @@ func TestSave(t *testing.T) {
 		t.Errorf("error was not expected while saving data to clickhouse: %s", err)
 	}
 
+	_ = db.Close()
 	// we make sure that all expectations were met
 	if err := mock.ExpectationsWereMet(); err != nil {
 		t.Errorf("there were unfulfilled expectations: %s", err)
@@ -172,7 +173,7 @@ func TestSaveEpmtyMaps(t *testing.T) {
 	if err != nil {
 		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
 	}
-	defer db.Close()
+
 	mock.ExpectBegin()
 	a := mock.ExpectPrepare("^INSERT INTO queries .*")
 	for _, qc := range agentMsg.QueryClass {
@@ -192,6 +193,7 @@ func TestSaveEpmtyMaps(t *testing.T) {
 		t.Errorf("error was not expected while saving data to clickhouse: %s", err)
 	}
 
+	_ = db.Close()
 	// we make sure that all expectations were met
 	if err := mock.ExpectationsWereMet(); err != nil {
 		t.Errorf("there were unfulfilled expectations: %s", err)
@@ -207,7 +209,7 @@ func TestSaveEpmtyQueryClass(t *testing.T) {
 	if err != nil {
 		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
 	}
-	defer db.Close()
 	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
 	assert.EqualError(t, qc.Save(&agentMsg), "Nothing to save - no query classes")
+	_ = db.Close()
 }

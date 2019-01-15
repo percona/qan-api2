@@ -19,13 +19,12 @@ import (
 
 const agentUUID = "dc889ca7be92a66f0a00f616f69ffa7b"
 
-var logOpt = slowlog.Options{}
-
 type closedChannelError struct {
 	error
 }
 
 func main() {
+	logOpt := slowlog.Options{}
 	slowLogPath := flag.String("slow-log", "logs/mysql-slow.log", "Path to MySQL slow log file")
 	serverURL := flag.String("server-url", "127.0.0.1:80", "ULR of QAN-API Server")
 	offset := flag.Uint64("offset", 0, "Start Offset of slowlog")

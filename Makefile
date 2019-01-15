@@ -60,6 +60,10 @@ go-build: go-generate
 api-version:
 	prototool grpc api/version --address 0.0.0.0:9911 --method version.Version/HandleVersion --data '{"name": "john"}'
 
-
+# Lint project.
 lint:
 	golangci-lint run
+
+# Run tests
+test:
+	go test -v -p 1 -race ./...
