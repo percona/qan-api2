@@ -21,8 +21,10 @@ linters-settings:
 linters:
   enable-all: true
 
-skip-dirs:
-  - migrations
+# options for analysis running
+run:
+  skip-dirs:
+    - migrations
 
 issues:
   exclude-use-default: false
