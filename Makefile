@@ -1,5 +1,10 @@
 include .env
 
+init:                 ## Install prototool.
+	# https://github.com/uber/prototool#installation
+	curl -L https://github.com/uber/prototool/releases/download/v1.3.0/prototool-$(shell uname -s)-$(shell uname -m) -o ./prototool
+	chmod +x ./prototool
+
 # Run ClickHouse, MySQL Server and sysbench containers. Create pmm DB in ClickHouse.
 env-up:
 	mkdir -p logs
@@ -44,7 +49,7 @@ go-generate:
 
 	go install -v ./vendor/github.com/golang/protobuf/protoc-gen-go \
 					./vendor/github.com/mwitkow/go-proto-validators/protoc-gen-govalidators
-	prototool all
+	./prototool all
 
 # Build binary.
 linux-go-build: go-generate
@@ -58,8 +63,7 @@ go-build: go-generate
 
 # Request API version.
 api-version:
-	prototool grpc api/version --address 0.0.0.0:9911 --method version.Version/HandleVersion --data '{"name": "john"}'
-
+	./prototool grpc api/version --address 0.0.0.0:9911 --method version.Version/HandleVersion --data '{"name": "john"}'
 
 lint:
 	golangci-lint run
