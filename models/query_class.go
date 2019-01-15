@@ -364,7 +364,7 @@ func (qc *QueryClass) Save(agentMsg *collectorpb.AgentMessage) error {
 		return fmt.Errorf("prepare named: %s", err.Error())
 	}
 	var errs error
-	for i, qc := range agentMsg.QueryClass {
+	for _, qc := range agentMsg.QueryClass {
 		lk, lv := MapToArrsStrStr(qc.Labels)
 		wk, wv := MapToArrsStrInt(qc.Warnings)
 		ek, ev := MapToArrsStrInt(qc.Errors)
@@ -383,7 +383,7 @@ func (qc *QueryClass) Save(agentMsg *collectorpb.AgentMessage) error {
 			labintv,
 			qc,
 		}
-		v, err := stmt.Exec(q)
+		_, err := stmt.Exec(q)
 
 		if err != nil {
 			errs = fmt.Errorf("%v; execute: %v;", errs, err)
