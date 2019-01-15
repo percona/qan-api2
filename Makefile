@@ -32,15 +32,18 @@ ps-client:
 # Run qan-api with envs.
 # env $(cat .env | xargs) go run *.go
 go-run:
-	@echo "  > Runing with envs..." 
+	@echo "  > Runing with envs..."
 	GRPC_VERBOSITY=DEBUG GRPC_TRACE=all go run *.go
 
 # Pack ClickHouse migrations into go file.
 go-generate:
 	@echo "  >  Generating dependency files..."
-	go-bindata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
-	go install -v ./vendor/github.com/golang/protobuf/protoc-gen-go ./vendor/github.com/mwitkow/go-proto-validators/protoc-gen-govalidators
 
+	go install -v ./vendor/github.com/jteeuwen/go-bindata/go-bindata
+	go-bindata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
+
+	go install -v ./vendor/github.com/golang/protobuf/protoc-gen-go \
+					./vendor/github.com/mwitkow/go-proto-validators/protoc-gen-govalidators
 	prototool all
 
 # Build binary.
