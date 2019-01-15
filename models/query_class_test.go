@@ -105,14 +105,14 @@ func (c *converter) ConvertValue(v interface{}) (driver.Value, error) {
 func TestSave(t *testing.T) {
 	agentMsg := collectorpb.AgentMessage{
 		QueryClass: []*collectorpb.QueryClass{
-			&collectorpb.QueryClass{
+			{
 				Digest:   "digest1",
 				Labels:   map[string]string{"label1": "aaa1"},
 				Warnings: map[string]uint64{"warn1": 111},
 				Errors:   map[string]uint64{"error1": 333},
 				Labint:   map[uint32]uint32{321: 123},
 			},
-			&collectorpb.QueryClass{
+			{
 				Digest:   "digest2",
 				Labels:   map[string]string{"label2": "bbb2"},
 				Warnings: map[string]uint64{"warn2": 222},
@@ -160,10 +160,10 @@ func TestSave(t *testing.T) {
 func TestSaveEpmtyMaps(t *testing.T) {
 	agentMsg := collectorpb.AgentMessage{
 		QueryClass: []*collectorpb.QueryClass{
-			&collectorpb.QueryClass{
+			{
 				Digest: "digest1",
 			},
-			&collectorpb.QueryClass{
+			{
 				Digest: "digest2",
 			},
 		},
