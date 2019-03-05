@@ -27,7 +27,7 @@ import (
 	"time"
 
 	"github.com/Percona-Lab/qan-api/models"
-	aservice "github.com/Percona-Lab/qan-api/services/analitycs"
+	aservice "github.com/Percona-Lab/qan-api/services/analytics"
 	rservice "github.com/Percona-Lab/qan-api/services/receiver"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	pbqan "github.com/percona/pmm/api/qan"
@@ -35,8 +35,6 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
-
-type server struct{}
 
 const shutdownTimeout = 3 * time.Second
 
@@ -92,7 +90,7 @@ func addSwaggerHandler(mux *http.ServeMux) {
 	})
 }
 
-// runJSONServer runs JSON proxy server (grpc-gateway) until context is canceled, then gracefully stops it.
+// runJSONServer runs gRPC-gateway until context is canceled, then gracefully stops it.
 func runJSONServer(ctx context.Context, grpcBind, jsonBind string) {
 
 	log.Printf("Starting server on http://%s/ ...", jsonBind)

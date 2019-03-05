@@ -135,11 +135,11 @@
 
 [[projects]]
   branch = "PMM-3399-qan-api"
-  digest = "1:7dfbc4cf82ee91fa2ee3f1ef75b6b609c6fc98c2326c628adc0dd8b2b82c148d"
+  digest = "1:3da08f69189f11a2d9d8c930287916ab493d81b6f3f9c62cc686de9bf6b54252"
   name = "github.com/percona/pmm"
   packages = ["api/qan"]
   pruneopts = "NUT"
-  revision = "a3221cba8e49030b7a1e8464e9262403d87390e5"
+  revision = "ea5db79bf1283cb1fee319c7a62a2324dd9d0e30"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"

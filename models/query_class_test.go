@@ -22,13 +22,19 @@ import (
 	"fmt"
 	"net"
 	"reflect"
+	"testing"
 
-	_ "github.com/DATA-DOG/go-sqlmock"
-	_ "github.com/stretchr/testify/assert"
+	"github.com/DATA-DOG/go-sqlmock"
+	"github.com/jmoiron/sqlx"
 	_ "github.com/kshvakov/clickhouse"
 	"github.com/kshvakov/clickhouse/lib/column"
 	"github.com/kshvakov/clickhouse/lib/types"
+	pbqan "github.com/percona/pmm/api/qan"
+	"github.com/stretchr/testify/assert"
 )
+
+// numFieldsInBucket is amount fields in backet
+const numFieldsInBucket = 159
 
 // Any is a stub for any argument in SQL query or exec.
 type Any struct{}
@@ -115,112 +121,110 @@ func (c *converter) ConvertValue(v interface{}) (driver.Value, error) {
 	return nil, fmt.Errorf("value converter: unsupported type %T", v)
 }
 
-// TODO: Fix tests
-// func TestSave(t *testing.T) {
-// 	agentMsg := pbqan.AgentMessage{
-// 		QueryClass: []*pbqan.QueryClass{
-// 			{
-// 				Queryid:  "Queryid1",
-// 				Labels:   map[string]string{"label1": "aaa1"},
-// 				Warnings: map[uint64]uint64{123: 111},
-// 				Errors:   map[uint64]uint64{123: 333},
-// 			},
-// 			{
-// 				Queryid:  "Queryid2",
-// 				Labels:   map[string]string{"label2": "bbb2"},
-// 				Warnings: map[uint64]uint64{321: 222},
-// 				Errors:   map[uint64]uint64{321: 444},
-// 			},
-// 		},
-// 	}
-// 	var _converter = &converter{}
-// 	db, mock, err := sqlmock.New(sqlmock.ValueConverterOption(_converter))
-// 	if err != nil {
-// 		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
-// 	}
+func TestSave(t *testing.T) {
+	agentMsg := pbqan.AgentMessage{
+		QueryClass: []*pbqan.QueryClass{
+			{
+				Queryid:  "Queryid1",
+				Labels:   map[string]string{"label1": "aaa1"},
+				Warnings: map[uint64]uint64{123: 111},
+				Errors:   map[uint64]uint64{123: 333},
+			},
+			{
+				Queryid:  "Queryid2",
+				Labels:   map[string]string{"label2": "bbb2"},
+				Warnings: map[uint64]uint64{321: 222},
+				Errors:   map[uint64]uint64{321: 444},
+			},
+		},
+	}
+	var _converter = &converter{}
+	db, mock, err := sqlmock.New(sqlmock.ValueConverterOption(_converter))
+	if err != nil {
+		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
+	}
 
-// 	mock.ExpectBegin()
-// 	a := mock.ExpectPrepare("^INSERT INTO queries .*")
-// 	for _, qc := range agentMsg.QueryClass {
-// 		s := reflect.ValueOf(*qc)
-// 		ret := make([]driver.Value, s.NumField())
-// 		for i := 0; i < s.NumField(); i++ {
-// 			ret[i] = Any{}
-// 		}
-// 		ret[0] = qc.Queryid
-// 		ret[6], ret[7] = MapToArrsStrStr(qc.Labels)     // Query class labels.
-// 		ret[17], ret[18] = MapToArrsIntInt(qc.Warnings) // Query class warnings.
-// 		ret[20], ret[21] = MapToArrsIntInt(qc.Errors)   // Query class errors.
-// 		a.ExpectExec().WithArgs(ret...).WillReturnResult(sqlmock.NewResult(1, 1))
-// 	}
-// 	mock.ExpectCommit()
-// 	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
+	mock.ExpectBegin()
+	a := mock.ExpectPrepare("^INSERT INTO queries .*")
+	for _, qc := range agentMsg.QueryClass {
+		ret := make([]driver.Value, numFieldsInBucket)
+		for i := 0; i < numFieldsInBucket; i++ {
+			ret[i] = Any{}
+		}
+		ret[0] = qc.Queryid
+		ret[6], ret[7] = MapToArrsStrStr(qc.Labels)     // Query class labels.
+		ret[18], ret[19] = MapToArrsIntInt(qc.Warnings) // Query class warnings.
+		ret[21], ret[22] = MapToArrsIntInt(qc.Errors)   // Query class errors.
+		// fmt.Printf("ret: %#v", ret)
+		a.ExpectExec().WithArgs(ret...).WillReturnResult(sqlmock.NewResult(1, 1))
+	}
+	mock.ExpectCommit()
+	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
 
-// 	// execute save method
-// 	if err = qc.Save(&agentMsg); err != nil {
-// 		t.Errorf("error was not expected while saving data to clickhouse: %s", err)
-// 	}
+	// execute save method
+	if err = qc.Save(&agentMsg); err != nil {
+		t.Errorf("error was not expected while saving data to clickhouse: %s", err)
+	}
 
-// 	_ = db.Close()
-// 	// we make sure that all expectations were met
-// 	if err := mock.ExpectationsWereMet(); err != nil {
-// 		t.Errorf("there were unfulfilled expectations: %s", err)
-// 	}
-// }
+	_ = db.Close()
+	// we make sure that all expectations were met
+	if err := mock.ExpectationsWereMet(); err != nil {
+		t.Errorf("there were unfulfilled expectations: %s", err)
+	}
+}
 
-// func TestSaveEpmtyMaps(t *testing.T) {
-// 	agentMsg := pbqan.AgentMessage{
-// 		QueryClass: []*pbqan.QueryClass{
-// 			{
-// 				Queryid: "Queryid1",
-// 			},
-// 			{
-// 				Queryid: "Queryid2",
-// 			},
-// 		},
-// 	}
-// 	var _converter = &converter{}
-// 	db, mock, err := sqlmock.New(sqlmock.ValueConverterOption(_converter))
-// 	if err != nil {
-// 		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
-// 	}
+func TestSaveEpmtyMaps(t *testing.T) {
+	agentMsg := pbqan.AgentMessage{
+		QueryClass: []*pbqan.QueryClass{
+			{
+				Queryid: "Queryid1",
+			},
+			{
+				Queryid: "Queryid2",
+			},
+		},
+	}
+	var _converter = &converter{}
+	db, mock, err := sqlmock.New(sqlmock.ValueConverterOption(_converter))
+	if err != nil {
+		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
+	}
 
-// 	mock.ExpectBegin()
-// 	a := mock.ExpectPrepare("^INSERT INTO queries .*")
-// 	for _, qc := range agentMsg.QueryClass {
-// 		s := reflect.ValueOf(*qc)
-// 		ret := make([]driver.Value, s.NumField())
-// 		for i := 0; i < s.NumField(); i++ {
-// 			ret[i] = Any{}
-// 		}
-// 		ret[0] = qc.Queryid
-// 		a.ExpectExec().WithArgs(ret...).WillReturnResult(sqlmock.NewResult(1, 1))
-// 	}
-// 	mock.ExpectCommit()
-// 	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
+	mock.ExpectBegin()
+	a := mock.ExpectPrepare("^INSERT INTO queries .*")
+	for _, qc := range agentMsg.QueryClass {
+		ret := make([]driver.Value, numFieldsInBucket)
+		for i := 0; i < numFieldsInBucket; i++ {
+			ret[i] = Any{}
+		}
+		ret[0] = qc.Queryid
+		a.ExpectExec().WithArgs(ret...).WillReturnResult(sqlmock.NewResult(1, 1))
+	}
+	mock.ExpectCommit()
+	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
 
-// 	// execute save method
-// 	if err = qc.Save(&agentMsg); err != nil {
-// 		t.Errorf("error was not expected while saving data to clickhouse: %s", err)
-// 	}
+	// execute save method
+	if err = qc.Save(&agentMsg); err != nil {
+		t.Errorf("error was not expected while saving data to clickhouse: %s", err)
+	}
 
-// 	_ = db.Close()
-// 	// we make sure that all expectations were met
-// 	if err := mock.ExpectationsWereMet(); err != nil {
-// 		t.Errorf("there were unfulfilled expectations: %s", err)
-// 	}
-// }
+	_ = db.Close()
+	// we make sure that all expectations were met
+	if err := mock.ExpectationsWereMet(); err != nil {
+		t.Errorf("there were unfulfilled expectations: %s", err)
+	}
+}
 
-// func TestSaveEpmtyQueryClass(t *testing.T) {
-// 	agentMsg := pbqan.AgentMessage{
-// 		QueryClass: []*pbqan.QueryClass{},
-// 	}
-// 	var _converter = &converter{}
-// 	db, _, err := sqlmock.New(sqlmock.ValueConverterOption(_converter))
-// 	if err != nil {
-// 		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
-// 	}
-// 	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
-// 	assert.EqualError(t, qc.Save(&agentMsg), "Nothing to save - no query classes")
-// 	_ = db.Close()
-// }
+func TestSaveEpmtyQueryClass(t *testing.T) {
+	agentMsg := pbqan.AgentMessage{
+		QueryClass: []*pbqan.QueryClass{},
+	}
+	var _converter = &converter{}
+	db, _, err := sqlmock.New(sqlmock.ValueConverterOption(_converter))
+	if err != nil {
+		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
+	}
+	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
+	assert.EqualError(t, qc.Save(&agentMsg), "Nothing to save - no query classes")
+	_ = db.Close()
+}

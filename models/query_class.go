@@ -47,10 +47,10 @@ const insertSQL = `
     is_truncated,
     example_type,
     example_metrics,
-    num_query_with_warnings,
+    num_queries_with_warnings,
     warnings.code,
     warnings.count,
-    num_query_with_errors,
+    num_queries_with_errors,
     errors.code,
     errors.count,
     num_queries,
@@ -191,8 +191,8 @@ const insertSQL = `
     m_docs_scanned_p99
    )
   VALUES (
-	  :queryid,
-	  :d_server,
+    :queryid,
+    :d_server,
     :d_database,
     :d_schema,
     :d_username,
@@ -205,13 +205,13 @@ const insertSQL = `
     :period_length,
     :example,
     CAST( :example_format_s AS Enum8('EXAMPLE' = 0, 'DIGEST' = 1)) AS example_format,
-    :is_truncated,
+    :is_query_truncated,
     CAST( :example_type_s AS Enum8('RANDOM' = 0, 'SLOWEST' = 1, 'FASTEST' = 2, 'WITH_ERROR' = 3)) AS example_type,
     :example_metrics,
-    :num_query_with_warnings,
+    :num_queries_with_warnings,
     :warnings_code,
     :warnings_count,
-    :num_query_with_errors,
+    :num_queries_with_errors,
     :errors_code,
     :errors_count,
     :num_queries,
@@ -365,15 +365,16 @@ func NewQueryClass(db *sqlx.DB) QueryClass {
 
 // QueryClassExtended  extends proto QueryClass to store converted data into db.
 type QueryClassExtended struct {
-	PeriodStart   time.Time `json:"period_start_ts"`
-	ExampleType   string    `json:"example_type_s"`
-	ExampleFormat string    `json:"example_format_s"`
-	LabelsKey     []string  `json:"labels_key"`
-	LabelsValues  []string  `json:"labels_value"`
-	WarningsCode  []uint64  `json:"warnings_code"`
-	WarningsCount []uint64  `json:"warnings_count"`
-	ErrorsCode    []uint64  `json:"errors_code"`
-	ErrorsCount   []uint64  `json:"errors_count"`
+	PeriodStart      time.Time `json:"period_start_ts"`
+	ExampleType      string    `json:"example_type_s"`
+	ExampleFormat    string    `json:"example_format_s"`
+	LabelsKey        []string  `json:"labels_key"`
+	LabelsValues     []string  `json:"labels_value"`
+	WarningsCode     []uint64  `json:"warnings_code"`
+	WarningsCount    []uint64  `json:"warnings_count"`
+	ErrorsCode       []uint64  `json:"errors_code"`
+	ErrorsCount      []uint64  `json:"errors_count"`
+	IsQueryTruncated uint8     `json:"is_query_truncated"` // uint32 -> uint8
 	*pbqan.QueryClass
 }
 
@@ -404,7 +405,7 @@ func (qc *QueryClass) Save(agentMsg *pbqan.AgentMessage) error {
 		lk, lv := MapToArrsStrStr(qc.Labels)
 		wk, wv := MapToArrsIntInt(qc.Warnings)
 		ek, ev := MapToArrsIntInt(qc.Errors)
-		fmt.Printf("Time: %v, %v \n", qc.GetPeriodStart(), time.Unix(qc.GetPeriodStart(), 0).UTC())
+
 		q := QueryClassExtended{
 			time.Unix(qc.GetPeriodStart(), 0).UTC(),
 			qc.GetExampleType().String(),
@@ -415,8 +416,10 @@ func (qc *QueryClass) Save(agentMsg *pbqan.AgentMessage) error {
 			wv,
 			ek,
 			ev,
+			uint8(qc.IsTruncated), // uint32 -> uint8
 			qc,
 		}
+
 		_, err := stmt.Exec(q)
 
 		if err != nil {
@@ -442,17 +445,6 @@ func (qc *QueryClass) Save(agentMsg *pbqan.AgentMessage) error {
 func MapToArrsStrStr(m map[string]string) (keys []string, values []string) {
 	keys = []string{}
 	values = []string{}
-	for k, v := range m {
-		keys = append(keys, k)
-		values = append(values, v)
-	}
-	return keys, values
-}
-
-// MapToArrsStrInt converts map into two lists.
-func MapToArrsStrInt(m map[string]uint64) (keys []string, values []uint64) {
-	keys = []string{}
-	values = []uint64{}
 	for k, v := range m {
 		keys = append(keys, k)
 		values = append(values, v)

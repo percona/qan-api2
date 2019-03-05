@@ -50,19 +50,14 @@ type QueryClassDimentions struct {
 }
 
 func main() {
-	dbs := []string{"db0", "db1", "db2", "db3", "db4", "db5", "db6", "db7", "db8", "db9"}
-	rand.Seed(time.Now().UnixNano())
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 
 	logOpt := slowlog.Options{}
 	slowLogPath := flag.String("slow-log", "logs/mysql-slow.log", "Path to MySQL slow log file")
+	logTimeStart := flag.String("logTimeStart", "2019-01-01 00:00:00", "Start fake time of query from")
 	serverURL := flag.String("server-url", "127.0.0.1:80", "ULR of QAN-API Server")
-	offset := flag.Uint64("offset", 0, "Start Offset of slowlog")
-
-	maxQCtoSent := flag.Int("max-qc-to-sent", 100000, "Maximum query classes  to sent to QAN-API.")
-	maxTimeForSent := flag.Duration("max-time-for-tx", 5*time.Second, "Maximum time to send .")
 	newEventWait := flag.Duration("new-event-wait", 10*time.Second, "Time to wait for a new event in slow log.")
 	flag.Parse()
-	logOpt.StartOffset = *offset
 
 	log.SetOutput(os.Stderr)
 
@@ -99,66 +94,70 @@ func main() {
 	events = parseSlowLog(*slowLogPath, logOpt)
 	fmt.Println("Parsing slowlog: ", *slowLogPath, "...")
 
+	logStart, _ := time.Parse("2006-01-02 15:04:05", *logTimeStart)
+	periodNumber := 0
+
+	var periodStart time.Time
+	if periodStart.IsZero() {
+		periodStart = logStart.Add(time.Duration(periodNumber) * time.Minute)
+	}
+
 	for {
-		start := time.Now()
+		// start := time.Now()
+		var prewTs time.Time
 		err = bulkSend(stream, func(am *pbqan.AgentMessage) error {
 			i := 0
 			aggregator := event.NewAggregator(true, 0, 1) // add right params
-			qcDimentions := map[string]*QueryClassDimentions{}
 			for e := range events {
 				fingerprint := query.Fingerprint(e.Query)
 				digest := query.Id(fingerprint)
-				aggregator.AddEvent(e, digest, fingerprint, "", "", "", "")
+
+				e.Db = fmt.Sprintf("schema%d", r.Intn(100))      // fake data 100
+				e.User = fmt.Sprintf("user%d", r.Intn(100))      // fake data 100
+				e.Host = fmt.Sprintf("10.11.12.%d", r.Intn(100)) // fake data 100
+				e.Server = fmt.Sprintf("db%d", r.Intn(10))       // fake data 10
+				e.LabelsKey = []string{fmt.Sprintf("label%d", r.Intn(10)), fmt.Sprintf("label%d", r.Intn(10)), fmt.Sprintf("label%d", r.Intn(10))}
+				e.LabelsValue = []string{fmt.Sprintf("value%d", r.Intn(100)), fmt.Sprintf("value%d", r.Intn(100)), fmt.Sprintf("value%d", r.Intn(100))}
+
+				aggregator.AddEvent(e, digest, e.User, e.Host, e.Db, e.Server, fingerprint)
+				i++
+
 				// Pass last offset to restart reader when reached out end of slowlog.
 				logOpt.StartOffset = e.OffsetEnd
 
-				qcd := &QueryClassDimentions{
-					DbUsername: e.User,
-					ClientHost: e.Host,
-					PeriodEnd:  e.Ts.UnixNano(),
+				if prewTs.IsZero() {
+					prewTs = e.Ts
 				}
 
-				qcDimentions[digest] = qcd
-				if qcDimentions[digest].PeriodStart != 0 {
-					qcDimentions[digest].PeriodStart = e.Ts.UnixNano()
-				}
-
-				i++
-				if i >= *maxQCtoSent || time.Since(start) > *maxTimeForSent {
-
-					fmt.Printf("offset: %v\n", logOpt.StartOffset)
+				if e.Ts.Sub(prewTs).Seconds() > 59 {
+					prewTs = e.Ts
+					periodStart = logStart.Add(time.Duration(periodNumber) * time.Minute)
+					periodNumber++
 					break
 				}
 			}
 
-			r := aggregator.Finalize()
+			res := aggregator.Finalize()
 
-			for k, v := range r.Class {
-				n := rand.Intn(9)
-				labels := map[string]string{}
-				for i := 1; i <= n; i++ {
-					labels[fmt.Sprintf("key%v", rand.Intn(9))] = fmt.Sprintf("label%v", rand.Intn(9))
-				}
+			for _, v := range res.Class {
 
 				qc := &pbqan.QueryClass{
-					Queryid:     k,
-					Fingerprint: v.Fingerprint,
-					DDatabase:   "",                // fake data
-					DSchema:     dbs[rand.Intn(9)], // fake data
-					DUsername:   qcDimentions[k].DbUsername,
-					DClientHost: fmt.Sprintf("192.168.1.%v", rand.Intn(99)), // fake data
-					// ClientHost:   qcDimentions[k].ClientHost,
-					DServer:      fmt.Sprintf("hostname_%v", rand.Intn(99)), // fake data
-					Labels:       labels,
-					AgentUuid:    agentUUID,
-					PeriodStart:  qcDimentions[k].PeriodStart,
-					PeriodLength: uint32(qcDimentions[k].PeriodStart - qcDimentions[k].PeriodStart),
-					Example:      v.Example.Query,
-					NumQueries:   float32(v.TotalQueries),
+					Queryid:       v.Id,
+					Fingerprint:   v.Fingerprint,
+					DDatabase:     "",
+					DSchema:       v.Db,
+					DUsername:     v.User,
+					DClientHost:   v.Host,
+					DServer:       v.Server,
+					Labels:        listsToMap(v.LabelsKey, v.LabelsValue),
+					AgentUuid:     agentUUID,
+					PeriodStart:   periodStart.Truncate(1 * time.Minute).Unix(),
+					PeriodLength:  uint32(60),
+					Example:       v.Example.Query,
+					ExampleFormat: 1,
+					ExampleType:   1,
+					NumQueries:    float32(v.TotalQueries),
 				}
-
-				t, _ := time.Parse("2006-01-02 15:04:05", v.Example.Ts)
-				qc.PeriodStart = t.Unix()
 
 				// If key has suffix _time or _wait than field is TimeMetrics.
 				// For Boolean metrics exists only Sum.
@@ -424,4 +423,12 @@ func parseSlowLog(filename string, o slowlog.Options) <-chan *slowlog.Event {
 		}
 	}()
 	return p.EventChan()
+}
+
+func listsToMap(k, v []string) map[string]string {
+	m := map[string]string{}
+	for i, e := range k {
+		m[e] = v[i]
+	}
+	return m
 }
