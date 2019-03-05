@@ -112,12 +112,20 @@ func main() {
 				fingerprint := query.Fingerprint(e.Query)
 				digest := query.Id(fingerprint)
 
-				e.Db = fmt.Sprintf("schema%d", r.Intn(100))      // fake data 100
-				e.User = fmt.Sprintf("user%d", r.Intn(100))      // fake data 100
-				e.Host = fmt.Sprintf("10.11.12.%d", r.Intn(100)) // fake data 100
-				e.Server = fmt.Sprintf("db%d", r.Intn(10))       // fake data 10
-				e.LabelsKey = []string{fmt.Sprintf("label%d", r.Intn(10)), fmt.Sprintf("label%d", r.Intn(10)), fmt.Sprintf("label%d", r.Intn(10))}
-				e.LabelsValue = []string{fmt.Sprintf("value%d", r.Intn(100)), fmt.Sprintf("value%d", r.Intn(100)), fmt.Sprintf("value%d", r.Intn(100))}
+				e.Db = fmt.Sprintf("schema%d", r.Intn(100))      // fake 100
+				e.User = fmt.Sprintf("user%d", r.Intn(100))      // fake 100
+				e.Host = fmt.Sprintf("10.11.12.%d", r.Intn(100)) // fake 100
+				e.Server = fmt.Sprintf("db%d", r.Intn(10))       // fake 10
+				e.LabelsKey = []string{
+					fmt.Sprintf("label%d", r.Intn(10)),
+					fmt.Sprintf("label%d", r.Intn(10)),
+					fmt.Sprintf("label%d", r.Intn(10)),
+				}
+				e.LabelsValue = []string{
+					fmt.Sprintf("value%d", r.Intn(100)),
+					fmt.Sprintf("value%d", r.Intn(100)),
+					fmt.Sprintf("value%d", r.Intn(100)),
+				}
 
 				aggregator.AddEvent(e, digest, e.User, e.Host, e.Db, e.Server, fingerprint)
 				i++
