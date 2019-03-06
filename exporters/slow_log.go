@@ -42,13 +42,6 @@ type closedChannelError struct {
 	error
 }
 
-type MetricsBucketDimentions struct {
-	DbUsername  string
-	ClientHost  string
-	PeriodStart int64
-	PeriodEnd   int64
-}
-
 func main() {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 
