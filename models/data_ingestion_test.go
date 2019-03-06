@@ -123,7 +123,7 @@ func (c *converter) ConvertValue(v interface{}) (driver.Value, error) {
 
 func TestSave(t *testing.T) {
 	agentMsg := pbqan.AgentMessage{
-		QueryClass: []*pbqan.QueryClass{
+		MetricsBucket: []*pbqan.MetricsBucket{
 			{
 				Queryid:  "Queryid1",
 				Labels:   map[string]string{"label1": "aaa1"},
@@ -146,23 +146,23 @@ func TestSave(t *testing.T) {
 
 	mock.ExpectBegin()
 	a := mock.ExpectPrepare("^INSERT INTO queries .*")
-	for _, qc := range agentMsg.QueryClass {
+	for _, mb := range agentMsg.MetricsBucket {
 		ret := make([]driver.Value, numFieldsInBucket)
 		for i := 0; i < numFieldsInBucket; i++ {
 			ret[i] = Any{}
 		}
-		ret[0] = qc.Queryid
-		ret[6], ret[7] = MapToArrsStrStr(qc.Labels)     // Query class labels.
-		ret[18], ret[19] = MapToArrsIntInt(qc.Warnings) // Query class warnings.
-		ret[21], ret[22] = MapToArrsIntInt(qc.Errors)   // Query class errors.
+		ret[0] = mb.Queryid
+		ret[6], ret[7] = MapToArrsStrStr(mb.Labels)     // Query class labels.
+		ret[18], ret[19] = MapToArrsIntInt(mb.Warnings) // Query class warnings.
+		ret[21], ret[22] = MapToArrsIntInt(mb.Errors)   // Query class errors.
 		// fmt.Printf("ret: %#v", ret)
 		a.ExpectExec().WithArgs(ret...).WillReturnResult(sqlmock.NewResult(1, 1))
 	}
 	mock.ExpectCommit()
-	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
+	mb := NewMetricsBucket(sqlx.NewDb(db, "clickhouse"))
 
 	// execute save method
-	if err = qc.Save(&agentMsg); err != nil {
+	if err = mb.Save(&agentMsg); err != nil {
 		t.Errorf("error was not expected while saving data to clickhouse: %s", err)
 	}
 
@@ -175,7 +175,7 @@ func TestSave(t *testing.T) {
 
 func TestSaveEpmtyMaps(t *testing.T) {
 	agentMsg := pbqan.AgentMessage{
-		QueryClass: []*pbqan.QueryClass{
+		MetricsBucket: []*pbqan.MetricsBucket{
 			{
 				Queryid: "Queryid1",
 			},
@@ -192,19 +192,19 @@ func TestSaveEpmtyMaps(t *testing.T) {
 
 	mock.ExpectBegin()
 	a := mock.ExpectPrepare("^INSERT INTO queries .*")
-	for _, qc := range agentMsg.QueryClass {
+	for _, mb := range agentMsg.MetricsBucket {
 		ret := make([]driver.Value, numFieldsInBucket)
 		for i := 0; i < numFieldsInBucket; i++ {
 			ret[i] = Any{}
 		}
-		ret[0] = qc.Queryid
+		ret[0] = mb.Queryid
 		a.ExpectExec().WithArgs(ret...).WillReturnResult(sqlmock.NewResult(1, 1))
 	}
 	mock.ExpectCommit()
-	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
+	mb := NewMetricsBucket(sqlx.NewDb(db, "clickhouse"))
 
 	// execute save method
-	if err = qc.Save(&agentMsg); err != nil {
+	if err = mb.Save(&agentMsg); err != nil {
 		t.Errorf("error was not expected while saving data to clickhouse: %s", err)
 	}
 
@@ -215,16 +215,16 @@ func TestSaveEpmtyMaps(t *testing.T) {
 	}
 }
 
-func TestSaveEpmtyQueryClass(t *testing.T) {
+func TestSaveEpmtyMetricsBucket(t *testing.T) {
 	agentMsg := pbqan.AgentMessage{
-		QueryClass: []*pbqan.QueryClass{},
+		MetricsBucket: []*pbqan.MetricsBucket{},
 	}
 	var _converter = &converter{}
 	db, _, err := sqlmock.New(sqlmock.ValueConverterOption(_converter))
 	if err != nil {
 		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
 	}
-	qc := NewQueryClass(sqlx.NewDb(db, "clickhouse"))
-	assert.EqualError(t, qc.Save(&agentMsg), "Nothing to save - no query classes")
+	mb := NewMetricsBucket(sqlx.NewDb(db, "clickhouse"))
+	assert.EqualError(t, mb.Save(&agentMsg), "Nothing to save - no metrics buckets")
 	_ = db.Close()
 }

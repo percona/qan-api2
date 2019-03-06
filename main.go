@@ -50,11 +50,11 @@ func runGRPCServer(ctx context.Context, dsn, bind string) {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-	qcm := models.NewQueryClass(db)
+	mbm := models.NewMetricsBucket(db)
 	rm := models.NewReporter(db)
 	mm := models.NewMetrics(db)
 	grpcServer := grpc.NewServer()
-	pbqan.RegisterAgentServer(grpcServer, rservice.NewService(qcm))
+	pbqan.RegisterAgentServer(grpcServer, rservice.NewService(mbm))
 	pbqan.RegisterProfileServer(grpcServer, aservice.NewService(rm, mm))
 	pbqan.RegisterMetricsServer(grpcServer, aservice.NewService(rm, mm))
 	reflection.Register(grpcServer)

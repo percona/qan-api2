@@ -353,18 +353,18 @@ const insertSQL = `
   )
 `
 
-// QueryClass implements models to store query classes
-type QueryClass struct {
+// MetricsBucket implements models to store metrics bucket
+type MetricsBucket struct {
 	db *sqlx.DB
 }
 
-// NewQueryClass initialize QueryClass with db instance.
-func NewQueryClass(db *sqlx.DB) QueryClass {
-	return QueryClass{db: db}
+// NewMetricsBucket initialize MetricsBucket with db instance.
+func NewMetricsBucket(db *sqlx.DB) MetricsBucket {
+	return MetricsBucket{db: db}
 }
 
-// QueryClassExtended  extends proto QueryClass to store converted data into db.
-type QueryClassExtended struct {
+// MetricsBucketExtended  extends proto MetricsBucket to store converted data into db.
+type MetricsBucketExtended struct {
 	PeriodStart      time.Time `json:"period_start_ts"`
 	ExampleType      string    `json:"example_type_s"`
 	ExampleFormat    string    `json:"example_format_s"`
@@ -375,24 +375,24 @@ type QueryClassExtended struct {
 	ErrorsCode       []uint64  `json:"errors_code"`
 	ErrorsCount      []uint64  `json:"errors_count"`
 	IsQueryTruncated uint8     `json:"is_query_truncated"` // uint32 -> uint8
-	*pbqan.QueryClass
+	*pbqan.MetricsBucket
 }
 
-// Save store cquery classes received from agent into db.
-func (qc *QueryClass) Save(agentMsg *pbqan.AgentMessage) error {
+// Save store metrics bucket received from agent into db.
+func (mb *MetricsBucket) Save(agentMsg *pbqan.AgentMessage) error {
 
-	if len(agentMsg.QueryClass) == 0 {
-		return errors.New("Nothing to save - no query classes")
+	if len(agentMsg.MetricsBucket) == 0 {
+		return errors.New("Nothing to save - no metrics buckets")
 	}
 
 	// TODO: find solution with better performance
-	qc.db.Mapper = reflectx.NewMapperTagFunc("json", strings.ToUpper, func(value string) string {
+	mb.db.Mapper = reflectx.NewMapperTagFunc("json", strings.ToUpper, func(value string) string {
 		if strings.Contains(value, ",") {
 			return strings.Split(value, ",")[0]
 		}
 		return value
 	})
-	tx, err := qc.db.Beginx()
+	tx, err := mb.db.Beginx()
 	if err != nil {
 		return fmt.Errorf("begin transaction: %s", err.Error())
 	}
@@ -401,23 +401,23 @@ func (qc *QueryClass) Save(agentMsg *pbqan.AgentMessage) error {
 		return fmt.Errorf("prepare named: %s", err.Error())
 	}
 	var errs error
-	for _, qc := range agentMsg.QueryClass {
-		lk, lv := MapToArrsStrStr(qc.Labels)
-		wk, wv := MapToArrsIntInt(qc.Warnings)
-		ek, ev := MapToArrsIntInt(qc.Errors)
+	for _, mb := range agentMsg.MetricsBucket {
+		lk, lv := MapToArrsStrStr(mb.Labels)
+		wk, wv := MapToArrsIntInt(mb.Warnings)
+		ek, ev := MapToArrsIntInt(mb.Errors)
 
-		q := QueryClassExtended{
-			time.Unix(qc.GetPeriodStart(), 0).UTC(),
-			qc.GetExampleType().String(),
-			qc.GetExampleFormat().String(),
+		q := MetricsBucketExtended{
+			time.Unix(mb.GetPeriodStart(), 0).UTC(),
+			mb.GetExampleType().String(),
+			mb.GetExampleFormat().String(),
 			lk,
 			lv,
 			wk,
 			wv,
 			ek,
 			ev,
-			uint8(qc.IsTruncated), // uint32 -> uint8
-			qc,
+			uint8(mb.IsTruncated), // uint32 -> uint8
+			mb,
 		}
 
 		_, err := stmt.Exec(q)
