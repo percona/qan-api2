@@ -21,7 +21,11 @@ import (
 	"fmt"
 	"io"
 
-	pbqan "github.com/percona/pmm/api/qan"
+	"github.com/golang/protobuf/proto"
+	qanpb "github.com/percona/pmm/api/qan"
+	"github.com/sirupsen/logrus"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 
 	"github.com/Percona-Lab/qan-api/models"
 )
@@ -29,15 +33,19 @@ import (
 // Service implements gRPC service to communicate with agent.
 type Service struct {
 	mbm models.MetricsBucket
+	l   *logrus.Entry
 }
 
 // NewService create new insstance of Service.
 func NewService(mbm models.MetricsBucket) *Service {
-	return &Service{mbm}
+	return &Service{
+		mbm: mbm,
+		l:   logrus.WithField("component", "receiver"),
+	}
 }
 
 // DataInterchange implements rpc to exchange data between API and agent.
-func (s *Service) DataInterchange(stream pbqan.Agent_DataInterchangeServer) error {
+func (s *Service) DataInterchange(stream qanpb.Agent_DataInterchangeServer) error {
 	fmt.Println("Start...")
 	for {
 		agentMsg, err := stream.Recv()
@@ -55,14 +63,30 @@ func (s *Service) DataInterchange(stream pbqan.Agent_DataInterchangeServer) erro
 		savedAmount := len(agentMsg.MetricsBucket)
 		fmt.Printf("Rcvd and saved %v Metrics Buckets\n", savedAmount)
 		// look for msgs to be sent to client
-		msg := pbqan.ApiMessage{SavedAmount: uint32(savedAmount)}
+		msg := qanpb.ApiMessage{SavedAmount: uint32(savedAmount)}
 		if err := stream.Send(&msg); err != nil {
 			return err
 		}
 	}
 }
 
-func (s *Service) TODO(ctx context.Context, req *pbqan.AgentMessageTODO) (*pbqan.ApiMessageTODO, error) {
-	// TODO
-	return nil, nil
+func (s *Service) TODO(ctx context.Context, req *qanpb.AgentMessageTODO) (*qanpb.ApiMessageTODO, error) {
+	switch t := req.Data.GetTypeUrl(); t {
+	case qanpb.AgentMessageTypeURL:
+		var msg qanpb.AgentMessage
+		if err := proto.Unmarshal(req.Data.Value, &msg); err != nil {
+			s.l.Error(err)
+			return nil, err
+		}
+
+		if err := s.mbm.Save(&msg); err != nil {
+			s.l.Error(err)
+			return nil, err
+		}
+		return new(qanpb.ApiMessageTODO), nil
+
+	default:
+		s.l.Errorf("Unexpected message type %q.", t)
+		return nil, status.Errorf(codes.InvalidArgument, "unexpected message type %q", t)
+	}
 }

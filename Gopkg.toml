@@ -16,3 +16,7 @@ required = [
 [[constraint]]
   branch = "PMM-3514-group-by-digest-user-host-db-server"
   name = "github.com/percona/go-mysql"
+
+[[constraint]]
+  name = "github.com/sirupsen/logrus"
+  version = "1.3.0"
