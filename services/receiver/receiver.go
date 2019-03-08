@@ -17,6 +17,7 @@
 package receiver
 
 import (
+	"context"
 	"fmt"
 	"io"
 
@@ -59,4 +60,9 @@ func (s *Service) DataInterchange(stream pbqan.Agent_DataInterchangeServer) erro
 			return err
 		}
 	}
+}
+
+func (s *Service) TODO(ctx context.Context, req *pbqan.AgentMessageTODO) (*pbqan.ApiMessageTODO, error) {
+	// TODO
+	return nil, nil
 }

@@ -134,15 +134,15 @@
   revision = "b9f78430ec7937d23152e7e8717193e36188e8a9"
 
 [[projects]]
-  branch = "PMM-2.0"
-  digest = "1:ac59722af16542eb92dd7b0d5ca205a7eda83489091773ce2a34b18c673be614"
+  branch = "PMM-3595-qan-mysql-perfschema"
+  digest = "1:05902650e3a70e41c431ca4c989b3b6d85bcf31ff90cd25d2effa55c7eb3ef8e"
   name = "github.com/percona/pmm"
   packages = [
     "api/qan",
     "version",
   ]
   pruneopts = "NUT"
-  revision = "05036f9df1fadbdad5a7ecf0ec66d0a6766c7fea"
+  revision = "0118627e6de0dc51fbf244f02be03b51c720f958"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
