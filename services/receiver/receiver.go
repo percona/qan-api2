@@ -18,14 +18,9 @@ package receiver
 
 import (
 	"context"
-	"fmt"
-	"io"
 
-	"github.com/golang/protobuf/proto"
-	qanpb "github.com/percona/pmm/api/qan"
+	"github.com/percona/pmm/api/qanpb"
 	"github.com/sirupsen/logrus"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 
 	"github.com/Percona-Lab/qan-api/models"
 )
@@ -44,49 +39,10 @@ func NewService(mbm models.MetricsBucket) *Service {
 	}
 }
 
-// DataInterchange implements rpc to exchange data between API and agent.
-func (s *Service) DataInterchange(stream qanpb.Agent_DataInterchangeServer) error {
-	fmt.Println("Start...")
-	for {
-		agentMsg, err := stream.Recv()
-		if err == io.EOF {
-			return nil
-		}
-		if err != nil {
-			return fmt.Errorf("recved from agent: %+v", agentMsg)
-		}
-		err = s.mbm.Save(agentMsg)
-		if err != nil {
-			fmt.Printf("save error: %v \n", err)
-			return fmt.Errorf("save error: %v", err)
-		}
-		savedAmount := len(agentMsg.MetricsBucket)
-		fmt.Printf("Rcvd and saved %v Metrics Buckets\n", savedAmount)
-		// look for msgs to be sent to client
-		msg := qanpb.ApiMessage{SavedAmount: uint32(savedAmount)}
-		if err := stream.Send(&msg); err != nil {
-			return err
-		}
+func (s *Service) Collect(ctx context.Context, req *qanpb.CollectRequest) (*qanpb.CollectResponse, error) {
+	if err := s.mbm.Save(req); err != nil {
+		s.l.Error(err)
+		return nil, err
 	}
-}
-
-func (s *Service) TODO(ctx context.Context, req *qanpb.AgentMessageTODO) (*qanpb.ApiMessageTODO, error) {
-	switch t := req.Data.GetTypeUrl(); t {
-	case qanpb.AgentMessageTypeURL:
-		var msg qanpb.AgentMessage
-		if err := proto.Unmarshal(req.Data.Value, &msg); err != nil {
-			s.l.Error(err)
-			return nil, err
-		}
-
-		if err := s.mbm.Save(&msg); err != nil {
-			s.l.Error(err)
-			return nil, err
-		}
-		return new(qanpb.ApiMessageTODO), nil
-
-	default:
-		s.l.Errorf("Unexpected message type %q.", t)
-		return nil, status.Errorf(codes.InvalidArgument, "unexpected message type %q", t)
-	}
+	return new(qanpb.CollectResponse), nil
 }

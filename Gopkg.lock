@@ -143,14 +143,14 @@
 
 [[projects]]
   branch = "PMM-3595-qan-mysql-perfschema"
-  digest = "1:6ad1d787c4b12d46a5cff2a19c568aaa61fe7f86bc433913c9c77ff0d870011d"
+  digest = "1:9d02e12a4f50ff40c27fdd3fe4002ba90629a1f202582ac9c194a94843225671"
   name = "github.com/percona/pmm"
   packages = [
-    "api/qan",
+    "api/qanpb",
     "version",
   ]
   pruneopts = "NUT"
-  revision = "d5a4e7ad9bdbba3345ae5c1452ecff12ab5289ac"
+  revision = "5800f1c7c28ad4c9dcf598485a50816b2b182b33"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
@@ -315,7 +315,7 @@
     "github.com/percona/go-mysql/log",
     "github.com/percona/go-mysql/log/slow",
     "github.com/percona/go-mysql/query",
-    "github.com/percona/pmm/api/qan",
+    "github.com/percona/pmm/api/qanpb",
     "github.com/percona/pmm/version",
     "github.com/pkg/errors",
     "github.com/sirupsen/logrus",
