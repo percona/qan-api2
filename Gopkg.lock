@@ -303,6 +303,7 @@
     "github.com/golang-migrate/migrate",
     "github.com/golang-migrate/migrate/database/clickhouse",
     "github.com/golang-migrate/migrate/source/go_bindata",
+    "github.com/golang/protobuf/ptypes/timestamp",
     "github.com/grpc-ecosystem/grpc-gateway/runtime",
     "github.com/jmoiron/sqlx",
     "github.com/jmoiron/sqlx/reflectx",

@@ -345,7 +345,6 @@ func (r *Reporter) SelectFilters(periodStartFrom, periodStartTo time.Time) (*qan
 	var hosts []*qanpb.NameAndCount
 	var labels []*CustomLabels
 
-	t := time.Now()
 	err := r.db.Select(&servers, queryServers, periodStartFrom, periodStartTo)
 	if err != nil {
 		return nil, fmt.Errorf("cannot select server dimension:%v", err)
