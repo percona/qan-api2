@@ -33,13 +33,23 @@ install:                        ## Install qan-api2 binary.
 install-race:                   ## Install qan-api2 binary with race detector.
 	go install -v -race ./...
 
-test:                           ## Run tests.
+pre-test:
+	-docker rm -f pmm-clickhouse-test --volumes
+	docker run -d --name pmm-clickhouse-test -p19000:9000 yandex/clickhouse-server:19.1.10
+	sleep 10s
+	docker exec pmm-clickhouse-test clickhouse client --query="CREATE DATABASE IF NOT EXISTS pmm_test;"
+	cat migrations/sql/*.up.sql | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --multiline --multiquery
+	cat fixture/metrics.csv | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --query="INSERT INTO metrics FORMAT CSV"
+
+test: pre-test                          ## Run tests.
 	go test -v ./...
+	docker rm -f pmm-clickhouse-test --volumes
 
-test-race:                      ## Run tests with race detector.
+test-race: pre-test                     ## Run tests with race detector.
 	go test -v -race ./...
+	docker rm -f pmm-clickhouse-test --volumes
 
-test-cover:                     ## Run tests and collect coverage information.
+test-cover: pre-test                    ## Run tests and collect coverage information.
 	go test -v -coverprofile=cover.out -covermode=count ./...
 
 check-license:                  ## Check that all files have the same license header.

@@ -22,6 +22,7 @@ import (
 	"log"
 	"strings"
 	"text/template"
+	"time"
 
 	"github.com/jmoiron/sqlx"
 	"github.com/percona/pmm/api/qanpb"
@@ -278,4 +279,116 @@ func interfaceToFloat32(unk interface{}) float32 {
 	default:
 		return float32(0)
 	}
+}
+
+const queryServers = `
+	SELECT d_server AS value, count(d_server) AS count
+	  FROM metrics
+	 WHERE period_start >= ?
+	   AND period_start <= ?
+  GROUP BY d_server;
+`
+const queryDatabases = `
+	SELECT d_database AS value, count(d_database) AS count
+	  FROM metrics
+	 WHERE period_start >= ?
+	   AND period_start <= ?
+  GROUP BY d_database;
+`
+const querySchemas = `
+	SELECT d_schema AS value, count(d_schema) AS count
+	  FROM metrics
+	 WHERE period_start >= ?
+	   AND period_start <= ?
+  GROUP BY d_schema;
+`
+const queryUsernames = `
+	SELECT d_username AS value, count(d_username) AS count
+	  FROM metrics
+	 WHERE period_start >= ?
+	   AND period_start <= ?
+  GROUP BY d_username;
+`
+const queryClientHosts = `
+	SELECT d_client_host AS value, count(d_client_host) AS count
+	  FROM metrics
+	 WHERE period_start >= ?
+	   AND period_start <= ?
+	 GROUP BY d_client_host;
+`
+
+const queryLabels = `
+	SELECT labels.key AS key, labels.value AS value, COUNT(labels.value) AS count
+	  FROM metrics
+ARRAY JOIN labels
+     WHERE period_start >= ?
+       AND period_start <= ?
+  GROUP BY labels.key, labels.value
+  ORDER BY labels.key, labels.value;
+`
+
+func (r *Reporter) SelectFilters(periodStartFrom, periodStartTo time.Time) (*qanpb.FiltersReply, error) {
+
+	result := qanpb.FiltersReply{
+		Labels: make(map[string]*qanpb.ListLabels),
+	}
+
+	type CustomLabels struct {
+		Key   string
+		Value string
+		Count int64
+	}
+	var servers []*qanpb.NameAndCount
+	var databases []*qanpb.NameAndCount
+	var schemas []*qanpb.NameAndCount
+	var users []*qanpb.NameAndCount
+	var hosts []*qanpb.NameAndCount
+	var labels []*CustomLabels
+
+	t := time.Now()
+	err := r.db.Select(&servers, queryServers, periodStartFrom, periodStartTo)
+	if err != nil {
+		return nil, fmt.Errorf("cannot select server dimension:%v", err)
+	}
+	err = r.db.Select(&databases, queryDatabases, periodStartFrom, periodStartTo)
+	if err != nil {
+		return nil, fmt.Errorf("cannot select databases dimension:%v", err)
+	}
+	err = r.db.Select(&schemas, querySchemas, periodStartFrom, periodStartTo)
+	if err != nil {
+		return nil, fmt.Errorf("cannot select schemas dimension:%v", err)
+	}
+	err = r.db.Select(&users, queryUsernames, periodStartFrom, periodStartTo)
+	if err != nil {
+		return nil, fmt.Errorf("cannot select usernames dimension:%v", err)
+	}
+	err = r.db.Select(&hosts, queryClientHosts, periodStartFrom, periodStartTo)
+	if err != nil {
+		return nil, fmt.Errorf("cannot select client hosts dimension:%v", err)
+	}
+	err = r.db.Select(&labels, queryLabels, periodStartFrom, periodStartTo)
+	if err != nil {
+		return nil, fmt.Errorf("cannot select labels dimension:%v", err)
+	}
+
+	result.Labels["d_server"] = &qanpb.ListLabels{Values: servers}
+	result.Labels["d_database"] = &qanpb.ListLabels{Values: databases}
+	result.Labels["d_schema"] = &qanpb.ListLabels{Values: schemas}
+	result.Labels["d_username"] = &qanpb.ListLabels{Values: users}
+	result.Labels["d_client_host"] = &qanpb.ListLabels{Values: hosts}
+
+	for _, row := range labels {
+		if _, ok := result.Labels[row.Key]; !ok {
+			result.Labels[row.Key] = &qanpb.ListLabels{
+				Values: []*qanpb.NameAndCount{},
+			}
+		}
+		val := qanpb.NameAndCount{
+			Value: row.Value,
+			Count: row.Count,
+		}
+		result.Labels[row.Key].Values = append(result.Labels[row.Key].Values, &val)
+	}
+
+	return &result, nil
 }

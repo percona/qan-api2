@@ -28,6 +28,10 @@ curl -X POST -s -d '{"period_start_from": "2019-01-01 00:00:00", "period_start_t
 
  ```
 
+ ```
+ curl -X POST -d '{"from": "2019-01-01T00:00:00Z", "to": "2019-01-01T10:00:00Z"}'  http://127.0.0.1:9922/v1/qan/GetFilters
+ ```
+
 # Get list of availible metrics.
 
 `curl -X POST -d '{}' http://127.0.0.1:9922/v1/qan/GetMetricsNames -s | jq`
