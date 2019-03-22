@@ -326,7 +326,7 @@ ARRAY JOIN labels
   GROUP BY labels.key, labels.value
   ORDER BY labels.key, labels.value;
 `
-
+// SelectFilters selects dimention and their values, and also labels keys and values.
 func (r *Reporter) SelectFilters(periodStartFrom, periodStartTo time.Time) (*qanpb.FiltersReply, error) {
 
 	result := qanpb.FiltersReply{

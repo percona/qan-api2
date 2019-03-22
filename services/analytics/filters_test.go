@@ -50,6 +50,9 @@ func TestService_GetFilters(t *testing.T) {
 	t2, _ := time.Parse(time.RFC3339, "2019-01-01T00:01:00Z")
 	var want qanpb.FiltersReply
 	err = json.Unmarshal([]byte(expectedJSON), &want)
+	if err != nil {
+		log.Fatal("cannot unmarshal expected result: ", err)
+	}
 
 	type fields struct {
 		rm models.Reporter
