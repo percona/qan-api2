@@ -42,11 +42,7 @@ const shutdownTimeout = 3 * time.Second
 
 // runGRPCServer runs gRPC server until context is canceled, then gracefully stops it.
 func runGRPCServer(ctx context.Context, dsn, bind string) {
-	db, err := NewDB(dsn)
-	if err != nil {
-		log.Fatal("DB error", err)
-	}
-
+	db := NewDB(dsn)
 	lis, err := net.Listen("tcp", bind)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)

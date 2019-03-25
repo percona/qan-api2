@@ -143,14 +143,14 @@
 
 [[projects]]
   branch = "PMM-3575-filters"
-  digest = "1:bb321ea6c9a078aa495f96c628ac883e6fcd50d096b1a039951ffa15bb2ff200"
+  digest = "1:974fc2f857e010132e893aad123af17df8d4af90e4b930e7b34f8c6c3a6dedf8"
   name = "github.com/percona/pmm"
   packages = [
     "api/qanpb",
     "version",
   ]
   pruneopts = "NUT"
-  revision = "f4b5f92037d58cb31f2572f9064be9f460ff8d51"
+  revision = "af1bfb144da8ecf8cf0151dc3e0d8cea79b72e84"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"

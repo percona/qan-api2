@@ -28,14 +28,12 @@ import (
 
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/jmoiron/sqlx"
-	_ "github.com/kshvakov/clickhouse"
-
 	"github.com/percona/pmm/api/qanpb"
 
 	"github.com/percona/qan-api2/models"
 )
 
-func TestService_GetFilters(t *testing.T) {
+func TestService_GetReport(t *testing.T) {
 	dsn, ok := os.LookupEnv("QANAPI_DSN_TEST")
 	if !ok {
 		dsn = "clickhouse://127.0.0.1:19000?database=pmm_test"
@@ -48,9 +46,9 @@ func TestService_GetFilters(t *testing.T) {
 	rm := models.NewReporter(db)
 	mm := models.NewMetrics(db)
 	t1, _ := time.Parse(time.RFC3339, "2019-01-01T00:00:00Z")
-	t2, _ := time.Parse(time.RFC3339, "2019-01-01T00:01:00Z")
-	var want qanpb.FiltersReply
-	expectedData, err := ioutil.ReadFile("../../test_data/filters.json")
+	t2, _ := time.Parse(time.RFC3339, "2019-01-01T10:00:00Z")
+	var want qanpb.ReportReply
+	expectedData, err := ioutil.ReadFile("../../test_data/profile.json")
 	if err != nil {
 		log.Fatal("read file with expected filtering data: ", err)
 	}
@@ -58,20 +56,19 @@ func TestService_GetFilters(t *testing.T) {
 	if err != nil {
 		log.Fatal("cannot unmarshal expected result: ", err)
 	}
-
 	type fields struct {
 		rm models.Reporter
 		mm models.Metrics
 	}
 	type args struct {
 		ctx context.Context
-		in  *qanpb.FiltersRequest
+		in  *qanpb.ReportRequest
 	}
 	tests := []struct {
 		name    string
 		fields  fields
 		args    args
-		want    *qanpb.FiltersReply
+		want    *qanpb.ReportReply
 		wantErr bool
 	}{
 		{
@@ -79,7 +76,7 @@ func TestService_GetFilters(t *testing.T) {
 			fields{rm: rm, mm: mm},
 			args{
 				context.TODO(),
-				&qanpb.FiltersRequest{
+				&qanpb.ReportRequest{
 					PeriodStartFrom: &timestamp.Timestamp{Seconds: t1.Unix()},
 					PeriodStartTo:   &timestamp.Timestamp{Seconds: t2.Unix()},
 				},
@@ -88,26 +85,26 @@ func TestService_GetFilters(t *testing.T) {
 			false,
 		},
 		{
-			"fail",
+			"wrong time range",
 			fields{rm: rm, mm: mm},
 			args{
 				context.TODO(),
-				&qanpb.FiltersRequest{
+				&qanpb.ReportRequest{
 					PeriodStartFrom: &timestamp.Timestamp{Seconds: t2.Unix()},
 					PeriodStartTo:   &timestamp.Timestamp{Seconds: t1.Unix()},
 				},
 			},
-			&qanpb.FiltersReply{},
+			&qanpb.ReportReply{},
 			true,
 		},
 		{
-			"fail",
+			"empty fail",
 			fields{rm: rm, mm: mm},
 			args{
 				context.TODO(),
-				&qanpb.FiltersRequest{},
+				&qanpb.ReportRequest{},
 			},
-			&qanpb.FiltersReply{},
+			&qanpb.ReportReply{},
 			true,
 		},
 	}
@@ -117,13 +114,13 @@ func TestService_GetFilters(t *testing.T) {
 				rm: tt.fields.rm,
 				mm: tt.fields.mm,
 			}
-			got, err := s.GetFilters(tt.args.ctx, tt.args.in)
+			got, err := s.GetReport(tt.args.ctx, tt.args.in)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("Service.GetFilters() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("Service.GetReport() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Service.GetFilters() = %v, want %v", got, tt.want)
+				t.Errorf("Service.GetReport() = %v, want %v", got, tt.want)
 			}
 		})
 	}

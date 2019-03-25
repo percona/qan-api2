@@ -27,13 +27,13 @@ import (
 // GetFilters implements rpc to get list of available labels.
 func (s *Service) GetFilters(ctx context.Context, in *qanpb.FiltersRequest) (*qanpb.FiltersReply, error) {
 
-	if in.From == nil || in.To == nil {
-		err := fmt.Errorf("from-date: %s or to-date: %s cannot be empty", in.From, in.To)
+	if in.PeriodStartFrom == nil || in.PeriodStartTo == nil {
+		err := fmt.Errorf("from-date: %s or to-date: %s cannot be empty", in.PeriodStartFrom, in.PeriodStartTo)
 		return &qanpb.FiltersReply{}, err
 	}
 
-	from := time.Unix(in.From.Seconds, 0)
-	to := time.Unix(in.To.Seconds, 0)
+	from := time.Unix(in.PeriodStartFrom.Seconds, 0)
+	to := time.Unix(in.PeriodStartTo.Seconds, 0)
 	if from.After(to) {
 		err := fmt.Errorf("from-date %s cannot be bigger then to-date %s", from.UTC(), to.UTC())
 		return &qanpb.FiltersReply{}, err

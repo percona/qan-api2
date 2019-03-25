@@ -18,6 +18,8 @@ package analitycs
 
 import (
 	"context"
+	"fmt"
+	"time"
 
 	"github.com/percona/pmm/api/qanpb"
 
@@ -37,7 +39,19 @@ func NewService(rm models.Reporter, mm models.Metrics) *Service {
 
 // GetReport implements rpc to get report for given filtering.
 func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanpb.ReportReply, error) {
-	// TODO: add validator/sanitazer
+
+	if in.PeriodStartFrom == nil || in.PeriodStartTo == nil {
+		err := fmt.Errorf("from-date: %s or to-date: %s cannot be empty", in.PeriodStartFrom, in.PeriodStartTo)
+		return &qanpb.ReportReply{}, err
+	}
+
+	from := time.Unix(in.PeriodStartFrom.Seconds, 0)
+	to := time.Unix(in.PeriodStartTo.Seconds, 0)
+	if from.After(to) {
+		err := fmt.Errorf("from-date %s cannot be bigger then to-date %s", from.UTC(), to.UTC())
+		return &qanpb.ReportReply{}, err
+	}
+
 	labels := in.GetLabels()
 	dQueryids := []string{}
 	dServers := []string{}
@@ -71,10 +85,9 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 
 	resp := &qanpb.ReportReply{}
 	results, err := s.rm.Select(
-		in.PeriodStartFrom,
-		in.PeriodStartTo,
-		in.Keyword,
-		in.FirstSeen,
+		ctx,
+		from,
+		to,
 		dQueryids,
 		dServers,
 		dDatabases,
@@ -106,11 +119,10 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		}
 
 		sparklines, err := s.rm.SelectSparklines(
+			ctx,
 			row.Dimension,
-			in.PeriodStartFrom,
-			in.PeriodStartTo,
-			in.Keyword,
-			in.FirstSeen,
+			from,
+			to,
 			dQueryids,
 			dServers,
 			dDatabases,
