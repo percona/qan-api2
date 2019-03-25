@@ -18,6 +18,7 @@ package models
 
 import (
 	"bytes"
+	"context"
 	"fmt"
 	"log"
 	"strings"
@@ -25,6 +26,7 @@ import (
 	"time"
 
 	"github.com/jmoiron/sqlx"
+
 	"github.com/percona/pmm/api/qanpb"
 )
 
@@ -326,8 +328,9 @@ ARRAY JOIN labels
   GROUP BY labels.key, labels.value
   ORDER BY labels.key, labels.value;
 `
-// SelectFilters selects dimention and their values, and also labels keys and values.
-func (r *Reporter) SelectFilters(periodStartFrom, periodStartTo time.Time) (*qanpb.FiltersReply, error) {
+
+// SelectFilters selects dimension and their values, and also keys and values of labels.
+func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodStartTo time.Time) (*qanpb.FiltersReply, error) {
 
 	result := qanpb.FiltersReply{
 		Labels: make(map[string]*qanpb.ListLabels),
@@ -345,27 +348,27 @@ func (r *Reporter) SelectFilters(periodStartFrom, periodStartTo time.Time) (*qan
 	var hosts []*qanpb.NameAndCount
 	var labels []*CustomLabels
 
-	err := r.db.Select(&servers, queryServers, periodStartFrom, periodStartTo)
+	err := r.db.SelectContext(ctx, &servers, queryServers, periodStartFrom, periodStartTo)
 	if err != nil {
 		return nil, fmt.Errorf("cannot select server dimension:%v", err)
 	}
-	err = r.db.Select(&databases, queryDatabases, periodStartFrom, periodStartTo)
+	err = r.db.SelectContext(ctx, &databases, queryDatabases, periodStartFrom, periodStartTo)
 	if err != nil {
 		return nil, fmt.Errorf("cannot select databases dimension:%v", err)
 	}
-	err = r.db.Select(&schemas, querySchemas, periodStartFrom, periodStartTo)
+	err = r.db.SelectContext(ctx, &schemas, querySchemas, periodStartFrom, periodStartTo)
 	if err != nil {
 		return nil, fmt.Errorf("cannot select schemas dimension:%v", err)
 	}
-	err = r.db.Select(&users, queryUsernames, periodStartFrom, periodStartTo)
+	err = r.db.SelectContext(ctx, &users, queryUsernames, periodStartFrom, periodStartTo)
 	if err != nil {
 		return nil, fmt.Errorf("cannot select usernames dimension:%v", err)
 	}
-	err = r.db.Select(&hosts, queryClientHosts, periodStartFrom, periodStartTo)
+	err = r.db.SelectContext(ctx, &hosts, queryClientHosts, periodStartFrom, periodStartTo)
 	if err != nil {
 		return nil, fmt.Errorf("cannot select client hosts dimension:%v", err)
 	}
-	err = r.db.Select(&labels, queryLabels, periodStartFrom, periodStartTo)
+	err = r.db.SelectContext(ctx, &labels, queryLabels, periodStartFrom, periodStartTo)
 	if err != nil {
 		return nil, fmt.Errorf("cannot select labels dimension:%v", err)
 	}
