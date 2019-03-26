@@ -146,7 +146,9 @@ func (r *Reporter) Select(ctx context.Context, periodStartFrom, periodStartTo ti
 	query = r.db.Rebind(query)
 
 	rows, err := r.db.QueryxContext(ctx, query, args...)
-	fmt.Printf("queryx error: %v", err)
+	if err != nil {
+		return results, fmt.Errorf("QueryxContext error:%v", err)
+	}
 	for rows.Next() {
 		result := make(M)
 		err = rows.MapScan(result)

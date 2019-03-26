@@ -34,7 +34,6 @@ install-race:                   ## Install qan-api2 binary with race detector.
 	go install -v -race ./...
 
 pre-test:
-	-docker rm -f pmm-clickhouse-test --volumes
 	docker run -d --name pmm-clickhouse-test -p19000:9000 yandex/clickhouse-server:19.1.10
 	sleep 10s
 	docker exec pmm-clickhouse-test clickhouse client --query="CREATE DATABASE IF NOT EXISTS pmm_test;"
