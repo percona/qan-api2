@@ -143,7 +143,7 @@
   revision = "b9f78430ec7937d23152e7e8717193e36188e8a9"
 
 [[projects]]
-  branch = "PMM-3575-filters"
+  branch = "PMM-2.0"
   digest = "1:bb19adec296e34bffbd4f245f405fd80ec0c306c9d92d1ab6223af23dc4f9f31"
   name = "github.com/percona/pmm"
   packages = [
@@ -151,7 +151,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "2a488610db751efba6bce19a8ee0692ba4256cd8"
+  revision = "5bdb86ed3fa101ac58331d1b3a9e7dbe907c5d03"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
