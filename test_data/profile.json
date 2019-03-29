@@ -2,21 +2,9 @@
 	"total_rows": 9,
 	"rows": [
 		{
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"rate": 1,
-						"cnt": 17809,
-						"sum": 5.52541,
-						"max": 0.00019,
-						"p99": 0.000031025942
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0.07518,
 						"m_query_load": 0.0025124666,
 						"m_query_time_avg": 0.0000012142858,
 						"m_query_time_sum": 1.50748,
@@ -28,7 +16,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07791,
 						"m_query_load": 0.0025901666,
 						"m_query_time_avg": 0.0000011030247,
 						"m_query_time_sum": 1.5541,
@@ -40,7 +27,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09124,
 						"m_query_load": 0.0031905333,
 						"m_query_time_avg": 0.0000012539105,
 						"m_query_time_sum": 1.91432,
@@ -52,7 +38,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08311,
 						"m_query_load": 0.0027697,
 						"m_query_time_avg": 0.0000011706792,
 						"m_query_time_sum": 1.66182,
@@ -64,7 +49,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.10934,
 						"m_query_load": 0.003744,
 						"m_query_time_avg": 0.0000012962568,
 						"m_query_time_sum": 2.2464,
@@ -76,7 +60,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09388,
 						"m_query_load": 0.0030883832,
 						"m_query_time_avg": 0.0000014383284,
 						"m_query_time_sum": 1.85303,
@@ -88,7 +71,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09101,
 						"m_query_load": 0.0030647332,
 						"m_query_time_avg": 0.000001231265,
 						"m_query_time_sum": 1.83884,
@@ -100,7 +82,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09492,
 						"m_query_load": 0.0030603667,
 						"m_query_time_avg": 0.00000126116,
 						"m_query_time_sum": 1.83622,
@@ -112,7 +93,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09308,
 						"m_query_load": 0.00308025,
 						"m_query_time_avg": 0.0000012081401,
 						"m_query_time_sum": 1.84815,
@@ -124,7 +104,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08411,
 						"m_query_load": 0.0028783667,
 						"m_query_time_avg": 0.0000011654903,
 						"m_query_time_sum": 1.72702,
@@ -136,7 +115,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09077,
 						"m_query_load": 0.0030066834,
 						"m_query_time_avg": 0.0000011674407,
 						"m_query_time_sum": 1.80401,
@@ -148,7 +126,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09879,
 						"m_query_load": 0.0033630833,
 						"m_query_time_avg": 0.0000013276316,
 						"m_query_time_sum": 2.01785,
@@ -160,7 +137,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0893,
 						"m_query_load": 0.0030741,
 						"m_query_time_avg": 0.0000013046781,
 						"m_query_time_sum": 1.84446,
@@ -172,7 +148,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.10264,
 						"m_query_load": 0.0032793167,
 						"m_query_time_avg": 0.0000012773008,
 						"m_query_time_sum": 1.96759,
@@ -184,7 +159,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07719,
 						"m_query_load": 0.0025434666,
 						"m_query_time_avg": 0.0000011062053,
 						"m_query_time_sum": 1.52608,
@@ -196,7 +170,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.1011,
 						"m_query_load": 0.0032675,
 						"m_query_time_avg": 0.0000013672425,
 						"m_query_time_sum": 1.9605,
@@ -208,7 +181,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09389,
 						"m_query_load": 0.0031130833,
 						"m_query_time_avg": 0.0000012545555,
 						"m_query_time_sum": 1.86785,
@@ -220,7 +192,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07908,
 						"m_query_load": 0.0026375167,
 						"m_query_time_avg": 0.0000010927291,
 						"m_query_time_sum": 1.58251,
@@ -232,7 +203,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08993,
 						"m_query_load": 0.0027867833,
 						"m_query_time_avg": 0.0000012035125,
 						"m_query_time_sum": 1.67207,
@@ -244,7 +214,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.10441,
 						"m_query_load": 0.0033665833,
 						"m_query_time_avg": 0.0000014093062,
 						"m_query_time_sum": 2.01995,
@@ -256,7 +225,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08307,
 						"m_query_load": 0.0028839167,
 						"m_query_time_avg": 0.0000012086606,
 						"m_query_time_sum": 1.73035,
@@ -268,7 +236,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08531,
 						"m_query_load": 0.0027750833,
 						"m_query_time_avg": 0.0000011477223,
 						"m_query_time_sum": 1.66505,
@@ -280,7 +247,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08765,
 						"m_query_load": 0.0032165167,
 						"m_query_time_avg": 0.0000013554824,
 						"m_query_time_sum": 1.92991,
@@ -292,7 +258,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09623,
 						"m_query_load": 0.0030979333,
 						"m_query_time_avg": 0.0000012286365,
 						"m_query_time_sum": 1.85876,
@@ -304,7 +269,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08516,
 						"m_query_load": 0.0029634666,
 						"m_query_time_avg": 0.0000011750851,
 						"m_query_time_sum": 1.77808,
@@ -316,7 +280,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09449,
 						"m_query_load": 0.0031322166,
 						"m_query_time_avg": 0.0000012576439,
 						"m_query_time_sum": 1.87933,
@@ -328,7 +291,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08429,
 						"m_query_load": 0.0027045833,
 						"m_query_time_avg": 0.0000010755293,
 						"m_query_time_sum": 1.62275,
@@ -340,7 +302,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09996,
 						"m_query_load": 0.0033672834,
 						"m_query_time_avg": 0.0000013265446,
 						"m_query_time_sum": 2.02037,
@@ -352,7 +313,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09006,
 						"m_query_load": 0.0030253667,
 						"m_query_time_avg": 0.0000011721729,
 						"m_query_time_sum": 1.81522,
@@ -364,7 +324,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09492,
 						"m_query_load": 0.0031145834,
 						"m_query_time_avg": 0.0000012016689,
 						"m_query_time_sum": 1.86875,
@@ -376,7 +335,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08979,
 						"m_query_load": 0.00288715,
 						"m_query_time_avg": 0.000001218421,
 						"m_query_time_sum": 1.73229,
@@ -388,7 +346,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08202,
 						"m_query_load": 0.0026321667,
 						"m_query_time_avg": 0.0000010469771,
 						"m_query_time_sum": 1.5793,
@@ -400,7 +357,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09918,
 						"m_query_load": 0.00326445,
 						"m_query_time_avg": 0.0000012919049,
 						"m_query_time_sum": 1.95867,
@@ -412,7 +368,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08603,
 						"m_query_load": 0.0027981666,
 						"m_query_time_avg": 0.0000011210147,
 						"m_query_time_sum": 1.6789,
@@ -424,7 +379,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08848,
 						"m_query_load": 0.0029510334,
 						"m_query_time_avg": 0.0000013079517,
 						"m_query_time_sum": 1.77062,
@@ -436,7 +390,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.10526,
 						"m_query_load": 0.0035896834,
 						"m_query_time_avg": 0.0000013252845,
 						"m_query_time_sum": 2.15381,
@@ -448,7 +401,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09605,
 						"m_query_load": 0.0032824,
 						"m_query_time_avg": 0.000001247152,
 						"m_query_time_sum": 1.96944,
@@ -460,7 +412,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.10545,
 						"m_query_load": 0.00353535,
 						"m_query_time_avg": 0.0000014650283,
 						"m_query_time_sum": 2.12121,
@@ -472,7 +423,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09661,
 						"m_query_load": 0.0032364666,
 						"m_query_time_avg": 0.0000012681598,
 						"m_query_time_sum": 1.94188,
@@ -484,7 +434,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09759,
 						"m_query_load": 0.0031270334,
 						"m_query_time_avg": 0.000001195273,
 						"m_query_time_sum": 1.87622,
@@ -496,7 +445,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08067,
 						"m_query_load": 0.0025903166,
 						"m_query_time_avg": 0.0000011813976,
 						"m_query_time_sum": 1.55419,
@@ -508,7 +456,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09865,
 						"m_query_load": 0.0030756833,
 						"m_query_time_avg": 0.0000012135115,
 						"m_query_time_sum": 1.84541,
@@ -520,7 +467,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.10481,
 						"m_query_load": 0.0035094,
 						"m_query_time_avg": 0.0000013629788,
 						"m_query_time_sum": 2.10564,
@@ -532,7 +478,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0922,
 						"m_query_load": 0.0030470833,
 						"m_query_time_avg": 0.0000012763633,
 						"m_query_time_sum": 1.82825,
@@ -544,7 +489,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0791,
 						"m_query_load": 0.0027343167,
 						"m_query_time_avg": 0.0000011079355,
 						"m_query_time_sum": 1.6405901,
@@ -556,7 +500,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09487,
 						"m_query_load": 0.0031336334,
 						"m_query_time_avg": 0.0000012322165,
 						"m_query_time_sum": 1.88018,
@@ -568,7 +511,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08959,
 						"m_query_load": 0.0029384168,
 						"m_query_time_avg": 0.0000013354153,
 						"m_query_time_sum": 1.76305,
@@ -580,7 +522,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09381,
 						"m_query_load": 0.003056,
 						"m_query_time_avg": 0.0000012260135,
 						"m_query_time_sum": 1.8336,
@@ -592,7 +533,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.10845,
 						"m_query_load": 0.0035270667,
 						"m_query_time_avg": 0.0000014997477,
 						"m_query_time_sum": 2.11624,
@@ -604,7 +544,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09941,
 						"m_query_load": 0.0033220167,
 						"m_query_time_avg": 0.0000012972869,
 						"m_query_time_sum": 1.99321,
@@ -616,7 +555,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.086840004,
 						"m_query_load": 0.0028957,
 						"m_query_time_avg": 0.0000011985711,
 						"m_query_time_sum": 1.73742,
@@ -628,7 +566,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08721,
 						"m_query_load": 0.0029579834,
 						"m_query_time_avg": 0.0000011610452,
 						"m_query_time_sum": 1.77479,
@@ -640,7 +577,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.09285,
 						"m_query_load": 0.0032263666,
 						"m_query_time_avg": 0.0000012916885,
 						"m_query_time_sum": 1.93582,
@@ -652,7 +588,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.10165,
 						"m_query_load": 0.00339085,
 						"m_query_time_avg": 0.0000013786866,
 						"m_query_time_sum": 2.03451,
@@ -664,7 +599,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08799,
 						"m_query_load": 0.0029921166,
 						"m_query_time_avg": 0.0000011659316,
 						"m_query_time_sum": 1.79527,
@@ -676,7 +610,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.10113,
 						"m_query_load": 0.0032496834,
 						"m_query_time_avg": 0.0000012904222,
 						"m_query_time_sum": 1.94981,
@@ -688,7 +621,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08149,
 						"m_query_load": 0.0027609332,
 						"m_query_time_avg": 0.0000010709178,
 						"m_query_time_sum": 1.65656,
@@ -700,7 +632,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08317,
 						"m_query_load": 0.0027843,
 						"m_query_time_avg": 0.0000011581818,
 						"m_query_time_sum": 1.67058,
@@ -712,7 +643,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.1078,
 						"m_query_load": 0.0033928833,
 						"m_query_time_avg": 0.0000012797602,
 						"m_query_time_sum": 2.03573,
@@ -724,7 +654,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08524,
 						"m_query_load": 0.0029288668,
 						"m_query_time_avg": 0.0000012398133,
 						"m_query_time_sum": 1.75732,
@@ -734,22 +663,18 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "show status like ?",
+			"num_queries": 88768456,
+			"qps": 2465,
+			"load": 0.0030585926
 		},
 		{
 			"rank": 1,
 			"dimension": "1D410B4BE5060972",
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"cnt": 164
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.6666664e-7,
 						"m_query_time_avg": 7.2572035e-8,
 						"m_query_time_sum": 0.00034,
@@ -761,7 +686,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 7.8333335e-7,
 						"m_query_time_avg": 2.6112561e-8,
 						"m_query_time_sum": 0.00047,
@@ -773,7 +697,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 4.5000002e-7,
 						"m_query_time_avg": 3.117423e-8,
 						"m_query_time_sum": 0.00027000002,
@@ -785,7 +708,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 7e-7,
 						"m_query_time_avg": 2.7646129e-8,
 						"m_query_time_sum": 0.00042,
@@ -797,7 +719,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 3.5e-7,
 						"m_query_time_avg": 1.02951265e-8,
 						"m_query_time_sum": 0.00021,
@@ -809,7 +730,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 4.6666668e-7,
 						"m_query_time_avg": 2.029868e-8,
 						"m_query_time_sum": 0.00028,
@@ -821,7 +741,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 1.6666667e-7,
 						"m_query_time_avg": 8.177952e-9,
 						"m_query_time_sum": 0.0001,
@@ -833,7 +752,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.333333e-8,
 						"m_query_time_avg": 1.0638298e-7,
 						"m_query_time_sum": 0.00005,
@@ -845,7 +763,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010666666,
 						"m_query_time_avg": 1.7245096e-8,
 						"m_query_time_sum": 0.00064,
@@ -857,7 +774,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.5e-7,
 						"m_query_time_avg": 1.1961289e-8,
 						"m_query_time_sum": 0.00032999998,
@@ -869,7 +785,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.1666666e-7,
 						"m_query_time_avg": 3.251862e-8,
 						"m_query_time_sum": 0.00031,
@@ -881,7 +796,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 7.1666665e-7,
 						"m_query_time_avg": 4.377927e-8,
 						"m_query_time_sum": 0.00043,
@@ -893,7 +807,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9.1666664e-7,
 						"m_query_time_avg": 3.130692e-8,
 						"m_query_time_sum": 0.00055,
@@ -905,7 +818,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 2.5e-7,
 						"m_query_time_avg": 6.7162174e-9,
 						"m_query_time_sum": 0.00014999999,
@@ -917,7 +829,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 2.6666666e-7,
 						"m_query_time_avg": 8.544726e-9,
 						"m_query_time_sum": 0.00016,
@@ -929,7 +840,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.333333e-8,
 						"m_query_time_avg": 6.499415e-9,
 						"m_query_time_sum": 0.00005,
@@ -941,7 +851,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9.833334e-7,
 						"m_query_time_avg": 3.9491297e-8,
 						"m_query_time_sum": 0.00059,
@@ -953,7 +862,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 1.6666667e-7,
 						"m_query_time_avg": 6.8714354e-9,
 						"m_query_time_sum": 0.0001,
@@ -965,7 +873,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 1.6666667e-7,
 						"m_query_time_avg": 1.0517459e-8,
 						"m_query_time_sum": 0.0001,
@@ -977,7 +884,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.333333e-7,
 						"m_query_time_avg": 1.8291987e-8,
 						"m_query_time_sum": 0.00032,
@@ -989,7 +895,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 1.4999999e-7,
 						"m_query_time_avg": 6.34473e-9,
 						"m_query_time_sum": 0.00009,
@@ -1001,7 +906,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 3.9999998e-7,
 						"m_query_time_avg": 7.783363e-9,
 						"m_query_time_sum": 0.00024,
@@ -1013,7 +917,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 2.3333332e-7,
 						"m_query_time_avg": 9.311606e-9,
 						"m_query_time_sum": 0.00013999999,
@@ -1025,7 +928,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.3333333e-7,
 						"m_query_time_avg": 2.1202611e-8,
 						"m_query_time_sum": 0.00049999997,
@@ -1037,7 +939,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.6666665e-8,
 						"m_query_time_avg": 8.310825e-9,
 						"m_query_time_sum": 0.00004,
@@ -1049,7 +950,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 4.8333334e-7,
 						"m_query_time_avg": 1.6449235e-8,
 						"m_query_time_sum": 0.00029,
@@ -1061,7 +961,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 2e-7,
 						"m_query_time_avg": 9.165203e-9,
 						"m_query_time_sum": 0.00012,
@@ -1073,7 +972,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 1.8333334e-7,
 						"m_query_time_avg": 7.533731e-9,
 						"m_query_time_sum": 0.00011,
@@ -1085,7 +983,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.6666665e-8,
 						"m_query_time_avg": 3.508772e-8,
 						"m_query_time_sum": 0.00004,
@@ -1097,7 +994,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.333333e-8,
 						"m_query_time_avg": 3.265839e-8,
 						"m_query_time_sum": 0.00005,
@@ -1109,7 +1005,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6e-7,
 						"m_query_time_avg": 1.6253555e-8,
 						"m_query_time_sum": 0.00036,
@@ -1121,7 +1016,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.333333e-8,
 						"m_query_time_avg": 9.883376e-9,
 						"m_query_time_sum": 0.00005,
@@ -1133,7 +1027,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9e-7,
 						"m_query_time_avg": 1.5569587e-8,
 						"m_query_time_sum": 0.00054,
@@ -1145,7 +1038,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 4.1666667e-7,
 						"m_query_time_avg": 7.52604e-9,
 						"m_query_time_sum": 0.00024999998,
@@ -1157,7 +1049,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.333333e-8,
 						"m_query_time_avg": 1.05708246e-7,
 						"m_query_time_sum": 0.00005,
@@ -1169,7 +1060,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 2.3333332e-7,
 						"m_query_time_avg": 1.2374049e-8,
 						"m_query_time_sum": 0.00013999999,
@@ -1181,7 +1071,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 1.4999999e-7,
 						"m_query_time_avg": 7.142857e-9,
 						"m_query_time_sum": 0.00009,
@@ -1193,7 +1082,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 1.6666667e-7,
 						"m_query_time_avg": 9.74279e-9,
 						"m_query_time_sum": 0.0001,
@@ -1205,7 +1093,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 7.666667e-7,
 						"m_query_time_avg": 1.5678255e-7,
 						"m_query_time_sum": 0.00046,
@@ -1217,7 +1104,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011166667,
 						"m_query_time_avg": 3.296433e-8,
 						"m_query_time_sum": 0.00067,
@@ -1229,7 +1115,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 1.8333333e-7,
 						"m_query_time_avg": 1.1402508e-8,
 						"m_query_time_sum": 0.00010999999,
@@ -1241,7 +1126,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 4e-7,
 						"m_query_time_avg": 1.27775115e-8,
 						"m_query_time_sum": 0.00024,
@@ -1253,7 +1137,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.6666665e-7,
 						"m_query_time_avg": 1.7223677e-8,
 						"m_query_time_sum": 0.00052,
@@ -1265,7 +1148,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 1.4999999e-7,
 						"m_query_time_avg": 6.252171e-9,
 						"m_query_time_sum": 0.00009,
@@ -1277,7 +1159,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.8333336e-7,
 						"m_query_time_avg": 1.2010982e-7,
 						"m_query_time_sum": 0.00035000002,
@@ -1289,7 +1170,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000012,
 						"m_query_time_avg": 6.58858e-8,
 						"m_query_time_sum": 0.00072,
@@ -1301,7 +1181,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 4.166667e-7,
 						"m_query_time_avg": 4.3365137e-8,
 						"m_query_time_sum": 0.00025,
@@ -1313,7 +1192,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 4.1666667e-7,
 						"m_query_time_avg": 7.960516e-9,
 						"m_query_time_sum": 0.00024999998,
@@ -1325,7 +1203,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.3333334e-7,
 						"m_query_time_avg": 3.0804152e-8,
 						"m_query_time_sum": 0.00038,
@@ -1337,7 +1214,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 3.9999998e-7,
 						"m_query_time_avg": 2.6047319e-8,
 						"m_query_time_sum": 0.00024,
@@ -1349,7 +1225,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.6666666e-7,
 						"m_query_time_avg": 4.9109882e-8,
 						"m_query_time_sum": 0.0004,
@@ -1361,7 +1236,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 2.1666666e-7,
 						"m_query_time_avg": 1.33744855e-8,
 						"m_query_time_sum": 0.00013,
@@ -1373,7 +1247,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.6666666e-7,
 						"m_query_time_avg": 1.6934084e-8,
 						"m_query_time_sum": 0.0004,
@@ -1385,7 +1258,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 3.9999998e-7,
 						"m_query_time_avg": 2.0782819e-8,
 						"m_query_time_sum": 0.00024,
@@ -1397,7 +1269,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 3.8333332e-7,
 						"m_query_time_avg": 1.3280979e-8,
 						"m_query_time_sum": 0.00022999999,
@@ -1407,22 +1278,18 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "ping",
+			"num_queries": 805692,
+			"qps": 22,
+			"load": 0.0030585926
 		},
 		{
 			"rank": 2,
 			"dimension": "B305F6354FA21F2A",
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"cnt": 67
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.1666666e-7,
 						"m_query_time_avg": 1.9670051e-7,
 						"m_query_time_sum": 0.00031,
@@ -1434,7 +1301,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.1666666e-7,
 						"m_query_time_avg": 0.0000012156863,
 						"m_query_time_sum": 0.00031,
@@ -1446,7 +1312,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.1666666e-7,
 						"m_query_time_avg": 1.02615026e-7,
 						"m_query_time_sum": 0.00031,
@@ -1458,7 +1323,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.333333e-7,
 						"m_query_time_avg": 3.5496395e-8,
 						"m_query_time_sum": 0.00032,
@@ -1470,7 +1334,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 4.8333334e-7,
 						"m_query_time_avg": 4.537631e-8,
 						"m_query_time_sum": 0.00029,
@@ -1482,7 +1345,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 7e-7,
 						"m_query_time_avg": 4.281782e-8,
 						"m_query_time_sum": 0.00042,
@@ -1494,7 +1356,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010833334,
 						"m_query_time_avg": 8.556009e-8,
 						"m_query_time_sum": 0.00065,
@@ -1506,7 +1367,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011833333,
 						"m_query_time_avg": 6.358589e-8,
 						"m_query_time_sum": 0.00071,
@@ -1518,7 +1378,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010833334,
 						"m_query_time_avg": 1.4415613e-7,
 						"m_query_time_sum": 0.00065,
@@ -1530,7 +1389,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000018666667,
 						"m_query_time_avg": 1.0108303e-7,
 						"m_query_time_sum": 0.00112,
@@ -1542,7 +1400,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010666666,
 						"m_query_time_avg": 1.3973799e-7,
 						"m_query_time_sum": 0.00064,
@@ -1554,7 +1411,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011166667,
 						"m_query_time_avg": 5.13292e-8,
 						"m_query_time_sum": 0.00067,
@@ -1566,7 +1422,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.333333e-7,
 						"m_query_time_avg": 3.047619e-7,
 						"m_query_time_sum": 0.00032,
@@ -1578,7 +1433,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000125,
 						"m_query_time_avg": 1.2556504e-7,
 						"m_query_time_sum": 0.00075,
@@ -1590,7 +1444,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.1666666e-7,
 						"m_query_time_avg": 7.8760166e-8,
 						"m_query_time_sum": 0.00031,
@@ -1602,7 +1455,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011833333,
 						"m_query_time_avg": 6.812512e-8,
 						"m_query_time_sum": 0.00071,
@@ -1614,7 +1466,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.833333e-7,
 						"m_query_time_avg": 5.5714093e-8,
 						"m_query_time_sum": 0.00041,
@@ -1626,7 +1477,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000019,
 						"m_query_time_avg": 4.7049113e-7,
 						"m_query_time_sum": 0.0011400001,
@@ -1638,7 +1488,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000135,
 						"m_query_time_avg": 1.0917913e-7,
 						"m_query_time_sum": 0.00081,
@@ -1650,7 +1499,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.333333e-7,
 						"m_query_time_avg": 4.8817697e-8,
 						"m_query_time_sum": 0.00032,
@@ -1662,7 +1510,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5e-7,
 						"m_query_time_avg": 8.178844e-8,
 						"m_query_time_sum": 0.0003,
@@ -1674,7 +1521,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.833333e-7,
 						"m_query_time_avg": 3.6857625e-8,
 						"m_query_time_sum": 0.00035,
@@ -1686,7 +1532,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.1666666e-7,
 						"m_query_time_avg": 5.5715315e-8,
 						"m_query_time_sum": 0.00031,
@@ -1698,7 +1543,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.3333334e-7,
 						"m_query_time_avg": 5.609684e-8,
 						"m_query_time_sum": 0.00038,
@@ -1710,7 +1554,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.1666666e-7,
 						"m_query_time_avg": 3.9591317e-8,
 						"m_query_time_sum": 0.00031,
@@ -1722,7 +1565,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000115,
 						"m_query_time_avg": 4.41374e-8,
 						"m_query_time_sum": 0.00069,
@@ -1734,7 +1576,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.1666666e-7,
 						"m_query_time_avg": 1.2161632e-7,
 						"m_query_time_sum": 0.00031,
@@ -1746,7 +1587,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.833333e-7,
 						"m_query_time_avg": 1.0612492e-7,
 						"m_query_time_sum": 0.00035,
@@ -1758,7 +1598,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000019666666,
 						"m_query_time_avg": 1.5573445e-7,
 						"m_query_time_sum": 0.00118,
@@ -1770,7 +1609,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000012333334,
 						"m_query_time_avg": 5.7209125e-8,
 						"m_query_time_sum": 0.00074000005,
@@ -1782,7 +1620,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.333333e-7,
 						"m_query_time_avg": 4.834567e-8,
 						"m_query_time_sum": 0.00032,
@@ -1794,7 +1631,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000125,
 						"m_query_time_avg": 6.2261336e-8,
 						"m_query_time_sum": 0.00075,
@@ -1806,7 +1642,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011999999,
 						"m_query_time_avg": 1.0831954e-7,
 						"m_query_time_sum": 0.00072,
@@ -1818,7 +1653,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010666666,
 						"m_query_time_avg": 4.172915e-8,
 						"m_query_time_sum": 0.00064,
@@ -1830,7 +1664,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.833333e-7,
 						"m_query_time_avg": 6.3674484e-8,
 						"m_query_time_sum": 0.00041,
@@ -1842,7 +1675,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000012166666,
 						"m_query_time_avg": 6.451613e-8,
 						"m_query_time_sum": 0.00072999997,
@@ -1854,7 +1686,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010166667,
 						"m_query_time_avg": 1.831282e-7,
 						"m_query_time_sum": 0.00061,
@@ -1866,7 +1697,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 7.3333337e-7,
 						"m_query_time_avg": 4.5026606e-8,
 						"m_query_time_sum": 0.00044,
@@ -1878,7 +1708,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 5.833333e-7,
 						"m_query_time_avg": 7.4706506e-8,
 						"m_query_time_sum": 0.00035,
@@ -1890,7 +1719,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000125,
 						"m_query_time_avg": 6.398771e-8,
 						"m_query_time_sum": 0.00075,
@@ -1902,7 +1730,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000115,
 						"m_query_time_avg": 6.24152e-8,
 						"m_query_time_sum": 0.00069,
@@ -1914,7 +1741,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000016833334,
 						"m_query_time_avg": 4.416459e-8,
 						"m_query_time_sum": 0.00101,
@@ -1926,7 +1752,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.833333e-7,
 						"m_query_time_avg": 5.5638488e-8,
 						"m_query_time_sum": 0.00041,
@@ -1938,7 +1763,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 6.3333334e-7,
 						"m_query_time_avg": 4.229271e-8,
 						"m_query_time_sum": 0.00038,
@@ -1948,22 +1772,18 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "select @@global.slow_query_log_file",
+			"num_queries": 340703,
+			"qps": 9,
+			"load": 0.0030585926
 		},
 		{
 			"rank": 3,
 			"dimension": "A34EB28BD7F1E9C3",
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"cnt": 57
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000023166667,
 						"m_query_time_avg": 1.3612771e-7,
 						"m_query_time_sum": 0.00139,
@@ -1975,7 +1795,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011666666,
 						"m_query_time_avg": 5.766062e-7,
 						"m_query_time_sum": 0.0007,
@@ -1987,7 +1806,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000125,
 						"m_query_time_avg": 2.6260506e-7,
 						"m_query_time_sum": 0.00075,
@@ -1999,7 +1817,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000022666668,
 						"m_query_time_avg": 1.3379243e-7,
 						"m_query_time_sum": 0.0013600001,
@@ -2011,7 +1828,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011333333,
 						"m_query_time_avg": 1.1284434e-7,
 						"m_query_time_sum": 0.00068,
@@ -2023,7 +1839,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000022833333,
 						"m_query_time_avg": 1.266642e-7,
 						"m_query_time_sum": 0.00137,
@@ -2035,7 +1850,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9e-7,
 						"m_query_time_avg": 3.499676e-7,
 						"m_query_time_sum": 0.00054,
@@ -2047,7 +1861,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000012,
 						"m_query_time_avg": 5.095541e-7,
 						"m_query_time_sum": 0.00072,
@@ -2059,7 +1872,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000135,
 						"m_query_time_avg": 1.0168215e-7,
 						"m_query_time_sum": 0.00081,
@@ -2071,7 +1883,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010666666,
 						"m_query_time_avg": 8.4756984e-8,
 						"m_query_time_sum": 0.00064,
@@ -2083,7 +1894,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000018166667,
 						"m_query_time_avg": 1.8319328e-7,
 						"m_query_time_sum": 0.0010899999,
@@ -2095,7 +1905,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9.1666664e-7,
 						"m_query_time_avg": 9.1165255e-8,
 						"m_query_time_sum": 0.00055,
@@ -2107,7 +1916,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000018333333,
 						"m_query_time_avg": 1.03228224e-7,
 						"m_query_time_sum": 0.0011,
@@ -2119,7 +1927,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010666666,
 						"m_query_time_avg": 7.493268e-8,
 						"m_query_time_sum": 0.00064,
@@ -2131,7 +1938,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9e-7,
 						"m_query_time_avg": 7.0615926e-8,
 						"m_query_time_sum": 0.00054,
@@ -2143,7 +1949,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000027,
 						"m_query_time_avg": 1.02208205e-7,
 						"m_query_time_sum": 0.00162,
@@ -2155,7 +1960,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000023833334,
 						"m_query_time_avg": 1.00470736e-7,
 						"m_query_time_sum": 0.00143,
@@ -2167,7 +1971,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000020833334,
 						"m_query_time_avg": 8.984403e-8,
 						"m_query_time_sum": 0.00125,
@@ -2179,7 +1982,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010333333,
 						"m_query_time_avg": 6.656646e-8,
 						"m_query_time_sum": 0.00062,
@@ -2191,7 +1993,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010666666,
 						"m_query_time_avg": 4.6511627e-7,
 						"m_query_time_sum": 0.00064,
@@ -2203,7 +2004,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010666666,
 						"m_query_time_avg": 2.449292e-7,
 						"m_query_time_sum": 0.00064,
@@ -2215,7 +2015,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000020833334,
 						"m_query_time_avg": 5.2476906e-7,
 						"m_query_time_sum": 0.00125,
@@ -2227,7 +2026,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000021833334,
 						"m_query_time_avg": 2.0610447e-7,
 						"m_query_time_sum": 0.00131,
@@ -2239,7 +2037,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9.3333335e-7,
 						"m_query_time_avg": 2.6058632e-7,
 						"m_query_time_sum": 0.00056,
@@ -2251,7 +2048,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000021333333,
 						"m_query_time_avg": 2.341749e-7,
 						"m_query_time_sum": 0.00128,
@@ -2263,7 +2059,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000020166667,
 						"m_query_time_avg": 1.0659854e-7,
 						"m_query_time_sum": 0.00121,
@@ -2275,7 +2070,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000005616667,
 						"m_query_time_avg": 1.3581044e-7,
 						"m_query_time_sum": 0.00337,
@@ -2287,7 +2081,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000105,
 						"m_query_time_avg": 7.2899795e-8,
 						"m_query_time_sum": 0.00063,
@@ -2299,7 +2092,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010833334,
 						"m_query_time_avg": 6.676253e-8,
 						"m_query_time_sum": 0.00065,
@@ -2311,7 +2103,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010666666,
 						"m_query_time_avg": 4.2440317e-7,
 						"m_query_time_sum": 0.00064,
@@ -2323,7 +2114,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000013333333,
 						"m_query_time_avg": 9.768009e-8,
 						"m_query_time_sum": 0.0008,
@@ -2335,7 +2125,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000012166668,
 						"m_query_time_avg": 0.0000015400844,
 						"m_query_time_sum": 0.00073,
@@ -2347,7 +2136,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000105,
 						"m_query_time_avg": 2.0737328e-7,
 						"m_query_time_sum": 0.00063,
@@ -2359,7 +2147,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000018166667,
 						"m_query_time_avg": 7.71463e-8,
 						"m_query_time_sum": 0.0010899999,
@@ -2371,7 +2158,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011000001,
 						"m_query_time_avg": 9.690207e-8,
 						"m_query_time_sum": 0.00066,
@@ -2383,7 +2169,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000022333334,
 						"m_query_time_avg": 1.2409706e-7,
 						"m_query_time_sum": 0.00134,
@@ -2395,7 +2180,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000029999999,
 						"m_query_time_avg": 1.1785504e-7,
 						"m_query_time_sum": 0.0018,
@@ -2405,22 +2189,18 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "select @@global.datadir",
+			"num_queries": 287004,
+			"qps": 7,
+			"load": 0.0030585926
 		},
 		{
 			"rank": 4,
 			"dimension": "C45DE4F1F8F55169",
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"cnt": 135
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000032,
 						"m_query_time_avg": 1.0211679e-7,
 						"m_query_time_sum": 0.00192,
@@ -2432,7 +2212,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.8333337e-7,
 						"m_query_time_avg": 2.3430593e-7,
 						"m_query_time_sum": 0.00053,
@@ -2444,7 +2223,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000031333332,
 						"m_query_time_avg": 2.0454792e-7,
 						"m_query_time_sum": 0.0018799999,
@@ -2456,7 +2234,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000032666667,
 						"m_query_time_avg": 1.2650058e-7,
 						"m_query_time_sum": 0.00196,
@@ -2468,7 +2245,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000048833335,
 						"m_query_time_avg": 1.6792755e-7,
 						"m_query_time_sum": 0.00293,
@@ -2480,7 +2256,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000020333332,
 						"m_query_time_avg": 2.1715913e-7,
 						"m_query_time_sum": 0.00122,
@@ -2492,7 +2267,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000335,
 						"m_query_time_avg": 1.1916054e-7,
 						"m_query_time_sum": 0.00201,
@@ -2504,7 +2278,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000021333333,
 						"m_query_time_avg": 1.9095927e-7,
 						"m_query_time_sum": 0.00128,
@@ -2516,7 +2289,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000010666666,
 						"m_query_time_avg": 2.7610008e-7,
 						"m_query_time_sum": 0.00064,
@@ -2528,7 +2300,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000017000001,
 						"m_query_time_avg": 6.879806e-8,
 						"m_query_time_sum": 0.0010200001,
@@ -2540,7 +2311,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000024666667,
 						"m_query_time_avg": 1.4857946e-7,
 						"m_query_time_sum": 0.00148,
@@ -2552,7 +2322,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000070666665,
 						"m_query_time_avg": 1.2770315e-7,
 						"m_query_time_sum": 0.00424,
@@ -2564,7 +2333,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000175,
 						"m_query_time_avg": 6.481882e-8,
 						"m_query_time_sum": 0.0010500001,
@@ -2576,7 +2344,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000036166666,
 						"m_query_time_avg": 6.109234e-7,
 						"m_query_time_sum": 0.00217,
@@ -2588,7 +2355,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011666666,
 						"m_query_time_avg": 2.1413275e-7,
 						"m_query_time_sum": 0.0007,
@@ -2600,7 +2366,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000056833333,
 						"m_query_time_avg": 1.7120193e-7,
 						"m_query_time_sum": 0.00341,
@@ -2612,7 +2377,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.6666665e-7,
 						"m_query_time_avg": 9.848485e-7,
 						"m_query_time_sum": 0.00052,
@@ -2624,7 +2388,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000012,
 						"m_query_time_avg": 8.900977e-8,
 						"m_query_time_sum": 0.00072,
@@ -2636,7 +2399,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000025666666,
 						"m_query_time_avg": 4.1420117e-7,
 						"m_query_time_sum": 0.00154,
@@ -2648,7 +2410,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9.3333335e-7,
 						"m_query_time_avg": 4.0201007e-7,
 						"m_query_time_sum": 0.00056,
@@ -2660,7 +2421,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000034666666,
 						"m_query_time_avg": 1.03487736e-7,
 						"m_query_time_sum": 0.00208,
@@ -2672,7 +2432,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000024166666,
 						"m_query_time_avg": 2.2157701e-7,
 						"m_query_time_sum": 0.00145,
@@ -2684,7 +2443,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000033,
 						"m_query_time_avg": 1.646159e-7,
 						"m_query_time_sum": 0.00198,
@@ -2696,7 +2454,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000042833335,
 						"m_query_time_avg": 1.00815946e-7,
 						"m_query_time_sum": 0.00257,
@@ -2708,7 +2465,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000035,
 						"m_query_time_avg": 1.3131566e-7,
 						"m_query_time_sum": 0.0021000002,
@@ -2720,7 +2476,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000022666666,
 						"m_query_time_avg": 8.975713e-8,
 						"m_query_time_sum": 0.00136,
@@ -2732,7 +2487,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000014333333,
 						"m_query_time_avg": 1.0983397e-7,
 						"m_query_time_sum": 0.00086,
@@ -2744,7 +2498,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000049,
 						"m_query_time_avg": 1.8148148e-7,
 						"m_query_time_sum": 0.00294,
@@ -2756,7 +2509,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 8.8333337e-7,
 						"m_query_time_avg": 7.879869e-8,
 						"m_query_time_sum": 0.00053,
@@ -2768,7 +2520,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011166667,
 						"m_query_time_avg": 6.957425e-7,
 						"m_query_time_sum": 0.00067,
@@ -2780,7 +2531,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011166667,
 						"m_query_time_avg": 2.3574947e-7,
 						"m_query_time_sum": 0.00067,
@@ -2792,7 +2542,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000021333333,
 						"m_query_time_avg": 1.1464398e-7,
 						"m_query_time_sum": 0.00128,
@@ -2804,7 +2553,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000045,
 						"m_query_time_avg": 1.7928286e-7,
 						"m_query_time_sum": 0.0027,
@@ -2816,7 +2564,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000015333334,
 						"m_query_time_avg": 3.652243e-7,
 						"m_query_time_sum": 0.00092,
@@ -2828,7 +2575,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000043,
 						"m_query_time_avg": 2.0275048e-7,
 						"m_query_time_sum": 0.00258,
@@ -2840,7 +2586,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000011166667,
 						"m_query_time_avg": 1.819169e-7,
 						"m_query_time_sum": 0.00067,
@@ -2852,7 +2597,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000425,
 						"m_query_time_avg": 1.4646754e-7,
 						"m_query_time_sum": 0.0025499999,
@@ -2864,7 +2608,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000019666668,
 						"m_query_time_avg": 8.222997e-8,
 						"m_query_time_sum": 0.00118,
@@ -2876,7 +2619,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000018833333,
 						"m_query_time_avg": 9.055938e-8,
 						"m_query_time_sum": 0.00113,
@@ -2888,7 +2630,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000044666667,
 						"m_query_time_avg": 1.8574993e-7,
 						"m_query_time_sum": 0.00268,
@@ -2900,7 +2641,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9e-7,
 						"m_query_time_avg": 1.8048128e-7,
 						"m_query_time_sum": 0.00054,
@@ -2912,7 +2652,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000105,
 						"m_query_time_avg": 9.7327366e-8,
 						"m_query_time_sum": 0.00063,
@@ -2924,7 +2663,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000325,
 						"m_query_time_avg": 1.1021931e-7,
 						"m_query_time_sum": 0.00195,
@@ -2936,7 +2674,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000029666667,
 						"m_query_time_avg": 1.032303e-7,
 						"m_query_time_sum": 0.00178,
@@ -2948,7 +2685,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9.3333335e-7,
 						"m_query_time_avg": 1.9587269e-7,
 						"m_query_time_sum": 0.00056,
@@ -2960,7 +2696,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000019666668,
 						"m_query_time_avg": 1.0640217e-7,
 						"m_query_time_sum": 0.00118,
@@ -2972,7 +2707,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000028666666,
 						"m_query_time_avg": 2.6025117e-7,
 						"m_query_time_sum": 0.0017200001,
@@ -2984,7 +2718,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000002,
 						"m_query_time_avg": 1.5995734e-7,
 						"m_query_time_sum": 0.0012,
@@ -2996,7 +2729,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9e-7,
 						"m_query_time_avg": 0.0000010465116,
 						"m_query_time_sum": 0.00054,
@@ -3008,7 +2740,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000021666667,
 						"m_query_time_avg": 1.1470926e-7,
 						"m_query_time_sum": 0.0013,
@@ -3020,7 +2751,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000063166667,
 						"m_query_time_avg": 1.7433302e-7,
 						"m_query_time_sum": 0.00379,
@@ -3032,7 +2762,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000004366667,
 						"m_query_time_avg": 1.2818631e-7,
 						"m_query_time_sum": 0.00262,
@@ -3044,7 +2773,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000022833333,
 						"m_query_time_avg": 1.3726078e-7,
 						"m_query_time_sum": 0.00137,
@@ -3056,7 +2784,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000026833334,
 						"m_query_time_avg": 1.8848046e-7,
 						"m_query_time_sum": 0.00161,
@@ -3068,7 +2795,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000037500001,
 						"m_query_time_avg": 3.6782737e-7,
 						"m_query_time_sum": 0.00225,
@@ -3080,7 +2806,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9e-7,
 						"m_query_time_avg": 6.484928e-8,
 						"m_query_time_sum": 0.00054,
@@ -3092,7 +2817,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 9.833334e-7,
 						"m_query_time_avg": 6.1000826e-8,
 						"m_query_time_sum": 0.00059,
@@ -3102,22 +2826,18 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "set time_zone=?",
+			"num_queries": 612172,
+			"qps": 17,
+			"load": 0.0030585926
 		},
 		{
 			"rank": 5,
 			"dimension": "8ED794C0D5413D5A",
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"cnt": 5029
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000041999997,
 						"m_query_time_avg": 7.526499e-9,
 						"m_query_time_sum": 0.0025199999,
@@ -3129,7 +2849,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000555,
 						"m_query_time_avg": 7.1359993e-9,
 						"m_query_time_sum": 0.00333,
@@ -3141,7 +2860,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000056166664,
 						"m_query_time_avg": 6.834452e-9,
 						"m_query_time_sum": 0.0033699998,
@@ -3153,7 +2871,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000004933333,
 						"m_query_time_avg": 7.26953e-9,
 						"m_query_time_sum": 0.00296,
@@ -3165,7 +2882,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000050333333,
 						"m_query_time_avg": 7.1947586e-9,
 						"m_query_time_sum": 0.00302,
@@ -3177,7 +2893,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000053333333,
 						"m_query_time_avg": 8.222437e-9,
 						"m_query_time_sum": 0.0032,
@@ -3189,7 +2904,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000465,
 						"m_query_time_avg": 7.311953e-9,
 						"m_query_time_sum": 0.0027899998,
@@ -3201,7 +2915,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000058666665,
 						"m_query_time_avg": 7.901802e-9,
 						"m_query_time_sum": 0.00352,
@@ -3213,7 +2926,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000049833334,
 						"m_query_time_avg": 7.1027957e-9,
 						"m_query_time_sum": 0.00299,
@@ -3225,7 +2937,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000052,
 						"m_query_time_avg": 7.063026e-9,
 						"m_query_time_sum": 0.00312,
@@ -3237,7 +2948,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000065833333,
 						"m_query_time_avg": 8.436998e-9,
 						"m_query_time_sum": 0.00395,
@@ -3249,7 +2959,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000004783333,
 						"m_query_time_avg": 7.525618e-9,
 						"m_query_time_sum": 0.00287,
@@ -3261,7 +2970,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000037,
 						"m_query_time_avg": 7.156373e-9,
 						"m_query_time_sum": 0.00222,
@@ -3273,7 +2981,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000057166667,
 						"m_query_time_avg": 7.611194e-9,
 						"m_query_time_sum": 0.00343,
@@ -3285,7 +2992,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000045666666,
 						"m_query_time_avg": 7.1418516e-9,
 						"m_query_time_sum": 0.00274,
@@ -3297,7 +3003,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000004883333,
 						"m_query_time_avg": 7.6874835e-9,
 						"m_query_time_sum": 0.00293,
@@ -3309,7 +3014,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000475,
 						"m_query_time_avg": 7.767911e-9,
 						"m_query_time_sum": 0.00285,
@@ -3321,7 +3025,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000060666666,
 						"m_query_time_avg": 6.9210073e-9,
 						"m_query_time_sum": 0.00364,
@@ -3333,7 +3036,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000053166664,
 						"m_query_time_avg": 9.095782e-9,
 						"m_query_time_sum": 0.0031899998,
@@ -3345,7 +3047,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000047166664,
 						"m_query_time_avg": 6.8664487e-9,
 						"m_query_time_sum": 0.00283,
@@ -3357,7 +3058,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000055666665,
 						"m_query_time_avg": 8.006462e-9,
 						"m_query_time_sum": 0.0033399998,
@@ -3369,7 +3069,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000056666663,
 						"m_query_time_avg": 7.0703265e-9,
 						"m_query_time_sum": 0.0033999998,
@@ -3381,7 +3080,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000595,
 						"m_query_time_avg": 7.893463e-9,
 						"m_query_time_sum": 0.00357,
@@ -3393,7 +3091,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000040333334,
 						"m_query_time_avg": 7.0404096e-9,
 						"m_query_time_sum": 0.00242,
@@ -3405,7 +3102,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000060499997,
 						"m_query_time_avg": 8.211388e-9,
 						"m_query_time_sum": 0.00363,
@@ -3417,7 +3113,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000036666665,
 						"m_query_time_avg": 6.2211916e-9,
 						"m_query_time_sum": 0.0022,
@@ -3429,7 +3124,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000055166665,
 						"m_query_time_avg": 7.2312583e-9,
 						"m_query_time_sum": 0.0033099998,
@@ -3441,7 +3135,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000044333333,
 						"m_query_time_avg": 6.7370594e-9,
 						"m_query_time_sum": 0.00266,
@@ -3453,7 +3146,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000004833333,
 						"m_query_time_avg": 6.5067938e-9,
 						"m_query_time_sum": 0.0029,
@@ -3465,7 +3157,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000525,
 						"m_query_time_avg": 6.869195e-9,
 						"m_query_time_sum": 0.00315,
@@ -3477,7 +3168,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000052166665,
 						"m_query_time_avg": 7.3416615e-9,
 						"m_query_time_sum": 0.0031299999,
@@ -3489,7 +3179,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000059,
 						"m_query_time_avg": 7.593389e-9,
 						"m_query_time_sum": 0.00354,
@@ -3501,7 +3190,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000004933333,
 						"m_query_time_avg": 7.334139e-9,
 						"m_query_time_sum": 0.00296,
@@ -3513,7 +3201,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000056833333,
 						"m_query_time_avg": 8.875863e-9,
 						"m_query_time_sum": 0.00341,
@@ -3525,7 +3212,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000055166665,
 						"m_query_time_avg": 7.458348e-9,
 						"m_query_time_sum": 0.0033099998,
@@ -3537,7 +3223,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000053,
 						"m_query_time_avg": 7.85577e-9,
 						"m_query_time_sum": 0.00318,
@@ -3549,7 +3234,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000060166667,
 						"m_query_time_avg": 6.9971544e-9,
 						"m_query_time_sum": 0.00361,
@@ -3561,7 +3245,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000054499997,
 						"m_query_time_avg": 8.003916e-9,
 						"m_query_time_sum": 0.00327,
@@ -3573,7 +3256,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000062833333,
 						"m_query_time_avg": 8.8366345e-9,
 						"m_query_time_sum": 0.0037699998,
@@ -3585,7 +3267,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000056333333,
 						"m_query_time_avg": 7.2999953e-9,
 						"m_query_time_sum": 0.00338,
@@ -3597,7 +3278,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000048166667,
 						"m_query_time_avg": 7.172337e-9,
 						"m_query_time_sum": 0.00289,
@@ -3609,7 +3289,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000057666666,
 						"m_query_time_avg": 7.43389e-9,
 						"m_query_time_sum": 0.0034599998,
@@ -3621,7 +3300,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000056,
 						"m_query_time_avg": 8.161302e-9,
 						"m_query_time_sum": 0.00336,
@@ -3633,7 +3311,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000004833333,
 						"m_query_time_avg": 7.018597e-9,
 						"m_query_time_sum": 0.0029,
@@ -3645,7 +3322,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000004783333,
 						"m_query_time_avg": 6.414583e-9,
 						"m_query_time_sum": 0.00287,
@@ -3657,7 +3333,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000046833334,
 						"m_query_time_avg": 6.925788e-9,
 						"m_query_time_sum": 0.00281,
@@ -3669,7 +3344,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000053833332,
 						"m_query_time_avg": 7.718575e-9,
 						"m_query_time_sum": 0.00323,
@@ -3681,7 +3355,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000044999997,
 						"m_query_time_avg": 6.600079e-9,
 						"m_query_time_sum": 0.0026999998,
@@ -3693,7 +3366,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000044333333,
 						"m_query_time_avg": 7.1238992e-9,
 						"m_query_time_sum": 0.00266,
@@ -3705,7 +3377,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000005183333,
 						"m_query_time_avg": 6.7974573e-9,
 						"m_query_time_sum": 0.00311,
@@ -3717,7 +3388,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000005,
 						"m_query_time_avg": 6.9421464e-9,
 						"m_query_time_sum": 0.003,
@@ -3729,7 +3399,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000005133333,
 						"m_query_time_avg": 7.4104904e-9,
 						"m_query_time_sum": 0.00308,
@@ -3741,7 +3410,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000062999998,
 						"m_query_time_avg": 8.315825e-9,
 						"m_query_time_sum": 0.00378,
@@ -3753,7 +3421,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000005183333,
 						"m_query_time_avg": 7.476231e-9,
 						"m_query_time_sum": 0.00311,
@@ -3765,7 +3432,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000055,
 						"m_query_time_avg": 6.932846e-9,
 						"m_query_time_sum": 0.0033,
@@ -3777,7 +3443,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000052166665,
 						"m_query_time_avg": 7.623288e-9,
 						"m_query_time_sum": 0.0031299999,
@@ -3789,7 +3454,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00000555,
 						"m_query_time_avg": 7.690353e-9,
 						"m_query_time_sum": 0.00333,
@@ -3801,7 +3465,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000050166664,
 						"m_query_time_avg": 7.693232e-9,
 						"m_query_time_sum": 0.0030099999,
@@ -3813,7 +3476,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000053666668,
 						"m_query_time_avg": 7.912656e-9,
 						"m_query_time_sum": 0.0032199998,
@@ -3825,7 +3487,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000068333334,
 						"m_query_time_avg": 8.065055e-9,
 						"m_query_time_sum": 0.0041,
@@ -3835,22 +3496,18 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "quit",
+			"num_queries": 25370222,
+			"qps": 704,
+			"load": 0.0030585926
 		},
 		{
 			"rank": 6,
 			"dimension": "3530F787A2430DC8",
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"cnt": 1236
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015083333,
 						"m_query_time_avg": 1.4786373e-7,
 						"m_query_time_sum": 0.0090499995,
@@ -3862,7 +3519,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015216667,
 						"m_query_time_avg": 9.26095e-8,
 						"m_query_time_sum": 0.00913,
@@ -3874,7 +3530,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015533333,
 						"m_query_time_avg": 9.4943154e-8,
 						"m_query_time_sum": 0.00932,
@@ -3886,7 +3541,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000021416667,
 						"m_query_time_avg": 7.938616e-8,
 						"m_query_time_sum": 0.01285,
@@ -3898,7 +3552,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000020466667,
 						"m_query_time_avg": 7.960483e-8,
 						"m_query_time_sum": 0.01228,
@@ -3910,7 +3563,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000009233333,
 						"m_query_time_avg": 9.2020464e-8,
 						"m_query_time_sum": 0.00554,
@@ -3922,7 +3574,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000014633333,
 						"m_query_time_avg": 8.525679e-8,
 						"m_query_time_sum": 0.00878,
@@ -3934,7 +3585,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000016583333,
 						"m_query_time_avg": 8.6680025e-8,
 						"m_query_time_sum": 0.00995,
@@ -3946,7 +3596,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000175,
 						"m_query_time_avg": 8.845606e-8,
 						"m_query_time_sum": 0.0105,
@@ -3958,7 +3607,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000144,
 						"m_query_time_avg": 9.746962e-8,
 						"m_query_time_sum": 0.00864,
@@ -3970,7 +3618,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00001965,
 						"m_query_time_avg": 1.0893065e-7,
 						"m_query_time_sum": 0.01179,
@@ -3982,7 +3629,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000013666667,
 						"m_query_time_avg": 1.09232836e-7,
 						"m_query_time_sum": 0.0082,
@@ -3994,7 +3640,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000016083333,
 						"m_query_time_avg": 7.820541e-8,
 						"m_query_time_sum": 0.009649999,
@@ -4006,7 +3651,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000013816667,
 						"m_query_time_avg": 7.952114e-8,
 						"m_query_time_sum": 0.00829,
@@ -4018,7 +3662,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000018616667,
 						"m_query_time_avg": 8.921654e-8,
 						"m_query_time_sum": 0.01117,
@@ -4030,7 +3673,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000017116667,
 						"m_query_time_avg": 7.575087e-8,
 						"m_query_time_sum": 0.0102699995,
@@ -4042,7 +3684,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000018983334,
 						"m_query_time_avg": 8.053568e-8,
 						"m_query_time_sum": 0.01139,
@@ -4054,7 +3695,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000017283333,
 						"m_query_time_avg": 9.539316e-8,
 						"m_query_time_sum": 0.01037,
@@ -4066,7 +3706,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015083333,
 						"m_query_time_avg": 7.5828666e-8,
 						"m_query_time_sum": 0.0090499995,
@@ -4078,7 +3717,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000018083334,
 						"m_query_time_avg": 1.0770941e-7,
 						"m_query_time_sum": 0.01085,
@@ -4090,7 +3728,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015883334,
 						"m_query_time_avg": 8.417315e-8,
 						"m_query_time_sum": 0.00953,
@@ -4102,7 +3739,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015616666,
 						"m_query_time_avg": 9.005546e-8,
 						"m_query_time_sum": 0.00937,
@@ -4114,7 +3750,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000017316666,
 						"m_query_time_avg": 1.1863575e-7,
 						"m_query_time_sum": 0.01039,
@@ -4126,7 +3761,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000016850001,
 						"m_query_time_avg": 8.745221e-8,
 						"m_query_time_sum": 0.01011,
@@ -4138,7 +3772,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000141,
 						"m_query_time_avg": 8.329313e-8,
 						"m_query_time_sum": 0.00846,
@@ -4150,7 +3783,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015233333,
 						"m_query_time_avg": 9.883859e-8,
 						"m_query_time_sum": 0.00914,
@@ -4162,7 +3794,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015233333,
 						"m_query_time_avg": 1.0203398e-7,
 						"m_query_time_sum": 0.00914,
@@ -4174,7 +3805,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000013233333,
 						"m_query_time_avg": 8.484991e-8,
 						"m_query_time_sum": 0.00794,
@@ -4186,7 +3816,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000017516666,
 						"m_query_time_avg": 1.0170115e-7,
 						"m_query_time_sum": 0.0105099995,
@@ -4198,7 +3827,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000017733333,
 						"m_query_time_avg": 9.851487e-8,
 						"m_query_time_sum": 0.01064,
@@ -4210,7 +3838,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000016166667,
 						"m_query_time_avg": 8.562551e-8,
 						"m_query_time_sum": 0.0097,
@@ -4222,7 +3849,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000017916667,
 						"m_query_time_avg": 9.802044e-8,
 						"m_query_time_sum": 0.01075,
@@ -4234,7 +3860,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000144,
 						"m_query_time_avg": 9.0412506e-8,
 						"m_query_time_sum": 0.00864,
@@ -4246,7 +3871,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00001625,
 						"m_query_time_avg": 8.30586e-8,
 						"m_query_time_sum": 0.00975,
@@ -4258,7 +3882,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00001055,
 						"m_query_time_avg": 8.7567614e-8,
 						"m_query_time_sum": 0.00633,
@@ -4270,7 +3893,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000118,
 						"m_query_time_avg": 7.390242e-8,
 						"m_query_time_sum": 0.00708,
@@ -4282,7 +3904,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00002095,
 						"m_query_time_avg": 1.18870865e-7,
 						"m_query_time_sum": 0.01257,
@@ -4294,7 +3915,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000017833334,
 						"m_query_time_avg": 9.75761e-8,
 						"m_query_time_sum": 0.0106999995,
@@ -4306,7 +3926,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00001565,
 						"m_query_time_avg": 9.0241606e-8,
 						"m_query_time_sum": 0.00939,
@@ -4318,7 +3937,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000020733332,
 						"m_query_time_avg": 9.0235815e-8,
 						"m_query_time_sum": 0.01244,
@@ -4330,7 +3948,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000134833335,
 						"m_query_time_avg": 1.0352682e-7,
 						"m_query_time_sum": 0.00809,
@@ -4342,7 +3959,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000016816666,
 						"m_query_time_avg": 9.126679e-8,
 						"m_query_time_sum": 0.01009,
@@ -4354,7 +3970,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0000125999995,
 						"m_query_time_avg": 9.06801e-8,
 						"m_query_time_sum": 0.00756,
@@ -4366,7 +3981,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000010083333,
 						"m_query_time_avg": 9.4090204e-8,
 						"m_query_time_sum": 0.00605,
@@ -4378,7 +3992,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000012716667,
 						"m_query_time_avg": 7.767564e-8,
 						"m_query_time_sum": 0.00763,
@@ -4390,7 +4003,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000020966667,
 						"m_query_time_avg": 1.0640187e-7,
 						"m_query_time_sum": 0.01258,
@@ -4402,7 +4014,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000012583333,
 						"m_query_time_avg": 1.05153205e-7,
 						"m_query_time_sum": 0.00755,
@@ -4414,7 +4025,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00002055,
 						"m_query_time_avg": 7.0540985e-8,
 						"m_query_time_sum": 0.012329999,
@@ -4426,7 +4036,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000014616667,
 						"m_query_time_avg": 9.9922524e-8,
 						"m_query_time_sum": 0.00877,
@@ -4438,7 +4047,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000016466667,
 						"m_query_time_avg": 1.0511421e-7,
 						"m_query_time_sum": 0.00988,
@@ -4450,7 +4058,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000016016666,
 						"m_query_time_avg": 1.0600161e-7,
 						"m_query_time_sum": 0.00961,
@@ -4462,7 +4069,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00001215,
 						"m_query_time_avg": 8.048223e-8,
 						"m_query_time_sum": 0.00729,
@@ -4474,7 +4080,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000011416667,
 						"m_query_time_avg": 9.771894e-8,
 						"m_query_time_sum": 0.00685,
@@ -4486,7 +4091,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000012216667,
 						"m_query_time_avg": 1.0617803e-7,
 						"m_query_time_sum": 0.00733,
@@ -4498,7 +4102,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000008333333,
 						"m_query_time_avg": 9.130252e-8,
 						"m_query_time_sum": 0.005,
@@ -4510,7 +4113,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000017183333,
 						"m_query_time_avg": 9.396389e-8,
 						"m_query_time_sum": 0.01031,
@@ -4522,7 +4124,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000019933334,
 						"m_query_time_avg": 1.1589709e-7,
 						"m_query_time_sum": 0.01196,
@@ -4534,7 +4135,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000019166666,
 						"m_query_time_avg": 9.8372155e-8,
 						"m_query_time_sum": 0.0115,
@@ -4546,7 +4146,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015466667,
 						"m_query_time_avg": 7.916805e-8,
 						"m_query_time_sum": 0.00928,
@@ -4558,7 +4157,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000015316666,
 						"m_query_time_avg": 1.0928377e-7,
 						"m_query_time_sum": 0.00919,
@@ -4568,22 +4166,18 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "select @@port",
+			"num_queries": 6159103,
+			"qps": 171,
+			"load": 0.0030585926
 		},
 		{
 			"rank": 7,
 			"dimension": "E3A3649C5FAC418D",
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"cnt": 4910
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00012886667,
 						"m_query_time_avg": 1.9630144e-7,
 						"m_query_time_sum": 0.07732,
@@ -4595,7 +4189,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014235,
 						"m_query_time_avg": 2.0765916e-7,
 						"m_query_time_sum": 0.08541,
@@ -4607,7 +4200,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013863333,
 						"m_query_time_avg": 1.9853451e-7,
 						"m_query_time_sum": 0.08318,
@@ -4619,7 +4211,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013106667,
 						"m_query_time_avg": 2.0994405e-7,
 						"m_query_time_sum": 0.07864,
@@ -4631,7 +4222,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00015116666,
 						"m_query_time_avg": 1.7684414e-7,
 						"m_query_time_sum": 0.0907,
@@ -4643,7 +4233,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00012428334,
 						"m_query_time_avg": 2.1633682e-7,
 						"m_query_time_sum": 0.07457,
@@ -4655,7 +4244,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00017706667,
 						"m_query_time_avg": 2.0205363e-7,
 						"m_query_time_sum": 0.10624,
@@ -4667,7 +4255,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00012286667,
 						"m_query_time_avg": 2.1263831e-7,
 						"m_query_time_sum": 0.07372,
@@ -4679,7 +4266,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013251667,
 						"m_query_time_avg": 2.1273408e-7,
 						"m_query_time_sum": 0.07951,
@@ -4691,7 +4277,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0001397,
 						"m_query_time_avg": 2.076747e-7,
 						"m_query_time_sum": 0.08382,
@@ -4703,7 +4288,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000168,
 						"m_query_time_avg": 2.1429801e-7,
 						"m_query_time_sum": 0.1008,
@@ -4715,7 +4299,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013295,
 						"m_query_time_avg": 1.9644638e-7,
 						"m_query_time_sum": 0.07977,
@@ -4727,7 +4310,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013391666,
 						"m_query_time_avg": 1.9883102e-7,
 						"m_query_time_sum": 0.08035,
@@ -4739,7 +4321,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00012776666,
 						"m_query_time_avg": 1.9538976e-7,
 						"m_query_time_sum": 0.07666,
@@ -4751,7 +4332,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014151666,
 						"m_query_time_avg": 1.9811058e-7,
 						"m_query_time_sum": 0.08491,
@@ -4763,7 +4343,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013546666,
 						"m_query_time_avg": 2.0596404e-7,
 						"m_query_time_sum": 0.08128,
@@ -4775,7 +4354,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0001193,
 						"m_query_time_avg": 2.1571026e-7,
 						"m_query_time_sum": 0.07158,
@@ -4787,7 +4365,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00011395,
 						"m_query_time_avg": 1.9773546e-7,
 						"m_query_time_sum": 0.06837,
@@ -4799,7 +4376,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014648333,
 						"m_query_time_avg": 1.9703847e-7,
 						"m_query_time_sum": 0.08789,
@@ -4811,7 +4387,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0001144,
 						"m_query_time_avg": 2.0820379e-7,
 						"m_query_time_sum": 0.06864,
@@ -4823,7 +4398,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0001279,
 						"m_query_time_avg": 2.0097738e-7,
 						"m_query_time_sum": 0.07674,
@@ -4835,7 +4409,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014126666,
 						"m_query_time_avg": 2.3955008e-7,
 						"m_query_time_sum": 0.08476,
@@ -4847,7 +4420,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013191666,
 						"m_query_time_avg": 2.0724127e-7,
 						"m_query_time_sum": 0.07915,
@@ -4859,7 +4431,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00015276666,
 						"m_query_time_avg": 1.7882331e-7,
 						"m_query_time_sum": 0.09166,
@@ -4871,7 +4442,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014086667,
 						"m_query_time_avg": 1.9768726e-7,
 						"m_query_time_sum": 0.08452,
@@ -4883,7 +4453,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0001555,
 						"m_query_time_avg": 2.0943749e-7,
 						"m_query_time_sum": 0.0933,
@@ -4895,7 +4464,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00012775,
 						"m_query_time_avg": 1.9354546e-7,
 						"m_query_time_sum": 0.07665,
@@ -4907,7 +4475,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013565,
 						"m_query_time_avg": 1.8016442e-7,
 						"m_query_time_sum": 0.08139,
@@ -4919,7 +4486,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014788333,
 						"m_query_time_avg": 2.0159541e-7,
 						"m_query_time_sum": 0.08873,
@@ -4931,7 +4497,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013841667,
 						"m_query_time_avg": 2.116765e-7,
 						"m_query_time_sum": 0.08305,
@@ -4943,7 +4508,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013901667,
 						"m_query_time_avg": 2.2133474e-7,
 						"m_query_time_sum": 0.08341,
@@ -4955,7 +4519,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013753334,
 						"m_query_time_avg": 1.890865e-7,
 						"m_query_time_sum": 0.08252,
@@ -4967,7 +4530,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000138,
 						"m_query_time_avg": 1.9983878e-7,
 						"m_query_time_sum": 0.0828,
@@ -4979,7 +4541,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013545,
 						"m_query_time_avg": 1.8774386e-7,
 						"m_query_time_sum": 0.08127,
@@ -4991,7 +4552,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00011201666,
 						"m_query_time_avg": 2.1963406e-7,
 						"m_query_time_sum": 0.067210004,
@@ -5003,7 +4563,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013153334,
 						"m_query_time_avg": 1.8316472e-7,
 						"m_query_time_sum": 0.07892,
@@ -5015,7 +4574,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013196666,
 						"m_query_time_avg": 2.1076167e-7,
 						"m_query_time_sum": 0.07918,
@@ -5027,7 +4585,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013273333,
 						"m_query_time_avg": 2.4203672e-7,
 						"m_query_time_sum": 0.07964,
@@ -5039,7 +4596,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013088333,
 						"m_query_time_avg": 1.8556764e-7,
 						"m_query_time_sum": 0.07853,
@@ -5051,7 +4607,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0001243,
 						"m_query_time_avg": 1.8658154e-7,
 						"m_query_time_sum": 0.07458,
@@ -5063,7 +4618,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000117916665,
 						"m_query_time_avg": 2.0260306e-7,
 						"m_query_time_sum": 0.07075,
@@ -5075,7 +4629,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0001313,
 						"m_query_time_avg": 1.9725279e-7,
 						"m_query_time_sum": 0.07878,
@@ -5087,7 +4640,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014176666,
 						"m_query_time_avg": 2.0055077e-7,
 						"m_query_time_sum": 0.08506,
@@ -5099,7 +4651,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00012853333,
 						"m_query_time_avg": 1.9154109e-7,
 						"m_query_time_sum": 0.07712,
@@ -5111,7 +4662,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0001379,
 						"m_query_time_avg": 1.9053803e-7,
 						"m_query_time_sum": 0.08274,
@@ -5123,7 +4673,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00012481667,
 						"m_query_time_avg": 1.822416e-7,
 						"m_query_time_sum": 0.07489,
@@ -5135,7 +4684,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.0001069,
 						"m_query_time_avg": 2.133257e-7,
 						"m_query_time_sum": 0.06414,
@@ -5147,7 +4695,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.000114333336,
 						"m_query_time_avg": 1.9144684e-7,
 						"m_query_time_sum": 0.0686,
@@ -5159,7 +4706,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00011186667,
 						"m_query_time_avg": 2.2115685e-7,
 						"m_query_time_sum": 0.06712,
@@ -5171,7 +4717,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013801667,
 						"m_query_time_avg": 1.9443394e-7,
 						"m_query_time_sum": 0.08281,
@@ -5183,7 +4728,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014118334,
 						"m_query_time_avg": 1.9887358e-7,
 						"m_query_time_sum": 0.08471,
@@ -5195,7 +4739,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00015951667,
 						"m_query_time_avg": 2.1433834e-7,
 						"m_query_time_sum": 0.09571,
@@ -5207,7 +4750,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00012791666,
 						"m_query_time_avg": 1.9691049e-7,
 						"m_query_time_sum": 0.07675,
@@ -5219,7 +4761,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014146666,
 						"m_query_time_avg": 2.0041746e-7,
 						"m_query_time_sum": 0.08488,
@@ -5231,7 +4772,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00016566667,
 						"m_query_time_avg": 2.1081564e-7,
 						"m_query_time_sum": 0.0994,
@@ -5243,7 +4783,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00012163333,
 						"m_query_time_avg": 1.825769e-7,
 						"m_query_time_sum": 0.07298,
@@ -5255,7 +4794,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014843333,
 						"m_query_time_avg": 1.9455184e-7,
 						"m_query_time_sum": 0.08906,
@@ -5267,7 +4805,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00013125,
 						"m_query_time_avg": 2.1442166e-7,
 						"m_query_time_sum": 0.07875,
@@ -5279,7 +4816,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00014085,
 						"m_query_time_avg": 1.8996988e-7,
 						"m_query_time_sum": 0.08451,
@@ -5291,7 +4827,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0,
 						"m_query_load": 0.00010495,
 						"m_query_time_avg": 2.1611251e-7,
 						"m_query_time_sum": 0.06297,
@@ -5301,27 +4836,18 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "select @@version_comment limit ?",
+			"num_queries": 24091246,
+			"qps": 669,
+			"load": 0.0030585926
 		},
 		{
 			"rank": 8,
 			"dimension": "7DD5F6760F2D2EBB",
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"rate": 0.29682866,
-						"cnt": 2473,
-						"sum": 1.6401,
-						"min": 0.000052,
-						"max": 0.000179,
-						"p99": 0.00006632026
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0.02306,
 						"m_query_load": 0.0010107167,
 						"m_query_time_avg": 0.0000037620193,
 						"m_query_time_sum": 0.60643,
@@ -5333,7 +4859,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.01963,
 						"m_query_load": 0.00085685,
 						"m_query_time_avg": 0.00000360617,
 						"m_query_time_sum": 0.51411,
@@ -5345,7 +4870,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03171,
 						"m_query_load": 0.0014175833,
 						"m_query_time_avg": 0.0000036734473,
 						"m_query_time_sum": 0.85055,
@@ -5357,7 +4881,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02308,
 						"m_query_load": 0.0010419333,
 						"m_query_time_avg": 0.000003839955,
 						"m_query_time_sum": 0.62516,
@@ -5369,7 +4892,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03737,
 						"m_query_load": 0.00164105,
 						"m_query_time_avg": 0.000003744837,
 						"m_query_time_sum": 0.98463,
@@ -5381,7 +4903,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0254,
 						"m_query_load": 0.0011481667,
 						"m_query_time_avg": 0.000004402001,
 						"m_query_time_sum": 0.6889,
@@ -5393,7 +4914,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0234,
 						"m_query_load": 0.0010296666,
 						"m_query_time_avg": 0.0000043820264,
 						"m_query_time_sum": 0.6178,
@@ -5405,7 +4925,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.023740001,
 						"m_query_load": 0.0010253167,
 						"m_query_time_avg": 0.000004006682,
 						"m_query_time_sum": 0.61518997,
@@ -5417,7 +4936,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02655,
 						"m_query_load": 0.0012090667,
 						"m_query_time_avg": 0.000003692483,
 						"m_query_time_sum": 0.72544,
@@ -5429,7 +4947,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.027420001,
 						"m_query_load": 0.00123235,
 						"m_query_time_avg": 0.0000034149575,
 						"m_query_time_sum": 0.73941,
@@ -5441,7 +4958,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02512,
 						"m_query_load": 0.00114375,
 						"m_query_time_avg": 0.0000029830212,
 						"m_query_time_sum": 0.68625003,
@@ -5453,7 +4969,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03297,
 						"m_query_load": 0.0015102334,
 						"m_query_time_avg": 0.000003260071,
 						"m_query_time_sum": 0.90614,
@@ -5465,7 +4980,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.030280001,
 						"m_query_load": 0.0013840167,
 						"m_query_time_avg": 0.0000030862918,
 						"m_query_time_sum": 0.83041,
@@ -5477,7 +4991,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02629,
 						"m_query_load": 0.00116785,
 						"m_query_time_avg": 0.000003428131,
 						"m_query_time_sum": 0.70071,
@@ -5489,7 +5002,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02187,
 						"m_query_load": 0.0009520167,
 						"m_query_time_avg": 0.0000033971678,
 						"m_query_time_sum": 0.57121,
@@ -5501,7 +5013,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02866,
 						"m_query_load": 0.0013032,
 						"m_query_time_avg": 0.0000033737767,
 						"m_query_time_sum": 0.78192,
@@ -5513,7 +5024,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0278,
 						"m_query_load": 0.0012729666,
 						"m_query_time_avg": 0.0000030637352,
 						"m_query_time_sum": 0.76378,
@@ -5525,7 +5035,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02229,
 						"m_query_load": 0.0009993833,
 						"m_query_time_avg": 0.0000029184046,
 						"m_query_time_sum": 0.59963,
@@ -5537,7 +5046,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.019820001,
 						"m_query_load": 0.00084321667,
 						"m_query_time_avg": 0.000003940111,
 						"m_query_time_sum": 0.50593,
@@ -5549,7 +5057,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03141,
 						"m_query_load": 0.0013592667,
 						"m_query_time_avg": 0.0000037738887,
 						"m_query_time_sum": 0.81556,
@@ -5561,7 +5068,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02925,
 						"m_query_load": 0.0013109166,
 						"m_query_time_avg": 0.0000033371093,
 						"m_query_time_sum": 0.78655,
@@ -5573,7 +5079,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02183,
 						"m_query_load": 0.0009793834,
 						"m_query_time_avg": 0.0000028011193,
 						"m_query_time_sum": 0.58763,
@@ -5585,7 +5090,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0269,
 						"m_query_load": 0.0011442,
 						"m_query_time_avg": 0.00000409667,
 						"m_query_time_sum": 0.68652,
@@ -5597,7 +5101,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02378,
 						"m_query_load": 0.0010481001,
 						"m_query_time_avg": 0.0000038139542,
 						"m_query_time_sum": 0.62886,
@@ -5609,7 +5112,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03094,
 						"m_query_load": 0.0013584166,
 						"m_query_time_avg": 0.0000035199741,
 						"m_query_time_sum": 0.81505,
@@ -5621,7 +5123,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02685,
 						"m_query_load": 0.00118385,
 						"m_query_time_avg": 0.0000033413303,
 						"m_query_time_sum": 0.71031,
@@ -5633,7 +5134,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0222,
 						"m_query_load": 0.0009818,
 						"m_query_time_avg": 0.000002988115,
 						"m_query_time_sum": 0.58908,
@@ -5645,7 +5145,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03081,
 						"m_query_load": 0.001361,
 						"m_query_time_avg": 0.0000037612963,
 						"m_query_time_sum": 0.8166,
@@ -5657,7 +5156,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02731,
 						"m_query_load": 0.0011901833,
 						"m_query_time_avg": 0.0000034199525,
 						"m_query_time_sum": 0.71411,
@@ -5669,7 +5167,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03028,
 						"m_query_load": 0.00130385,
 						"m_query_time_avg": 0.0000034810332,
 						"m_query_time_sum": 0.78231,
@@ -5681,7 +5178,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02372,
 						"m_query_load": 0.00104175,
 						"m_query_time_avg": 0.000003800551,
 						"m_query_time_sum": 0.62505,
@@ -5693,7 +5189,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02051,
 						"m_query_load": 0.00088583335,
 						"m_query_time_avg": 0.0000032545863,
 						"m_query_time_sum": 0.5315,
@@ -5705,7 +5200,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02911,
 						"m_query_load": 0.0012967,
 						"m_query_time_avg": 0.000003509052,
 						"m_query_time_sum": 0.77802,
@@ -5717,7 +5211,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02437,
 						"m_query_load": 0.0010567834,
 						"m_query_time_avg": 0.0000033978351,
 						"m_query_time_sum": 0.63407,
@@ -5729,7 +5222,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02732,
 						"m_query_load": 0.0012165833,
 						"m_query_time_avg": 0.0000035360142,
 						"m_query_time_sum": 0.72995,
@@ -5741,7 +5233,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03977,
 						"m_query_load": 0.0017125333,
 						"m_query_time_avg": 0.0000032154012,
 						"m_query_time_sum": 1.0275201,
@@ -5753,7 +5244,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03299,
 						"m_query_load": 0.0014579666,
 						"m_query_time_avg": 0.000003514443,
 						"m_query_time_sum": 0.87478,
@@ -5765,7 +5255,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03456,
 						"m_query_load": 0.0015169333,
 						"m_query_time_avg": 0.0000033993665,
 						"m_query_time_sum": 0.91016,
@@ -5777,7 +5266,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03064,
 						"m_query_load": 0.0013816833,
 						"m_query_time_avg": 0.0000032851856,
 						"m_query_time_sum": 0.82901,
@@ -5789,7 +5277,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02403,
 						"m_query_load": 0.0010300333,
 						"m_query_time_avg": 0.0000030862884,
 						"m_query_time_sum": 0.61802,
@@ -5801,7 +5288,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.01876,
 						"m_query_load": 0.00085688336,
 						"m_query_time_avg": 0.000003110416,
 						"m_query_time_sum": 0.51413,
@@ -5813,7 +5299,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.01994,
 						"m_query_load": 0.0008757,
 						"m_query_time_avg": 0.000003758369,
 						"m_query_time_sum": 0.52542,
@@ -5825,7 +5310,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03639,
 						"m_query_load": 0.00156735,
 						"m_query_time_avg": 0.000003607305,
 						"m_query_time_sum": 0.94041,
@@ -5837,7 +5321,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0264,
 						"m_query_load": 0.0011887667,
 						"m_query_time_avg": 0.000003641404,
 						"m_query_time_sum": 0.71326,
@@ -5849,7 +5332,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02724,
 						"m_query_load": 0.0011883667,
 						"m_query_time_avg": 0.0000032990483,
 						"m_query_time_sum": 0.71302,
@@ -5861,7 +5343,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02978,
 						"m_query_load": 0.0012788667,
 						"m_query_time_avg": 0.0000039421916,
 						"m_query_time_sum": 0.76732,
@@ -5873,7 +5354,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02733,
 						"m_query_load": 0.0011768667,
 						"m_query_time_avg": 0.000003382465,
 						"m_query_time_sum": 0.70612,
@@ -5885,7 +5365,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02755,
 						"m_query_load": 0.0012041833,
 						"m_query_time_avg": 0.00000325045,
 						"m_query_time_sum": 0.72251,
@@ -5897,7 +5376,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03354,
 						"m_query_load": 0.0014379167,
 						"m_query_time_avg": 0.0000035948665,
 						"m_query_time_sum": 0.86275,
@@ -5909,7 +5387,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0301,
 						"m_query_load": 0.0013578,
 						"m_query_time_avg": 0.0000041078238,
 						"m_query_time_sum": 0.81468,
@@ -5921,7 +5398,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02518,
 						"m_query_load": 0.0010803833,
 						"m_query_time_avg": 0.0000036467816,
 						"m_query_time_sum": 0.64823,
@@ -5933,7 +5409,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02809,
 						"m_query_load": 0.0012318,
 						"m_query_time_avg": 0.0000032544253,
 						"m_query_time_sum": 0.73908,
@@ -5945,7 +5420,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03235,
 						"m_query_load": 0.0014580333,
 						"m_query_time_avg": 0.0000033494396,
 						"m_query_time_sum": 0.87482,
@@ -5957,7 +5431,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03203,
 						"m_query_load": 0.0013953167,
 						"m_query_time_avg": 0.0000034250286,
 						"m_query_time_sum": 0.83719,
@@ -5969,7 +5442,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02838,
 						"m_query_load": 0.00121755,
 						"m_query_time_avg": 0.000003448157,
 						"m_query_time_sum": 0.73053,
@@ -5981,7 +5453,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02776,
 						"m_query_load": 0.0012120834,
 						"m_query_time_avg": 0.0000035136754,
 						"m_query_time_sum": 0.72725,
@@ -5993,7 +5464,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.024290001,
 						"m_query_load": 0.0010698834,
 						"m_query_time_avg": 0.0000029085827,
 						"m_query_time_sum": 0.64193,
@@ -6005,7 +5475,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02612,
 						"m_query_load": 0.0011398167,
 						"m_query_time_avg": 0.0000031677853,
 						"m_query_time_sum": 0.68389,
@@ -6017,7 +5486,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.02379,
 						"m_query_load": 0.0010531333,
 						"m_query_time_avg": 0.0000032349358,
 						"m_query_time_sum": 0.63188,
@@ -6029,7 +5497,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.03004,
 						"m_query_load": 0.0013291667,
 						"m_query_time_avg": 0.0000034540856,
 						"m_query_time_sum": 0.7975,
@@ -6039,27 +5506,18 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "show variables like ?",
+			"num_queries": 12540812,
+			"qps": 348,
+			"load": 0.0030585926
 		},
 		{
 			"rank": 9,
 			"dimension": "CB73D6B5B031B4CF",
-			"metrics": {
-				"lock_time": {
-					"stats": {
-						"rate": 0.7031713,
-						"cnt": 3738,
-						"sum": 3.88531,
-						"min": 0.000086,
-						"max": 0.00019,
-						"p99": 0.000103940874
-					}
-				}
-			},
 			"sparkline": [
 				{
 					"values": {
-						"m_lock_time_sum": 0.05212,
 						"m_query_load": 0.0013475167,
 						"m_query_time_avg": 0.0000031502188,
 						"m_query_time_sum": 0.80851,
@@ -6071,7 +5529,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05828,
 						"m_query_load": 0.0015680167,
 						"m_query_time_avg": 0.0000035103542,
 						"m_query_time_sum": 0.94081,
@@ -6083,7 +5540,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05953,
 						"m_query_load": 0.0016079,
 						"m_query_time_avg": 0.0000036323727,
 						"m_query_time_sum": 0.96474,
@@ -6095,7 +5551,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06003,
 						"m_query_load": 0.0015658666,
 						"m_query_time_avg": 0.0000033626102,
 						"m_query_time_sum": 0.93952,
@@ -6107,7 +5562,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07197,
 						"m_query_load": 0.0019205167,
 						"m_query_time_avg": 0.0000034263737,
 						"m_query_time_sum": 1.15231,
@@ -6119,7 +5573,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06848,
 						"m_query_load": 0.0017976167,
 						"m_query_time_avg": 0.0000034188222,
 						"m_query_time_sum": 1.07857,
@@ -6131,7 +5584,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06761,
 						"m_query_load": 0.0018362834,
 						"m_query_time_avg": 0.000003445971,
 						"m_query_time_sum": 1.10177,
@@ -6143,7 +5595,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07118,
 						"m_query_load": 0.0018858167,
 						"m_query_time_avg": 0.0000030436279,
 						"m_query_time_sum": 1.13149,
@@ -6155,7 +5606,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06653,
 						"m_query_load": 0.00171115,
 						"m_query_time_avg": 0.0000028501986,
 						"m_query_time_sum": 1.02669,
@@ -6167,7 +5617,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05669,
 						"m_query_load": 0.0014817333,
 						"m_query_time_avg": 0.0000031418838,
 						"m_query_time_sum": 0.88904,
@@ -6179,7 +5628,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06565,
 						"m_query_load": 0.0016655833,
 						"m_query_time_avg": 0.000004120487,
 						"m_query_time_sum": 0.99935,
@@ -6191,7 +5639,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06582,
 						"m_query_load": 0.0016958833,
 						"m_query_time_avg": 0.000002931721,
 						"m_query_time_sum": 1.01753,
@@ -6203,7 +5650,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05902,
 						"m_query_load": 0.0015259667,
 						"m_query_time_avg": 0.000003756981,
 						"m_query_time_sum": 0.91558,
@@ -6215,7 +5661,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07635,
 						"m_query_load": 0.0019621667,
 						"m_query_time_avg": 0.0000033613132,
 						"m_query_time_sum": 1.1773,
@@ -6227,7 +5672,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05532,
 						"m_query_load": 0.001421,
 						"m_query_time_avg": 0.0000035435082,
 						"m_query_time_sum": 0.8526,
@@ -6239,7 +5683,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07244,
 						"m_query_load": 0.0018046,
 						"m_query_time_avg": 0.0000038267103,
 						"m_query_time_sum": 1.08276,
@@ -6251,7 +5694,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06609,
 						"m_query_load": 0.0016891334,
 						"m_query_time_avg": 0.000002885878,
 						"m_query_time_sum": 1.01348,
@@ -6263,7 +5705,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05679,
 						"m_query_load": 0.0014989834,
 						"m_query_time_avg": 0.0000036430692,
 						"m_query_time_sum": 0.89939,
@@ -6275,7 +5716,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07011,
 						"m_query_load": 0.0017729667,
 						"m_query_time_avg": 0.0000033753327,
 						"m_query_time_sum": 1.06378,
@@ -6287,7 +5727,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.073,
 						"m_query_load": 0.0018661333,
 						"m_query_time_avg": 0.0000031502213,
 						"m_query_time_sum": 1.11968,
@@ -6299,7 +5738,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05382,
 						"m_query_load": 0.0014212667,
 						"m_query_time_avg": 0.000003295156,
 						"m_query_time_sum": 0.85276,
@@ -6311,7 +5749,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06348,
 						"m_query_load": 0.0016324833,
 						"m_query_time_avg": 0.0000034479615,
 						"m_query_time_sum": 0.97949,
@@ -6323,7 +5760,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06075,
 						"m_query_load": 0.00191025,
 						"m_query_time_avg": 0.0000043677,
 						"m_query_time_sum": 1.14615,
@@ -6335,7 +5771,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07245,
 						"m_query_load": 0.0018717833,
 						"m_query_time_avg": 0.0000033168828,
 						"m_query_time_sum": 1.12307,
@@ -6347,7 +5782,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05422,
 						"m_query_load": 0.0014371,
 						"m_query_time_avg": 0.0000032570315,
 						"m_query_time_sum": 0.86226,
@@ -6359,7 +5793,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06764,
 						"m_query_load": 0.0017655666,
 						"m_query_time_avg": 0.0000031473085,
 						"m_query_time_sum": 1.05934,
@@ -6371,7 +5804,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06209,
 						"m_query_load": 0.0015679167,
 						"m_query_time_avg": 0.000002935697,
 						"m_query_time_sum": 0.94075,
@@ -6383,7 +5815,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06915,
 						"m_query_load": 0.0018499667,
 						"m_query_time_avg": 0.0000033537788,
 						"m_query_time_sum": 1.10998,
@@ -6395,7 +5826,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06275,
 						"m_query_load": 0.00166075,
 						"m_query_time_avg": 0.0000032080836,
 						"m_query_time_sum": 0.99645,
@@ -6407,7 +5837,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06464,
 						"m_query_load": 0.00164275,
 						"m_query_time_avg": 0.0000029393696,
 						"m_query_time_sum": 0.98565,
@@ -6419,7 +5848,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06607,
 						"m_query_load": 0.0016829667,
 						"m_query_time_avg": 0.0000030489816,
 						"m_query_time_sum": 1.00978,
@@ -6431,7 +5859,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06151,
 						"m_query_load": 0.00158275,
 						"m_query_time_avg": 0.0000031220618,
 						"m_query_time_sum": 0.94965,
@@ -6443,7 +5870,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07007,
 						"m_query_load": 0.0018092167,
 						"m_query_time_avg": 0.0000029102448,
 						"m_query_time_sum": 1.08553,
@@ -6455,7 +5881,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06166,
 						"m_query_load": 0.0015792666,
 						"m_query_time_avg": 0.0000029485568,
 						"m_query_time_sum": 0.94756,
@@ -6467,7 +5892,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06116,
 						"m_query_load": 0.0016009334,
 						"m_query_time_avg": 0.000003569528,
 						"m_query_time_sum": 0.96056,
@@ -6479,7 +5903,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06549,
 						"m_query_load": 0.00172575,
 						"m_query_time_avg": 0.00000291256,
 						"m_query_time_sum": 1.03545,
@@ -6491,7 +5914,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06306,
 						"m_query_load": 0.0016583666,
 						"m_query_time_avg": 0.0000032739968,
 						"m_query_time_sum": 0.99502,
@@ -6503,7 +5925,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07089,
 						"m_query_load": 0.0018600667,
 						"m_query_time_avg": 0.0000035548562,
 						"m_query_time_sum": 1.11604,
@@ -6515,7 +5936,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06597,
 						"m_query_load": 0.00169975,
 						"m_query_time_avg": 0.0000033011372,
 						"m_query_time_sum": 1.01985,
@@ -6527,7 +5947,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07356,
 						"m_query_load": 0.0019393667,
 						"m_query_time_avg": 0.0000033955866,
 						"m_query_time_sum": 1.16362,
@@ -6539,7 +5958,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06191,
 						"m_query_load": 0.0015925167,
 						"m_query_time_avg": 0.0000032377877,
 						"m_query_time_sum": 0.95551,
@@ -6551,7 +5969,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07871,
 						"m_query_load": 0.0020422,
 						"m_query_time_avg": 0.0000032100556,
 						"m_query_time_sum": 1.22532,
@@ -6563,7 +5980,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06842,
 						"m_query_load": 0.0017752667,
 						"m_query_time_avg": 0.0000033569916,
 						"m_query_time_sum": 1.06516,
@@ -6575,7 +5991,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0658,
 						"m_query_load": 0.00171325,
 						"m_query_time_avg": 0.00000304903,
 						"m_query_time_sum": 1.02795,
@@ -6587,7 +6002,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05186,
 						"m_query_load": 0.0013826333,
 						"m_query_time_avg": 0.0000034363945,
 						"m_query_time_sum": 0.82958,
@@ -6599,7 +6013,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06509,
 						"m_query_load": 0.00169945,
 						"m_query_time_avg": 0.000002887046,
 						"m_query_time_sum": 1.01967,
@@ -6611,7 +6024,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.062260002,
 						"m_query_load": 0.00163285,
 						"m_query_time_avg": 0.000003587433,
 						"m_query_time_sum": 0.97971,
@@ -6623,7 +6035,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06626,
 						"m_query_load": 0.0017115,
 						"m_query_time_avg": 0.0000031285226,
 						"m_query_time_sum": 1.0269,
@@ -6635,7 +6046,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07491,
 						"m_query_load": 0.001954,
 						"m_query_time_avg": 0.0000032844844,
 						"m_query_time_sum": 1.1724,
@@ -6647,7 +6057,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06931,
 						"m_query_load": 0.0017993334,
 						"m_query_time_avg": 0.0000032226576,
 						"m_query_time_sum": 1.0796,
@@ -6659,7 +6068,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06166,
 						"m_query_load": 0.0016476334,
 						"m_query_time_avg": 0.0000033876595,
 						"m_query_time_sum": 0.98858,
@@ -6671,7 +6079,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05912,
 						"m_query_load": 0.0015457167,
 						"m_query_time_avg": 0.0000028021657,
 						"m_query_time_sum": 0.92743,
@@ -6683,7 +6090,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0605,
 						"m_query_load": 0.0016189,
 						"m_query_time_avg": 0.0000034708937,
 						"m_query_time_sum": 0.97134,
@@ -6695,7 +6101,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.06962,
 						"m_query_load": 0.0018279334,
 						"m_query_time_avg": 0.0000039761885,
 						"m_query_time_sum": 1.09676,
@@ -6707,7 +6112,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05961,
 						"m_query_load": 0.0015879,
 						"m_query_time_avg": 0.000003437199,
 						"m_query_time_sum": 0.95274,
@@ -6719,7 +6123,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.07337,
 						"m_query_load": 0.0018882666,
 						"m_query_time_avg": 0.0000032619876,
 						"m_query_time_sum": 1.13296,
@@ -6731,7 +6134,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0572,
 						"m_query_load": 0.00151085,
 						"m_query_time_avg": 0.0000031037634,
 						"m_query_time_sum": 0.90651,
@@ -6743,7 +6145,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.05705,
 						"m_query_load": 0.00148295,
 						"m_query_time_avg": 0.0000029808339,
 						"m_query_time_sum": 0.88977003,
@@ -6755,7 +6156,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.08401,
 						"m_query_load": 0.0021760834,
 						"m_query_time_avg": 0.0000032713547,
 						"m_query_time_sum": 1.30565,
@@ -6767,7 +6167,6 @@
 				},
 				{
 					"values": {
-						"m_lock_time_sum": 0.0552,
 						"m_query_load": 0.0014676,
 						"m_query_time_avg": 0.000003502096,
 						"m_query_time_sum": 0.88056,
@@ -6777,7 +6176,11 @@
 						"timestamp": 1546301400
 					}
 				}
-			]
+			],
+			"fingerprint": "show status like ?",
+			"num_queries": 18561504,
+			"qps": 515,
+			"load": 0.0030585926
 		}
 	]
 }

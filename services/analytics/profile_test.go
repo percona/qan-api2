@@ -22,16 +22,18 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-	"reflect"
 	"testing"
 	"time"
 
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/jmoiron/sqlx"
+	"github.com/kylelemons/godebug/pretty"
 	"github.com/percona/pmm/api/qanpb"
 
 	"github.com/percona/qan-api2/models"
 )
+
+const expectedDataFile = "../../test_data/profile.json"
 
 func TestService_GetReport(t *testing.T) {
 	dsn, ok := os.LookupEnv("QANAPI_DSN_TEST")
@@ -48,7 +50,7 @@ func TestService_GetReport(t *testing.T) {
 	t1, _ := time.Parse(time.RFC3339, "2019-01-01T00:00:00Z")
 	t2, _ := time.Parse(time.RFC3339, "2019-01-01T10:00:00Z")
 	var want qanpb.ReportReply
-	expectedData, err := ioutil.ReadFile("../../test_data/profile.json")
+	expectedData, err := ioutil.ReadFile(expectedDataFile)
 	if err != nil {
 		log.Fatal("read file with expected filtering data: ", err)
 	}
@@ -119,8 +121,9 @@ func TestService_GetReport(t *testing.T) {
 				t.Errorf("Service.GetReport() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Service.GetReport() = %v, want %v", got, tt.want)
+
+			if diff := pretty.Compare(got, *tt.want); diff != "" {
+				t.Errorf("%s: Service.GetReport() = diff: (-got +want)\n%s", tt.name, diff)
 			}
 		})
 	}

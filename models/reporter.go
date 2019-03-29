@@ -52,7 +52,7 @@ const queryReportTmpl = `
 	SELECT
 	{{ index . "group" }} AS dimension,
 
-	{{ if eq (index . "group") "queryid" }} any(fingerprint) AS fingerprint, {{ end }}
+	{{ if eq (index . "group") "queryid" }} any(fingerprint) {{ else }} '' {{ end }} AS fingerprint,
 	SUM(num_queries) AS num_queries,
 
 	SUM(m_query_time_cnt) AS m_query_time_cnt,
@@ -61,12 +61,16 @@ const queryReportTmpl = `
 	MAX(m_query_time_max) AS m_query_time_max,
 	AVG(m_query_time_p99) AS m_query_time_p99,
 
-	{{range $j, $col := index . "columns"}}
+	{{range $j, $col := index . "common_columns"}}
 		SUM(m_{{ $col }}_cnt) AS m_{{ $col }}_cnt,
 		SUM(m_{{ $col }}_sum) AS m_{{ $col }}_sum,
 		MIN(m_{{ $col }}_min) AS m_{{ $col }}_min,
 		MAX(m_{{ $col }}_max) AS m_{{ $col }}_max,
 		AVG(m_{{ $col }}_p99) AS m_{{ $col }}_p99,
+	{{ end }}
+	{{range $j, $col := index . "bool_columns"}}
+		SUM(m_{{ $col }}_cnt) AS m_{{ $col }}_cnt,
+		SUM(m_{{ $col }}_sum) AS m_{{ $col }}_sum,
 	{{ end }}
 
 	rowNumberInAllBlocks() AS total_rows
@@ -98,7 +102,7 @@ const queryReportTmpl = `
 func (r *Reporter) Select(ctx context.Context, periodStartFrom, periodStartTo time.Time,
 	dQueryids, dServers, dDatabases, dSchemas, dUsernames, dClientHosts []string,
 	dbLabels map[string][]string, group, order string, offset, limit uint32,
-	columns []string) ([]M, error) {
+	commonColumns, boolColumns []string) ([]M, error) {
 
 	if group == "" {
 		group = "queryid"
@@ -125,7 +129,8 @@ func (r *Reporter) Select(ctx context.Context, periodStartFrom, periodStartTo ti
 		"order":             order,
 		"offset":            offset,
 		"limit":             limit,
-		"columns":           columns,
+		"common_columns":    commonColumns,
+		"bool_columns":      boolColumns,
 	}
 
 	var queryBuffer bytes.Buffer

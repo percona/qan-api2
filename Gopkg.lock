@@ -123,6 +123,17 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:c5a4770f74cb34f5edc854c4b06a030d567a4e3d5bf502973852dbbbcb749eb8"
+  name = "github.com/kylelemons/godebug"
+  packages = [
+    "diff",
+    "pretty",
+  ]
+  pruneopts = "NUT"
+  revision = "d65d576e9348f5982d7f6d83682b694e731a45c6"
+
+[[projects]]
+  branch = "master"
   digest = "1:a643872ee8f7077f6d8393590da1d364e3647bdc9bb3f6ac8427c30812c9f6cc"
   name = "github.com/mwitkow/go-proto-validators"
   packages = ["."]
@@ -144,14 +155,14 @@
 
 [[projects]]
   branch = "PMM-3575-filters"
-  digest = "1:e6506fff8fa70b8cb743e5f65f62826091d19baa7af507660bbe04bfd7e87258"
+  digest = "1:1603c967da9a95131cf2d7a73a7d018aacb36698a4d0db30df730be8abd76f38"
   name = "github.com/percona/pmm"
   packages = [
     "api/qanpb",
     "version",
   ]
   pruneopts = "NUT"
-  revision = "b44fa93f9e0f200c3d8470acf58e683d74a5f415"
+  revision = "0ec7ff654b2e32a3cfcabc66a24a3be03a66b619"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
@@ -312,6 +323,7 @@
     "github.com/kshvakov/clickhouse",
     "github.com/kshvakov/clickhouse/lib/column",
     "github.com/kshvakov/clickhouse/lib/types",
+    "github.com/kylelemons/godebug/pretty",
     "github.com/percona/go-mysql/event",
     "github.com/percona/go-mysql/log",
     "github.com/percona/go-mysql/log/slow",
