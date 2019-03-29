@@ -40,13 +40,13 @@ test-env-up:
 	cat migrations/sql/*.up.sql | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --multiline --multiquery
 	cat fixture/metrics.csv | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --query="INSERT INTO metrics FORMAT CSV"
 
-test:                          ## Run tests.
+test:                           ## Run tests.
 	go test -v ./...
 
-test-race:                     ## Run tests with race detector.
+test-race:                      ## Run tests with race detector.
 	go test -v -race ./...
 
-test-cover:                    ## Run tests and collect coverage information.
+test-cover:                     ## Run tests and collect coverage information.
 	go test -v -coverprofile=cover.out -covermode=count ./...
 
 check-license:                  ## Check that all files have the same license header.

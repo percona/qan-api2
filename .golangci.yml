@@ -21,26 +21,21 @@ linters-settings:
     algo: rta
     check-exported: true
 
+
 linters:
   enable-all: true
+  disable:
+    - varcheck
 
 # options for analysis running
 run:
+  tests: false
+
   skip-dirs:
     - migrations
 
 issues:
   exclude-use-default: false
-
-  exclude-rules:
-    - path: ./
-      text: 'U1000: .* is unused'
-    - path: ./
-      text: '.* is a global variable'
-    - path: _test\.go
-      text: '.* lines are duplicate of .*'
-    - path: _test\.go
-      text: 'Using the variable on range scope .* in function literal'
 
   exclude:
     # gas: Duplicated errcheck checks

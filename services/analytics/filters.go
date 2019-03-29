@@ -24,7 +24,7 @@ import (
 	"github.com/percona/pmm/api/qanpb"
 )
 
-// GetFilters implements rpc to get list of available labels.
+// Get implements rpc to get list of available labels.
 func (s *Service) Get(ctx context.Context, in *qanpb.FiltersRequest) (*qanpb.FiltersReply, error) {
 
 	if in.PeriodStartFrom == nil || in.PeriodStartTo == nil {

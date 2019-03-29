@@ -19,6 +19,7 @@ package analitycs
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -51,6 +52,8 @@ func TestService_GetReport(t *testing.T) {
 	t2, _ := time.Parse(time.RFC3339, "2019-01-01T10:00:00Z")
 	var want qanpb.ReportReply
 	expectedData, err := ioutil.ReadFile(expectedDataFile)
+
+	fmt.Println("expectedData", string(expectedData))
 	if err != nil {
 		log.Fatal("read file with expected filtering data: ", err)
 	}
@@ -121,6 +124,8 @@ func TestService_GetReport(t *testing.T) {
 				t.Errorf("Service.GetReport() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
+			gotJSON, _ := json.MarshalIndent(got, "", "\t")
+			fmt.Println("expectedData", string(gotJSON))
 
 			if diff := pretty.Compare(got, *tt.want); diff != "" {
 				t.Errorf("%s: Service.GetReport() = diff: (-got +want)\n%s", tt.name, diff)
