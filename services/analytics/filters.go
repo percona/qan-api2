@@ -25,7 +25,7 @@ import (
 )
 
 // GetFilters implements rpc to get list of available labels.
-func (s *Service) GetFilters(ctx context.Context, in *qanpb.FiltersRequest) (*qanpb.FiltersReply, error) {
+func (s *Service) Get(ctx context.Context, in *qanpb.FiltersRequest) (*qanpb.FiltersReply, error) {
 
 	if in.PeriodStartFrom == nil || in.PeriodStartTo == nil {
 		err := fmt.Errorf("from-date: %s or to-date: %s cannot be empty", in.PeriodStartFrom, in.PeriodStartTo)

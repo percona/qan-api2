@@ -33,7 +33,7 @@ curl -s -X POST -d '{"period_start_from": "2019-01-01T00:00:00Z", "period_start_
  ```
 
  ```
- curl -X POST -d '{"period_start_from": "2019-01-01T00:00:00Z", "period_start_to": "2019-01-01T10:00:00Z"}'  http://127.0.0.1:9922/v1/qan/GetFilters
+ curl -X POST -d '{"period_start_from": "2019-01-01T00:00:00Z", "period_start_to": "2019-01-01T10:00:00Z"}'  http://127.0.0.1:9922/v1/qan/Filters/Get
  ```
 
 # Get list of availible metrics.

@@ -341,11 +341,11 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodSta
 		Value string
 		Count int64
 	}
-	var servers []*qanpb.NameAndCount
-	var databases []*qanpb.NameAndCount
-	var schemas []*qanpb.NameAndCount
-	var users []*qanpb.NameAndCount
-	var hosts []*qanpb.NameAndCount
+	var servers []*qanpb.ValueAndCount
+	var databases []*qanpb.ValueAndCount
+	var schemas []*qanpb.ValueAndCount
+	var users []*qanpb.ValueAndCount
+	var hosts []*qanpb.ValueAndCount
 	var labels []*CustomLabels
 
 	err := r.db.SelectContext(ctx, &servers, queryServers, periodStartFrom, periodStartTo)
@@ -373,23 +373,23 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodSta
 		return nil, fmt.Errorf("cannot select labels dimension:%v", err)
 	}
 
-	result.Labels["d_server"] = &qanpb.ListLabels{Values: servers}
-	result.Labels["d_database"] = &qanpb.ListLabels{Values: databases}
-	result.Labels["d_schema"] = &qanpb.ListLabels{Values: schemas}
-	result.Labels["d_username"] = &qanpb.ListLabels{Values: users}
-	result.Labels["d_client_host"] = &qanpb.ListLabels{Values: hosts}
+	result.Labels["d_server"] = &qanpb.ListLabels{Name: servers}
+	result.Labels["d_database"] = &qanpb.ListLabels{Name: databases}
+	result.Labels["d_schema"] = &qanpb.ListLabels{Name: schemas}
+	result.Labels["d_username"] = &qanpb.ListLabels{Name: users}
+	result.Labels["d_client_host"] = &qanpb.ListLabels{Name: hosts}
 
 	for _, row := range labels {
 		if _, ok := result.Labels[row.Key]; !ok {
 			result.Labels[row.Key] = &qanpb.ListLabels{
-				Values: []*qanpb.NameAndCount{},
+				Name: []*qanpb.ValueAndCount{},
 			}
 		}
-		val := qanpb.NameAndCount{
+		val := qanpb.ValueAndCount{
 			Value: row.Value,
 			Count: row.Count,
 		}
-		result.Labels[row.Key].Values = append(result.Labels[row.Key].Values, &val)
+		result.Labels[row.Key].Name = append(result.Labels[row.Key].Name, &val)
 	}
 
 	return &result, nil

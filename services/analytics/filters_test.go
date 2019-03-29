@@ -117,7 +117,7 @@ func TestService_GetFilters(t *testing.T) {
 				rm: tt.fields.rm,
 				mm: tt.fields.mm,
 			}
-			got, err := s.GetFilters(tt.args.ctx, tt.args.in)
+			got, err := s.Get(tt.args.ctx, tt.args.in)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Service.GetFilters() error = %v, wantErr %v", err, tt.wantErr)
 				return
