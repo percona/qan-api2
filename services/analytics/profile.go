@@ -116,16 +116,18 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			col = col[1:]
 			direction = "DESC"
 		}
-		col = fmt.Sprintf("m_%s_sum", col)
-		if _, ok := boolColumnNames[col]; !ok {
+
+		if _, ok := boolColumnNames[col]; ok {
 			switch col {
 			case "load", "latency":
 				col = "m_query_time_sum"
 			case "count":
 				col = "num_queries"
+			default:
+				col = fmt.Sprintf("m_%s_sum", col)
 			}
+			order = fmt.Sprintf("%s %s", col, direction)
 		}
-		order = fmt.Sprintf("%s %s", col, direction)
 	}
 
 	resp := &qanpb.ReportReply{}
