@@ -34,7 +34,6 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 	clientHosts := []string{}
 	dbLabels := map[string][]string{}
 	for _, label := range labels {
-		fmt.Printf("label: %v, : %v \n", label.Key, label.Value)
 		switch label.Key {
 		case "db_server":
 			dbServers = label.Value
@@ -72,49 +71,6 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 
 	if len(metrics) > 2 {
 		return resp, fmt.Errorf("not found for filter: %s and group: %s in given time range", in.FilterBy, in.GroupBy)
-	}
-
-	boolColumnNames := map[string]struct{}{
-		"qc_hit":                 {},
-		"full_scan":              {},
-		"full_join":              {},
-		"tmp_table":              {},
-		"tmp_table_on_disk":      {},
-		"filesort":               {},
-		"filesort_on_disk":       {},
-		"select_full_range_join": {},
-		"select_range":           {},
-		"select_range_check":     {},
-		"sort_range":             {},
-		"sort_rows":              {},
-		"sort_scan":              {},
-		"no_index_used":          {},
-		"no_good_index_used":     {},
-	}
-
-	// "num_queries":           {},
-	commonColumnNames := map[string]struct{}{
-		"query_time":            {},
-		"lock_time":             {},
-		"rows_sent":             {},
-		"rows_examined":         {},
-		"rows_affected":         {},
-		"rows_read":             {},
-		"merge_passes":          {},
-		"innodb_io_r_ops":       {},
-		"innodb_io_r_bytes":     {},
-		"innodb_io_r_wait":      {},
-		"innodb_rec_lock_wait":  {},
-		"innodb_queue_wait":     {},
-		"innodb_pages_distinct": {},
-		"query_length":          {},
-		"bytes_sent":            {},
-		"tmp_tables":            {},
-		"tmp_disk_tables":       {},
-		"tmp_table_sizes":       {},
-		"docs_returned":         {},
-		"response_length":       {},
-		"docs_scanned":          {},
 	}
 
 	durationSec := to.Sub(from).Seconds()

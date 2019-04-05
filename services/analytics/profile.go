@@ -22,22 +22,9 @@ import (
 	"time"
 
 	"github.com/percona/pmm/api/qanpb"
-
-	"github.com/percona/qan-api2/models"
 )
 
-// Service implements gRPC service to communicate with QAN-APP.
-type Service struct {
-	rm models.Reporter
-	mm models.Metrics
-}
-
 const defaultOrder = "m_query_time_sum"
-
-// NewService create new insstance of Service.
-func NewService(rm models.Reporter, mm models.Metrics) *Service {
-	return &Service{rm, mm}
-}
 
 // GetReport implements rpc to get report for given filtering.
 func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanpb.ReportReply, error) {
@@ -80,49 +67,6 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		default:
 			dbLabels[label.Key] = label.Value
 		}
-	}
-
-	boolColumnNames := map[string]struct{}{
-		"qc_hit":                 {},
-		"full_scan":              {},
-		"full_join":              {},
-		"tmp_table":              {},
-		"tmp_table_on_disk":      {},
-		"filesort":               {},
-		"filesort_on_disk":       {},
-		"select_full_range_join": {},
-		"select_range":           {},
-		"select_range_check":     {},
-		"sort_range":             {},
-		"sort_rows":              {},
-		"sort_scan":              {},
-		"no_index_used":          {},
-		"no_good_index_used":     {},
-	}
-
-	// "num_queries":           {},
-	commonColumnNames := map[string]struct{}{
-		"query_time":            {},
-		"lock_time":             {},
-		"rows_sent":             {},
-		"rows_examined":         {},
-		"rows_affected":         {},
-		"rows_read":             {},
-		"merge_passes":          {},
-		"innodb_io_r_ops":       {},
-		"innodb_io_r_bytes":     {},
-		"innodb_io_r_wait":      {},
-		"innodb_rec_lock_wait":  {},
-		"innodb_queue_wait":     {},
-		"innodb_pages_distinct": {},
-		"query_length":          {},
-		"bytes_sent":            {},
-		"tmp_tables":            {},
-		"tmp_disk_tables":       {},
-		"tmp_table_sizes":       {},
-		"docs_returned":         {},
-		"response_length":       {},
-		"docs_scanned":          {},
 	}
 
 	boolColumns := []string{}
@@ -252,17 +196,4 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		resp.Rows = append(resp.Rows, row)
 	}
 	return resp, nil
-}
-
-func interfaceToFloat32(unk interface{}) float32 {
-	switch i := unk.(type) {
-	case float64:
-		return float32(i)
-	case float32:
-		return i
-	case int64:
-		return float32(i)
-	default:
-		return float32(0)
-	}
 }
