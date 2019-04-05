@@ -31,7 +31,7 @@ func NewService(rm models.Reporter, mm models.Metrics) *Service {
 	return &Service{rm, mm}
 }
 
-const boolColumnNames = map[string]struct{}{
+var boolColumnNames = map[string]struct{}{
 	"qc_hit":                 {},
 	"full_scan":              {},
 	"full_join":              {},
@@ -50,7 +50,7 @@ const boolColumnNames = map[string]struct{}{
 }
 
 // "num_queries":           {},
-const commonColumnNames = map[string]struct{}{
+var commonColumnNames = map[string]struct{}{
 	"query_time":            {},
 	"lock_time":             {},
 	"rows_sent":             {},
