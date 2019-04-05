@@ -32,6 +32,8 @@ type Service struct {
 	mm models.Metrics
 }
 
+const defaultOrder = "m_query_time_sum"
+
 // NewService create new insstance of Service.
 func NewService(rm models.Reporter, mm models.Metrics) *Service {
 	return &Service{rm, mm}
@@ -98,6 +100,31 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		"no_good_index_used":     {},
 	}
 
+	// "num_queries":           {},
+	commonColumnNames := map[string]struct{}{
+		"query_time":            {},
+		"lock_time":             {},
+		"rows_sent":             {},
+		"rows_examined":         {},
+		"rows_affected":         {},
+		"rows_read":             {},
+		"merge_passes":          {},
+		"innodb_io_r_ops":       {},
+		"innodb_io_r_bytes":     {},
+		"innodb_io_r_wait":      {},
+		"innodb_rec_lock_wait":  {},
+		"innodb_queue_wait":     {},
+		"innodb_pages_distinct": {},
+		"query_length":          {},
+		"bytes_sent":            {},
+		"tmp_tables":            {},
+		"tmp_disk_tables":       {},
+		"tmp_table_sizes":       {},
+		"docs_returned":         {},
+		"response_length":       {},
+		"docs_scanned":          {},
+	}
+
 	boolColumns := []string{}
 	commonColumns := []string{}
 	for _, col := range columns {
@@ -105,10 +132,13 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			boolColumns = append(boolColumns, col)
 			continue
 		}
-		commonColumns = append(commonColumns, col)
+		if _, ok := commonColumnNames[col]; ok {
+			commonColumns = append(commonColumns, col)
+			continue
+		}
 	}
 
-	order := "m_query_time_sum"
+	order := defaultOrder
 	if in.OrderBy != "" {
 		col := in.OrderBy
 		direction := "ASC"
@@ -117,17 +147,20 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			direction = "DESC"
 		}
 
-		if _, ok := boolColumnNames[col]; ok {
-			switch col {
-			case "load", "latency":
-				col = "m_query_time_sum"
-			case "count":
-				col = "num_queries"
-			default:
-				col = fmt.Sprintf("m_%s_sum", col)
-			}
-			order = fmt.Sprintf("%s %s", col, direction)
+		_, isBoolCol := boolColumnNames[col]
+		_, isCommonCol := commonColumnNames[col]
+
+		switch true {
+		case isBoolCol || isCommonCol:
+			col = fmt.Sprintf("m_%s_sum", col)
+		case col == "load" || col == "latency":
+			col = defaultOrder
+		case col == "count":
+			col = "num_queries"
+		default:
+			col = defaultOrder
 		}
+		order = fmt.Sprintf("%s %s", col, direction)
 	}
 
 	resp := &qanpb.ReportReply{}
