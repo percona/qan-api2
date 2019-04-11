@@ -48,7 +48,6 @@ func setup() *sqlx.DB {
 }
 
 func expectedData(t *testing.T, got, want interface{}, filename string) {
-
 	if os.Getenv("REFRESH_TEST_DATA") != "" {
 		json, err := json.MarshalIndent(got, "", "\t")
 		if err != nil {
