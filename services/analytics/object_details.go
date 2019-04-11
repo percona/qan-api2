@@ -126,6 +126,7 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 	return resp, err
 }
 
+// GetQueryExample gets query examples in given time range for queryid.
 func (s *Service) GetQueryExample(ctx context.Context, in *qanpb.QueryExampleRequest) (*qanpb.QueryExampleReply, error) {
 	if in.PeriodStartFrom == nil {
 		return nil, fmt.Errorf("period_start_from is required:%v", in.PeriodStartFrom)
