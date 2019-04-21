@@ -139,15 +139,15 @@
   revision = "b9f78430ec7937d23152e7e8717193e36188e8a9"
 
 [[projects]]
-  branch = "PMM-2.0"
-  digest = "1:4df6202cacfe1c1efdeaec7a6c9b3252bc6212a1d5dcd18a570b3543c494480f"
+  branch = "PMM-3874-std-labels"
+  digest = "1:aaf10df8983d5e582fc5f5be4ce1ae75f6e44c0821c8b450d7add8de564ed42e"
   name = "github.com/percona/pmm"
   packages = [
     "api/qanpb",
     "version",
   ]
   pruneopts = "NUT"
-  revision = "cfd74991cc7c03fb73e351154f734660b47f532d"
+  revision = "98c10ac0acd79061fa342f2e669350d5c945cf48"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
