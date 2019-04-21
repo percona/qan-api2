@@ -139,7 +139,7 @@
   revision = "b9f78430ec7937d23152e7e8717193e36188e8a9"
 
 [[projects]]
-  branch = "PMM-3874-std-labels"
+  branch = "PMM-2.0"
   digest = "1:f3b11b0dd64a02673fe634f7ad0b6f0dac405f7398f1a9d56d07d13c3c563f2b"
   name = "github.com/percona/pmm"
   packages = [
@@ -147,7 +147,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "e7175a95e4f1288895afcfe171ee0d6add533617"
+  revision = "8687bb32ce0e42fb3040922e1c71b927da32a82b"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
