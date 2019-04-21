@@ -201,7 +201,7 @@ const insertSQL = `
    )
   VALUES (
     :queryid,
-    :d_server,
+    :service_name,
     :d_database,
     :d_schema,
     :d_username,
@@ -216,7 +216,7 @@ const insertSQL = `
     :container_name,
     :labels_key,
     :labels_value,
-    :agent_uuid,
+    :agent_id,
     CAST( :metrics_source_s AS Enum8('METRICS_SOURCE_INVALID' = 0, 'MYSQL_SLOWLOG' = 1, 'MYSQL_PERFSCHEMA' = 2)) AS metrics_source,
     :period_start_ts,
     :period_length_secs,
