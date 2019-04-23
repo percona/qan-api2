@@ -326,6 +326,13 @@ ARRAY JOIN labels
   ORDER BY labels.key, labels.value;
 `
 
+// CustomLabels describes custom labels query result row.
+type CustomLabels struct {
+	Key   string
+	Value string
+	Count int64
+}
+
 // SelectFilters selects dimension and their values, and also keys and values of labels.
 func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodStartTo time.Time) (*qanpb.FiltersReply, error) {
 
@@ -333,17 +340,12 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodSta
 		Labels: make(map[string]*qanpb.ListLabels),
 	}
 
-	type CustomLabels struct {
-		Key   string
-		Value string
-		Count int64
-	}
 	var servers []*qanpb.ValueAndCount
 	var databases []*qanpb.ValueAndCount
 	var schemas []*qanpb.ValueAndCount
 	var users []*qanpb.ValueAndCount
 	var hosts []*qanpb.ValueAndCount
-	var labels []*CustomLabels
+	labels := []*CustomLabels{}
 
 	err := r.db.SelectContext(ctx, &servers, queryServers, periodStartFrom, periodStartTo)
 	if err != nil {
@@ -365,9 +367,21 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodSta
 	if err != nil {
 		return nil, fmt.Errorf("cannot select client hosts dimension:%v", err)
 	}
-	err = r.db.SelectContext(ctx, &labels, queryLabels, periodStartFrom, periodStartTo)
+
+	rows, err := r.db.Query(queryLabels, periodStartFrom, periodStartTo)
 	if err != nil {
 		return nil, fmt.Errorf("cannot select labels dimension:%v", err)
+	}
+
+	for rows.Next() {
+		var key string
+		var value string
+		var count int64
+		err = rows.Scan(&key, &value, &count)
+		if err != nil {
+			return nil, fmt.Errorf("cannot scan labels dimension:%v", err)
+		}
+		labels = append(labels, &CustomLabels{key, value, count})
 	}
 
 	result.Labels["d_server"] = &qanpb.ListLabels{Name: servers}
