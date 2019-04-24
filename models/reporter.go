@@ -26,6 +26,7 @@ import (
 	"time"
 
 	"github.com/jmoiron/sqlx"
+	"github.com/pkg/errors"
 
 	"github.com/percona/pmm/api/qanpb"
 )
@@ -332,10 +333,10 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodSta
 		Labels: make(map[string]*qanpb.ListLabels),
 	}
 
-	type customLabels struct {
-		Key   string
-		Value string
-		Count int64
+	type customLabel struct {
+		key   string
+		value string
+		count int64
 	}
 
 	var servers []*qanpb.ValueAndCount
@@ -343,7 +344,7 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodSta
 	var schemas []*qanpb.ValueAndCount
 	var users []*qanpb.ValueAndCount
 	var hosts []*qanpb.ValueAndCount
-	var labels []*customLabels
+	var labels []*customLabel
 
 	err := r.db.SelectContext(ctx, &servers, queryServers, periodStartFrom, periodStartTo)
 	if err != nil {
@@ -368,23 +369,20 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodSta
 
 	rows, err := r.db.Query(queryLabels, periodStartFrom, periodStartTo)
 	if err != nil {
-		return nil, fmt.Errorf("cannot select labels dimension:%v", err)
+		return nil, errors.Wrap(err, "failed to select labels dimensions")
 	}
+	defer rows.Close() //nolint:errcheck
 
-	defer rows.Close()
 	for rows.Next() {
-		var key string
-		var value string
-		var count int64
-		err = rows.Scan(&key, &value, &count)
+		var label customLabel
+		err = rows.Scan(&label.key, &label.value, &label.count)
 		if err != nil {
-			return nil, fmt.Errorf("cannot scan labels dimension: %s", err.Error())
+			return nil, errors.Wrap(err, "failed to scan labels dimension")
 		}
-		labels = append(labels, &customLabels{key, value, count})
+		labels = append(labels, &label)
 	}
-
-	if err := rows.Err(); err != nil {
-		return nil, fmt.Errorf("cannot scan labels dimension: %s", err.Error())
+	if err = rows.Err(); err != nil {
+		return nil, errors.Wrap(err, "failed to select labels dimensions")
 	}
 
 	result.Labels["d_server"] = &qanpb.ListLabels{Name: servers}
@@ -393,17 +391,17 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFrom, periodSta
 	result.Labels["d_username"] = &qanpb.ListLabels{Name: users}
 	result.Labels["d_client_host"] = &qanpb.ListLabels{Name: hosts}
 
-	for _, row := range labels {
-		if _, ok := result.Labels[row.Key]; !ok {
-			result.Labels[row.Key] = &qanpb.ListLabels{
+	for _, label := range labels {
+		if _, ok := result.Labels[label.key]; !ok {
+			result.Labels[label.key] = &qanpb.ListLabels{
 				Name: []*qanpb.ValueAndCount{},
 			}
 		}
 		val := qanpb.ValueAndCount{
-			Value: row.Value,
-			Count: row.Count,
+			Value: label.value,
+			Count: label.count,
 		}
-		result.Labels[row.Key].Name = append(result.Labels[row.Key].Name, &val)
+		result.Labels[label.key].Name = append(result.Labels[label.key].Name, &val)
 	}
 
 	return &result, nil
