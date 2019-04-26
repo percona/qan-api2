@@ -145,11 +145,9 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	resp.TotalRows = uint32(total["total_rows"].(uint64))
 	resp.Offset = in.Offset
 	resp.Limit = in.Limit
-
 	intervalTime := in.PeriodStartTo.Seconds - in.PeriodStartFrom.Seconds
 
 	for i, res := range results {
-
 		numQueries := interfaceToFloat32(res["num_queries"])
 		row := &qanpb.Row{
 			Rank:        uint32(i) + in.Offset,
