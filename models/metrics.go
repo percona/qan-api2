@@ -21,6 +21,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"sort"
 	"strings"
 	"text/template"
 	"time"
@@ -304,5 +305,85 @@ func (m *Metrics) SelectQueryExamples(ctx context.Context, from, to time.Time, f
 	if err != nil {
 		return &res, fmt.Errorf("cannot select query examples:%v", err)
 	}
+	return &res, nil
+}
+
+const queryObjectDetailsLabelsTmpl = `
+	SELECT d_server, d_database, d_schema, d_username, d_client_host, labels.key AS lkey, labels.value AS lvalue
+	  FROM metrics
+	 ARRAY JOIN labels
+	 WHERE period_start >= :from AND period_start <= :to
+	 {{ if index . "filter" }} AND {{ index . "group" }} = :filter {{ end }}
+	 ORDER BY d_server, d_database, d_schema, d_username, d_client_host, labels.key, labels.value
+`
+
+// SelectObjectDetailsLabels selects object details labels for given time range and object.
+func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, from, to time.Time, filter,
+	group string) (*qanpb.ObjectDetailsLabelsReply, error) {
+	arg := map[string]interface{}{
+		"from":   from,
+		"to":     to,
+		"filter": filter,
+		"group":  group,
+	}
+	var queryBuffer bytes.Buffer
+	if tmpl, err := template.New("queryObjectDetailsLabelsTmpl").Funcs(funcMap).Parse(queryObjectDetailsLabelsTmpl); err != nil {
+		log.Fatalln(err)
+	} else if err = tmpl.Execute(&queryBuffer, arg); err != nil {
+		log.Fatalln(err)
+	}
+	res := qanpb.ObjectDetailsLabelsReply{}
+	nstmt, err := m.db.PrepareNamed(queryBuffer.String())
+	if err != nil {
+		return nil, fmt.Errorf("cannot prepare named statement of select object details labels: %v", err)
+	}
+	type queryRowsLabels struct {
+		DServer     string `db:"d_server"`
+		DDatabase   string `db:"d_database"`
+		DSchema     string `db:"d_schema"`
+		DClientHost string `db:"d_client_host"`
+		DUsername   string `db:"d_username"`
+		LabelKey    string `db:"lkey"`
+		LabelValue  string `db:"lvalue"`
+	}
+	rows := []queryRowsLabels{}
+
+	err = nstmt.SelectContext(ctx, &rows, arg)
+	if err != nil {
+		return &res, fmt.Errorf("cannot select object details labels:%v", err)
+	}
+	labels := map[string]map[string]struct{}{}
+	labels["d_server"] = map[string]struct{}{}
+	labels["d_database"] = map[string]struct{}{}
+	labels["d_schema"] = map[string]struct{}{}
+	labels["d_client_host"] = map[string]struct{}{}
+	labels["d_username"] = map[string]struct{}{}
+	// convert rows to array of unique label keys - values.
+	for _, row := range rows {
+		labels["d_server"][row.DServer] = struct{}{}
+		labels["d_database"][row.DDatabase] = struct{}{}
+		labels["d_schema"][row.DSchema] = struct{}{}
+		labels["d_client_host"][row.DClientHost] = struct{}{}
+		labels["d_username"][row.DUsername] = struct{}{}
+		if labels[row.LabelKey] == nil {
+			labels[row.LabelKey] = map[string]struct{}{}
+		}
+		labels[row.LabelKey][row.LabelValue] = struct{}{}
+	}
+
+	res.Labels = map[string]*qanpb.ListLabelValues{}
+	// rearrange labels into gRPC response structure.
+	for key, values := range labels {
+		if res.Labels[key] == nil {
+			res.Labels[key] = &qanpb.ListLabelValues{
+				Values: []string{},
+			}
+		}
+		for value := range values {
+			res.Labels[key].Values = append(res.Labels[key].Values, value)
+		}
+		sort.Strings(res.Labels[key].Values)
+	}
+
 	return &res, nil
 }
