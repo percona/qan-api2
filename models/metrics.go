@@ -26,10 +26,11 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/percona/pmm/api/qanpb"
-
 	"github.com/jmoiron/sqlx"
 	"github.com/jmoiron/sqlx/reflectx"
+	"github.com/pkg/errors"
+
+	"github.com/percona/pmm/api/qanpb"
 )
 
 // Metrics represents methods to work with metrics.
@@ -317,6 +318,8 @@ const queryObjectDetailsLabelsTmpl = `
 	 ORDER BY d_server, d_database, d_schema, d_username, d_client_host, labels.key, labels.value
 `
 
+var tmplObjectDetailsLabels = template.Must(template.New("queryObjectDetailsLabelsTmpl").Funcs(funcMap).Parse(queryObjectDetailsLabelsTmpl))
+
 // SelectObjectDetailsLabels selects object details labels for given time range and object.
 func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, from, to time.Time, filter,
 	group string) (*qanpb.ObjectDetailsLabelsReply, error) {
@@ -327,15 +330,13 @@ func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, from, to time.T
 		"group":  group,
 	}
 	var queryBuffer bytes.Buffer
-	if tmpl, err := template.New("queryObjectDetailsLabelsTmpl").Funcs(funcMap).Parse(queryObjectDetailsLabelsTmpl); err != nil {
-		log.Fatalln(err)
-	} else if err = tmpl.Execute(&queryBuffer, arg); err != nil {
+	if err := tmplObjectDetailsLabels.Execute(&queryBuffer, arg); err != nil {
 		log.Fatalln(err)
 	}
 	res := qanpb.ObjectDetailsLabelsReply{}
 	nstmt, err := m.db.PrepareNamed(queryBuffer.String())
 	if err != nil {
-		return nil, fmt.Errorf("cannot prepare named statement of select object details labels: %v", err)
+		return nil, errors.Wrap(err, "cannot prepare named statement of select object details labels")
 	}
 	type queryRowsLabels struct {
 		DServer     string `db:"d_server"`
@@ -350,7 +351,7 @@ func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, from, to time.T
 
 	err = nstmt.SelectContext(ctx, &rows, arg)
 	if err != nil {
-		return &res, fmt.Errorf("cannot select object details labels:%v", err)
+		return nil, errors.Wrap(err, "cannot select object details labels")
 	}
 	labels := map[string]map[string]struct{}{}
 	labels["d_server"] = map[string]struct{}{}

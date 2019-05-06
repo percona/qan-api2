@@ -24,7 +24,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes/timestamp"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+
 	"github.com/percona/pmm/api/qanpb"
 	"github.com/percona/qan-api2/models"
 )
@@ -150,15 +154,11 @@ func TestService_GetQueryExample(t *testing.T) {
 			}
 			got, err := s.GetQueryExample(tt.args.ctx, tt.args.in)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("Service.GetQueryExample() error = %v, wantErr %v", err, tt.wantErr)
-				return
+				assert.Errorf(t, err, "Service.GetQueryExample() error = %v, wantErr %v", err, tt.wantErr)
 			}
 			tt.want = nil
 			expectedData(t, got, &tt.want, "../../test_data/GetQueryExample_"+tt.name+".json")
-
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Service.GetQueryExample() = %v, want %v", got, tt.want)
-			}
+			assert.Equal(t, proto.MarshalTextString(got), proto.MarshalTextString(tt.want))
 		})
 	}
 }
@@ -283,8 +283,7 @@ func TestService_GetMetrics(t *testing.T) {
 			}
 			got, err := s.GetMetrics(tt.args.ctx, tt.args.in)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("Service.GetMetrics() error = %v, wantErr %v", err, tt.wantErr)
-				return
+				assert.Errorf(t, err, "Service.GetMetrics() error = %v, wantErr %v", err, tt.wantErr)
 			}
 			tt.want = nil
 			expectedData(t, got, &tt.want, "../../test_data/GetMetrics_"+tt.name+".json")
@@ -341,20 +340,14 @@ func TestService_GetLabels(t *testing.T) {
 			mm: tt.fields.mm,
 		}
 		got, err := s.GetLabels(tt.args.ctx, tt.args.in)
-		if err != tt.wantErr {
-			t.Errorf("Service.GetLabels() error = %v, wantErr %v", err, tt.wantErr)
-			return
-		}
+		require.Equal(t, err, tt.wantErr)
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/GetLabels"+tt.name+".json")
 
 		gotJSON, err := json.MarshalIndent(got, "", "\t")
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
-
-		if string(gotJSON) != string(expectedJSON) {
-			t.Errorf("Service.GetLabels() = \n %s \n, want \n %s \n", gotJSON, expectedJSON)
-		}
+		require.Equal(t, expectedJSON, gotJSON)
 	})
 
 	tt = testCase{
@@ -379,10 +372,7 @@ func TestService_GetLabels(t *testing.T) {
 			mm: tt.fields.mm,
 		}
 		_, err := s.GetLabels(tt.args.ctx, tt.args.in)
-		if err.Error() != tt.wantErr.Error() {
-			t.Errorf("Service.GetLabels() error = %v, wantErr %v", err, tt.wantErr)
-			return
-		}
+		require.EqualError(t, err, tt.wantErr.Error())
 	})
 
 	tt = testCase{
@@ -407,10 +397,7 @@ func TestService_GetLabels(t *testing.T) {
 			mm: tt.fields.mm,
 		}
 		_, err := s.GetLabels(tt.args.ctx, tt.args.in)
-		if err.Error() != tt.wantErr.Error() {
-			t.Errorf("Service.GetLabels() error = %v, wantErr %v", err, tt.wantErr)
-			return
-		}
+		require.EqualError(t, err, tt.wantErr.Error())
 	})
 
 	request := &qanpb.ObjectDetailsLabelsRequest{
@@ -436,10 +423,7 @@ func TestService_GetLabels(t *testing.T) {
 			mm: tt.fields.mm,
 		}
 		_, err := s.GetLabels(tt.args.ctx, tt.args.in)
-		if err.Error() != tt.wantErr.Error() {
-			t.Errorf("Service.GetLabels() error = %v, wantErr %v", err, tt.wantErr)
-			return
-		}
+		require.EqualError(t, err, tt.wantErr.Error())
 	})
 
 	request = &qanpb.ObjectDetailsLabelsRequest{
@@ -465,10 +449,7 @@ func TestService_GetLabels(t *testing.T) {
 			mm: tt.fields.mm,
 		}
 		_, err := s.GetLabels(tt.args.ctx, tt.args.in)
-		if err.Error() != tt.wantErr.Error() {
-			t.Errorf("Service.GetLabels() error = %v, wantErr %v", err, tt.wantErr)
-			return
-		}
+		require.EqualError(t, err, tt.wantErr.Error())
 	})
 
 	request = &qanpb.ObjectDetailsLabelsRequest{
@@ -494,10 +475,7 @@ func TestService_GetLabels(t *testing.T) {
 			mm: tt.fields.mm,
 		}
 		_, err := s.GetLabels(tt.args.ctx, tt.args.in)
-		if err.Error() != tt.wantErr.Error() {
-			t.Errorf("Service.GetLabels() error = %v, wantErr %v", err, tt.wantErr)
-			return
-		}
+		require.EqualError(t, err, tt.wantErr.Error())
 	})
 
 	const selectError = `cannot select object details labels`
@@ -516,7 +494,7 @@ func TestService_GetLabels(t *testing.T) {
 			request,
 		},
 		nil,
-		fmt.Errorf("error in selecting object details labels:%v", selectError),
+		fmt.Errorf("error in selecting object details labels:cannot select object details labels"),
 	}
 
 	t.Run(tt.name, func(t *testing.T) {
@@ -526,9 +504,7 @@ func TestService_GetLabels(t *testing.T) {
 		}
 		_, err := s.GetLabels(tt.args.ctx, tt.args.in)
 		// errors start with same text.
-		if err.Error()[:76] != tt.wantErr.Error()[:76] {
-			t.Errorf("Service.GetLabels() error = %v, wantErr %v", err, tt.wantErr)
-			return
-		}
+		require.Regexp(t, "^error in selecting object details labels:cannot select object details labels.*", err.Error())
+
 	})
 }
