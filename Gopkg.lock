@@ -147,7 +147,7 @@
   revision = "a7705a60b657bfd4b07854cf57ad4dbcb2920524"
 
 [[projects]]
-  branch = "PMM-3946-sparklines-obj-details"
+  branch = "PMM-2.0"
   digest = "1:2b035790aebeae3d01e1963cf69fac468b9c47419ab2f1a461c5f6260e5176b9"
   name = "github.com/percona/pmm"
   packages = [
@@ -155,7 +155,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "e5835a2f38716818b4d1c5ade3adb98150b637bb"
+  revision = "dae339800a82ab635388063026ee001e8d7d9600"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
