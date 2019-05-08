@@ -285,7 +285,7 @@ func TestService_GetMetrics(t *testing.T) {
 			t.Errorf("cannot marshal:%v", err)
 		}
 		fmt.Println("gotJSON", string(gotJSON))
-		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
+		require.JSONEq(t, string(expectedJSON), string(gotJSON))
 	})
 
 	t.Run("total", func(t *testing.T) {
@@ -307,7 +307,7 @@ func TestService_GetMetrics(t *testing.T) {
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
-		fmt.Println("gotJSON", gotJSON)
+		fmt.Println("gotJSON", string(gotJSON))
 		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
 	})
 }
