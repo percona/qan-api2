@@ -21,7 +21,6 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"math"
 	"sort"
 	"strings"
 	"text/template"
@@ -45,12 +44,12 @@ func NewMetrics(db *sqlx.DB) Metrics {
 }
 
 // Get select metrics for specific queryid, hostname, etc.
-func (m *Metrics) Get(ctx context.Context, periodStartFrom, periodStartTo time.Time, filter, group string,
+func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec int64, filter, group string,
 	dQueryids, dServers, dDatabases, dSchemas, dUsernames, dClientHosts []string,
 	dbLabels map[string][]string) ([]M, error) {
 	arg := map[string]interface{}{
-		"period_start_from": periodStartFrom.Unix(),
-		"period_start_to":   periodStartTo.Unix(),
+		"period_start_from": periodStartFromSec,
+		"period_start_to":   periodStartToSec,
 		"queryids":          dQueryids,
 		"servers":           dServers,
 		"databases":         dDatabases,
@@ -343,7 +342,7 @@ GROUP BY point
 var tmplMetricsSparklines = template.Must(template.New("queryMetricsSparklines").Funcs(funcMap).Parse(queryMetricsSparklinesTmpl))
 
 // SelectSparklines selects datapoint for sparklines.
-func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFrom, periodStartTo time.Time,
+func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, periodStartToSec int64,
 	filter, group string,
 	dQueryids, dServers, dDatabases, dSchemas, dUsernames, dClientHosts []string,
 	dbLabels map[string][]string) ([]*qanpb.Point, error) {
@@ -363,15 +362,15 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFrom, periodS
 
 	// If time range is bigger then an hour - amount of sparklines points = 60 to avoid huge data in response.
 	// Otherwise amount of sparklines points is equal to minutes in in time range to not mess up calculation.
-	amountOfPoints := 60
-	timePeriod := periodStartTo.Sub(periodStartFrom)
-	if timePeriod < 1*time.Hour {
-		amountOfPoints = int(math.Round(timePeriod.Minutes()))
+	amountOfPoints := int64(60)
+	timePeriod := periodStartToSec - periodStartFromSec
+	if timePeriod < int64((1 * time.Hour).Seconds()) {
+		amountOfPoints = timePeriod / 60 // minimum point is 1 minute
 	}
 
 	arg := map[string]interface{}{
-		"period_start_from": periodStartFrom,
-		"period_start_to":   periodStartTo,
+		"period_start_from": periodStartFromSec,
+		"period_start_to":   periodStartToSec,
 		"queryids":          dQueryids,
 		"servers":           dServers,
 		"databases":         dDatabases,
@@ -419,16 +418,16 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFrom, periodS
 		resultsWithGaps[points.Values["point"]] = &points
 	}
 
-	timeFrame := periodStartTo.Sub(periodStartFrom).Seconds() / float64(amountOfPoints)
+	timeFrame := (periodStartToSec - periodStartFromSec) / amountOfPoints
 	// fill in gaps in time series.
-	for pointN := 0; pointN < amountOfPoints; pointN++ {
+	for pointN := int64(0); pointN < amountOfPoints; pointN++ {
 		point, ok := resultsWithGaps[float32(pointN)]
 		if !ok {
 			point = &qanpb.Point{
 				Values: make(map[string]float32),
 			}
-			timeShift := time.Duration(int(timeFrame) * pointN)
-			ts := periodStartTo.Add(-time.Second * timeShift).Unix()
+			timeShift := timeFrame * pointN
+			ts := periodStartToSec - timeShift
 			point.Values["point"] = float32(pointN)
 			point.Values["time_frame"] = float32(timeFrame)
 			point.Values["timestamp"] = float32(ts)
