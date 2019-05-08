@@ -387,7 +387,7 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFrom, periodS
 	var results []*qanpb.Point
 	var queryBuffer bytes.Buffer
 	if err := tmplMetricsSparklines.Execute(&queryBuffer, arg); err != nil {
-		log.Fatalln(err)
+		return nil, errors.Wrap(err, "cannot execute tmplMetricsSparklines")
 	}
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
@@ -501,7 +501,7 @@ func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, from, to time.T
 	}
 	var queryBuffer bytes.Buffer
 	if err := tmplObjectDetailsLabels.Execute(&queryBuffer, arg); err != nil {
-		log.Fatalln(err)
+		return nil, errors.Wrap(err, "cannot execute tmplObjectDetailsLabels")
 	}
 	res := qanpb.ObjectDetailsLabelsReply{}
 	nstmt, err := m.db.PrepareNamed(queryBuffer.String())

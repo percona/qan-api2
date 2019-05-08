@@ -29,6 +29,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/percona/pmm/api/qanpb"
+
 	"github.com/percona/qan-api2/models"
 )
 
