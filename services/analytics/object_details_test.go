@@ -243,6 +243,51 @@ func TestService_GetMetricsError(t *testing.T) {
 			nil,
 			true,
 		},
+		{
+			"not_found_labels",
+			fields{rm: rm, mm: mm},
+			args{
+				context.TODO(),
+				&qanpb.MetricsRequest{
+					PeriodStartFrom: &timestamp.Timestamp{Seconds: t1.Unix()},
+					PeriodStartTo:   &timestamp.Timestamp{Seconds: t2.Unix()},
+					GroupBy:         "no_group_name",
+					FilterBy:        "B305F6354FA21F2A",
+					Labels: []*qanpb.MapFieldEntry{
+						{
+							Key:   "label1",
+							Value: []string{"value1", "value2"},
+						},
+						{
+							Key:   "d_server",
+							Value: []string{"db1", "db2", "db3", "db4", "db5", "db6", "db7"},
+						},
+						{
+							Key:   "d_client_host",
+							Value: []string{"localhost"},
+						},
+						{
+							Key:   "d_username",
+							Value: []string{"john"},
+						},
+						{
+							Key:   "d_schema",
+							Value: []string{"my_schema"},
+						},
+						{
+							Key:   "d_database",
+							Value: []string{"test_database"},
+						},
+						{
+							Key:   "queryid",
+							Value: []string{"some_query_id"},
+						},
+					},
+				},
+			},
+			nil,
+			true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

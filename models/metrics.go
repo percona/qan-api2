@@ -339,6 +339,7 @@ GROUP BY point
 	ORDER BY point ASC;
 `
 
+//nolint
 var tmplMetricsSparklines = template.Must(template.New("queryMetricsSparklines").Funcs(funcMap).Parse(queryMetricsSparklinesTmpl))
 
 // SelectSparklines selects datapoint for sparklines.
