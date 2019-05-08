@@ -262,8 +262,8 @@ func TestService_GetMetrics(t *testing.T) {
 	db := setup()
 	rm := models.NewReporter(db)
 	mm := models.NewMetrics(db)
-	t1, _ := time.Parse(time.RFC3339, "2019-01-01T00:00:00Z")
-	t2, _ := time.Parse(time.RFC3339, "2019-01-01T10:00:00Z")
+	// t1, _ := time.Parse(time.RFC3339, "2019-01-01T00:00:00Z")
+	// t2, _ := time.Parse(time.RFC3339, "2019-01-01T10:00:00Z")
 
 	t.Run("group_by_queryid", func(t *testing.T) {
 		s := &Service{
@@ -271,8 +271,10 @@ func TestService_GetMetrics(t *testing.T) {
 			mm: mm,
 		}
 		in := &qanpb.MetricsRequest{
-			PeriodStartFrom: &timestamp.Timestamp{Seconds: t1.Unix()},
-			PeriodStartTo:   &timestamp.Timestamp{Seconds: t2.Unix()},
+			// PeriodStartFrom: &timestamp.Timestamp{Seconds: t1.Unix()},
+			// PeriodStartTo:   &timestamp.Timestamp{Seconds: t2.Unix()},
+			PeriodStartFrom: &timestamp.Timestamp{Seconds: 1546300800},
+			PeriodStartTo:   &timestamp.Timestamp{Seconds: 1546336800},
 			GroupBy:         "queryid",
 			FilterBy:        "B305F6354FA21F2A",
 		}
@@ -294,8 +296,10 @@ func TestService_GetMetrics(t *testing.T) {
 			mm: mm,
 		}
 		in := &qanpb.MetricsRequest{
-			PeriodStartFrom: &timestamp.Timestamp{Seconds: t1.Unix()},
-			PeriodStartTo:   &timestamp.Timestamp{Seconds: t2.Unix()},
+			// PeriodStartFrom: &timestamp.Timestamp{Seconds: t1.Unix()},
+			// PeriodStartTo:   &timestamp.Timestamp{Seconds: t2.Unix()},
+			PeriodStartFrom: &timestamp.Timestamp{Seconds: 1546300800},
+			PeriodStartTo:   &timestamp.Timestamp{Seconds: 1546336800},
 			GroupBy:         "queryid",
 			FilterBy:        "", // Empty filter get all queries.
 		}
