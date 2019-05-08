@@ -284,7 +284,7 @@ func TestService_GetMetrics(t *testing.T) {
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
-		fmt.Println("gotJSON", gotJSON)
+		fmt.Println("gotJSON", string(gotJSON))
 		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
 	})
 
