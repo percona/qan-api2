@@ -20,7 +20,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"reflect"
 	"testing"
 	"time"
 
@@ -285,11 +284,13 @@ func TestService_GetMetrics(t *testing.T) {
 			if (err != nil) != tt.wantErr {
 				assert.Errorf(t, err, "Service.GetMetrics() error = %v, wantErr %v", err, tt.wantErr)
 			}
-			tt.want = nil
-			expectedData(t, got, &tt.want, "../../test_data/GetMetrics_"+tt.name+".json")
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Service.GetMetrics() = %v, want %v", got, tt.want)
+			expectedJSON := getExpectedJSON(t, got, "../../test_data/GetMetrics_"+tt.name+".json")
+
+			gotJSON, err := json.MarshalIndent(got, "", "\t")
+			if err != nil {
+				t.Errorf("cannot marshal:%v", err)
 			}
+			require.Equal(t, expectedJSON, gotJSON)
 		})
 	}
 }

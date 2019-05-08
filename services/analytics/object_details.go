@@ -27,21 +27,27 @@ import (
 // GetMetrics implements rpc to get metrics for specific filtering.
 func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qanpb.MetricsReply, error) {
 	labels := in.GetLabels()
-	dbServers := []string{}
-	dbSchemas := []string{}
-	dbUsernames := []string{}
-	clientHosts := []string{}
+	dQueryids := []string{}
+	dServers := []string{}
+	dDatabases := []string{}
+	dSchemas := []string{}
+	dUsernames := []string{}
+	dClientHosts := []string{}
 	dbLabels := map[string][]string{}
 	for _, label := range labels {
 		switch label.Key {
-		case "db_server":
-			dbServers = label.Value
-		case "db_schema":
-			dbSchemas = label.Value
-		case "db_username":
-			dbUsernames = label.Value
-		case "client_host":
-			clientHosts = label.Value
+		case "queryid":
+			dQueryids = label.Value
+		case "d_server":
+			dServers = label.Value
+		case "d_database":
+			dDatabases = label.Value
+		case "d_schema":
+			dSchemas = label.Value
+		case "d_username":
+			dUsernames = label.Value
+		case "d_client_host":
+			dClientHosts = label.Value
 		default:
 			dbLabels[label.Key] = label.Value
 		}
@@ -64,10 +70,12 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 		to,
 		in.FilterBy,
 		in.GroupBy,
-		dbServers,
-		dbSchemas,
-		dbUsernames,
-		clientHosts,
+		dQueryids,
+		dServers,
+		dDatabases,
+		dSchemas,
+		dUsernames,
+		dClientHosts,
 		dbLabels,
 	)
 	if err != nil {
@@ -122,6 +130,16 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 		}
 		resp.Metrics[k] = &mv
 	}
+
+	// m.selectSparklines(ctx, from, to, filter, group, dbServers, dbSchemas, dbUsernames, clientHosts, dbLabels)
+	sparklines, err := s.mm.SelectSparklines(ctx, from, to, in.FilterBy, in.GroupBy,
+		dQueryids, dServers, dDatabases, dSchemas, dUsernames, dClientHosts,
+		dbLabels)
+	// fmt.Printf("\n\nsparklines results: %+v, \n err: %v \n", res, err)
+	if err != nil {
+		return resp, err
+	}
+	resp.Sparkline = sparklines
 
 	return resp, err
 }
