@@ -49,8 +49,8 @@ func (m *Metrics) Get(ctx context.Context, periodStartFrom, periodStartTo time.T
 	dQueryids, dServers, dDatabases, dSchemas, dUsernames, dClientHosts []string,
 	dbLabels map[string][]string) ([]M, error) {
 	arg := map[string]interface{}{
-		"period_start_from": periodStartFrom,
-		"period_start_to":   periodStartTo,
+		"period_start_from": periodStartFrom.Unix(),
+		"period_start_to":   periodStartTo.Unix(),
 		"queryids":          dQueryids,
 		"servers":           dServers,
 		"databases":         dDatabases,
