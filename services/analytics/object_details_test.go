@@ -285,13 +285,10 @@ func TestService_GetMetrics(t *testing.T) {
 			if (err != nil) != tt.wantErr {
 				assert.Errorf(t, err, "Service.GetMetrics() error = %v, wantErr %v", err, tt.wantErr)
 			}
-			expectedJSON := getExpectedJSON(t, got, "../../test_data/GetMetrics_"+tt.name+".json")
 
-			gotJSON, err := json.MarshalIndent(got, "", "\t")
-			if err != nil {
-				t.Errorf("cannot marshal:%v", err)
-			}
-			require.Equal(t, expectedJSON, gotJSON)
+			tt.want = nil
+			expectedData(t, got, &tt.want, "../../test_data/GetMetrics_"+tt.name+".json")
+			assert.Equal(t, proto.MarshalTextString(got), proto.MarshalTextString(tt.want))
 		})
 	}
 }
