@@ -55,19 +55,20 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 	if in.PeriodStartFrom == nil {
 		return nil, fmt.Errorf("period_start_from is required:%v", in.PeriodStartFrom)
 	}
-	from := time.Unix(in.PeriodStartFrom.Seconds, 0)
+	periodStartFrom := time.Unix(in.PeriodStartFrom.Seconds, 0)
+	fmt.Printf("periodStartFrom := time.Unix(in.PeriodStartFrom.Seconds, 0): %v \n", periodStartFrom)
 	if in.PeriodStartTo == nil {
 		return nil, fmt.Errorf("period_start_to is required:%v", in.PeriodStartTo)
 	}
-	to := time.Unix(in.PeriodStartTo.Seconds, 0)
+	periodStartTo := time.Unix(in.PeriodStartTo.Seconds, 0)
 	m := make(map[string]*qanpb.MetricValues)
 	resp := &qanpb.MetricsReply{
 		Metrics: m,
 	}
 	metrics, err := s.mm.Get(
 		ctx,
-		from,
-		to,
+		periodStartFrom,
+		periodStartTo,
 		in.FilterBy,
 		in.GroupBy,
 		dQueryids,
@@ -86,7 +87,7 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 		return nil, fmt.Errorf("not found for filter: %s and group: %s in given time range", in.FilterBy, in.GroupBy)
 	}
 
-	durationSec := to.Sub(from).Seconds()
+	durationSec := periodStartTo.Sub(periodStartFrom).Seconds()
 
 	for k := range commonColumnNames {
 		cnt := interfaceToFloat32(metrics[0]["m_"+k+"_cnt"])
@@ -131,11 +132,9 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 		resp.Metrics[k] = &mv
 	}
 
-	// m.selectSparklines(ctx, from, to, filter, group, dbServers, dbSchemas, dbUsernames, clientHosts, dbLabels)
-	sparklines, err := s.mm.SelectSparklines(ctx, from, to, in.FilterBy, in.GroupBy,
+	sparklines, err := s.mm.SelectSparklines(ctx, periodStartFrom, periodStartTo, in.FilterBy, in.GroupBy,
 		dQueryids, dServers, dDatabases, dSchemas, dUsernames, dClientHosts,
 		dbLabels)
-	// fmt.Printf("\n\nsparklines results: %+v, \n err: %v \n", res, err)
 	if err != nil {
 		return resp, err
 	}
