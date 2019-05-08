@@ -284,6 +284,7 @@ func TestService_GetMetrics(t *testing.T) {
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
+		fmt.Println("gotJSON", gotJSON)
 		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
 	})
 
@@ -296,7 +297,7 @@ func TestService_GetMetrics(t *testing.T) {
 			PeriodStartFrom: &timestamp.Timestamp{Seconds: t1.Unix()},
 			PeriodStartTo:   &timestamp.Timestamp{Seconds: t2.Unix()},
 			GroupBy:         "queryid",
-			FilterBy:        "B305F6354FA21F2A",
+			FilterBy:        "", // Empty filter get all queries.
 		}
 		got, err := s.GetMetrics(context.TODO(), in)
 		assert.NoError(t, err, "Unexpected error in Service.GetMetrics()")
@@ -306,6 +307,7 @@ func TestService_GetMetrics(t *testing.T) {
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
+		fmt.Println("gotJSON", gotJSON)
 		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
 	})
 }
