@@ -19,7 +19,6 @@ package analitycs
 import (
 	"context"
 	"fmt"
-	"time"
 
 	"github.com/percona/pmm/api/qanpb"
 
@@ -36,10 +35,10 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		return &qanpb.ReportReply{}, err
 	}
 
-	from := time.Unix(in.PeriodStartFrom.Seconds, 0)
-	to := time.Unix(in.PeriodStartTo.Seconds, 0)
-	if from.After(to) {
-		err := fmt.Errorf("from-date %s cannot be bigger then to-date %s", from.UTC(), to.UTC())
+	periodStartFromSec := in.PeriodStartFrom.Seconds
+	periodStartToSec := in.PeriodStartTo.Seconds
+	if periodStartFromSec > periodStartToSec {
+		err := fmt.Errorf("from-date %s cannot be bigger then to-date %s", in.PeriodStartFrom, in.PeriodStartTo)
 		return &qanpb.ReportReply{}, err
 	}
 
@@ -122,8 +121,8 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	resp := &qanpb.ReportReply{}
 	results, err := s.rm.Select(
 		ctx,
-		from,
-		to,
+		periodStartFromSec,
+		periodStartToSec,
 		dQueryids,
 		dServers,
 		dDatabases,
@@ -173,8 +172,8 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		sparklines, err := s.rm.SelectSparklines(
 			ctx,
 			row.Dimension,
-			from,
-			to,
+			periodStartFromSec,
+			periodStartToSec,
 			dQueryids,
 			dServers,
 			dDatabases,
