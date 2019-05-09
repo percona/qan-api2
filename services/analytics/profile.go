@@ -161,7 +161,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			Metrics:     make(map[string]*qanpb.Metric),
 		}
 		// Add latency as default column.
-		stats := makeStats("query_time", total, res)
+		stats := makeStats("query_time", total, res, numQueries)
 		row.Metrics["latency"] = &qanpb.Metric{
 			Stats: stats,
 		}
@@ -190,7 +190,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		}
 		row.Sparkline = sparklines
 		for _, c := range columns {
-			stats := makeStats(c, total, res)
+			stats := makeStats(c, total, res, numQueries)
 			row.Metrics[c] = &qanpb.Metric{
 				Stats: stats,
 			}
@@ -200,16 +200,18 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	return resp, nil
 }
 
-func makeStats(metricNameRoot string, total, res models.M) *qanpb.Stat {
+func makeStats(metricNameRoot string, total, res models.M, numQueries float32) *qanpb.Stat {
 	rate := float32(0)
 	divider := interfaceToFloat32(total["m_"+metricNameRoot+"_sum"])
+	sum := interfaceToFloat32(res["m_"+metricNameRoot+"_sum"])
 	if divider != 0 {
-		rate = interfaceToFloat32(res["m_"+metricNameRoot+"_sum"]) / divider
+		rate = sum / divider
 	}
 	stat := &qanpb.Stat{
 		Rate: rate,
 		Cnt:  interfaceToFloat32(res["m_"+metricNameRoot+"_cnt"]),
-		Sum:  interfaceToFloat32(res["m_"+metricNameRoot+"_sum"]),
+		Sum:  sum,
+		Avg:  sum / numQueries,
 	}
 	if val, ok := res["m_"+metricNameRoot+"_min"]; ok {
 		stat.Min = interfaceToFloat32(val)
