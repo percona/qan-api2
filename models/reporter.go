@@ -25,6 +25,7 @@ import (
 	"text/template"
 	"time"
 
+	structpb "github.com/golang/protobuf/ptypes/struct"
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
 
@@ -204,16 +205,19 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 	dQueryids, dServers, dDatabases, dSchemas, dUsernames, dClientHosts []string,
 	dbLabels map[string][]string, group string, columns []string) ([]*qanpb.Point, error) {
 
-	interfaceToFloat32 := func(unk interface{}) float32 {
+	interfaceToFloat32 := func(unk interface{}) *float32 {
+		var f float32
 		switch i := unk.(type) {
 		case float64:
-			return float32(i)
+			f = float32(i)
+			return &f
 		case float32:
-			return i
+			return &i
 		case int64:
-			return float32(i)
+			f = float32(i)
+			return &f
 		default:
-			return float32(0)
+			return nil
 		}
 	}
 
@@ -263,7 +267,7 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 	if err != nil {
 		return results, fmt.Errorf("report query:%v", err)
 	}
-	resultsWithGaps := map[float32]*qanpb.Point{}
+	resultsWithGaps := map[float64]*qanpb.Point{}
 	for rows.Next() {
 		res := make(map[string]interface{})
 		err = rows.MapScan(res)
@@ -271,27 +275,52 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 			fmt.Printf("DimensionReport Scan error: %v", err)
 		}
 		points := qanpb.Point{
-			Values: make(map[string]float32),
+			Values: make(map[string]*structpb.Value),
 		}
 		for k, v := range res {
-			points.Values[k] = interfaceToFloat32(v)
+			f := interfaceToFloat32(v)
+			if f == nil {
+				points.Values[k] = &structpb.Value{
+					Kind: &structpb.Value_NullValue{
+						NullValue: 0,
+					},
+				}
+				continue
+			}
+			points.Values[k] = &structpb.Value{
+				Kind: &structpb.Value_NumberValue{
+					NumberValue: float64(*f),
+				},
+			}
 		}
-		resultsWithGaps[points.Values["point"]] = &points
+		resultsWithGaps[points.Values["point"].GetNumberValue()] = &points
 	}
 
 	timeFrame := (periodStartToSec - periodStartFromSec) / amountOfPoints
 	// fill in gaps in time series.
 	for pointN := int64(0); pointN < amountOfPoints; pointN++ {
-		point, ok := resultsWithGaps[float32(pointN)]
+		point, ok := resultsWithGaps[float64(pointN)]
 		if !ok {
 			point = &qanpb.Point{
-				Values: make(map[string]float32),
+				Values: make(map[string]*structpb.Value),
 			}
 			timeShift := timeFrame * pointN
 			ts := periodStartToSec - timeShift
-			point.Values["point"] = float32(pointN)
-			point.Values["time_frame"] = float32(timeFrame)
-			point.Values["timestamp"] = float32(ts)
+			point.Values["point"] = &structpb.Value{
+				Kind: &structpb.Value_NumberValue{
+					NumberValue: float64(pointN),
+				},
+			}
+			point.Values["time_frame"] = &structpb.Value{
+				Kind: &structpb.Value_NumberValue{
+					NumberValue: float64(timeFrame),
+				},
+			}
+			point.Values["timestamp"] = &structpb.Value{
+				Kind: &structpb.Value_NumberValue{
+					NumberValue: float64(ts),
+				},
+			}
 		}
 		results = append(results, point)
 	}
