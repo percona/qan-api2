@@ -78,1113 +78,4117 @@
 	"sparkline": [
 		{
 			"values": {
-				"point": 0,
-				"time_frame": 60,
-				"timestamp": 1546306200
-			}
-		},
-		{
-			"values": {
-				"point": 1,
-				"time_frame": 60,
-				"timestamp": 1546306200
-			}
-		},
-		{
-			"values": {
-				"point": 2,
-				"time_frame": 60,
-				"timestamp": 1546306000
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000050000003,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 1.7666667,
-				"point": 3,
-				"time_frame": 60,
-				"timestamp": 1546306000
-			}
-		},
-		{
-			"values": {
-				"point": 4,
-				"time_frame": 60,
-				"timestamp": 1546305900
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000051666666,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 53.75,
-				"point": 5,
-				"time_frame": 60,
-				"timestamp": 1546305900
-			}
-		},
-		{
-			"values": {
-				"point": 6,
-				"time_frame": 60,
-				"timestamp": 1546305800
-			}
-		},
-		{
-			"values": {
-				"point": 7,
-				"time_frame": 60,
-				"timestamp": 1546305800
-			}
-		},
-		{
-			"values": {
-				"point": 8,
-				"time_frame": 60,
-				"timestamp": 1546305700
-			}
-		},
-		{
-			"values": {
-				"point": 9,
-				"time_frame": 60,
-				"timestamp": 1546305700
-			}
-		},
-		{
-			"values": {
-				"point": 10,
-				"time_frame": 60,
-				"timestamp": 1546305500
-			}
-		},
-		{
-			"values": {
-				"point": 11,
-				"time_frame": 60,
-				"timestamp": 1546305500
-			}
-		},
-		{
-			"values": {
-				"point": 12,
-				"time_frame": 60,
-				"timestamp": 1546305500
-			}
-		},
-		{
-			"values": {
-				"point": 13,
-				"time_frame": 60,
-				"timestamp": 1546305400
-			}
-		},
-		{
-			"values": {
-				"point": 14,
-				"time_frame": 60,
-				"timestamp": 1546305400
-			}
-		},
-		{
-			"values": {
-				"point": 15,
-				"time_frame": 60,
-				"timestamp": 1546305300
-			}
-		},
-		{
-			"values": {
-				"point": 16,
-				"time_frame": 60,
-				"timestamp": 1546305300
-			}
-		},
-		{
-			"values": {
-				"point": 17,
-				"time_frame": 60,
-				"timestamp": 1546305200
-			}
-		},
-		{
-			"values": {
-				"point": 18,
-				"time_frame": 60,
-				"timestamp": 1546305200
-			}
-		},
-		{
-			"values": {
-				"point": 19,
-				"time_frame": 60,
-				"timestamp": 1546305000
-			}
-		},
-		{
-			"values": {
-				"point": 20,
-				"time_frame": 60,
-				"timestamp": 1546305000
-			}
-		},
-		{
-			"values": {
-				"point": 21,
-				"time_frame": 60,
-				"timestamp": 1546304900
-			}
-		},
-		{
-			"values": {
-				"point": 22,
-				"time_frame": 60,
-				"timestamp": 1546304900
-			}
-		},
-		{
-			"values": {
-				"point": 23,
-				"time_frame": 60,
-				"timestamp": 1546304800
-			}
-		},
-		{
-			"values": {
-				"point": 24,
-				"time_frame": 60,
-				"timestamp": 1546304800
-			}
-		},
-		{
-			"values": {
-				"point": 25,
-				"time_frame": 60,
-				"timestamp": 1546304600
-			}
-		},
-		{
-			"values": {
-				"point": 26,
-				"time_frame": 60,
-				"timestamp": 1546304600
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000073333335,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 162.86667,
-				"point": 27,
-				"time_frame": 60,
-				"timestamp": 1546304600
-			}
-		},
-		{
-			"values": {
-				"point": 28,
-				"time_frame": 60,
-				"timestamp": 1546304500
-			}
-		},
-		{
-			"values": {
-				"point": 29,
-				"time_frame": 60,
-				"timestamp": 1546304500
-			}
-		},
-		{
-			"values": {
-				"point": 30,
-				"time_frame": 60,
-				"timestamp": 1546304400
-			}
-		},
-		{
-			"values": {
-				"point": 31,
-				"time_frame": 60,
-				"timestamp": 1546304400
-			}
-		},
-		{
-			"values": {
-				"point": 32,
-				"time_frame": 60,
-				"timestamp": 1546304300
-			}
-		},
-		{
-			"values": {
-				"point": 33,
-				"time_frame": 60,
-				"timestamp": 1546304300
-			}
-		},
-		{
-			"values": {
-				"point": 34,
-				"time_frame": 60,
-				"timestamp": 1546304100
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.000005833333,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 78.083336,
-				"point": 35,
-				"time_frame": 60,
-				"timestamp": 1546304100
-			}
-		},
-		{
-			"values": {
-				"point": 36,
-				"time_frame": 60,
-				"timestamp": 1546304000
-			}
-		},
-		{
-			"values": {
-				"point": 37,
-				"time_frame": 60,
-				"timestamp": 1546304000
-			}
-		},
-		{
-			"values": {
-				"point": 38,
-				"time_frame": 60,
-				"timestamp": 1546303900
-			}
-		},
-		{
-			"values": {
-				"point": 39,
-				"time_frame": 60,
-				"timestamp": 1546303900
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000050000003,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 79.48333,
-				"point": 40,
-				"time_frame": 60,
-				"timestamp": 1546303700
-			}
-		},
-		{
-			"values": {
-				"point": 41,
-				"time_frame": 60,
-				"timestamp": 1546303700
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000075,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 115.86667,
-				"point": 42,
-				"time_frame": 60,
-				"timestamp": 1546303700
-			}
-		},
-		{
-			"values": {
-				"point": 43,
-				"time_frame": 60,
-				"timestamp": 1546303600
-			}
-		},
-		{
-			"values": {
-				"point": 44,
-				"time_frame": 60,
-				"timestamp": 1546303600
-			}
-		},
-		{
-			"values": {
-				"point": 45,
-				"time_frame": 60,
-				"timestamp": 1546303500
-			}
-		},
-		{
-			"values": {
-				"point": 46,
-				"time_frame": 60,
-				"timestamp": 1546303500
-			}
-		},
-		{
-			"values": {
-				"point": 47,
-				"time_frame": 60,
-				"timestamp": 1546303400
-			}
-		},
-		{
-			"values": {
-				"point": 48,
-				"time_frame": 60,
-				"timestamp": 1546303400
-			}
-		},
-		{
-			"values": {
-				"point": 49,
-				"time_frame": 60,
-				"timestamp": 1546303200
-			}
-		},
-		{
-			"values": {
-				"point": 50,
-				"time_frame": 60,
-				"timestamp": 1546303200
-			}
-		},
-		{
-			"values": {
-				"point": 51,
-				"time_frame": 60,
-				"timestamp": 1546303100
-			}
-		},
-		{
-			"values": {
-				"point": 52,
-				"time_frame": 60,
-				"timestamp": 1546303100
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000055,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 150.58333,
-				"point": 53,
-				"time_frame": 60,
-				"timestamp": 1546303000
-			}
-		},
-		{
-			"values": {
-				"point": 54,
-				"time_frame": 60,
-				"timestamp": 1546303000
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.000006,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 33.666668,
-				"point": 55,
-				"time_frame": 60,
-				"timestamp": 1546302800
-			}
-		},
-		{
-			"values": {
-				"point": 56,
-				"time_frame": 60,
-				"timestamp": 1546302800
-			}
-		},
-		{
-			"values": {
-				"point": 57,
-				"time_frame": 60,
-				"timestamp": 1546302700
-			}
-		},
-		{
-			"values": {
-				"point": 58,
-				"time_frame": 60,
-				"timestamp": 1546302700
-			}
-		},
-		{
-			"values": {
-				"point": 59,
-				"time_frame": 60,
-				"timestamp": 1546302700
-			}
-		},
-		{
-			"values": {
-				"point": 60,
-				"time_frame": 60,
-				"timestamp": 1546302600
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000050000003,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 152.86667,
-				"point": 61,
-				"time_frame": 60,
-				"timestamp": 1546302600
-			}
-		},
-		{
-			"values": {
-				"point": 62,
-				"time_frame": 60,
-				"timestamp": 1546302500
-			}
-		},
-		{
-			"values": {
-				"point": 63,
-				"time_frame": 60,
-				"timestamp": 1546302500
-			}
-		},
-		{
-			"values": {
-				"point": 64,
-				"time_frame": 60,
-				"timestamp": 1546302300
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000063333337,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 63.716667,
-				"point": 65,
-				"time_frame": 60,
-				"timestamp": 1546302300
-			}
-		},
-		{
-			"values": {
-				"point": 66,
-				"time_frame": 60,
-				"timestamp": 1546302200
-			}
-		},
-		{
-			"values": {
-				"point": 67,
-				"time_frame": 60,
-				"timestamp": 1546302200
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000055,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 164.56667,
-				"point": 68,
-				"time_frame": 60,
-				"timestamp": 1546302100
-			}
-		},
-		{
-			"values": {
-				"point": 69,
-				"time_frame": 60,
-				"timestamp": 1546302100
-			}
-		},
-		{
-			"values": {
-				"point": 70,
-				"time_frame": 60,
-				"timestamp": 1546302000
-			}
-		},
-		{
-			"values": {
-				"point": 71,
-				"time_frame": 60,
-				"timestamp": 1546302000
-			}
-		},
-		{
-			"values": {
-				"point": 72,
-				"time_frame": 60,
-				"timestamp": 1546301800
-			}
-		},
-		{
-			"values": {
-				"point": 73,
-				"time_frame": 60,
-				"timestamp": 1546301800
-			}
-		},
-		{
-			"values": {
-				"point": 74,
-				"time_frame": 60,
-				"timestamp": 1546301700
-			}
-		},
-		{
-			"values": {
-				"point": 75,
-				"time_frame": 60,
-				"timestamp": 1546301700
-			}
-		},
-		{
-			"values": {
-				"point": 76,
-				"time_frame": 60,
-				"timestamp": 1546301700
-			}
-		},
-		{
-			"values": {
-				"point": 77,
-				"time_frame": 60,
-				"timestamp": 1546301600
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000068333334,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 122.816666,
-				"point": 78,
-				"time_frame": 60,
-				"timestamp": 1546301600
-			}
-		},
-		{
-			"values": {
-				"point": 79,
-				"time_frame": 60,
-				"timestamp": 1546301400
-			}
-		},
-		{
-			"values": {
-				"point": 80,
-				"time_frame": 60,
-				"timestamp": 1546301400
-			}
-		},
-		{
-			"values": {
-				"point": 81,
-				"time_frame": 60,
-				"timestamp": 1546301300
-			}
-		},
-		{
-			"values": {
-				"point": 82,
-				"time_frame": 60,
-				"timestamp": 1546301300
-			}
-		},
-		{
-			"values": {
-				"point": 83,
-				"time_frame": 60,
-				"timestamp": 1546301200
-			}
-		},
-		{
-			"values": {
-				"point": 84,
-				"time_frame": 60,
-				"timestamp": 1546301200
-			}
-		},
-		{
-			"values": {
-				"point": 85,
-				"time_frame": 60,
-				"timestamp": 1546301000
-			}
-		},
-		{
-			"values": {
-				"point": 86,
-				"time_frame": 60,
-				"timestamp": 1546301000
-			}
-		},
-		{
-			"values": {
-				"m_bytes_sent_sum_per_sec": 18.833334,
-				"m_docs_returned_sum_per_sec": 0,
-				"m_docs_scanned_sum_per_sec": 0,
-				"m_filesort_on_disk_sum_per_sec": 0,
-				"m_filesort_sum_per_sec": 0,
-				"m_full_join_sum_per_sec": 0,
-				"m_full_scan_sum_per_sec": 0,
-				"m_innodb_io_r_bytes_sum_per_sec": 0,
-				"m_innodb_io_r_ops_sum_per_sec": 0,
-				"m_innodb_io_r_wait_sum_per_sec": 0,
-				"m_innodb_pages_distinct_sum_per_sec": 0,
-				"m_innodb_queue_wait_sum_per_sec": 0,
-				"m_innodb_rec_lock_wait_sum_per_sec": 0,
-				"m_lock_time_sum": 0,
-				"m_merge_passes_sum_per_sec": 0,
-				"m_no_good_index_used_sum_per_sec": 0,
-				"m_no_index_used_sum_per_sec": 0,
-				"m_qc_hit_sum_per_sec": 0,
-				"m_query_length_sum_per_sec": 0,
-				"m_query_time_per_sec": 0.0000063333337,
-				"m_response_length_sum_per_sec": 0,
-				"m_rows_affected_sum_per_sec": 0,
-				"m_rows_examined_sum_per_sec": 0,
-				"m_rows_read_sum_per_sec": 0,
-				"m_rows_sent_sum_per_sec": 0.16666667,
-				"m_select_full_range_join_sum_per_sec": 0,
-				"m_select_range_check_sum_per_sec": 0,
-				"m_select_range_sum_per_sec": 0,
-				"m_sort_range_sum_per_sec": 0,
-				"m_sort_rows_sum_per_sec": 0,
-				"m_sort_scan_sum_per_sec": 0,
-				"m_tmp_disk_tables_sum_per_sec": 0,
-				"m_tmp_table_on_disk_sum_per_sec": 0,
-				"m_tmp_table_sizes_sum_per_sec": 0,
-				"m_tmp_table_sum_per_sec": 0,
-				"m_tmp_tables_sum_per_sec": 0,
-				"num_queries_per_sec": 149.75,
-				"point": 87,
-				"time_frame": 60,
-				"timestamp": 1546300900
-			}
-		},
-		{
-			"values": {
-				"point": 88,
-				"time_frame": 60,
-				"timestamp": 1546300900
-			}
-		},
-		{
-			"values": {
-				"point": 89,
-				"time_frame": 60,
-				"timestamp": 1546300800
+				"point": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:30:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 1
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:29:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 2
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:28:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000005000000237487257
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 1.7666666666666666
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 3
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:27:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 4
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:26:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000005166666718044629
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 53.75
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 5
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:25:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 6
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:24:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 7
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:23:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 8
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:22:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 9
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:21:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 10
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:20:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 11
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:19:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 12
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:18:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 13
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:17:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 14
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:16:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 15
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:15:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 16
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:14:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 17
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:13:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 18
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:12:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 19
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:11:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 20
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:10:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 21
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:09:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 22
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:08:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 23
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:07:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 24
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:06:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 25
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:05:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 26
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:04:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000007333333390609671
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 162.86666666666667
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 27
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:03:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 28
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:02:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 29
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:01:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 30
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T01:00:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 31
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:59:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 32
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:58:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 33
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:57:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 34
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:56:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000005833333125337958
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 78.08333333333333
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 35
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:55:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 36
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:54:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 37
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:53:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 38
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:52:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 39
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:51:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000005000000237487257
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 79.48333333333333
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 40
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:50:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 41
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:49:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000007499999871167044
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 115.86666666666666
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 42
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:48:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 43
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:47:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 44
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:46:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 45
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:45:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 46
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:44:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 47
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:43:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 48
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:42:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 49
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:41:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 50
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:40:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 51
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:39:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 52
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:38:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000005500000164223214
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 150.58333333333334
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 53
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:37:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 54
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:36:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000006000000090959171
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 33.666666666666664
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 55
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:35:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 56
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:34:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 57
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:33:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 58
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:32:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 59
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:31:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:30:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000005000000237487257
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 152.86666666666667
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 61
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:29:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 62
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:28:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 63
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:27:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 64
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:26:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000006333333537137756
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 63.71666666666667
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 65
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:25:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 66
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:24:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 67
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:23:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000005500000164223214
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 164.56666666666666
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 68
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:22:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 69
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:21:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 70
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:20:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 71
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:19:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 72
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:18:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 73
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:17:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 74
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:16:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 75
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:15:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 76
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:14:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 77
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:13:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000006833333463873714
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 122.81666666666666
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 78
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:12:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 79
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:11:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 80
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:10:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 81
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:09:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 82
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:08:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 83
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:07:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 84
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:06:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 85
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:05:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 86
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:04:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"m_bytes_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 18.833333333333332
+					}
+				},
+				"m_docs_returned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_docs_scanned_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_filesort_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_filesort_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_join_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_full_scan_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_innodb_io_r_bytes_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_ops_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_io_r_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_pages_distinct_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_queue_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_innodb_rec_lock_wait_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_lock_time_sum_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_merge_passes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_no_good_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_no_index_used_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_qc_hit_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_query_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_query_time_per_sec": {
+					"Kind": {
+						"NumberValue": 0.000006333333537137756
+					}
+				},
+				"m_response_length_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_affected_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_examined_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_rows_read_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_rows_sent_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0.16666666666666666
+					}
+				},
+				"m_select_full_range_join_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_check_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_select_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_range_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_rows_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_sort_scan_sum_per_sec": {
+					"Kind": {
+						"NullValue": 0
+					}
+				},
+				"m_tmp_disk_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_on_disk_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sizes_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_table_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"m_tmp_tables_sum_per_sec": {
+					"Kind": {
+						"NumberValue": 0
+					}
+				},
+				"num_queries_per_sec": {
+					"Kind": {
+						"NumberValue": 149.75
+					}
+				},
+				"point": {
+					"Kind": {
+						"NumberValue": 87
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:03:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 88
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:02:00Z"
+					}
+				}
+			}
+		},
+		{
+			"values": {
+				"point": {
+					"Kind": {
+						"NumberValue": 89
+					}
+				},
+				"time_frame": {
+					"Kind": {
+						"NumberValue": 60
+					}
+				},
+				"timestamp": {
+					"Kind": {
+						"StringValue": "2019-01-01T00:01:00Z"
+					}
+				}
 			}
 		}
 	]

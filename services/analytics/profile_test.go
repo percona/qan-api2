@@ -47,28 +47,6 @@ func setup() *sqlx.DB {
 	return db
 }
 
-func expectedData(t *testing.T, got, want interface{}, filename string) {
-	if os.Getenv("REFRESH_TEST_DATA") != "" {
-		json, err := json.MarshalIndent(got, "", "\t")
-		if err != nil {
-			t.Errorf("cannot marshal:%v", err)
-		}
-		err = ioutil.WriteFile(filename, json, 0644)
-		if err != nil {
-			t.Errorf("cannot write:%v", err)
-		}
-	}
-	data, err := ioutil.ReadFile(filename)
-	if err != nil {
-		t.Errorf("cannot read data from file:%v", err)
-	}
-
-	err = json.Unmarshal(data, want)
-	if err != nil {
-		t.Errorf("cannot read data from file:%v", err)
-	}
-}
-
 func getExpectedJSON(t *testing.T, got interface{}, filename string) []byte {
 	if os.Getenv("REFRESH_TEST_DATA") != "" {
 		json, err := json.MarshalIndent(got, "", "\t")
@@ -156,24 +134,18 @@ func TestService_GetReport(t *testing.T) {
 				rm: tt.fields.rm,
 				mm: tt.fields.mm,
 			}
+
 			got, err := s.GetReport(tt.args.ctx, tt.args.in)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Service.GetReport() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-
-			tt.want = nil
-			expectedData(t, got, &tt.want, "../../test_data/TestService_GetReport_"+tt.name+".json")
-			// TODO: why travis-ci return other values then expected?
-			if got.TotalRows != tt.want.TotalRows {
-				t.Errorf("got.TotalRows (%v) != *tt.want.TotalRows (%v)", got.TotalRows, tt.want.TotalRows)
+			expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_"+tt.name+".json")
+			gotJSON, err := json.MarshalIndent(got, "", "\t")
+			if err != nil {
+				t.Errorf("cannot marshal:%v", err)
 			}
-
-			for i, v := range got.Rows {
-				if v.NumQueries != tt.want.Rows[i].NumQueries {
-					t.Errorf("got.Rows[0].NumQueries (%v) != *tt.want.Rows[0].NumQueries (%v)", v.NumQueries, tt.want.Rows[i].NumQueries)
-				}
-			}
+			assert.JSONEq(t, string(expectedJSON), string(gotJSON))
 		})
 	}
 }
@@ -232,20 +204,18 @@ func TestService_GetReport_Mix(t *testing.T) {
 			rm: test.fields.rm,
 			mm: test.fields.mm,
 		}
+
 		got, err := s.GetReport(test.args.ctx, test.args.in)
 		if (err != nil) != test.wantErr {
 			t.Errorf("Service.GetReport() error = %v, wantErr %v", err, test.wantErr)
 			return
 		}
-
-		test.want = nil
-		expectedData(t, got, &test.want, "../../test_data/TestService_GetReport_Mix_"+test.name+".json")
-
-		for i, v := range got.Rows {
-			if v.NumQueries != test.want.Rows[i].NumQueries {
-				t.Errorf("got.Rows[%d].NumQueries (%v) != *tt.want.Rows[%d].NumQueries (%v)", i, v.NumQueries, i, test.want.Rows[i].NumQueries)
-			}
+		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Mix_"+test.name+".json")
+		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		if err != nil {
+			t.Errorf("cannot marshal:%v", err)
 		}
+		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
 	})
 
 	test.name = "correct_load"
@@ -259,14 +229,12 @@ func TestService_GetReport_Mix(t *testing.T) {
 			t.Errorf("Service.GetReport() error = %v, wantErr %v", err, test.wantErr)
 			return
 		}
-		test.want = nil
-		expectedData(t, got, &test.want, "../../test_data/TestService_GetReport_Mix_"+test.name+".json")
-
-		for i, v := range got.Rows {
-			if v.Load != test.want.Rows[i].Load {
-				t.Errorf("got.Rows[%d].Load (%v) != *tt.want.Rows[%d].Load (%v)", i, v.NumQueries, i, test.want.Rows[i].NumQueries)
-			}
+		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Mix_"+test.name+".json")
+		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		if err != nil {
+			t.Errorf("cannot marshal:%v", err)
 		}
+		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
 	})
 
 	test.name = "correct_latency"
@@ -280,20 +248,17 @@ func TestService_GetReport_Mix(t *testing.T) {
 			t.Errorf("Service.GetReport() error = %v, wantErr %v", err, test.wantErr)
 			return
 		}
-		test.want = nil
-		expectedData(t, got, &test.want, "../../test_data/TestService_GetReport_Mix_"+test.name+".json")
-
-		for i, v := range got.Rows {
-			if v.Metrics["latency"].Stats.Sum != test.want.Rows[i].Metrics["latency"].Stats.Sum {
-				t.Errorf(
-					"got.Rows[%d].Metrics[latency].Stats.Sum (%v) != *tt.want.Rows[%d].Metrics[latency].Stats.Sum (%v)",
-					i,
-					v.Metrics["latency"].Stats.Sum,
-					i,
-					test.want.Rows[i].Metrics["latency"].Stats.Sum,
-				)
-			}
+		got, err = s.GetReport(test.args.ctx, test.args.in)
+		if (err != nil) != test.wantErr {
+			t.Errorf("Service.GetReport() error = %v, wantErr %v", err, test.wantErr)
+			return
 		}
+		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Mix_"+test.name+".json")
+		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		if err != nil {
+			t.Errorf("cannot marshal:%v", err)
+		}
+		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
 	})
 
 	t.Run("no error on limit is 0", func(t *testing.T) {

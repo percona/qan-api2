@@ -23,7 +23,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -156,9 +155,12 @@ func TestService_GetQueryExample(t *testing.T) {
 			if (err != nil) != tt.wantErr {
 				assert.Errorf(t, err, "Service.GetQueryExample() error = %v, wantErr %v", err, tt.wantErr)
 			}
-			tt.want = nil
-			expectedData(t, got, &tt.want, "../../test_data/GetQueryExample_"+tt.name+".json")
-			assert.Equal(t, proto.MarshalTextString(got), proto.MarshalTextString(tt.want))
+			expectedJSON := getExpectedJSON(t, got, "../../test_data/GetQueryExample_"+tt.name+".json")
+			gotJSON, err := json.MarshalIndent(got, "", "\t")
+			if err != nil {
+				t.Errorf("cannot marshal:%v", err)
+			}
+			assert.JSONEq(t, string(expectedJSON), string(gotJSON))
 		})
 	}
 }

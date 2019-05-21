@@ -32,7 +32,7 @@ import (
 	"github.com/percona/pmm/api/qanpb"
 )
 
-const maxAmountOfPoints = 120
+const optimalAmountOfPoint = 120
 const minFullTimeFrame = 2 * time.Hour
 
 // Metrics represents methods to work with metrics.
@@ -275,13 +275,13 @@ GROUP BY {{ index . "group" }}
 
 const queryMetricsSparklinesTmpl = `
 SELECT
-		(toUnixTimestamp( :period_start_to ) - toUnixTimestamp( :period_start_from )) / {{ index . "amount_of_points" }} AS time_frame,
-		intDivOrZero(toUnixTimestamp( :period_start_to ) - toRelativeSecondNum(period_start), time_frame) AS point,
-		toUnixTimestamp( :period_start_to ) - (point * time_frame) AS timestamp,
+		intDivOrZero(toUnixTimestamp( :period_start_to ) - toUnixTimestamp(period_start), {{ index . "time_frame" }}) AS point,
+		toDateTime(toUnixTimestamp( :period_start_to ) - (point * {{ index . "time_frame" }})) AS timestamp,
+		{{ index . "time_frame" }} AS time_frame,
 
 SUM(num_queries) / time_frame AS num_queries_per_sec,
 if(SUM(m_query_time_cnt) == 0, NULL, SUM(m_query_time_sum) / time_frame) AS m_query_time_per_sec,
-if(SUM(m_lock_time_cnt) == 0, NULL, SUM(m_lock_time_sum) / time_frame) AS m_lock_time_sum,
+if(SUM(m_lock_time_cnt) == 0, NULL, SUM(m_lock_time_sum) / time_frame) AS m_lock_time_sum_sec,
 if(SUM(m_rows_sent_cnt) == 0, NULL, SUM(m_rows_sent_sum) / time_frame) AS m_rows_sent_sum_per_sec,
 if(SUM(m_rows_examined_cnt) == 0, NULL, SUM(m_rows_examined_sum) / time_frame) AS m_rows_examined_sum_per_sec,
 if(SUM(m_rows_affected_cnt) == 0, NULL, SUM(m_rows_affected_sum) / time_frame) AS m_rows_affected_sum_per_sec,
@@ -347,30 +347,26 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 	dQueryids, dServers, dDatabases, dSchemas, dUsernames, dClientHosts []string,
 	dbLabels map[string][]string) ([]*qanpb.Point, error) {
 
-	interfaceToFloat32 := func(unk interface{}) *float32 {
-		var f float32
-		switch i := unk.(type) {
-		case float64:
-			f = float32(i)
-			return &f
-		case float32:
-			return &i
-		case int64:
-			f = float32(i)
-			return &f
-		default:
-			return nil
-		}
-	}
+	// Align to minutes
+	periodStartToSec = periodStartToSec / 60 * 60
+	periodStartFromSec = periodStartFromSec / 60 * 60
 
 	// If time range is bigger then two hour - amount of sparklines points = 120 to avoid huge data in response.
 	// Otherwise amount of sparklines points is equal to minutes in in time range to not mess up calculation.
-	amountOfPoints := int64(maxAmountOfPoints)
+	amountOfPoints := int64(optimalAmountOfPoint)
 	timePeriod := periodStartToSec - periodStartFromSec
+	// reduce amount of point if period less then 2h.
 	if timePeriod < int64((minFullTimeFrame).Seconds()) {
 		// minimum point is 1 minute
 		amountOfPoints = timePeriod / 60
 	}
+
+	// how many full minutes we can fit into given amount of points.
+	minutesInPoint := (periodStartToSec - periodStartFromSec) / 60 / amountOfPoints
+	// we need aditional point to show this minutes
+	remainder := ((periodStartToSec - periodStartFromSec) / 60) % amountOfPoints
+	amountOfPoints += remainder / minutesInPoint
+	timeFrame := minutesInPoint * 60
 
 	arg := map[string]interface{}{
 		"period_start_from": periodStartFromSec,
@@ -384,7 +380,7 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 		"labels":            dbLabels,
 		"group":             group,
 		"dimension_val":     filter,
-		"amount_of_points":  amountOfPoints,
+		"time_frame":        timeFrame,
 	}
 
 	var results []*qanpb.Point
@@ -411,32 +407,41 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 		res := make(map[string]interface{})
 		err = rows.MapScan(res)
 		if err != nil {
-			return nil, errors.Wrap(err, "metrics sparkilnes scan error")
+			fmt.Printf("DimensionReport Scan error: %v", err)
 		}
 		points := qanpb.Point{
 			Values: make(map[string]*structpb.Value),
 		}
 		for k, v := range res {
-			f := interfaceToFloat32(v)
-			if f == nil {
+			switch i := v.(type) {
+			case time.Time:
+				points.Values[k] = &structpb.Value{
+					Kind: &structpb.Value_StringValue{
+						StringValue: i.Format(time.RFC3339),
+					},
+				}
+			case nil:
 				points.Values[k] = &structpb.Value{
 					Kind: &structpb.Value_NullValue{
 						NullValue: 0,
 					},
 				}
-				continue
+			default:
+				f, err := getFloat(i)
+				if err != nil {
+					err = errors.Wrap(err, "cannot get float for sparkline")
+					log.Println(err)
+				}
+				points.Values[k] = &structpb.Value{
+					Kind: &structpb.Value_NumberValue{
+						NumberValue: f,
+					},
+				}
 			}
-			points.Values[k] = &structpb.Value{
-				Kind: &structpb.Value_NumberValue{
-					NumberValue: float64(*f),
-				},
-			}
-
 		}
 		resultsWithGaps[points.Values["point"].GetNumberValue()] = &points
 	}
 
-	timeFrame := (periodStartToSec - periodStartFromSec) / amountOfPoints
 	// fill in gaps in time series.
 	for pointN := int64(0); pointN < amountOfPoints; pointN++ {
 		point, ok := resultsWithGaps[float64(pointN)]
@@ -444,8 +449,6 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 			point = &qanpb.Point{
 				Values: make(map[string]*structpb.Value),
 			}
-			timeShift := timeFrame * pointN
-			ts := periodStartToSec - timeShift
 			point.Values["point"] = &structpb.Value{
 				Kind: &structpb.Value_NumberValue{
 					NumberValue: float64(pointN),
@@ -456,9 +459,11 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 					NumberValue: float64(timeFrame),
 				},
 			}
+			timeShift := timeFrame * pointN
+			ts := periodStartToSec - timeShift
 			point.Values["timestamp"] = &structpb.Value{
-				Kind: &structpb.Value_NumberValue{
-					NumberValue: float64(ts),
+				Kind: &structpb.Value_StringValue{
+					StringValue: time.Unix(ts, 0).UTC().Format(time.RFC3339),
 				},
 			}
 		}
