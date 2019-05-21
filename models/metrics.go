@@ -22,12 +22,10 @@ import (
 	"fmt"
 	"log"
 	"sort"
-	"strings"
 	"text/template"
 	"time"
 
 	"github.com/jmoiron/sqlx"
-	"github.com/jmoiron/sqlx/reflectx"
 	"github.com/pkg/errors"
 
 	structpb "github.com/golang/protobuf/ptypes/struct"
@@ -71,9 +69,6 @@ func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec 
 		log.Fatalln(err)
 	}
 	var results []M
-	// set mapper to reuse json tags. Have to be unset
-	m.db.Mapper = reflectx.NewMapperFunc("json", strings.ToLower)
-	defer func() { m.db.Mapper = reflectx.NewMapperFunc("db", strings.ToLower) }()
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
 		return results, fmt.Errorf("prepare named:%v", err)
@@ -477,39 +472,43 @@ const queryExampleTmpl = `
 SELECT example, toUInt8(example_format) AS example_format,
        is_truncated, toUInt8(example_type) AS example_type, example_metrics
   FROM metrics
- WHERE period_start >= :from AND period_start <= :to
-  	   {{ if index . "filter" }} AND {{ index . "group" }} = :filter {{ end }}
- LIMIT :limit
+ WHERE period_start >= ? AND period_start <= ?
+       {{ if index . "filter" }} AND {{ index . "group" }} = '{{ index . "filter" }}' {{ end }}
+ LIMIT ?
 `
 
+var tmplQueryExample = template.Must(template.New("queryExampleTmpl").Parse(queryExampleTmpl))
+
 // SelectQueryExamples selects query examples and related stuff for given time range.
-func (m *Metrics) SelectQueryExamples(ctx context.Context, from, to time.Time, filter,
+func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, periodStartTo time.Time, filter,
 	group string, limit uint32) (*qanpb.QueryExampleReply, error) {
 	arg := map[string]interface{}{
-		"from":   from,
-		"to":     to,
 		"filter": filter,
 		"group":  group,
-		"limit":  limit,
 	}
+
 	var queryBuffer bytes.Buffer
-	if tmpl, err := template.New("queryExampleTmpl").Funcs(funcMap).Parse(queryExampleTmpl); err != nil {
-		log.Fatalln(err)
-	} else if err = tmpl.Execute(&queryBuffer, arg); err != nil {
-		log.Fatalln(err)
+	if err := tmplQueryExample.Execute(&queryBuffer, arg); err != nil {
+		return nil, errors.Wrap(err, "cannot execute queryExampleTmpl")
 	}
+
+	rows, err := m.db.QueryContext(ctx, queryBuffer.String(), periodStartFrom, periodStartTo, limit)
+	if err != nil {
+		return nil, errors.Wrap(err, "cannot select object details labels")
+	}
+	defer rows.Close() //nolint:errcheck
+
 	res := qanpb.QueryExampleReply{}
-	// set mapper to reuse json tags. Have to be unset
-	m.db.Mapper = reflectx.NewMapperFunc("json", strings.ToLower)
-	defer func() { m.db.Mapper = reflectx.NewMapperFunc("db", strings.ToLower) }()
-	nstmt, err := m.db.PrepareNamed(queryBuffer.String())
-	if err != nil {
-		return &res, fmt.Errorf("cannot prepare named statement of select query examples:%v", err)
+	for rows.Next() {
+		var row qanpb.QueryExample
+		err = rows.Scan(&row.Example, &row.ExampleFormat,
+			&row.IsTruncated, &row.ExampleType, &row.ExampleMetrics)
+		if err != nil {
+			return nil, errors.Wrap(err, "failed to scan query example for object details")
+		}
+		res.QueryExamples = append(res.QueryExamples, &row)
 	}
-	err = nstmt.SelectContext(ctx, &res.QueryExamples, arg)
-	if err != nil {
-		return &res, fmt.Errorf("cannot select query examples:%v", err)
-	}
+
 	return &res, nil
 }
 
@@ -517,19 +516,27 @@ const queryObjectDetailsLabelsTmpl = `
 	SELECT d_server, d_database, d_schema, d_username, d_client_host, labels.key AS lkey, labels.value AS lvalue
 	  FROM metrics
 	 ARRAY JOIN labels
-	 WHERE period_start >= :from AND period_start <= :to
-	 {{ if index . "filter" }} AND {{ index . "group" }} = :filter {{ end }}
+	 WHERE period_start >= ? AND period_start <= ?
+	 {{ if index . "filter" }} AND {{ index . "group" }} = '{{ index . "filter" }}' {{ end }}
 	 ORDER BY d_server, d_database, d_schema, d_username, d_client_host, labels.key, labels.value
 `
 
 var tmplObjectDetailsLabels = template.Must(template.New("queryObjectDetailsLabelsTmpl").Funcs(funcMap).Parse(queryObjectDetailsLabelsTmpl))
 
+type queryRowsLabels struct {
+	DServer     string
+	DDatabase   string
+	DSchema     string
+	DClientHost string
+	DUsername   string
+	LabelKey    string
+	LabelValue  string
+}
+
 // SelectObjectDetailsLabels selects object details labels for given time range and object.
-func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, from, to time.Time, filter,
+func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, periodStartFrom, periodStartTo time.Time, filter,
 	group string) (*qanpb.ObjectDetailsLabelsReply, error) {
 	arg := map[string]interface{}{
-		"from":   from,
-		"to":     to,
 		"filter": filter,
 		"group":  group,
 	}
@@ -538,33 +545,28 @@ func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, from, to time.T
 		return nil, errors.Wrap(err, "cannot execute tmplObjectDetailsLabels")
 	}
 	res := qanpb.ObjectDetailsLabelsReply{}
-	nstmt, err := m.db.PrepareNamed(queryBuffer.String())
-	if err != nil {
-		return nil, errors.Wrap(err, "cannot prepare named statement of select object details labels")
-	}
-	type queryRowsLabels struct {
-		DServer     string `db:"d_server"`
-		DDatabase   string `db:"d_database"`
-		DSchema     string `db:"d_schema"`
-		DClientHost string `db:"d_client_host"`
-		DUsername   string `db:"d_username"`
-		LabelKey    string `db:"lkey"`
-		LabelValue  string `db:"lvalue"`
-	}
-	rows := []queryRowsLabels{}
 
-	err = nstmt.SelectContext(ctx, &rows, arg)
+	rows, err := m.db.QueryContext(ctx, queryBuffer.String(), periodStartFrom, periodStartTo)
 	if err != nil {
 		return nil, errors.Wrap(err, "cannot select object details labels")
 	}
+	defer rows.Close() //nolint:errcheck
+
 	labels := map[string]map[string]struct{}{}
 	labels["d_server"] = map[string]struct{}{}
 	labels["d_database"] = map[string]struct{}{}
 	labels["d_schema"] = map[string]struct{}{}
 	labels["d_client_host"] = map[string]struct{}{}
 	labels["d_username"] = map[string]struct{}{}
-	// convert rows to array of unique label keys - values.
-	for _, row := range rows {
+
+	for rows.Next() {
+		var row queryRowsLabels
+		err = rows.Scan(&row.DServer, &row.DDatabase, &row.DSchema,
+			&row.DUsername, &row.DClientHost, &row.LabelKey, &row.LabelValue)
+		if err != nil {
+			return nil, errors.Wrap(err, "failed to scan labels for object details")
+		}
+		// convert rows to array of unique label keys - values.
 		labels["d_server"][row.DServer] = struct{}{}
 		labels["d_database"][row.DDatabase] = struct{}{}
 		labels["d_schema"][row.DSchema] = struct{}{}
@@ -574,6 +576,9 @@ func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, from, to time.T
 			labels[row.LabelKey] = map[string]struct{}{}
 		}
 		labels[row.LabelKey][row.LabelValue] = struct{}{}
+	}
+	if err = rows.Err(); err != nil {
+		return nil, errors.Wrap(err, "failed to select labels dimensions")
 	}
 
 	res.Labels = map[string]*qanpb.ListLabelValues{}

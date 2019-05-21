@@ -21,6 +21,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/pkg/errors"
+
 	"github.com/percona/pmm/api/qanpb"
 )
 
@@ -87,6 +89,7 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 	}
 
 	durationSec := periodStartToSec - periodStartFromSec
+	numQueries := interfaceToFloat32(metrics[0]["num_queries"])
 
 	for k := range commonColumnNames {
 		cnt := interfaceToFloat32(metrics[0]["m_"+k+"_cnt"])
@@ -99,8 +102,8 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 			Max: interfaceToFloat32(metrics[0]["m_"+k+"_max"]),
 			P99: interfaceToFloat32(metrics[0]["m_"+k+"_p99"]),
 		}
-		if cnt > 0 && sum > 0 {
-			mv.Avg = sum / cnt
+		if numQueries > 0 && sum > 0 {
+			mv.Avg = sum / numQueries
 		}
 		if sum > 0 && totalSum > 0 {
 			mv.PercentOfTotal = sum / totalSum
@@ -171,7 +174,7 @@ func (s *Service) GetQueryExample(ctx context.Context, in *qanpb.QueryExampleReq
 		limit,
 	)
 	if err != nil {
-		return resp, fmt.Errorf("error in selecting query examples:%v", err)
+		return resp, errors.Wrap(err, "error in selecting query examples")
 	}
 	return resp, nil
 }
@@ -179,16 +182,13 @@ func (s *Service) GetQueryExample(ctx context.Context, in *qanpb.QueryExampleReq
 // GetLabels gets labels in given time range for object.
 func (s *Service) GetLabels(ctx context.Context, in *qanpb.ObjectDetailsLabelsRequest) (*qanpb.ObjectDetailsLabelsReply, error) {
 	if in.PeriodStartFrom == nil {
-		return nil, fmt.Errorf("period_start_from is required:%v", in.PeriodStartFrom)
+		return nil, fmt.Errorf("period_start_from is required: %v", in.PeriodStartFrom)
 	}
 	if in.PeriodStartTo == nil {
-		return nil, fmt.Errorf("period_start_to is required:%v", in.PeriodStartTo)
+		return nil, fmt.Errorf("period_start_to is required: %v", in.PeriodStartTo)
 	}
-	if in.GroupBy == "" {
-		return nil, fmt.Errorf("group_by is required:%v", in.GroupBy)
-	}
-	if in.FilterBy == "" {
-		return nil, fmt.Errorf("filter_by is required:%v", in.FilterBy)
+	if in.FilterBy != "" && in.GroupBy == "" {
+		return nil, fmt.Errorf("group_by is required if filter_by is not empty %v = %v", in.GroupBy, in.FilterBy)
 	}
 
 	from := time.Unix(in.PeriodStartFrom.Seconds, 0)
