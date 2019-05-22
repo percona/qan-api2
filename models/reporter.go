@@ -250,17 +250,17 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 	}
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
-		return results, fmt.Errorf("prepare named:%v", err)
+		return nil, errors.Wrap(err, "prepare named")
 	}
 	query, args, err = sqlx.In(query, args...)
 	if err != nil {
-		return results, fmt.Errorf("populate agruments in IN clause:%v", err)
+		return nil, errors.Wrap(err, "populate agruments in IN clause")
 	}
 	query = r.db.Rebind(query)
 
 	rows, err := r.db.QueryxContext(ctx, query, args...)
 	if err != nil {
-		return results, fmt.Errorf("report query:%v", err)
+		return nil, errors.Wrap(err, "report query")
 	}
 	resultsWithGaps := map[uint32]*qanpb.Point{}
 
@@ -280,7 +280,7 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 		res := getPointFieldsList(&p, sparklinePointFieldsToQuery)
 		err = rows.Scan(res...)
 		if err != nil {
-			fmt.Printf("DimensionReport Scan error: %v", err)
+			return nil, errors.Wrap(err, "DimensionReport scan error")
 		}
 		resultsWithGaps[p.Point] = &p
 	}

@@ -389,7 +389,7 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 	}
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
-		return results, fmt.Errorf("prepare named:%v", err)
+		return nil, errors.Wrap(err, "prepare named")
 	}
 	query, args, err = sqlx.In(query, args...)
 	if err != nil {
@@ -407,7 +407,7 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 		res := getPointFieldsList(&p, sparklinePointAllFields)
 		err = rows.Scan(res...)
 		if err != nil {
-			fmt.Printf("DimensionReport Scan error: %v", err)
+			return nil, errors.Wrap(err, "DimensionReport scan error")
 		}
 		resultsWithGaps[p.Point] = &p
 	}
