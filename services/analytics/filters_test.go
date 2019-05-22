@@ -18,12 +18,12 @@ package analitycs
 
 import (
 	"context"
-	"encoding/json"
 	"log"
 	"os"
 	"testing"
 	"time"
 
+	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/kshvakov/clickhouse"
@@ -113,7 +113,8 @@ func TestService_GetFilters(t *testing.T) {
 				assert.Errorf(t, err, "Service.GetFilters() error = %v, wantErr %v", err, tt.wantErr)
 			}
 			expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetFilters_"+tt.name+".json")
-			gotJSON, err := json.MarshalIndent(got, "", "\t")
+			marshaler := jsonpb.Marshaler{Indent: "	"}
+			gotJSON, err := marshaler.MarshalToString(got)
 			if err != nil {
 				t.Errorf("cannot marshal:%v", err)
 			}

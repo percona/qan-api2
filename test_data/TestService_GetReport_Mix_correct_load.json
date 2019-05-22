@@ -1,5 +1,5 @@
 {
-	"total_rows": 6,
+	"totalRows": 6,
 	"offset": 10,
 	"limit": 10,
 	"rows": [
@@ -28,3293 +28,787 @@
 					}
 				},
 				"sort_scan": {
-					"stats": {}
+					"stats": {
+
+					}
 				}
 			},
 			"sparkline": [
 				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000034666666761040686
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000057133330653111137
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 8.413333333333334
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T10:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000020000000949949025
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005833333396973709
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 2.1
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 1
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000002033333294093609
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005850000306963921
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 13.54
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 2
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 3
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 4
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 5
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 6
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 9.999999747378752e-8
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 13.09
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 7
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000004000000189989805
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000626666657626629
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 11.106666666666667
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 8
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 1.3333332996505002e-7
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 25.696666666666665
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 9
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 10
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 9.999999747378752e-8
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 8.78
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 11
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:05:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000002966666749368111
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 13.393333333333333
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 12
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T09:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 1.9999999494757504e-7
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 46.92666666666667
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 13
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 14
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 15
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 16
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 9.999999747378752e-8
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.6133333333333333
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 17
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003266666705409686
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005373333270351092
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 23.89
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 18
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003299999904508392
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005663333460688591
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 18.356666666666666
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 19
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 20
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 21
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 22
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003166666720062494
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000057133330653111137
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 29.843333333333334
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 23
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:05:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 9.999999747378752e-8
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 23.666666666666668
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 24
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T08:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 25
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 26
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 27
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 28
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 29
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 30
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000004666666500270367
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005716666579246521
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 6.683333333333334
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 31
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 1.3333332996505002e-7
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 17.713333333333335
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 32
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 33
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 34
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 1.9999999494757504e-7
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 31.233333333333334
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 35
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:05:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003299999904508392
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005343333507577578
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 10.596666666666666
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 36
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T07:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 37
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003233333312285443
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000055033334841330844
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 12.936666666666667
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 38
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 1.3333332996505002e-7
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.35333333333333333
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 39
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 40
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 41
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000020666666872178514
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005540000274777413
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 22.47
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 42
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 43
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 44
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 1.3333332996505002e-7
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 2.506666666666667
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 45
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 46
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 47
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:05:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 48
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T06:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000013999999888862172
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 28.92
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 49
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003866666617492834
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000052999997678853105
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 43.45666666666666
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 50
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 51
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 52
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 53
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 1.3333332996505002e-7
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 9.526666666666667
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 54
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 55
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 56
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 57
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003266666705409686
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005260000005364418
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 12.676666666666666
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 58
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 59
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:05:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 9.999999747378752e-8
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 5.543333333333333
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 60
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T05:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003833333418394129
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 5.633333333333334
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 61
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 62
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 63
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 64
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000034333334770053626
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005763333252010246
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 12.676666666666666
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 65
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 66
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00000196666670187066
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00006293333310168236
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 39.42
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 67
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 68
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 69
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 70
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 71
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:05:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 72
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T04:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 73
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 74
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00000393333340374132
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000055333332469065984
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 12.263333333333334
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 75
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000031333333269382517
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 15.926666666666666
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 76
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 77
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003066666734715303
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 2.5533333333333332
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 78
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 79
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 80
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000004000000189989805
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000052333331356445946
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 15.9
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 81
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000014333332849976917
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 2.17
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 82
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 83
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:05:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000002033333294093609
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000056333330770333606
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 32.02333333333333
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 84
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T03:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000037000000399226946
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 9.166666666666666
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 85
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 86
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 87
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 88
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 89
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 90
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000004166666573534409
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 3.51
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 91
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000004000000189989805
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005343333507577578
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.9066666666666666
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 92
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 1.3333332996505002e-7
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 16.09
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 93
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000031333333269382517
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 24.503333333333334
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 94
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 95
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:05:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000013999999888862172
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 11.78
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 96
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T02:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 2.6666665993010003e-7
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 16.86
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 97
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 98
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003233333312285443
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00005653333593121109
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 39.78666666666667
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 99
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 100
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 101
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 102
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 103
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000007233333502275248
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00017760000502069792
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 50.526666666666664
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 104
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 105
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 106
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003233333312285443
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000535999983549118
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 9.366666666666667
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 107
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:05:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 108
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T01:00:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 109
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:55:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 110
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:50:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000003066666734715303
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 20.22
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 111
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:45:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 112
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:40:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 113
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:35:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 114
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:30:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000035999998605499664
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 17.92
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 115
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:25:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.000005299999999503295
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.00010976666561570407
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 75.63333333333334
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 116
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:20:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"m_lock_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0
-							}
-						},
-						"m_query_time_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 0.0000031333333269382517
-							}
-						},
-						"m_sort_scan_sum_per_sec": {
-							"Kind": {
-								"NullValue": 0
-							}
-						},
-						"num_queries_sum_per_sec": {
-							"Kind": {
-								"NumberValue": 15.343333333333334
-							}
-						},
-						"point": {
-							"Kind": {
-								"NumberValue": 117
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:15:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 118
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:10:00Z"
-							}
-						}
-					}
-				},
-				{
-					"values": {
-						"point": {
-							"Kind": {
-								"NumberValue": 119
-							}
-						},
-						"time_frame": {
-							"Kind": {
-								"NumberValue": 300
-							}
-						},
-						"timestamp": {
-							"Kind": {
-								"StringValue": "2019-01-01T00:05:00Z"
-							}
-						}
-					}
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T10:00:00Z",
+					"numQueriesPerSec": 8.413333,
+					"mQueryTimeSumPerSec": 0.00005713333,
+					"mLockTimeSumPerSec": 0.0000034666666,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 1,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:55:00Z",
+					"numQueriesPerSec": 2.1,
+					"mQueryTimeSumPerSec": 0.000058333335,
+					"mLockTimeSumPerSec": 0.000002,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 2,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:50:00Z",
+					"numQueriesPerSec": 13.54,
+					"mQueryTimeSumPerSec": 0.0000585,
+					"mLockTimeSumPerSec": 0.0000020333332,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 3,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:45:00Z"
+				},
+				{
+					"point": 4,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:40:00Z"
+				},
+				{
+					"point": 5,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:35:00Z"
+				},
+				{
+					"point": 6,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:30:00Z"
+				},
+				{
+					"point": 7,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:25:00Z",
+					"numQueriesPerSec": 13.09,
+					"mQueryTimeSumPerSec": 9.9999994e-8,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 8,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:20:00Z",
+					"numQueriesPerSec": 11.106667,
+					"mQueryTimeSumPerSec": 0.000062666666,
+					"mLockTimeSumPerSec": 0.000004,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 9,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:15:00Z",
+					"numQueriesPerSec": 25.696667,
+					"mQueryTimeSumPerSec": 1.3333333e-7,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 10,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:10:00Z"
+				},
+				{
+					"point": 11,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:05:00Z",
+					"numQueriesPerSec": 8.78,
+					"mQueryTimeSumPerSec": 9.9999994e-8,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 12,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:00:00Z",
+					"numQueriesPerSec": 13.393333,
+					"mQueryTimeSumPerSec": 0.0000029666667,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 13,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:55:00Z",
+					"numQueriesPerSec": 46.926666,
+					"mQueryTimeSumPerSec": 1.9999999e-7,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 14,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:50:00Z"
+				},
+				{
+					"point": 15,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:45:00Z"
+				},
+				{
+					"point": 16,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:40:00Z"
+				},
+				{
+					"point": 17,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:35:00Z",
+					"numQueriesPerSec": 0.61333334,
+					"mQueryTimeSumPerSec": 9.9999994e-8,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 18,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:30:00Z",
+					"numQueriesPerSec": 23.89,
+					"mQueryTimeSumPerSec": 0.000053733333,
+					"mLockTimeSumPerSec": 0.0000032666667,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 19,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:25:00Z",
+					"numQueriesPerSec": 18.356667,
+					"mQueryTimeSumPerSec": 0.000056633333,
+					"mLockTimeSumPerSec": 0.0000033,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 20,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:20:00Z"
+				},
+				{
+					"point": 21,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:15:00Z"
+				},
+				{
+					"point": 22,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:10:00Z"
+				},
+				{
+					"point": 23,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:05:00Z",
+					"numQueriesPerSec": 29.843334,
+					"mQueryTimeSumPerSec": 0.00005713333,
+					"mLockTimeSumPerSec": 0.0000031666668,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 24,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:00:00Z",
+					"numQueriesPerSec": 23.666666,
+					"mQueryTimeSumPerSec": 9.9999994e-8,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 25,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:55:00Z"
+				},
+				{
+					"point": 26,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:50:00Z"
+				},
+				{
+					"point": 27,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:45:00Z"
+				},
+				{
+					"point": 28,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:40:00Z"
+				},
+				{
+					"point": 29,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:35:00Z"
+				},
+				{
+					"point": 30,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:30:00Z"
+				},
+				{
+					"point": 31,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:25:00Z",
+					"numQueriesPerSec": 6.6833334,
+					"mQueryTimeSumPerSec": 0.000057166664,
+					"mLockTimeSumPerSec": 0.0000046666664,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 32,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:20:00Z",
+					"numQueriesPerSec": 17.713333,
+					"mQueryTimeSumPerSec": 1.3333333e-7,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 33,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:15:00Z"
+				},
+				{
+					"point": 34,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:10:00Z"
+				},
+				{
+					"point": 35,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:05:00Z",
+					"numQueriesPerSec": 31.233334,
+					"mQueryTimeSumPerSec": 1.9999999e-7,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 36,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:00:00Z",
+					"numQueriesPerSec": 10.596666,
+					"mQueryTimeSumPerSec": 0.000053433334,
+					"mLockTimeSumPerSec": 0.0000033,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 37,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:55:00Z"
+				},
+				{
+					"point": 38,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:50:00Z",
+					"numQueriesPerSec": 12.9366665,
+					"mQueryTimeSumPerSec": 0.000055033335,
+					"mLockTimeSumPerSec": 0.0000032333332,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 39,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:45:00Z",
+					"numQueriesPerSec": 0.35333332,
+					"mQueryTimeSumPerSec": 1.3333333e-7,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 40,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:40:00Z"
+				},
+				{
+					"point": 41,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:35:00Z"
+				},
+				{
+					"point": 42,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:30:00Z",
+					"numQueriesPerSec": 22.47,
+					"mQueryTimeSumPerSec": 0.000055400003,
+					"mLockTimeSumPerSec": 0.0000020666666,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 43,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:25:00Z"
+				},
+				{
+					"point": 44,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:20:00Z"
+				},
+				{
+					"point": 45,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:15:00Z",
+					"numQueriesPerSec": 2.5066667,
+					"mQueryTimeSumPerSec": 1.3333333e-7,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 46,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:10:00Z"
+				},
+				{
+					"point": 47,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:05:00Z"
+				},
+				{
+					"point": 48,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:00:00Z"
+				},
+				{
+					"point": 49,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:55:00Z",
+					"numQueriesPerSec": 28.92,
+					"mQueryTimeSumPerSec": 0.0000014,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 50,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:50:00Z",
+					"numQueriesPerSec": 43.456665,
+					"mQueryTimeSumPerSec": 0.000052999996,
+					"mLockTimeSumPerSec": 0.0000038666667,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 51,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:45:00Z"
+				},
+				{
+					"point": 52,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:40:00Z"
+				},
+				{
+					"point": 53,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:35:00Z"
+				},
+				{
+					"point": 54,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:30:00Z",
+					"numQueriesPerSec": 9.526667,
+					"mQueryTimeSumPerSec": 1.3333333e-7,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 55,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:25:00Z"
+				},
+				{
+					"point": 56,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:20:00Z"
+				},
+				{
+					"point": 57,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:15:00Z"
+				},
+				{
+					"point": 58,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:10:00Z",
+					"numQueriesPerSec": 12.676666,
+					"mQueryTimeSumPerSec": 0.0000526,
+					"mLockTimeSumPerSec": 0.0000032666667,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 59,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:05:00Z"
+				},
+				{
+					"point": 60,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:00:00Z",
+					"numQueriesPerSec": 5.5433335,
+					"mQueryTimeSumPerSec": 9.9999994e-8,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 61,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:55:00Z",
+					"numQueriesPerSec": 5.633333,
+					"mQueryTimeSumPerSec": 0.0000038333333,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 62,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:50:00Z"
+				},
+				{
+					"point": 63,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:45:00Z"
+				},
+				{
+					"point": 64,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:40:00Z"
+				},
+				{
+					"point": 65,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:35:00Z",
+					"numQueriesPerSec": 12.676666,
+					"mQueryTimeSumPerSec": 0.000057633333,
+					"mLockTimeSumPerSec": 0.0000034333334,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 66,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:30:00Z"
+				},
+				{
+					"point": 67,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:25:00Z",
+					"numQueriesPerSec": 39.42,
+					"mQueryTimeSumPerSec": 0.00006293333,
+					"mLockTimeSumPerSec": 0.0000019666668,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 68,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:20:00Z"
+				},
+				{
+					"point": 69,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:15:00Z"
+				},
+				{
+					"point": 70,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:10:00Z"
+				},
+				{
+					"point": 71,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:05:00Z"
+				},
+				{
+					"point": 72,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:00:00Z"
+				},
+				{
+					"point": 73,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:55:00Z"
+				},
+				{
+					"point": 74,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:50:00Z"
+				},
+				{
+					"point": 75,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:45:00Z",
+					"numQueriesPerSec": 12.263333,
+					"mQueryTimeSumPerSec": 0.000055333334,
+					"mLockTimeSumPerSec": 0.0000039333336,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 76,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:40:00Z",
+					"numQueriesPerSec": 15.926666,
+					"mQueryTimeSumPerSec": 0.0000031333334,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 77,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:35:00Z"
+				},
+				{
+					"point": 78,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:30:00Z",
+					"numQueriesPerSec": 2.5533333,
+					"mQueryTimeSumPerSec": 0.0000030666667,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 79,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:25:00Z"
+				},
+				{
+					"point": 80,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:20:00Z"
+				},
+				{
+					"point": 81,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:15:00Z",
+					"numQueriesPerSec": 15.9,
+					"mQueryTimeSumPerSec": 0.000052333333,
+					"mLockTimeSumPerSec": 0.000004,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 82,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:10:00Z",
+					"numQueriesPerSec": 2.17,
+					"mQueryTimeSumPerSec": 0.0000014333333,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 83,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:05:00Z"
+				},
+				{
+					"point": 84,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:00:00Z",
+					"numQueriesPerSec": 32.023335,
+					"mQueryTimeSumPerSec": 0.00005633333,
+					"mLockTimeSumPerSec": 0.0000020333332,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 85,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:55:00Z",
+					"numQueriesPerSec": 9.166667,
+					"mQueryTimeSumPerSec": 0.0000037,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 86,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:50:00Z"
+				},
+				{
+					"point": 87,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:45:00Z"
+				},
+				{
+					"point": 88,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:40:00Z"
+				},
+				{
+					"point": 89,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:35:00Z"
+				},
+				{
+					"point": 90,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:30:00Z"
+				},
+				{
+					"point": 91,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:25:00Z",
+					"numQueriesPerSec": 3.51,
+					"mQueryTimeSumPerSec": 0.0000041666667,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 92,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:20:00Z",
+					"numQueriesPerSec": 0.9066667,
+					"mQueryTimeSumPerSec": 0.000053433334,
+					"mLockTimeSumPerSec": 0.000004,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 93,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:15:00Z",
+					"numQueriesPerSec": 16.09,
+					"mQueryTimeSumPerSec": 1.3333333e-7,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 94,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:10:00Z",
+					"numQueriesPerSec": 24.503334,
+					"mQueryTimeSumPerSec": 0.0000031333334,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 95,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:05:00Z"
+				},
+				{
+					"point": 96,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:00:00Z",
+					"numQueriesPerSec": 11.78,
+					"mQueryTimeSumPerSec": 0.0000014,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 97,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:55:00Z",
+					"numQueriesPerSec": 16.86,
+					"mQueryTimeSumPerSec": 2.6666666e-7,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 98,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:50:00Z"
+				},
+				{
+					"point": 99,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:45:00Z",
+					"numQueriesPerSec": 39.786667,
+					"mQueryTimeSumPerSec": 0.000056533336,
+					"mLockTimeSumPerSec": 0.0000032333332,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 100,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:40:00Z"
+				},
+				{
+					"point": 101,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:35:00Z"
+				},
+				{
+					"point": 102,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:30:00Z"
+				},
+				{
+					"point": 103,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:25:00Z"
+				},
+				{
+					"point": 104,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:20:00Z",
+					"numQueriesPerSec": 50.52667,
+					"mQueryTimeSumPerSec": 0.0001776,
+					"mLockTimeSumPerSec": 0.0000072333337,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 105,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:15:00Z"
+				},
+				{
+					"point": 106,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:10:00Z"
+				},
+				{
+					"point": 107,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:05:00Z",
+					"numQueriesPerSec": 9.366667,
+					"mQueryTimeSumPerSec": 0.000053599997,
+					"mLockTimeSumPerSec": 0.0000032333332,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 108,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:00:00Z"
+				},
+				{
+					"point": 109,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:55:00Z"
+				},
+				{
+					"point": 110,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:50:00Z"
+				},
+				{
+					"point": 111,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:45:00Z",
+					"numQueriesPerSec": 20.22,
+					"mQueryTimeSumPerSec": 0.0000030666667,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 112,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:40:00Z"
+				},
+				{
+					"point": 113,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:35:00Z"
+				},
+				{
+					"point": 114,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:30:00Z"
+				},
+				{
+					"point": 115,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:25:00Z",
+					"numQueriesPerSec": 17.92,
+					"mQueryTimeSumPerSec": 0.0000036,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 116,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:20:00Z",
+					"numQueriesPerSec": 75.63333,
+					"mQueryTimeSumPerSec": 0.00010976667,
+					"mLockTimeSumPerSec": 0.0000053,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 117,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:15:00Z",
+					"numQueriesPerSec": 15.343333,
+					"mQueryTimeSumPerSec": 0.0000031333334,
+					"mSortScanSumPerSec": "NaN"
+				},
+				{
+					"point": 118,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:10:00Z"
+				},
+				{
+					"point": 119,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:05:00Z"
 				}
 			],
 			"fingerprint": "TOTAL",
-			"num_queries": 268264,
+			"numQueries": 268264,
 			"qps": 7,
 			"load": 0.000012552223
 		}

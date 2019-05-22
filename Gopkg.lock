@@ -148,14 +148,14 @@
 
 [[projects]]
   branch = "PMM-4004-sparlkine-show-null"
-  digest = "1:23c32e9fbda5309ad9320f4ece8cc48ce31612cc78581bfee3611dbd7c3a75fc"
+  digest = "1:3f3627b95e9380a31495bb8a7bc65f7e38994d22abd18a1144e1785ccd78ff9f"
   name = "github.com/percona/pmm"
   packages = [
     "api/qanpb",
     "version",
   ]
   pruneopts = "NUT"
-  revision = "c19c3943ddc9983a3ca00321727c7c3b809ef4c0"
+  revision = "1e66ef9d3a2078d2b0ec40bf1d5c04d33b20ab4a"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
@@ -304,7 +304,8 @@
     "github.com/golang-migrate/migrate",
     "github.com/golang-migrate/migrate/database/clickhouse",
     "github.com/golang-migrate/migrate/source/go_bindata",
-    "github.com/golang/protobuf/ptypes/struct",
+    "github.com/golang/protobuf/jsonpb",
+    "github.com/golang/protobuf/proto",
     "github.com/golang/protobuf/ptypes/timestamp",
     "github.com/grpc-ecosystem/grpc-gateway/runtime",
     "github.com/jmoiron/sqlx",

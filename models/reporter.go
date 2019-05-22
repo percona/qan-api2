@@ -25,7 +25,6 @@ import (
 	"text/template"
 	"time"
 
-	structpb "github.com/golang/protobuf/ptypes/struct"
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
 
@@ -172,7 +171,7 @@ const queryReportSparklinesTmpl = `
 		{{ index . "time_frame" }} AS time_frame,
 		SUM(num_queries) / time_frame AS num_queries_sum_per_sec,
 		{{range $j, $col := index . "columns"}}
-			if(SUM(m_{{ $col }}_cnt) == 0, NULL, SUM(m_{{ $col }}_sum) / time_frame) AS m_{{ $col }}_sum_per_sec,
+			if(SUM(m_{{ $col }}_cnt) == 0, NaN, SUM(m_{{ $col }}_sum) / time_frame) AS m_{{ $col }}_sum_per_sec,
 		{{ end }}
 		if(SUM(m_query_time_cnt) == 0, NULL, SUM(m_query_time_sum) / time_frame) AS m_query_time_sum_per_sec
 	FROM metrics
@@ -263,72 +262,42 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 	if err != nil {
 		return results, fmt.Errorf("report query:%v", err)
 	}
-	resultsWithGaps := map[float64]*qanpb.Point{}
+	resultsWithGaps := map[uint32]*qanpb.Point{}
+
+	sparklinePointFieldsToQuery := []string{
+		"point",
+		"timestamp",
+		"time_frame",
+		"num_queries_per_sec",
+	}
+	for _, v := range columns {
+		sparklinePointFieldsToQuery = append(sparklinePointFieldsToQuery, fmt.Sprintf("m_%s_sum_per_sec", v))
+	}
+	sparklinePointFieldsToQuery = append(sparklinePointFieldsToQuery, "m_query_time_sum_per_sec")
+
 	for rows.Next() {
-		res := make(map[string]interface{})
-		err = rows.MapScan(res)
+		p := qanpb.Point{}
+		res := getPointFieldsList(&p, sparklinePointFieldsToQuery)
+		err = rows.Scan(res...)
 		if err != nil {
 			fmt.Printf("DimensionReport Scan error: %v", err)
 		}
-		points := qanpb.Point{
-			Values: make(map[string]*structpb.Value),
-		}
-		for k, v := range res {
-			switch i := v.(type) {
-			case time.Time:
-				points.Values[k] = &structpb.Value{
-					Kind: &structpb.Value_StringValue{
-						StringValue: i.Format(time.RFC3339),
-					},
-				}
-			case nil:
-				points.Values[k] = &structpb.Value{
-					Kind: &structpb.Value_NullValue{
-						NullValue: 0,
-					},
-				}
-			default:
-				f, err := getFloat(i)
-				if err != nil {
-					err = errors.Wrap(err, "cannot get float for sparkline")
-					log.Println(err)
-				}
-				points.Values[k] = &structpb.Value{
-					Kind: &structpb.Value_NumberValue{
-						NumberValue: f,
-					},
-				}
-			}
-		}
-		resultsWithGaps[points.Values["point"].GetNumberValue()] = &points
+		resultsWithGaps[p.Point] = &p
 	}
 
 	// fill in gaps in time series.
-	for pointN := int64(0); pointN < amountOfPoints; pointN++ {
-		point, ok := resultsWithGaps[float64(pointN)]
+	for pointN := uint32(0); int64(pointN) < amountOfPoints; pointN++ {
+		p, ok := resultsWithGaps[pointN]
 		if !ok {
-			point = &qanpb.Point{
-				Values: make(map[string]*structpb.Value),
-			}
-			point.Values["point"] = &structpb.Value{
-				Kind: &structpb.Value_NumberValue{
-					NumberValue: float64(pointN),
-				},
-			}
-			point.Values["time_frame"] = &structpb.Value{
-				Kind: &structpb.Value_NumberValue{
-					NumberValue: float64(timeFrame),
-				},
-			}
-			timeShift := timeFrame * pointN
+			p = &qanpb.Point{}
+			p.Point = pointN
+			p.TimeFrame = uint32(timeFrame)
+			timeShift := timeFrame * int64(pointN)
 			ts := periodStartToSec - timeShift
-			point.Values["timestamp"] = &structpb.Value{
-				Kind: &structpb.Value_StringValue{
-					StringValue: time.Unix(ts, 0).UTC().Format(time.RFC3339),
-				},
-			}
+			// p.Timestamp = &timestamp.Timestamp{Seconds: ts}
+			p.Timestamp = time.Unix(ts, 0).UTC().Format(time.RFC3339)
 		}
-		results = append(results, point)
+		results = append(results, p)
 	}
 
 	return results, err

@@ -18,7 +18,6 @@ package analitycs
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -26,6 +25,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/golang/protobuf/jsonpb"
+	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/jmoiron/sqlx"
 	"github.com/percona/pmm/api/qanpb"
@@ -47,13 +48,16 @@ func setup() *sqlx.DB {
 	return db
 }
 
-func getExpectedJSON(t *testing.T, got interface{}, filename string) []byte {
+func getExpectedJSON(t *testing.T, got proto.Message, filename string) []byte {
 	if os.Getenv("REFRESH_TEST_DATA") != "" {
-		json, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{
+			Indent: "\t",
+		}
+		json, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
-		err = ioutil.WriteFile(filename, json, 0644)
+		err = ioutil.WriteFile(filename, []byte(json), 0644)
 		if err != nil {
 			t.Errorf("cannot write:%v", err)
 		}
@@ -141,7 +145,8 @@ func TestService_GetReport(t *testing.T) {
 				return
 			}
 			expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_"+tt.name+".json")
-			gotJSON, err := json.MarshalIndent(got, "", "\t")
+			marshaler := jsonpb.Marshaler{Indent: "\t"}
+			gotJSON, err := marshaler.MarshalToString(got)
 			if err != nil {
 				t.Errorf("cannot marshal:%v", err)
 			}
@@ -211,7 +216,8 @@ func TestService_GetReport_Mix(t *testing.T) {
 			return
 		}
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Mix_"+test.name+".json")
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -230,7 +236,8 @@ func TestService_GetReport_Mix(t *testing.T) {
 			return
 		}
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Mix_"+test.name+".json")
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -254,7 +261,8 @@ func TestService_GetReport_Mix(t *testing.T) {
 			return
 		}
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Mix_"+test.name+".json")
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -327,7 +335,8 @@ func TestService_GetReport_Groups(t *testing.T) {
 		assert.NoError(t, err, "Unexpected error in Service.GetReport()")
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Groups_group_by_queryid.json")
 
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -363,7 +372,8 @@ func TestService_GetReport_Groups(t *testing.T) {
 		assert.NoError(t, err, "Unexpected error in Service.GetReport()")
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Groups_group_by_d_server.json")
 
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -399,7 +409,8 @@ func TestService_GetReport_Groups(t *testing.T) {
 		assert.NoError(t, err, "Unexpected error in Service.GetReport()")
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Groups_group_by_d_database.json")
 
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -435,7 +446,8 @@ func TestService_GetReport_Groups(t *testing.T) {
 		assert.NoError(t, err, "Unexpected error in Service.GetReport()")
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Groups_group_by_d_schema.json")
 
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -471,7 +483,8 @@ func TestService_GetReport_Groups(t *testing.T) {
 		assert.NoError(t, err, "Unexpected error in Service.GetReport()")
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Groups_group_by_d_username.json")
 
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -507,7 +520,8 @@ func TestService_GetReport_Groups(t *testing.T) {
 		assert.NoError(t, err, "Unexpected error in Service.GetReport()")
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_Groups_group_by_d_client_host.json")
 
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -673,7 +687,8 @@ func TestService_GetReport_Sparklines(t *testing.T) {
 		assert.NoError(t, err, "Unexpected error in Service.GetReport()")
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_sparklines_60_points.json")
 
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
@@ -710,7 +725,8 @@ func TestService_GetReport_Sparklines(t *testing.T) {
 		assert.NoError(t, err, "Unexpected error in Service.GetReport()")
 		expectedJSON := getExpectedJSON(t, got, "../../test_data/TestService_GetReport_sparklines_90_points.json")
 
-		gotJSON, err := json.MarshalIndent(got, "", "\t")
+		marshaler := jsonpb.Marshaler{Indent: "\t"}
+		gotJSON, err := marshaler.MarshalToString(got)
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
