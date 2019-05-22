@@ -49,15 +49,16 @@ func getFloat(unk interface{}) (float64, error) {
 	default:
 		v := reflect.ValueOf(unk)
 		v = reflect.Indirect(v)
-		if v.Type().ConvertibleTo(floatType) {
+		switch {
+		case v.Type().ConvertibleTo(floatType):
 			fv := v.Convert(floatType)
 			return fv.Float(), nil
-		} else if v.Type().ConvertibleTo(stringType) {
+		case v.Type().ConvertibleTo(stringType):
 			sv := v.Convert(stringType)
 			s := sv.String()
 			return strconv.ParseFloat(s, 64)
-		} else {
-			return math.NaN(), fmt.Errorf("Can't convert %v to float64", v.Type())
+		default:
+			return math.NaN(), fmt.Errorf("can't convert %v to float64", v.Type())
 		}
 	}
 }
