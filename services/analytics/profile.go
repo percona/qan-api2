@@ -32,18 +32,18 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 
 	if in.PeriodStartFrom == nil || in.PeriodStartTo == nil {
 		err := fmt.Errorf("from-date: %s or to-date: %s cannot be empty", in.PeriodStartFrom, in.PeriodStartTo)
-		return &qanpb.ReportReply{}, err
+		return nil, err
 	}
 
 	periodStartFromSec := in.PeriodStartFrom.Seconds
 	periodStartToSec := in.PeriodStartTo.Seconds
 	if periodStartFromSec > periodStartToSec {
 		err := fmt.Errorf("from-date %s cannot be bigger then to-date %s", in.PeriodStartFrom, in.PeriodStartTo)
-		return &qanpb.ReportReply{}, err
+		return nil, err
 	}
 
 	if _, ok := standartDimensions[in.GroupBy]; !ok {
-		return &qanpb.ReportReply{}, fmt.Errorf("unknown group dimension: %s", in.GroupBy)
+		return nil, fmt.Errorf("unknown group dimension: %s", in.GroupBy)
 	}
 	group := in.GroupBy
 
@@ -139,7 +139,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	)
 
 	if err != nil {
-		return resp, err
+		return nil, err
 	}
 
 	total := results[0]
@@ -185,7 +185,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			columns,
 		)
 		if err != nil {
-			return resp, err
+			return nil, err
 		}
 		row.Sparkline = sparklines
 		for _, c := range columns {
