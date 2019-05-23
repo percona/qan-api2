@@ -80,9 +80,21 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		}
 	}
 
+	uniqColumnsMap := map[string]struct{}{}
+	for _, column := range columns {
+		if _, ok := uniqColumnsMap[column]; !ok {
+			uniqColumnsMap[column] = struct{}{}
+		}
+	}
+
+	uniqColumns := []string{}
+	for key := range uniqColumnsMap {
+		uniqColumns = append(uniqColumns, key)
+	}
+
 	boolColumns := []string{}
 	commonColumns := []string{}
-	for _, col := range columns {
+	for _, col := range uniqColumns {
 		if _, ok := boolColumnNames[col]; ok {
 			boolColumns = append(boolColumns, col)
 			continue
@@ -159,11 +171,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			Load:        interfaceToFloat32(res["m_query_time_sum"]) / float32(intervalTime),
 			Metrics:     make(map[string]*qanpb.Metric),
 		}
-		// Add latency as default column.
-		stats := makeStats("query_time", total, res, numQueries)
-		row.Metrics["latency"] = &qanpb.Metric{
-			Stats: stats,
-		}
+
 		// set TOTAL for Fingerprint instead of "any" if result is not empty.
 		if i == 0 && row.Fingerprint != "" {
 			row.Fingerprint = "TOTAL"

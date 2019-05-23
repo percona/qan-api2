@@ -172,7 +172,7 @@ const queryReportSparklinesTmpl = `
 		{{range $j, $col := index . "columns"}}
 		if(SUM(m_{{ $col }}_cnt) == 0, NaN, SUM(m_{{ $col }}_sum) / time_frame) AS m_{{ $col }}_sum_per_sec,
 		{{ end }}
-		SUM(num_queries) / time_frame AS num_queries_sum_per_sec
+		SUM(num_queries) / time_frame AS num_queries_per_sec
 	FROM metrics
 	WHERE period_start >= :period_start_from AND period_start <= :period_start_to
 	{{ if index . "dimension_val" }} AND {{ index . "group" }} = '{{ index . "dimension_val" }}' {{ end }}

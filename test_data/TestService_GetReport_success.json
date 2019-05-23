@@ -4,17 +4,6 @@
 	"rows": [
 		{
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 1,
-						"cnt": 17809,
-						"sum": 110.10933,
-						"min": 0.000002,
-						"max": 0.024769,
-						"p99": 0.00061827915,
-						"avg": 0.0000012404106
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"rate": 1,
@@ -1001,17 +990,6 @@
 			"rank": 1,
 			"dimension": "1D410B4BE5060972",
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 0.00013395777,
-						"cnt": 164,
-						"sum": 0.01475,
-						"min": 0.000004,
-						"max": 0.000041,
-						"p99": 0.000008993902,
-						"avg": 1.8307244e-8
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"cnt": 164
@@ -1805,17 +1783,6 @@
 			"rank": 2,
 			"dimension": "B305F6354FA21F2A",
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 0.00022068975,
-						"cnt": 67,
-						"sum": 0.0243,
-						"min": 0.000029,
-						"max": 0.000074,
-						"p99": 0.000036268655,
-						"avg": 7.1323115e-8
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"cnt": 67
@@ -2547,17 +2514,6 @@
 			"rank": 3,
 			"dimension": "A34EB28BD7F1E9C3",
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 0.00033630212,
-						"cnt": 57,
-						"sum": 0.03703,
-						"min": 0.000053,
-						"max": 0.000091,
-						"p99": 0.000064964916,
-						"avg": 1.290226e-7
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"cnt": 57
@@ -3273,17 +3229,6 @@
 			"rank": 4,
 			"dimension": "C45DE4F1F8F55169",
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 0.00080692524,
-						"cnt": 135,
-						"sum": 0.08885,
-						"min": 0.000039,
-						"max": 0.000102,
-						"p99": 0.00006581481,
-						"avg": 1.4513894e-7
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"cnt": 135
@@ -4077,17 +4022,6 @@
 			"rank": 5,
 			"dimension": "8ED794C0D5413D5A",
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 0.0017133879,
-						"cnt": 5029,
-						"sum": 0.18866,
-						"min": 0.000002,
-						"max": 0.000046,
-						"p99": 0.0000037514417,
-						"avg": 7.436277e-9
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"cnt": 5029
@@ -4949,17 +4883,6 @@
 			"rank": 6,
 			"dimension": "3530F787A2430DC8",
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 0.0051630503,
-						"cnt": 1236,
-						"sum": 0.5685,
-						"min": 0.000037,
-						"max": 0.000103,
-						"p99": 0.000045995144,
-						"avg": 9.23024e-8
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"cnt": 1236
@@ -5821,17 +5744,6 @@
 			"rank": 7,
 			"dimension": "E3A3649C5FAC418D",
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 0.043984465,
-						"cnt": 4910,
-						"sum": 4.8431,
-						"min": 0.000067,
-						"max": 0.000183,
-						"p99": 0.00009863747,
-						"avg": 2.0103153e-7
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"cnt": 4910
@@ -6693,17 +6605,6 @@
 			"rank": 8,
 			"dimension": "7DD5F6760F2D2EBB",
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 0.394119,
-						"cnt": 2473,
-						"sum": 43.39618,
-						"min": 0.001584,
-						"max": 0.003068,
-						"p99": 0.001754799,
-						"avg": 0.0000034603963
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"rate": 0.29682866,
@@ -7691,17 +7592,6 @@
 			"rank": 9,
 			"dimension": "CB73D6B5B031B4CF",
 			"metrics": {
-				"latency": {
-					"stats": {
-						"rate": 0.5535222,
-						"cnt": 3738,
-						"sum": 60.94796,
-						"min": 0.001403,
-						"max": 0.024769,
-						"p99": 0.0016304965,
-						"avg": 0.000003283568
-					}
-				},
 				"lock_time": {
 					"stats": {
 						"rate": 0.7031713,
