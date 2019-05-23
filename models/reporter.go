@@ -353,7 +353,6 @@ ARRAY JOIN labels
 	 WHERE period_start >= ?
 	   AND period_start <= ?
   GROUP BY labels.key, labels.value
-  	  WITH TOTALS
   ORDER BY main_metric_sum, labels.key, labels.value;
 `
 
@@ -387,16 +386,27 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFromSec, period
 			return nil, errors.Wrap(err, "cannot select "+dimentionName+" dimension")
 		}
 
+		totals := map[string]float32{}
+		if mainMetricPerSec == 0 {
+			for _, label := range values {
+				totals[label.key] += label.mainMetricPerSec
+			}
+		}
+
 		for _, label := range values {
 			if _, ok := result.Labels[label.key]; !ok {
 				result.Labels[label.key] = &qanpb.ListLabels{
 					Name: []*qanpb.Values{},
 				}
 			}
+			total := mainMetricPerSec
+			if mainMetricPerSec == 0 {
+				total = totals[label.key]
+			}
 			val := qanpb.Values{
 				Value:             label.value,
 				MainMetricPerSec:  label.mainMetricPerSec,
-				MainMetricPercent: label.mainMetricPerSec / mainMetricPerSec,
+				MainMetricPercent: label.mainMetricPerSec / total,
 			}
 			result.Labels[label.key].Name = append(result.Labels[label.key].Name, &val)
 		}
@@ -426,18 +436,22 @@ func (r *Reporter) queryFilters(ctx context.Context, periodStartFromSec, periodS
 	if err = rows.Err(); err != nil {
 		return nil, 0, errors.Wrap(err, "failed to select for query: "+query)
 	}
-	rows.NextResultSet()
-	var labelTotal customLabel
-	for rows.Next() {
-		err = rows.Scan(&labelTotal.key, &labelTotal.value, &labelTotal.mainMetricPerSec)
-		if err != nil {
-			return nil, 0, errors.Wrap(err, "failed to scan total for query: "+query)
+
+	totalMainMetricPerSec := float32(0)
+
+	if rows.NextResultSet() {
+		var labelTotal customLabel
+		for rows.Next() {
+			err = rows.Scan(&labelTotal.key, &labelTotal.value, &labelTotal.mainMetricPerSec)
+			if err != nil {
+				return nil, 0, errors.Wrap(err, "failed to scan total for query: "+query)
+			}
+			totalMainMetricPerSec = labelTotal.mainMetricPerSec / float32(durationSec)
 		}
-		labelTotal.mainMetricPerSec /= float32(durationSec)
-	}
-	if err = rows.Err(); err != nil {
-		return nil, 0, errors.Wrap(err, "failed to select total for query: "+query)
+		if err = rows.Err(); err != nil {
+			return nil, 0, errors.Wrap(err, "failed to select total for query: "+query)
+		}
 	}
 
-	return labels, labelTotal.mainMetricPerSec, nil
+	return labels, totalMainMetricPerSec, nil
 }
