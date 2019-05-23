@@ -358,10 +358,9 @@ ARRAY JOIN labels
 `
 
 type customLabel struct {
-	key               string
-	value             string
-	mainMetricPercent float32
-	mainMetricPerSec  float32
+	key              string
+	value            string
+	mainMetricPerSec float32
 }
 
 // SelectFilters selects dimension and their values, and also keys and values of labels.
