@@ -165,7 +165,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			Dimension:   res["dimension"].(string),
 			Fingerprint: res["fingerprint"].(string),
 			NumQueries:  uint32(numQueries),
-			Qps:         float32(numQueries) / float32(intervalTime),
+			Qps:         numQueries / float32(intervalTime),
 			Load:        interfaceToFloat32(res["m_query_time_sum"]) / float32(intervalTime),
 			Metrics:     make(map[string]*qanpb.Metric),
 		}
