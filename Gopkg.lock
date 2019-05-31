@@ -147,7 +147,7 @@
   revision = "a7705a60b657bfd4b07854cf57ad4dbcb2920524"
 
 [[projects]]
-  branch = "PMM-4140-agent_uuid-query-example"
+  branch = "PMM-2.0"
   digest = "1:727394c900111cf88986f3875f0a8cde00e6c954989397fd57696d1f26d34e73"
   name = "github.com/percona/pmm"
   packages = [
@@ -155,7 +155,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "ddf39b60c2817174088d54ac5cb64f5e74019c0a"
+  revision = "97a4f037faf874eac1d359f780f59cbafc2b08ab"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
