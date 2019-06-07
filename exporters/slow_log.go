@@ -148,7 +148,7 @@ func main() {
 					ContainerName:       "container_name1",
 					Labels:              listsToMap(v.LabelsKey, v.LabelsValue),
 					AgentId:             agentID,
-					MetricsSource:       qanpb.MetricsSource_MYSQL_SLOWLOG,
+					AgentType:           qanpb.AgentType_MYSQL_SLOWLOG,
 					PeriodStartUnixSecs: uint32(periodStart.Truncate(1 * time.Minute).Unix()),
 					PeriodLengthSecs:    uint32(60),
 					Example:             v.Example.Query,
