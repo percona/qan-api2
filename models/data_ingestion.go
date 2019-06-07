@@ -430,7 +430,7 @@ func (mb *MetricsBucket) Save(agentMsg *qanpb.CollectRequest) error {
 		}
 		q := MetricsBucketExtended{
 			time.Unix(int64(mb.GetPeriodStartUnixSecs()), 0).UTC(),
-			agentTypeToClickHouseEnum(mb.GetAgentType().String()),
+			agentTypeToClickHouseEnum(mb.GetAgentType()),
 			mb.GetExampleType().String(),
 			mb.GetExampleFormat().String(),
 			lk,

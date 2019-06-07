@@ -19,6 +19,7 @@ package models
 import (
 	"time"
 
+	"github.com/percona/pmm/api/inventorypb"
 	"github.com/percona/pmm/api/qanpb"
 )
 
@@ -263,26 +264,18 @@ func isValidMetricColumn(name string) bool {
 	return isValid
 }
 
-func agentTypeToClickHouseEnum(agentTypeName string) string {
-	// AgentTypes represents Agent type as stored in database.
+func agentTypeToClickHouseEnum(agentType inventorypb.AgentType) string {
+	// agentTypes represents Agent type as stored in database.
 	// Should be same as in pmm/inventorypb/agents.proto
-	AgentTypes := map[string]string{
-		"AGENT_TYPE_INVALID":         "agent_type_invalid",
-		"PMM_AGENT":                  "pmm-agent",
-		"NODE_EXPORTER":              "node_exporter",
-		"MYSQLD_EXPORTER":            "mysqld_exporter",
-		"MONGODB_EXPORTER":           "mongodb_exporter",
-		"POSTGRES_EXPORTER":          "postgres_exporter",
-		"QAN_MYSQL_PERFSCHEMA_AGENT": "qan-mysql-perfschema-agent",
-		"QAN_MYSQL_SLOWLOG_AGENT":    "qan-mysql-slowlog-agent",
-		"QAN_MONGODB_PROFILER_AGENT": "qan-mongodb-profiler-agent",
-		"RDS_EXPORTER":               "rds_exporter",
-		"PROXYSQL_EXPORTER":          "proxysql_exporter",
-		"EXTERNAL_EXPORTER":          "external_exporter",
+	agentTypes := map[inventorypb.AgentType]string{
+		inventorypb.AgentType_AGENT_TYPE_INVALID:         "agent_type_invalid",
+		inventorypb.AgentType_QAN_MYSQL_PERFSCHEMA_AGENT: "qan-mysql-perfschema-agent",
+		inventorypb.AgentType_QAN_MYSQL_SLOWLOG_AGENT:    "qan-mysql-slowlog-agent",
+		inventorypb.AgentType_QAN_MONGODB_PROFILER_AGENT: "qan-mongodb-profiler-agent",
 	}
 
-	if val, ok := AgentTypes[agentTypeName]; ok {
+	if val, ok := agentTypes[agentType]; ok {
 		return val
 	}
-	return AgentTypes["AGENT_TYPE_INVALID"]
+	return agentTypes[inventorypb.AgentType_AGENT_TYPE_INVALID]
 }

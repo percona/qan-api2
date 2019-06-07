@@ -22,17 +22,9 @@ CREATE TABLE IF NOT EXISTS metrics
     agent_id String COMMENT 'Identifier of agent that collect and send metrics',
     agent_type Enum8(
         'agent_type_invalid' = 0,
-        'pmm-agent' = 1,
-        'node_exporter' = 2,
-        'mysqld_exporter' = 3,
-        'mongodb_exporter' = 4,
-        'postgres_exporter' = 5,
-        'qan-mysql-perfschema-agent' = 6,
-        'qan-mysql-slowlog-agent' = 7,
-        'qan-mongodb-profiler-agent' = 8,
-        'rds_exporter' = 9,
-        'proxysql_exporter' = 10,
-        'external_exporter' = 11
+        'qan-mysql-perfschema-agent' = 1,
+        'qan-mysql-slowlog-agent' = 2,
+        'qan-mongodb-profiler-agent' = 3
     ) COMMENT 'Agent Type that collect of metrics: slowlog, perf schema, etc.',
     period_start DateTime COMMENT 'Time when collection of bucket started',
     period_length UInt32 COMMENT 'Duration of collection bucket',
