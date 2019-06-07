@@ -509,8 +509,8 @@ type queryRowsLabels struct {
 	Schema     string
 	ClientHost string
 	Username   string
-	LabelKey    string
-	LabelValue  string
+	LabelKey   string
+	LabelValue string
 }
 
 // SelectObjectDetailsLabels selects object details labels for given time range and object.
