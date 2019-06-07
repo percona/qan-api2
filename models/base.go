@@ -269,9 +269,9 @@ func agentTypeToClickHouseEnum(agentType inventorypb.AgentType) string {
 	// Should be same as in pmm/inventorypb/agents.proto
 	agentTypes := map[inventorypb.AgentType]string{
 		inventorypb.AgentType_AGENT_TYPE_INVALID:         "agent_type_invalid",
-		inventorypb.AgentType_QAN_MYSQL_PERFSCHEMA_AGENT: "qan-mysql-perfschema-agent",
-		inventorypb.AgentType_QAN_MYSQL_SLOWLOG_AGENT:    "qan-mysql-slowlog-agent",
-		inventorypb.AgentType_QAN_MONGODB_PROFILER_AGENT: "qan-mongodb-profiler-agent",
+		inventorypb.AgentType_QAN_MYSQL_PERFSCHEMA_AGENT: "mysql-perfschema",
+		inventorypb.AgentType_QAN_MYSQL_SLOWLOG_AGENT:    "mysql-slowlog",
+		inventorypb.AgentType_QAN_MONGODB_PROFILER_AGENT: "mongodb-profiler",
 	}
 
 	if val, ok := agentTypes[agentType]; ok {
