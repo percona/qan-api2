@@ -217,7 +217,7 @@ const insertSQL = `
     :labels_key,
     :labels_value,
     :agent_id,
-    CAST( :agent_type_s AS Enum8('AGENT_TYPE_INVALID' = 0, 'QAN_MYSQL_PERFSCHEMA_AGENT' = 6, 'QAN_MYSQL_SLOWLOG_AGENT' = 7, 'QAN_MONGODB_PROFILER_AGENT' = 8)) AS agent_type,
+    :agent_type_s,
     :period_start_ts,
     :period_length_secs,
     :fingerprint,
@@ -430,7 +430,7 @@ func (mb *MetricsBucket) Save(agentMsg *qanpb.CollectRequest) error {
 		}
 		q := MetricsBucketExtended{
 			time.Unix(int64(mb.GetPeriodStartUnixSecs()), 0).UTC(),
-			mb.GetAgentType().String(),
+			agentTypeToClickHouseEnum(mb.GetAgentType().String()),
 			mb.GetExampleType().String(),
 			mb.GetExampleFormat().String(),
 			lk,
