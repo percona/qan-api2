@@ -504,11 +504,11 @@ const queryObjectDetailsLabelsTmpl = `
 var tmplObjectDetailsLabels = template.Must(template.New("queryObjectDetailsLabelsTmpl").Funcs(funcMap).Parse(queryObjectDetailsLabelsTmpl))
 
 type queryRowsLabels struct {
-	DServer     string
-	DDatabase   string
-	DSchema     string
-	DClientHost string
-	DUsername   string
+	Server     string
+	Database   string
+	Schema     string
+	ClientHost string
+	Username   string
 	LabelKey    string
 	LabelValue  string
 }
@@ -541,17 +541,17 @@ func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, periodStartFrom
 
 	for rows.Next() {
 		var row queryRowsLabels
-		err = rows.Scan(&row.DServer, &row.DDatabase, &row.DSchema,
-			&row.DUsername, &row.DClientHost, &row.LabelKey, &row.LabelValue)
+		err = rows.Scan(&row.Server, &row.Database, &row.Schema,
+			&row.Username, &row.ClientHost, &row.LabelKey, &row.LabelValue)
 		if err != nil {
 			return nil, errors.Wrap(err, "failed to scan labels for object details")
 		}
 		// convert rows to array of unique label keys - values.
-		labels["server"][row.DServer] = struct{}{}
-		labels["database"][row.DDatabase] = struct{}{}
-		labels["schema"][row.DSchema] = struct{}{}
-		labels["client_host"][row.DClientHost] = struct{}{}
-		labels["username"][row.DUsername] = struct{}{}
+		labels["server"][row.Server] = struct{}{}
+		labels["database"][row.Database] = struct{}{}
+		labels["schema"][row.Schema] = struct{}{}
+		labels["client_host"][row.ClientHost] = struct{}{}
+		labels["username"][row.Username] = struct{}{}
 		if labels[row.LabelKey] == nil {
 			labels[row.LabelKey] = map[string]struct{}{}
 		}

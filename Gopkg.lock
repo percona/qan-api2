@@ -147,15 +147,16 @@
   revision = "a7705a60b657bfd4b07854cf57ad4dbcb2920524"
 
 [[projects]]
-  branch = "PMM-3891-unified-labels"
-  digest = "1:ba94ac67c3b72ebb053af9a99fa7264302ae1567930d693facb1440cb9c712cc"
+  branch = "PMM-2.0"
+  digest = "1:c551d6b89f9f11593107d1e40690248c5db8b5745d17a24eb31cc984f7ee0b74"
   name = "github.com/percona/pmm"
   packages = [
+    "api/inventorypb",
     "api/qanpb",
     "version",
   ]
   pruneopts = "NUT"
-  revision = "d9ebb82152fa7cc367dd7fe32de89333e9284d92"
+  revision = "e6803cfc7c08a552185b92815f83082cd269fd54"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
