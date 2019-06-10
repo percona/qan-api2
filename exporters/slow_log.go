@@ -109,6 +109,12 @@ func main() {
 				}
 
 				aggregator.AddEvent(e, digest, e.User, e.Host, e.Db, e.Server, fingerprint)
+
+				if m, ok := e.NumberMetrics["Last_errno"]; ok {
+					if m > 0 {
+						fmt.Printf("\nLast_errno: %d \n", m)
+					}
+				}
 				i++
 
 				// Pass last offset to restart reader when reached out end of slowlog.
@@ -131,30 +137,32 @@ func main() {
 			for _, v := range res.Class {
 
 				mb := &qanpb.MetricsBucket{
-					Queryid:             v.Id,
-					Fingerprint:         v.Fingerprint,
-					DDatabase:           "",
-					DSchema:             v.Db,
-					DUsername:           v.User,
-					DClientHost:         v.Host,
-					ServiceName:         v.Server,
-					ReplicationSet:      "replication_set1",
-					Cluster:             "cluster1",
-					ServiceType:         "service_type1",
-					Environment:         "environmenti1",
-					Az:                  "az1",
-					Region:              "region1",
-					NodeModel:           "node_model1",
-					ContainerName:       "container_name1",
-					Labels:              listsToMap(v.LabelsKey, v.LabelsValue),
-					AgentId:             agentID,
-					MetricsSource:       qanpb.MetricsSource_MYSQL_SLOWLOG,
-					PeriodStartUnixSecs: uint32(periodStart.Truncate(1 * time.Minute).Unix()),
-					PeriodLengthSecs:    uint32(60),
-					Example:             v.Example.Query,
-					ExampleFormat:       1,
-					ExampleType:         1,
-					NumQueries:          float32(v.TotalQueries),
+					Queryid:              v.Id,
+					Fingerprint:          v.Fingerprint,
+					DDatabase:            "",
+					DSchema:              v.Db,
+					DUsername:            v.User,
+					DClientHost:          v.Host,
+					ServiceName:          v.Server,
+					ReplicationSet:       "replication_set1",
+					Cluster:              "cluster1",
+					ServiceType:          "service_type1",
+					Environment:          "environmenti1",
+					Az:                   "az1",
+					Region:               "region1",
+					NodeModel:            "node_model1",
+					ContainerName:        "container_name1",
+					Labels:               listsToMap(v.LabelsKey, v.LabelsValue),
+					Errors:               errListsToMap(v.ErrorsCode, v.ErrorsCount),
+					NumQueriesWithErrors: v.NumQueriesWithErrors,
+					AgentId:              agentID,
+					MetricsSource:        qanpb.MetricsSource_MYSQL_SLOWLOG,
+					PeriodStartUnixSecs:  uint32(periodStart.Truncate(1 * time.Minute).Unix()),
+					PeriodLengthSecs:     uint32(60),
+					Example:              v.Example.Query,
+					ExampleFormat:        1,
+					ExampleType:          1,
+					NumQueries:           float32(v.TotalQueries),
 				}
 
 				// If key has suffix _time or _wait than field is TimeMetrics.
@@ -426,6 +434,14 @@ func parseSlowLog(filename string, o slowlog.Options) <-chan *slowlog.Event {
 
 func listsToMap(k, v []string) map[string]string {
 	m := map[string]string{}
+	for i, e := range k {
+		m[e] = v[i]
+	}
+	return m
+}
+
+func errListsToMap(k, v []uint64) map[uint64]uint64 {
+	m := map[uint64]uint64{}
 	for i, e := range k {
 		m[e] = v[i]
 	}

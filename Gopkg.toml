@@ -15,4 +15,5 @@ required = [
 
 [[constraint]]
   name = "github.com/percona/go-mysql"
-  branch = "PMM-2.0"
+  # branch = "PMM-2.0"
+  branch = "PMM-3694-errors"
