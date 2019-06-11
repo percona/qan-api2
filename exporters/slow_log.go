@@ -109,12 +109,6 @@ func main() {
 				}
 
 				aggregator.AddEvent(e, digest, e.User, e.Host, e.Db, e.Server, fingerprint)
-
-				if m, ok := e.NumberMetrics["Last_errno"]; ok {
-					if m > 0 {
-						fmt.Printf("\nLast_errno: %d \n", m)
-					}
-				}
 				i++
 
 				// Pass last offset to restart reader when reached out end of slowlog.
