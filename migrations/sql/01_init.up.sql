@@ -1,4 +1,4 @@
-CREATE TABLE pmm.metrics (
+CREATE TABLE metrics (
   -- Main dimentions
   `queryid` LowCardinality(String) COMMENT 'hash of query fingerprint',
   `server` LowCardinality(String) COMMENT 'IP or hostname of DB server',
