@@ -198,4 +198,5 @@ ORDER BY
     username,
     client_host,
     period_start
-  ) SETTINGS index_granularity = 8192
+  ) SETTINGS index_granularity = 8192;
+  
