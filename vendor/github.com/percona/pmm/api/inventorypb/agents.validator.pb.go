@@ -38,6 +38,14 @@ func (this *PostgresExporter) Validate() error {
 	// Validation of proto3 map<> fields is unsupported.
 	return nil
 }
+func (this *ProxySQLExporter) Validate() error {
+	// Validation of proto3 map<> fields is unsupported.
+	return nil
+}
+func (this *RDSExporter) Validate() error {
+	// Validation of proto3 map<> fields is unsupported.
+	return nil
+}
 func (this *QANMySQLPerfSchemaAgent) Validate() error {
 	// Validation of proto3 map<> fields is unsupported.
 	return nil
@@ -50,11 +58,7 @@ func (this *QANMongoDBProfilerAgent) Validate() error {
 	// Validation of proto3 map<> fields is unsupported.
 	return nil
 }
-func (this *RDSExporter) Validate() error {
-	// Validation of proto3 map<> fields is unsupported.
-	return nil
-}
-func (this *ProxySQLExporter) Validate() error {
+func (this *QANPostgreSQLPgStatementsAgent) Validate() error {
 	// Validation of proto3 map<> fields is unsupported.
 	return nil
 }
@@ -105,6 +109,20 @@ func (this *ListAgentsResponse) Validate() error {
 			}
 		}
 	}
+	for _, item := range this.ProxysqlExporter {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ProxysqlExporter", err)
+			}
+		}
+	}
+	for _, item := range this.RdsExporter {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("RdsExporter", err)
+			}
+		}
+	}
 	for _, item := range this.QanMysqlPerfschemaAgent {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -126,17 +144,10 @@ func (this *ListAgentsResponse) Validate() error {
 			}
 		}
 	}
-	for _, item := range this.RdsExporter {
+	for _, item := range this.QanPostgresqlPgstatementsAgent {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("RdsExporter", err)
-			}
-		}
-	}
-	for _, item := range this.ProxysqlExporter {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("ProxysqlExporter", err)
+				return github_com_mwitkow_go_proto_validators.FieldError("QanPostgresqlPgstatementsAgent", err)
 			}
 		}
 	}
@@ -191,6 +202,20 @@ func (this *GetAgentResponse) Validate() error {
 			}
 		}
 	}
+	if oneOfNester, ok := this.GetAgent().(*GetAgentResponse_ProxysqlExporter); ok {
+		if oneOfNester.ProxysqlExporter != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.ProxysqlExporter); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ProxysqlExporter", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetAgent().(*GetAgentResponse_RdsExporter); ok {
+		if oneOfNester.RdsExporter != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.RdsExporter); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("RdsExporter", err)
+			}
+		}
+	}
 	if oneOfNester, ok := this.GetAgent().(*GetAgentResponse_QanMysqlPerfschemaAgent); ok {
 		if oneOfNester.QanMysqlPerfschemaAgent != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.QanMysqlPerfschemaAgent); err != nil {
@@ -212,17 +237,10 @@ func (this *GetAgentResponse) Validate() error {
 			}
 		}
 	}
-	if oneOfNester, ok := this.GetAgent().(*GetAgentResponse_RdsExporter); ok {
-		if oneOfNester.RdsExporter != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.RdsExporter); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("RdsExporter", err)
-			}
-		}
-	}
-	if oneOfNester, ok := this.GetAgent().(*GetAgentResponse_ProxysqlExporter); ok {
-		if oneOfNester.ProxysqlExporter != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.ProxysqlExporter); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("ProxysqlExporter", err)
+	if oneOfNester, ok := this.GetAgent().(*GetAgentResponse_QanPostgresqlPgstatementsAgent); ok {
+		if oneOfNester.QanPostgresqlPgstatementsAgent != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.QanPostgresqlPgstatementsAgent); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("QanPostgresqlPgstatementsAgent", err)
 			}
 		}
 	}
@@ -401,6 +419,72 @@ func (this *ChangePostgresExporterResponse) Validate() error {
 	}
 	return nil
 }
+func (this *AddProxySQLExporterRequest) Validate() error {
+	if this.PmmAgentId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("PmmAgentId", fmt.Errorf(`value '%v' must not be an empty string`, this.PmmAgentId))
+	}
+	if this.ServiceId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("ServiceId", fmt.Errorf(`value '%v' must not be an empty string`, this.ServiceId))
+	}
+	if this.Username == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("Username", fmt.Errorf(`value '%v' must not be an empty string`, this.Username))
+	}
+	// Validation of proto3 map<> fields is unsupported.
+	return nil
+}
+func (this *AddProxySQLExporterResponse) Validate() error {
+	if this.ProxysqlExporter != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.ProxysqlExporter); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("ProxysqlExporter", err)
+		}
+	}
+	return nil
+}
+func (this *ChangeProxySQLExporterRequest) Validate() error {
+	if this.AgentId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("AgentId", fmt.Errorf(`value '%v' must not be an empty string`, this.AgentId))
+	}
+	if this.Common != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Common); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Common", err)
+		}
+	}
+	return nil
+}
+func (this *ChangeProxySQLExporterResponse) Validate() error {
+	if this.ProxysqlExporter != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.ProxysqlExporter); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("ProxysqlExporter", err)
+		}
+	}
+	return nil
+}
+func (this *AddRDSExporterRequest) Validate() error {
+	if this.PmmAgentId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("PmmAgentId", fmt.Errorf(`value '%v' must not be an empty string`, this.PmmAgentId))
+	}
+	// Validation of proto3 map<> fields is unsupported.
+	return nil
+}
+func (this *AddRDSExporterResponse) Validate() error {
+	if this.RdsExporter != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.RdsExporter); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("RdsExporter", err)
+		}
+	}
+	return nil
+}
+func (this *ChangeRDSExporterRequest) Validate() error {
+	return nil
+}
+func (this *ChangeRDSExporterResponse) Validate() error {
+	if this.RdsExporter != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.RdsExporter); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("RdsExporter", err)
+		}
+	}
+	return nil
+}
 func (this *AddQANMySQLPerfSchemaAgentRequest) Validate() error {
 	if this.PmmAgentId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("PmmAgentId", fmt.Errorf(`value '%v' must not be an empty string`, this.PmmAgentId))
@@ -518,33 +602,7 @@ func (this *ChangeQANMongoDBProfilerAgentResponse) Validate() error {
 	}
 	return nil
 }
-func (this *AddRDSExporterRequest) Validate() error {
-	if this.PmmAgentId == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("PmmAgentId", fmt.Errorf(`value '%v' must not be an empty string`, this.PmmAgentId))
-	}
-	// Validation of proto3 map<> fields is unsupported.
-	return nil
-}
-func (this *AddRDSExporterResponse) Validate() error {
-	if this.RdsExporter != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.RdsExporter); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("RdsExporter", err)
-		}
-	}
-	return nil
-}
-func (this *ChangeRDSExporterRequest) Validate() error {
-	return nil
-}
-func (this *ChangeRDSExporterResponse) Validate() error {
-	if this.RdsExporter != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.RdsExporter); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("RdsExporter", err)
-		}
-	}
-	return nil
-}
-func (this *AddProxySQLExporterRequest) Validate() error {
+func (this *AddQANPostgreSQLPgStatementsAgentRequest) Validate() error {
 	if this.PmmAgentId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("PmmAgentId", fmt.Errorf(`value '%v' must not be an empty string`, this.PmmAgentId))
 	}
@@ -557,15 +615,15 @@ func (this *AddProxySQLExporterRequest) Validate() error {
 	// Validation of proto3 map<> fields is unsupported.
 	return nil
 }
-func (this *AddProxySQLExporterResponse) Validate() error {
-	if this.ProxysqlExporter != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.ProxysqlExporter); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("ProxysqlExporter", err)
+func (this *AddQANPostgreSQLPgStatementsAgentResponse) Validate() error {
+	if this.QanPostgresqlPgstatementsAgent != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.QanPostgresqlPgstatementsAgent); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("QanPostgresqlPgstatementsAgent", err)
 		}
 	}
 	return nil
 }
-func (this *ChangeProxySQLExporterRequest) Validate() error {
+func (this *ChangeQANPostgreSQLPgStatementsAgentRequest) Validate() error {
 	if this.AgentId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("AgentId", fmt.Errorf(`value '%v' must not be an empty string`, this.AgentId))
 	}
@@ -576,10 +634,10 @@ func (this *ChangeProxySQLExporterRequest) Validate() error {
 	}
 	return nil
 }
-func (this *ChangeProxySQLExporterResponse) Validate() error {
-	if this.ProxysqlExporter != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.ProxysqlExporter); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("ProxysqlExporter", err)
+func (this *ChangeQANPostgreSQLPgStatementsAgentResponse) Validate() error {
+	if this.QanPostgresqlPgstatementsAgent != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.QanPostgresqlPgstatementsAgent); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("QanPostgresqlPgstatementsAgent", err)
 		}
 	}
 	return nil
