@@ -147,8 +147,8 @@
   revision = "26901809c968142fc55bffa04dd6f74e850406f6"
 
 [[projects]]
-  branch = "PMM-2.0"
-  digest = "1:1c7eb885582cac9aa1a860420f1d481e8d08c9b8a180400066128585d6eccfdd"
+  branch = "PMM-4226-sparkline-for-main-metric-only"
+  digest = "1:49f808b72b329c3cb7beec4dc903ef548b04d8527d8bee4c6c018fa331bc3262"
   name = "github.com/percona/pmm"
   packages = [
     "api/inventorypb",
@@ -156,7 +156,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "2fc3ea3465066a36f10caaba48574fd33e2159c0"
+  revision = "d24c5dd6513cb21318cc300248452f41c968e90a"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"

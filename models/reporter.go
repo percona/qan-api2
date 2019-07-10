@@ -63,10 +63,8 @@ const queryReportTmpl = `
                 SUM(m_{{ $col }}_cnt) AS m_{{ $col }}_cnt,
                 SUM(m_{{ $col }}_sum) AS m_{{ $col }}_sum,
         {{ end }}
+        SUM(num_queries) AS num_queries,
         {{range $j, $col := .SpecialColumns}}
-            {{ if eq $col "num_queries" }}
-                SUM(num_queries) AS num_queries,
-            {{ end }}
             {{ if eq $col "load" }}
                 {{ if $.IsQueryTimeInSelect }}
                     m_query_time_sum / {{ $.PeriodDuration }} AS load,
