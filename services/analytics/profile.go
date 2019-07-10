@@ -77,6 +77,13 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		}
 	}
 
+	// TODO: remove this when UI done.
+	if strings.TrimPrefix(in.OrderBy, "-") == "load" {
+		columns = append([]string{"load"}, columns...)
+	}
+
+	// TODO: use main_metric parameter when UI will pass.
+	mainMetric := columns[0]
 	uniqColumnsMap := map[string]struct{}{}
 	for _, column := range columns {
 		if _, ok := uniqColumnsMap[column]; !ok {
@@ -91,6 +98,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 
 	boolColumns := []string{}
 	commonColumns := []string{}
+	specialColumns := []string{}
 	for _, col := range uniqColumns {
 		if _, ok := boolColumnNames[col]; ok {
 			boolColumns = append(boolColumns, col)
@@ -98,6 +106,10 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		}
 		if _, ok := commonColumnNames[col]; ok {
 			commonColumns = append(commonColumns, col)
+			continue
+		}
+		if _, ok := specialColumnNames[col]; ok {
+			specialColumns = append(specialColumns, col)
 			continue
 		}
 	}
@@ -141,6 +153,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		order,
 		in.Offset,
 		limit,
+		specialColumns,
 		commonColumns,
 		boolColumns,
 	)
@@ -185,7 +198,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			dClientHosts,
 			dbLabels,
 			group,
-			append(commonColumns, boolColumns...),
+			mainMetric,
 		)
 		if err != nil {
 			return nil, err
