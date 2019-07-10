@@ -17,32 +17,32 @@
 package models
 
 import (
-        "bytes"
-        "context"
-        "fmt"
-        "strings"
-        "text/template"
-        "time"
+	"bytes"
+	"context"
+	"fmt"
+	"strings"
+	"text/template"
+	"time"
 
-        "github.com/jmoiron/sqlx"
-        "github.com/pkg/errors"
+	"github.com/jmoiron/sqlx"
+	"github.com/pkg/errors"
 
-        "github.com/percona/pmm/api/qanpb"
+	"github.com/percona/pmm/api/qanpb"
 )
 
 // Reporter implements models to select metrics bucket by params.
 type Reporter struct {
-        db *sqlx.DB
+	db *sqlx.DB
 }
 
 // NewReporter initialize Reporter with db instance.
 func NewReporter(db *sqlx.DB) Reporter {
-        return Reporter{db: db}
+	return Reporter{db: db}
 }
 
 var funcMap = template.FuncMap{
-        "inc":         func(i int) int { return i + 1 },
-        "StringsJoin": strings.Join,
+	"inc":         func(i int) int { return i + 1 },
+	"StringsJoin": strings.Join,
 }
 
 // M is map for interfaces.
@@ -102,117 +102,117 @@ var tmplQueryReport = template.Must(template.New("queryReportTmpl").Funcs(funcMa
 
 // Select select metrics for report.
 func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartToSec int64,
-        queryids, servers, databases, schemas, usernames, clientHosts []string,
-        dbLabels map[string][]string, group, order string, offset, limit uint32,
-        specialColumns, commonColumns, boolColumns []string) ([]M, error) {
+	queryids, servers, databases, schemas, usernames, clientHosts []string,
+	dbLabels map[string][]string, group, order string, offset, limit uint32,
+	specialColumns, commonColumns, boolColumns []string) ([]M, error) {
 
-        inSlice := func(slice []string, val string) bool {
-                for _, v := range slice {
-                        if v == val {
-                                return true
-                        }
-                }
-                return false
-        }
+	inSlice := func(slice []string, val string) bool {
+		for _, v := range slice {
+			if v == val {
+				return true
+			}
+		}
+		return false
+	}
 
-        arg := map[string]interface{}{
-                "period_start_from": periodStartFromSec,
-                "period_start_to":   periodStartToSec,
-                "queryids":                queryids,
-                "servers":                 servers,
-                "databases":               databases,
-                "schemas":                 schemas,
-                "users":                   usernames,
-                "hosts":                   clientHosts,
-                "labels":                  dbLabels,
-                "group":                   group,
-                "order":                   order,
-                "offset":                  offset,
-                "limit":                   limit,
-        }
+	arg := map[string]interface{}{
+		"period_start_from": periodStartFromSec,
+		"period_start_to":   periodStartToSec,
+		"queryids":          queryids,
+		"servers":           servers,
+		"databases":         databases,
+		"schemas":           schemas,
+		"users":             usernames,
+		"hosts":             clientHosts,
+		"labels":            dbLabels,
+		"group":             group,
+		"order":             order,
+		"offset":            offset,
+		"limit":             limit,
+	}
 
-        tmplArgs := struct {
-                PeriodStartFrom     int64
-                PeriodStartTo       int64
-                PeriodDuration      int64
-                Queryids            []string
-                Servers             []string
-                Databases           []string
-                Schemas             []string
-                Users               []string
-                Hosts               []string
-                Labels              map[string][]string
-                Group               string
-                Order               string
-                Offset              uint32
-                Limit               uint32
-                SpecialColumns      []string
-                CommonColumns       []string
-                BoolColumns         []string
-                IsQueryTimeInSelect bool
-        }{
-                periodStartFromSec,
-                periodStartToSec,
-                int64(periodStartToSec - periodStartFromSec),
-                queryids,
-                servers,
-                databases,
-                schemas,
-                usernames,
-                clientHosts,
-                dbLabels,
-                group,
-                order,
-                offset,
-                limit,
-                specialColumns,
-                commonColumns,
-                boolColumns,
-                inSlice(commonColumns, "query_time"),
-        }
+	tmplArgs := struct {
+		PeriodStartFrom     int64
+		PeriodStartTo       int64
+		PeriodDuration      int64
+		Queryids            []string
+		Servers             []string
+		Databases           []string
+		Schemas             []string
+		Users               []string
+		Hosts               []string
+		Labels              map[string][]string
+		Group               string
+		Order               string
+		Offset              uint32
+		Limit               uint32
+		SpecialColumns      []string
+		CommonColumns       []string
+		BoolColumns         []string
+		IsQueryTimeInSelect bool
+	}{
+		periodStartFromSec,
+		periodStartToSec,
+		periodStartToSec - periodStartFromSec,
+		queryids,
+		servers,
+		databases,
+		schemas,
+		usernames,
+		clientHosts,
+		dbLabels,
+		group,
+		order,
+		offset,
+		limit,
+		specialColumns,
+		commonColumns,
+		boolColumns,
+		inSlice(commonColumns, "query_time"),
+	}
 
-        var queryBuffer bytes.Buffer
+	var queryBuffer bytes.Buffer
 
-        if err := tmplQueryReport.Execute(&queryBuffer, tmplArgs); err != nil {
-                return nil, errors.Wrap(err, "cannot execute tmplQueryReport")
-        }
+	if err := tmplQueryReport.Execute(&queryBuffer, tmplArgs); err != nil {
+		return nil, errors.Wrap(err, "cannot execute tmplQueryReport")
+	}
 
-        var results []M
-        query, args, err := sqlx.Named(queryBuffer.String(), arg)
-        if err != nil {
-                return nil, errors.Wrap(err, "prepare named tmplQueryReport")
-        }
-        query, args, err = sqlx.In(query, args...)
-        if err != nil {
-                return nil, errors.Wrap(err, "populate agruments in IN clause")
-        }
-        query = r.db.Rebind(query)
+	var results []M
+	query, args, err := sqlx.Named(queryBuffer.String(), arg)
+	if err != nil {
+		return nil, errors.Wrap(err, "prepare named tmplQueryReport")
+	}
+	query, args, err = sqlx.In(query, args...)
+	if err != nil {
+		return nil, errors.Wrap(err, "populate arguments in IN clause")
+	}
+	query = r.db.Rebind(query)
 
-        queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
-        defer cancel()
+	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
+	defer cancel()
 
-        rows, err := r.db.QueryxContext(queryCtx, query, args...)
-        if err != nil {
-                return nil, errors.Wrap(err, "QueryxContext error")
-        }
-        for rows.Next() {
-                result := make(M)
-                err = rows.MapScan(result)
-                if err != nil {
-                        return nil, errors.Wrap(err, "DimensionReport Scan error")
-                }
-                results = append(results, result)
-        }
-        rows.NextResultSet()
-        total := make(M)
-        for rows.Next() {
-                err = rows.MapScan(total)
-                if err != nil {
-                        return nil, errors.Wrap(err, "DimensionReport Scan TOTALS error")
-                }
-                results = append([]M{total}, results...)
-        }
-        return results, err
+	rows, err := r.db.QueryxContext(queryCtx, query, args...)
+	if err != nil {
+		return nil, errors.Wrap(err, "QueryxContext error")
+	}
+	for rows.Next() {
+		result := make(M)
+		err = rows.MapScan(result)
+		if err != nil {
+			return nil, errors.Wrap(err, "DimensionReport Scan error")
+		}
+		results = append(results, result)
+	}
+	rows.NextResultSet()
+	total := make(M)
+	for rows.Next() {
+		err = rows.MapScan(total)
+		if err != nil {
+			return nil, errors.Wrap(err, "DimensionReport Scan TOTALS error")
+		}
+		results = append([]M{total}, results...)
+	}
+	return results, err
 }
 
 const queryReportSparklinesTmpl = `
@@ -256,146 +256,146 @@ var tmplQueryReportSparklines = template.Must(template.New("queryReportSparkline
 
 // SelectSparklines selects datapoint for sparklines.
 func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
-        periodStartFromSec, periodStartToSec int64,
-        queryids, servers, databases, schemas, usernames, clientHosts []string,
-        dbLabels map[string][]string, group string, column string) ([]*qanpb.Point, error) {
+	periodStartFromSec, periodStartToSec int64,
+	queryids, servers, databases, schemas, usernames, clientHosts []string,
+	dbLabels map[string][]string, group string, column string) ([]*qanpb.Point, error) {
 
-        // Align to minutes
-        periodStartToSec = periodStartToSec / 60 * 60
-        periodStartFromSec = periodStartFromSec / 60 * 60
+	// Align to minutes
+	periodStartToSec = periodStartToSec / 60 * 60
+	periodStartFromSec = periodStartFromSec / 60 * 60
 
-        // If time range is bigger then two hour - amount of sparklines points = 120 to avoid huge data in response.
-        // Otherwise amount of sparklines points is equal to minutes in in time range to not mess up calculation.
-        amountOfPoints := int64(optimalAmountOfPoint)
-        timePeriod := periodStartToSec - periodStartFromSec
-        // reduce amount of point if period less then 2h.
-        if timePeriod < int64((minFullTimeFrame).Seconds()) {
-                // minimum point is 1 minute
-                amountOfPoints = timePeriod / 60
-        }
+	// If time range is bigger then two hour - amount of sparklines points = 120 to avoid huge data in response.
+	// Otherwise amount of sparklines points is equal to minutes in in time range to not mess up calculation.
+	amountOfPoints := int64(optimalAmountOfPoint)
+	timePeriod := periodStartToSec - periodStartFromSec
+	// reduce amount of point if period less then 2h.
+	if timePeriod < int64((minFullTimeFrame).Seconds()) {
+		// minimum point is 1 minute
+		amountOfPoints = timePeriod / 60
+	}
 
-        // how many full minutes we can fit into given amount of points.
-        minutesInPoint := (periodStartToSec - periodStartFromSec) / 60 / amountOfPoints
-        // we need aditional point to show this minutes
-        remainder := ((periodStartToSec - periodStartFromSec) / 60) % amountOfPoints
-        amountOfPoints += remainder / minutesInPoint
-        timeFrame := minutesInPoint * 60
+	// how many full minutes we can fit into given amount of points.
+	minutesInPoint := (periodStartToSec - periodStartFromSec) / 60 / amountOfPoints
+	// we need aditional point to show this minutes
+	remainder := ((periodStartToSec - periodStartFromSec) / 60) % amountOfPoints
+	amountOfPoints += remainder / minutesInPoint
+	timeFrame := minutesInPoint * 60
 
-        arg := map[string]interface{}{
-                "dimension_val":     dimensionVal,
-                "period_start_from": periodStartFromSec,
-                "period_start_to":   periodStartToSec,
-                "queryids":          queryids,
-                "servers":           servers,
-                "databases":         databases,
-                "schemas":           schemas,
-                "users":             usernames,
-                "hosts":             clientHosts,
-                "labels":            dbLabels,
-                "group":             group,
-                "column":            column,
-                "time_frame":        timeFrame,
-        }
+	arg := map[string]interface{}{
+		"dimension_val":     dimensionVal,
+		"period_start_from": periodStartFromSec,
+		"period_start_to":   periodStartToSec,
+		"queryids":          queryids,
+		"servers":           servers,
+		"databases":         databases,
+		"schemas":           schemas,
+		"users":             usernames,
+		"hosts":             clientHosts,
+		"labels":            dbLabels,
+		"group":             group,
+		"column":            column,
+		"time_frame":        timeFrame,
+	}
 
-        tmplArgs := struct {
-                DimensionVal    string
-                PeriodStartFrom int64
-                PeriodStartTo   int64
-                PeriodDuration  int64
-                Queryids        []string
-                Servers         []string
-                Databases       []string
-                Schemas         []string
-                Users           []string
-                Hosts           []string
-                Labels          map[string][]string
-                Group           string
-                Column          string
-                TimeFrame       int64
-        }{
-                dimensionVal,
-                periodStartFromSec,
-                periodStartToSec,
-                int64(periodStartToSec - periodStartFromSec),
-                queryids,
-                servers,
-                databases,
-                schemas,
-                usernames,
-                clientHosts,
-                dbLabels,
-                group,
-                column,
-                timeFrame,
-        }
+	tmplArgs := struct {
+		DimensionVal    string
+		PeriodStartFrom int64
+		PeriodStartTo   int64
+		PeriodDuration  int64
+		Queryids        []string
+		Servers         []string
+		Databases       []string
+		Schemas         []string
+		Users           []string
+		Hosts           []string
+		Labels          map[string][]string
+		Group           string
+		Column          string
+		TimeFrame       int64
+	}{
+		dimensionVal,
+		periodStartFromSec,
+		periodStartToSec,
+		periodStartToSec - periodStartFromSec,
+		queryids,
+		servers,
+		databases,
+		schemas,
+		usernames,
+		clientHosts,
+		dbLabels,
+		group,
+		column,
+		timeFrame,
+	}
 
-        var results []*qanpb.Point
-        var queryBuffer bytes.Buffer
+	var results []*qanpb.Point
+	var queryBuffer bytes.Buffer
 
-        if err := tmplQueryReportSparklines.Execute(&queryBuffer, tmplArgs); err != nil {
-                return nil, errors.Wrap(err, "cannot execute tmplQueryReportSparklines")
-        }
-        query, args, err := sqlx.Named(queryBuffer.String(), arg)
-        if err != nil {
-                return nil, errors.Wrap(err, "prepare named")
-        }
-        query, args, err = sqlx.In(query, args...)
-        if err != nil {
-                return nil, errors.Wrap(err, "populate agruments in IN clause")
-        }
-        query = r.db.Rebind(query)
+	if err := tmplQueryReportSparklines.Execute(&queryBuffer, tmplArgs); err != nil {
+		return nil, errors.Wrap(err, "cannot execute tmplQueryReportSparklines")
+	}
+	query, args, err := sqlx.Named(queryBuffer.String(), arg)
+	if err != nil {
+		return nil, errors.Wrap(err, "prepare named")
+	}
+	query, args, err = sqlx.In(query, args...)
+	if err != nil {
+		return nil, errors.Wrap(err, "populate arguments in IN clause")
+	}
+	query = r.db.Rebind(query)
 
-        queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
-        defer cancel()
+	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
+	defer cancel()
 
-        rows, err := r.db.QueryxContext(queryCtx, query, args...)
-        if err != nil {
-                return nil, errors.Wrap(err, "report query")
-        }
-        resultsWithGaps := map[uint32]*qanpb.Point{}
+	rows, err := r.db.QueryxContext(queryCtx, query, args...)
+	if err != nil {
+		return nil, errors.Wrap(err, "report query")
+	}
+	resultsWithGaps := map[uint32]*qanpb.Point{}
 
-        mainMetricColumnName := fmt.Sprintf("m_%s_sum_per_sec", column)
+	mainMetricColumnName := fmt.Sprintf("m_%s_sum_per_sec", column)
 
-        if column == "num_queries" {
-                mainMetricColumnName = "num_queries_per_sec"
-        }
+	if column == "num_queries" {
+		mainMetricColumnName = "num_queries_per_sec"
+	}
 
-        if column == "load" {
-                mainMetricColumnName = "load"
-        }
+	if column == "load" {
+		mainMetricColumnName = "load"
+	}
 
-        sparklinePointFieldsToQuery := []string{
-                "point",
-                "timestamp",
-                "time_frame",
-                mainMetricColumnName,
-        }
+	sparklinePointFieldsToQuery := []string{
+		"point",
+		"timestamp",
+		"time_frame",
+		mainMetricColumnName,
+	}
 
-        for rows.Next() {
-                p := qanpb.Point{}
-                res := getPointFieldsList(&p, sparklinePointFieldsToQuery)
-                err = rows.Scan(res...)
-                if err != nil {
-                        return nil, errors.Wrap(err, "SelectSparklines scan errors")
-                }
-                resultsWithGaps[p.Point] = &p
-        }
+	for rows.Next() {
+		p := qanpb.Point{}
+		res := getPointFieldsList(&p, sparklinePointFieldsToQuery)
+		err = rows.Scan(res...)
+		if err != nil {
+			return nil, errors.Wrap(err, "SelectSparklines scan errors")
+		}
+		resultsWithGaps[p.Point] = &p
+	}
 
-        // fill in gaps in time series.
-        for pointN := uint32(0); int64(pointN) < amountOfPoints; pointN++ {
-                p, ok := resultsWithGaps[pointN]
-                if !ok {
-                        p = &qanpb.Point{}
-                        p.Point = pointN
-                        p.TimeFrame = uint32(timeFrame)
-                        timeShift := timeFrame * int64(pointN)
-                        ts := periodStartToSec - timeShift
-                        p.Timestamp = time.Unix(ts, 0).UTC().Format(time.RFC3339)
-                }
-                results = append(results, p)
-        }
+	// fill in gaps in time series.
+	for pointN := uint32(0); int64(pointN) < amountOfPoints; pointN++ {
+		p, ok := resultsWithGaps[pointN]
+		if !ok {
+			p = &qanpb.Point{}
+			p.Point = pointN
+			p.TimeFrame = uint32(timeFrame)
+			timeShift := timeFrame * int64(pointN)
+			ts := periodStartToSec - timeShift
+			p.Timestamp = time.Unix(ts, 0).UTC().Format(time.RFC3339)
+		}
+		results = append(results, p)
+	}
 
-        return results, err
+	return results, err
 }
 
 const queryServers = `
@@ -526,110 +526,110 @@ ARRAY JOIN labels
 `
 
 type customLabel struct {
-        key              string
-        value            string
-        mainMetricPerSec float32
+	key              string
+	value            string
+	mainMetricPerSec float32
 }
 
 // SelectFilters selects dimension and their values, and also keys and values of labels.
 func (r *Reporter) SelectFilters(ctx context.Context, periodStartFromSec, periodStartToSec int64, mainMetricName string) (*qanpb.FiltersReply, error) {
-        result := qanpb.FiltersReply{
-                Labels: make(map[string]*qanpb.ListLabels),
-        }
+	result := qanpb.FiltersReply{
+		Labels: make(map[string]*qanpb.ListLabels),
+	}
 
-        if !isValidMetricColumn(mainMetricName) {
-                return nil, fmt.Errorf("invalid main metric name %s", mainMetricName)
-        }
+	if !isValidMetricColumn(mainMetricName) {
+		return nil, fmt.Errorf("invalid main metric name %s", mainMetricName)
+	}
 
-        dimentionQueries := map[string]string{
-                "server":          queryServers,
-                "database":        queryDatabases,
-                "schema":          querySchemas,
-                "username":        queryUsernames,
-                "client_host":     queryClientHosts,
-                "replication_set": queryReplicationSet,
-                "cluster":         queryCluster,
-                "service_type":    queryServiceType,
-                "environment":     queryEnvironment,
-                "az":              queryAZ,
-                "region":          queryRegion,
-                "node_model":      queryNodeModel,
-                "container_name":  queryContainerName,
-                "labels":          queryLabels,
-        }
+	dimentionQueries := map[string]string{
+		"server":          queryServers,
+		"database":        queryDatabases,
+		"schema":          querySchemas,
+		"username":        queryUsernames,
+		"client_host":     queryClientHosts,
+		"replication_set": queryReplicationSet,
+		"cluster":         queryCluster,
+		"service_type":    queryServiceType,
+		"environment":     queryEnvironment,
+		"az":              queryAZ,
+		"region":          queryRegion,
+		"node_model":      queryNodeModel,
+		"container_name":  queryContainerName,
+		"labels":          queryLabels,
+	}
 
-        for dimentionName, dimentionQuery := range dimentionQueries {
-                values, mainMetricPerSec, err := r.queryFilters(ctx, periodStartFromSec, periodStartToSec, mainMetricName, dimentionQuery)
-                if err != nil {
-                        return nil, errors.Wrap(err, "cannot select "+dimentionName+" dimension")
-                }
+	for dimentionName, dimentionQuery := range dimentionQueries {
+		values, mainMetricPerSec, err := r.queryFilters(ctx, periodStartFromSec, periodStartToSec, mainMetricName, dimentionQuery)
+		if err != nil {
+			return nil, errors.Wrap(err, "cannot select "+dimentionName+" dimension")
+		}
 
-                totals := map[string]float32{}
-                if mainMetricPerSec == 0 {
-                        for _, label := range values {
-                                totals[label.key] += label.mainMetricPerSec
-                        }
-                }
+		totals := map[string]float32{}
+		if mainMetricPerSec == 0 {
+			for _, label := range values {
+				totals[label.key] += label.mainMetricPerSec
+			}
+		}
 
-                for _, label := range values {
-                        if _, ok := result.Labels[label.key]; !ok {
-                                result.Labels[label.key] = &qanpb.ListLabels{
-                                        Name: []*qanpb.Values{},
-                                }
-                        }
-                        total := mainMetricPerSec
-                        if mainMetricPerSec == 0 {
-                                total = totals[label.key]
-                        }
-                        val := qanpb.Values{
-                                Value:             label.value,
-                                MainMetricPerSec:  label.mainMetricPerSec,
-                                MainMetricPercent: label.mainMetricPerSec / total,
-                        }
-                        result.Labels[label.key].Name = append(result.Labels[label.key].Name, &val)
-                }
-        }
+		for _, label := range values {
+			if _, ok := result.Labels[label.key]; !ok {
+				result.Labels[label.key] = &qanpb.ListLabels{
+					Name: []*qanpb.Values{},
+				}
+			}
+			total := mainMetricPerSec
+			if mainMetricPerSec == 0 {
+				total = totals[label.key]
+			}
+			val := qanpb.Values{
+				Value:             label.value,
+				MainMetricPerSec:  label.mainMetricPerSec,
+				MainMetricPercent: label.mainMetricPerSec / total,
+			}
+			result.Labels[label.key].Name = append(result.Labels[label.key].Name, &val)
+		}
+	}
 
-        return &result, nil
+	return &result, nil
 }
 
 func (r *Reporter) queryFilters(ctx context.Context, periodStartFromSec, periodStartToSec int64, mainMetricName, query string) ([]*customLabel, float32, error) {
-        durationSec := periodStartToSec - periodStartFromSec
-        var labels []*customLabel
-        rows, err := r.db.QueryContext(ctx, fmt.Sprintf(query, mainMetricName), periodStartFromSec, periodStartToSec)
-        if err != nil {
-                return nil, 0, errors.Wrap(err, "failed to select for query: "+query)
-        }
-        defer rows.Close() //nolint:errcheck
+	durationSec := periodStartToSec - periodStartFromSec
+	var labels []*customLabel
+	rows, err := r.db.QueryContext(ctx, fmt.Sprintf(query, mainMetricName), periodStartFromSec, periodStartToSec)
+	if err != nil {
+		return nil, 0, errors.Wrap(err, "failed to select for query: "+query)
+	}
+	defer rows.Close() //nolint:errcheck
 
-        for rows.Next() {
-                var label customLabel
-                err = rows.Scan(&label.key, &label.value, &label.mainMetricPerSec)
-                if err != nil {
-                        return nil, 0, errors.Wrap(err, "failed to scan for query: "+query)
-                }
-                label.mainMetricPerSec /= float32(durationSec)
-                labels = append(labels, &label)
-        }
-        if err = rows.Err(); err != nil {
-                return nil, 0, errors.Wrap(err, "failed to select for query: "+query)
-        }
+	for rows.Next() {
+		var label customLabel
+		err = rows.Scan(&label.key, &label.value, &label.mainMetricPerSec)
+		if err != nil {
+			return nil, 0, errors.Wrap(err, "failed to scan for query: "+query)
+		}
+		label.mainMetricPerSec /= float32(durationSec)
+		labels = append(labels, &label)
+	}
+	if err = rows.Err(); err != nil {
+		return nil, 0, errors.Wrap(err, "failed to select for query: "+query)
+	}
 
-        totalMainMetricPerSec := float32(0)
+	totalMainMetricPerSec := float32(0)
 
-        if rows.NextResultSet() {
-                var labelTotal customLabel
-                for rows.Next() {
-                        err = rows.Scan(&labelTotal.key, &labelTotal.value, &labelTotal.mainMetricPerSec)
-                        if err != nil {
-                                return nil, 0, errors.Wrap(err, "failed to scan total for query: "+query)
-                        }
-                        totalMainMetricPerSec = labelTotal.mainMetricPerSec / float32(durationSec)
-                }
-                if err = rows.Err(); err != nil {
-                        return nil, 0, errors.Wrap(err, "failed to select total for query: "+query)
-                }
-        }
+	if rows.NextResultSet() {
+		var labelTotal customLabel
+		for rows.Next() {
+			err = rows.Scan(&labelTotal.key, &labelTotal.value, &labelTotal.mainMetricPerSec)
+			if err != nil {
+				return nil, 0, errors.Wrap(err, "failed to scan total for query: "+query)
+			}
+			totalMainMetricPerSec = labelTotal.mainMetricPerSec / float32(durationSec)
+		}
+		if err = rows.Err(); err != nil {
+			return nil, 0, errors.Wrap(err, "failed to select total for query: "+query)
+		}
+	}
 
-        return labels, totalMainMetricPerSec, nil
+	return labels, totalMainMetricPerSec, nil
 }

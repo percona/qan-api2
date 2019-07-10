@@ -58,6 +58,7 @@ var boolColumnNames = map[string]struct{}{
 	"no_good_index_used":     {},
 }
 
+//nolint
 var specialColumnNames = map[string]struct{}{
 	"num_queries": {},
 	"load":        {},

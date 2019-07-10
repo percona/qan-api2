@@ -182,8 +182,8 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			Rank:        uint32(i) + in.Offset,
 			Dimension:   res["dimension"].(string),
 			Fingerprint: res["fingerprint"].(string),
-			NumQueries:  uint32(numQueries), // TODO: deprecated, remove it when UI stop use it.
-			Qps:         numQueries / float32(periodDurationSec), // TODO: deprecated, remove it when UI stop use it.
+			NumQueries:  uint32(numQueries),                                                       // TODO: deprecated, remove it when UI stop use it.
+			Qps:         numQueries / float32(periodDurationSec),                                  // TODO: deprecated, remove it when UI stop use it.
 			Load:        interfaceToFloat32(res["m_query_time_sum"]) / float32(periodDurationSec), // TODO: deprecated, remove it when UI stop use it.
 			Metrics:     make(map[string]*qanpb.Metric),
 		}
@@ -231,7 +231,7 @@ func makeStats(metricNameRoot string, total, res models.M, numQueries float32, p
 	}
 	if metricNameRoot == "num_queries" {
 		return &qanpb.Stat{
-			Sum: numQueries,
+			Sum:       numQueries,
 			SumPerSec: numQueries / float32(periodDurationSec),
 		}
 	}
@@ -242,10 +242,10 @@ func makeStats(metricNameRoot string, total, res models.M, numQueries float32, p
 		rate = sum / divider
 	}
 	stat := &qanpb.Stat{
-		Rate: rate,
-		Cnt:  interfaceToFloat32(res["m_"+metricNameRoot+"_cnt"]),
-		Sum:  sum,
-		Avg:  sum / numQueries,
+		Rate:      rate,
+		Cnt:       interfaceToFloat32(res["m_"+metricNameRoot+"_cnt"]),
+		Sum:       sum,
+		Avg:       sum / numQueries,
 		SumPerSec: sum / float32(periodDurationSec),
 	}
 	if val, ok := res["m_"+metricNameRoot+"_min"]; ok {
