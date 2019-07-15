@@ -147,8 +147,8 @@
   revision = "26901809c968142fc55bffa04dd6f74e850406f6"
 
 [[projects]]
-  branch = "PMM-4223-totals-in-obj-details"
-  digest = "1:4190b9b8166394bb0b743b5f4b8f61c66418be30fddff934de948a618cf47956"
+  branch = "PMM-2.0"
+  digest = "1:1735f8c728ff0998435a176bb3176a52572772b9bad67a4a21275b750f4b8698"
   name = "github.com/percona/pmm"
   packages = [
     "api/inventorypb",
@@ -156,7 +156,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "a79094a31500e08a02138c8c8811e76d1e0eafb0"
+  revision = "bd2f7e8e1964f6f930b30e66c0d976c279f9aff1"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
