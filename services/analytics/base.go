@@ -115,7 +115,7 @@ func interfaceToFloat32(unk interface{}) float32 {
 
 func isDimension(name string) bool {
 	dimensionColumnNames := map[string]struct{}{
-		// Main dimentions
+		// Main dimensions
 		"queryid":     {},
 		"server":      {},
 		"database":    {},

@@ -123,7 +123,7 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 		PeriodStartFrom     int64
 		PeriodStartTo       int64
 		PeriodDuration      int64
-		Dimensions			map[string][]string
+		Dimensions          map[string][]string
 		Labels              map[string][]string
 		Group               string
 		Order               string
@@ -264,7 +264,7 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 		PeriodStartFrom int64
 		PeriodStartTo   int64
 		PeriodDuration  int64
-		Dimensions		map[string][]string
+		Dimensions      map[string][]string
 		Labels          map[string][]string
 		Group           string
 		Column          string
