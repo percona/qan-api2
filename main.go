@@ -186,17 +186,16 @@ func main() {
 	}()
 
 	ticker := time.NewTicker(24 * time.Hour)
-	quit := make(chan struct{})
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
+		// Drop old partitions when api just started.
+		DropOldPartition(db, *dataRetention)
 		for {
 			select {
 			case <-ticker.C:
+				// Drop old partitions once in 24h.
 				DropOldPartition(db, *dataRetention)
-			case <-quit:
-				ticker.Stop()
-				return
 			}
 		}
 	}()
