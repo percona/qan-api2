@@ -34,13 +34,15 @@ install-race:                   ## Install qan-api2 binary with race detector.
 	go install -v -race ./...
 
 test-env-up:
-	docker stop pmm-clickhouse-test
-	docker rm pmm-clickhouse-test
 	docker run -d --name pmm-clickhouse-test -p19000:9000 yandex/clickhouse-server:19.5
 	sleep 10s
 	docker exec pmm-clickhouse-test clickhouse client --query="CREATE DATABASE IF NOT EXISTS pmm_test;"
 	cat migrations/sql/*.up.sql | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --multiline --multiquery
 	cat fixture/metrics.csv | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --query="INSERT INTO metrics FORMAT CSV"
+
+test-env-down:
+	docker stop pmm-clickhouse-test
+	docker rm pmm-clickhouse-test
 
 test:                           ## Run tests.
 	go test -v ./...
