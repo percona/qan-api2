@@ -17,6 +17,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	_ "github.com/kshvakov/clickhouse"
@@ -77,7 +78,7 @@ func DropOldPartition(db *sqlx.DB, days uint) {
 		return
 	}
 	for _, part := range partitions {
-		result, err := db.Exec(`ALTER TABLE metrics DROP PARTITION ?`, part)
+		result, err := db.Exec(fmt.Sprintf(`ALTER TABLE metrics DROP PARTITION '%s'`, part))
 		log.Printf("Drop %s partitions of pmm.metrics. Result: %v, Error: %v", part, result, err)
 	}
 }
