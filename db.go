@@ -68,8 +68,8 @@ func runMigrations(dsn string) error {
 func DropOldPartition(db *sqlx.DB, days uint) {
 	partitions := []string{}
 	err := db.Select(
-		partitions,
-		`SELECT DISTINCT partition FROM system.parts WHERE partition < toYYYYMMDD(now() - toIntervalDay(?))`,
+		&partitions,
+		`SELECT DISTINCT partition FROM system.parts WHERE partition < toYYYYMMDD(now() - toIntervalDay(?)) ORDER BY partition`,
 		days,
 	)
 	if err != nil {

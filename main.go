@@ -150,11 +150,11 @@ func runJSONServer(ctx context.Context, grpcBind, jsonBind, swaggerBind string) 
 
 func main() {
 	kingpin.Version(version.ShortInfo())
-	grpcBind := kingpin.Flag("grpcBind", "GRPC bind address and port").Default("127.0.0.1:9911").String()
-	jsonBind := kingpin.Flag("jsonBind", "JSON bind address and port").Default("127.0.0.1:9922").String()
-	swaggerBind := kingpin.Flag("swaggerBind", "Swagger bind address and port").Default("").String()
-	dataRetention := kingpin.Flag("dataRetention", "QAN data Retention (in days)").Default("30").Uint()
-	dsn := kingpin.Flag("dsn", "ClickHouse database DSN").Default("clickhouse://127.0.0.1:9000?database=pmm&debug=true").String()
+	grpcBind := kingpin.Flag("grpcBind", "GRPC bind address and port").Envar("QANAPI_BIND").Default("127.0.0.1:9911").String()
+	jsonBind := kingpin.Flag("jsonBind", "JSON bind address and port").Envar("QANAPI_JSON_BIND").Default("127.0.0.1:9922").String()
+	swaggerBind := kingpin.Flag("swaggerBind", "Swagger bind address and port").Envar("QANAPI_SWAGGER_BIND").Default("").String()
+	dataRetention := kingpin.Flag("dataRetention", "QAN data Retention (in days)").Envar("QANAPI_DATA_RETENTION").Default("30").Uint()
+	dsn := kingpin.Flag("dsn", "ClickHouse database DSN").Envar("QANAPI_DSN").Default("clickhouse://127.0.0.1:9000?database=pmm&debug=true").String()
 	kingpin.Parse()
 
 	log.Printf("%s.", version.ShortInfo())
@@ -189,13 +189,14 @@ func main() {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		// Drop old partitions when api just started.
-		DropOldPartition(db, *dataRetention)
 		for {
+			// Drop old partitions once in 24h.
+			DropOldPartition(db, *dataRetention)
 			select {
+			case <-ctx.Done():
+				return
 			case <-ticker.C:
-				// Drop old partitions once in 24h.
-				DropOldPartition(db, *dataRetention)
+				// nothing
 			}
 		}
 	}()
