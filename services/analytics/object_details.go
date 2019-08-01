@@ -132,19 +132,19 @@ func makeMetrics(mm, t models.M, durationSec int64) map[string]*qanpb.MetricValu
 	m := make(map[string]*qanpb.MetricValues)
 	sumNumQueries := interfaceToFloat32(mm["num_queries"])
 	m["num_queries"] = &qanpb.MetricValues{
-		Sum: sumNumQueries,
+		Sum:  sumNumQueries,
 		Rate: sumNumQueries / float32(durationSec),
 	}
 
 	sumNumQueriesWithErrors := interfaceToFloat32(mm["num_queries_with_errors"])
 	m["num_queries_with_errors"] = &qanpb.MetricValues{
-		Sum: sumNumQueriesWithErrors,
+		Sum:  sumNumQueriesWithErrors,
 		Rate: sumNumQueriesWithErrors / float32(durationSec),
 	}
 
 	sumNumQueriesWithWarnings := interfaceToFloat32(mm["num_queries_with_warnings"])
 	m["num_queries_with_warnings"] = &qanpb.MetricValues{
-		Sum: sumNumQueriesWithWarnings,
+		Sum:  sumNumQueriesWithWarnings,
 		Rate: sumNumQueriesWithWarnings / float32(durationSec),
 	}
 
