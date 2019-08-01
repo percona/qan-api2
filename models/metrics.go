@@ -477,9 +477,9 @@ const queryExampleTmpl = `
 SELECT schema AS schema, service_id, agent_id, example, toUInt8(example_format) AS example_format,
        is_truncated, toUInt8(example_type) AS example_type, example_metrics
   FROM metrics
- WHERE period_start >= ? AND period_start <= ?
-       {{ if index . "filter" }} AND {{ index . "group" }} = '{{ index . "filter" }}' {{ end }}
- LIMIT ?
+ WHERE period_start >= :period_start_from AND period_start <= :period_start_to
+       {{ if index . "filter" }} AND {{ index . "group" }} = :filter {{ end }}
+ LIMIT :limit
 `
 
 //nolint
@@ -489,16 +489,23 @@ var tmplQueryExample = template.Must(template.New("queryExampleTmpl").Parse(quer
 func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, periodStartTo time.Time, filter,
 	group string, limit uint32) (*qanpb.QueryExampleReply, error) {
 	arg := map[string]interface{}{
-		"filter": filter,
-		"group":  group,
+		"filter":            filter,
+		"group":             group,
+		"period_start_to":   periodStartTo,
+		"period_start_from": periodStartFrom,
+		"limit":             limit,
 	}
 
 	var queryBuffer bytes.Buffer
 	if err := tmplQueryExample.Execute(&queryBuffer, arg); err != nil {
 		return nil, errors.Wrap(err, "cannot execute queryExampleTmpl")
 	}
-
-	rows, err := m.db.QueryContext(ctx, queryBuffer.String(), periodStartFrom, periodStartTo, limit)
+	query, queryArgs, err := sqlx.Named(queryBuffer.String(), arg)
+	if err != nil {
+		return nil, errors.Wrap(err, "prepare named")
+	}
+	query = m.db.Rebind(query)
+	rows, err := m.db.QueryContext(ctx, query, queryArgs...)
 	if err != nil {
 		return nil, errors.Wrap(err, "cannot select object details labels")
 	}
@@ -552,9 +559,9 @@ const queryObjectDetailsLabelsTmpl = `
 	labels.key AS lkey,
 	labels.value AS lvalue
 	FROM metrics
-	ARRAY JOIN labels
-	WHERE period_start >= ? AND period_start <= ?
-	{{ if index . "filter" }} AND {{ index . "group" }} = '{{ index . "filter" }}' {{ end }}
+	LEFT ARRAY JOIN labels
+	WHERE period_start >= :period_start_from AND period_start <= :period_start_to
+	{{ if index . "filter" }} AND {{ index . "group" }} = :filter {{ end }}
 	ORDER BY service_name, database, schema, username, client_host, replication_set, cluster, service_type, service_id,
 			 environment, az, region, node_model, node_id, node_name, node_type, machine_id, container_name, container_id,
 			 agent_id, agent_type, labels.key, labels.value
@@ -593,16 +600,24 @@ type queryRowsLabels struct {
 func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, periodStartFrom, periodStartTo time.Time, filter,
 	group string) (*qanpb.ObjectDetailsLabelsReply, error) {
 	arg := map[string]interface{}{
-		"filter": filter,
-		"group":  group,
+		"filter":            filter,
+		"group":             group,
+		"period_start_to":   periodStartTo,
+		"period_start_from": periodStartFrom,
 	}
+
 	var queryBuffer bytes.Buffer
 	if err := tmplObjectDetailsLabels.Execute(&queryBuffer, arg); err != nil {
 		return nil, errors.Wrap(err, "cannot execute tmplObjectDetailsLabels")
 	}
 	res := qanpb.ObjectDetailsLabelsReply{}
 
-	rows, err := m.db.QueryContext(ctx, queryBuffer.String(), periodStartFrom, periodStartTo)
+	query, queryArgs, err := sqlx.Named(queryBuffer.String(), arg)
+	if err != nil {
+		return nil, errors.Wrap(err, "prepare named")
+	}
+	query = m.db.Rebind(query)
+	rows, err := m.db.QueryContext(ctx, query, queryArgs...)
 	if err != nil {
 		return nil, errors.Wrap(err, "cannot select object details labels")
 	}

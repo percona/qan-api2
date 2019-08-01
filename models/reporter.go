@@ -541,7 +541,7 @@ const queryContainerID = `
 const queryLabels = `
         SELECT labels.key AS key, labels.value AS value, SUM(%s) AS main_metric_sum
           FROM metrics
-ARRAY JOIN labels
+LEFT ARRAY JOIN labels
          WHERE period_start >= ?
            AND period_start <= ?
   GROUP BY labels.key, labels.value
