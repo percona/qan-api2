@@ -698,10 +698,12 @@ func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, periodStartFrom
 		labels["container_id"][row.ContainerID] = struct{}{}
 		labels["agent_id"][row.AgentID] = struct{}{}
 		labels["agent_type"][row.AgentType] = struct{}{}
-		if labels[row.LabelKey] == nil {
-			labels[row.LabelKey] = map[string]struct{}{}
+		if row.LabelKey != "" {
+			if labels[row.LabelKey] == nil {
+				labels[row.LabelKey] = map[string]struct{}{}
+			}
+			labels[row.LabelKey][row.LabelValue] = struct{}{}
 		}
-		labels[row.LabelKey][row.LabelValue] = struct{}{}
 	}
 	if err = rows.Err(); err != nil {
 		return nil, errors.Wrap(err, "failed to select labels dimensions")
