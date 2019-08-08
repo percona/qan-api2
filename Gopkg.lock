@@ -148,7 +148,7 @@
 
 [[projects]]
   branch = "PMM-4181-postgresql-actions"
-  digest = "1:d05a87d9dcfc9c6cf0aeee0a30dbbf187ede228e22d4e6ceec0baf386c21a11c"
+  digest = "1:a773fecfdf3aa81dd2876598772548995faf605afcbfc5a89d38065fc5e8dd3a"
   name = "github.com/percona/pmm"
   packages = [
     "api/inventorypb",
@@ -156,7 +156,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "0a3403ad59ee66a572a6066a2173c07cac906a4a"
+  revision = "a9fc59a25fca0e2c4074ccbed179b9fda2fd5e3b"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
