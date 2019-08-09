@@ -52,7 +52,6 @@ const queryReportTmpl = `
 SELECT
 {{ .Group }} AS dimension,
 {{ if eq .Group "queryid" }} any(fingerprint) {{ else }} '' {{ end }} AS fingerprint,
-{{ if eq .Group "queryid" }} any(tables) {{ else }} [] {{ end }} AS tables,
 {{range $j, $col := .CommonColumns}}
 	SUM(m_{{ $col }}_cnt) AS m_{{ $col }}_cnt,
 	SUM(m_{{ $col }}_sum) AS m_{{ $col }}_sum,
