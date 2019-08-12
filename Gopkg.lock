@@ -147,7 +147,7 @@
   revision = "26901809c968142fc55bffa04dd6f74e850406f6"
 
 [[projects]]
-  branch = "PMM-4181-postgresql-actions"
+  branch = "PMM-2.0"
   digest = "1:70e7b65fd8d26ec6c64fe34e04fcd92cfcade7a998dc0db629ec406a4324e131"
   name = "github.com/percona/pmm"
   packages = [
@@ -156,7 +156,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "dd7ce16db1331ad0cc8069633afaed1b493dbad1"
+  revision = "a27771053e9169850702473edc8da84e2dc0c4b1"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
