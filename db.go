@@ -17,6 +17,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	_ "github.com/kshvakov/clickhouse"
@@ -67,9 +68,16 @@ func runMigrations(dsn string) error {
 // DropOldPartition drops number of days old partitions of pmm.metrics in ClickHouse.
 func DropOldPartition(db *sqlx.DB, days uint) {
 	partitions := []string{}
+	const query = `
+SELECT
+DISTINCT partition
+FROM system.parts
+WHERE
+toDate(replaceRegexpOne(partition, '^(\\d\\d\\d\\d)(\\d\\d)(\\d\\d)$', '\\1-\\2-\\3')) < toDate(now() - toIntervalDay(?))
+`
 	err := db.Select(
 		&partitions,
-		`SELECT DISTINCT partition FROM system.parts WHERE partition < toYYYYMMDD(now() - toIntervalDay(?)) ORDER BY partition`,
+		query,
 		days,
 	)
 	if err != nil {
@@ -77,7 +85,7 @@ func DropOldPartition(db *sqlx.DB, days uint) {
 		return
 	}
 	for _, part := range partitions {
-		result, err := db.Exec(`ALTER TABLE metrics DROP PARTITION ?`, part)
-		log.Printf("Drop %s partitions of pmm.metrics. Result: %v, Error: %v", part, result, err)
+		result, err := db.Exec(fmt.Sprintf(`ALTER TABLE metrics DROP PARTITION %s`, part))
+		log.Printf("Drop %s partitions of metrics. Result: %v, Error: %v", part, result, err)
 	}
 }
