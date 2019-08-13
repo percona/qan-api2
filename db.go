@@ -73,7 +73,7 @@ SELECT
 DISTINCT partition
 FROM system.parts
 WHERE
-toDate(replaceRegexpOne(partition, '^(\\d\\d\\d\\d)(\\d\\d)(\\d\\d)$', '\\1-\\2-\\3')) < toDate(now() - toIntervalDay(?))
+toDate(replaceRegexpOne(partition, '^(\\d\\d\\d\\d)(\\d\\d)(\\d\\d)$', '\\1-\\2-\\3')) < toDate(now() - toIntervalDay(?)) ORDER BY partition
 `
 	err := db.Select(
 		&partitions,
