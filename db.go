@@ -69,12 +69,10 @@ func runMigrations(dsn string) error {
 func DropOldPartition(db *sqlx.DB, days uint) {
 	partitions := []string{}
 	const query = `
-SELECT
-DISTINCT partition
-FROM system.parts
-WHERE
-toDate(replaceRegexpOne(partition, '^(\\d\\d\\d\\d)(\\d\\d)(\\d\\d)$', '\\1-\\2-\\3')) < toDate(now() - toIntervalDay(?)) ORDER BY partition
-`
+		SELECT DISTINCT partition
+		FROM system.parts
+		WHERE toUInt32(partition) < toYYYYMMDD(now() - toIntervalDay(?)) ORDER BY partition
+	`
 	err := db.Select(
 		&partitions,
 		query,
