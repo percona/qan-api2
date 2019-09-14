@@ -167,7 +167,7 @@
 
 [[projects]]
   branch = "PMM-3786-api-cleanups"
-  digest = "1:0e71c67b5489a77b894bbf1bc262f5360eb853e54679502fd09dc112b94d3daa"
+  digest = "1:50f37c5fb50982e8786b3ed5c9143844b59e2287e604cce465c7d8dae4b44494"
   name = "github.com/percona/pmm"
   packages = [
     "api/inventorypb",
@@ -175,7 +175,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "c63af0035cf08d32fd06ac49c35730362c374f66"
+  revision = "68e3939c2b40af02fc81687617759c8330f25208"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
