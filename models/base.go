@@ -322,8 +322,7 @@ func isValidMetricColumn(name string) bool {
 }
 
 func agentTypeToClickHouseEnum(agentType inventorypb.AgentType) string {
-	// agentTypes represents Agent type as stored in database.
-	// Should be same as in pmm/inventorypb/agents.proto
+        // String representation of agent type.
 	agentTypes := map[inventorypb.AgentType]string{
 		inventorypb.AgentType_AGENT_TYPE_INVALID:                "qan-agent-type-invalid",
 		inventorypb.AgentType_QAN_MYSQL_PERFSCHEMA_AGENT:        "qan-mysql-perfschema-agent",
