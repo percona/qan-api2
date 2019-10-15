@@ -406,45 +406,37 @@ type customLabel struct {
 
 var queryDimensionTmpl = template.Must(template.New("queryDimension").Funcs(funcMap).Parse(queryDimension))
 var queryLabelsTmpl = template.Must(template.New("queryLabels").Funcs(funcMap).Parse(queryLabels))
+var dimensionQueries = map[string]*template.Template{
+	"service_name":    queryDimensionTmpl,
+	"database":        queryDimensionTmpl,
+	"schema":          queryDimensionTmpl,
+	"username":        queryDimensionTmpl,
+	"client_host":     queryDimensionTmpl,
+	"replication_set": queryDimensionTmpl,
+	"cluster":         queryDimensionTmpl,
+	"service_type":    queryDimensionTmpl,
+	"service_id":      queryDimensionTmpl,
+	"environment":     queryDimensionTmpl,
+	"az":              queryDimensionTmpl,
+	"region":          queryDimensionTmpl,
+	"node_model":      queryDimensionTmpl,
+	"node_id":         queryDimensionTmpl,
+	"node_name":       queryDimensionTmpl,
+	"node_type":       queryDimensionTmpl,
+	"machine_id":      queryDimensionTmpl,
+	"container_name":  queryDimensionTmpl,
+	"container_id":    queryDimensionTmpl,
+	"labels":          queryLabelsTmpl,
+}
 
 // SelectFilters selects dimension and their values, and also keys and values of labels.
-func (r *Reporter) SelectFilters(
-	ctx context.Context,
-	periodStartFromSec,
-	periodStartToSec int64,
-	mainMetricName string,
-	dimensions,
-	labels map[string][]string,
-) (*qanpb.FiltersReply, error) {
+func (r *Reporter) SelectFilters(ctx context.Context, periodStartFromSec, periodStartToSec int64, mainMetricName string, dimensions, labels map[string][]string) (*qanpb.FiltersReply, error) {
 	result := qanpb.FiltersReply{
 		Labels: make(map[string]*qanpb.ListLabels),
 	}
 
 	if !isValidMetricColumn(mainMetricName) {
 		return nil, fmt.Errorf("invalid main metric name %s", mainMetricName)
-	}
-
-	dimensionQueries := map[string]*template.Template{
-		"service_name":    queryDimensionTmpl,
-		"database":        queryDimensionTmpl,
-		"schema":          queryDimensionTmpl,
-		"username":        queryDimensionTmpl,
-		"client_host":     queryDimensionTmpl,
-		"replication_set": queryDimensionTmpl,
-		"cluster":         queryDimensionTmpl,
-		"service_type":    queryDimensionTmpl,
-		"service_id":      queryDimensionTmpl,
-		"environment":     queryDimensionTmpl,
-		"az":              queryDimensionTmpl,
-		"region":          queryDimensionTmpl,
-		"node_model":      queryDimensionTmpl,
-		"node_id":         queryDimensionTmpl,
-		"node_name":       queryDimensionTmpl,
-		"node_type":       queryDimensionTmpl,
-		"machine_id":      queryDimensionTmpl,
-		"container_name":  queryDimensionTmpl,
-		"container_id":    queryDimensionTmpl,
-		"labels":          queryLabelsTmpl,
 	}
 
 	for dimensionName, dimensionQuery := range dimensionQueries {
