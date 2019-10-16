@@ -442,7 +442,7 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFromSec, period
 	for dimensionName, dimensionQuery := range dimensionQueries {
 		values, mainMetricPerSec, err := r.queryFilters(ctx, periodStartFromSec, periodStartToSec, dimensionName, mainMetricName, dimensionQuery, dimensions, labels)
 		if err != nil {
-			return nil, errors.Wrap(err, "cannot select "+dimensionName+" dimension")
+			return nil, errors.Wrapf(err, "cannot select %s dimension", dimensionName)
 		}
 
 		totals := map[string]float32{}
@@ -494,12 +494,12 @@ func (r *Reporter) queryFilters(ctx context.Context, periodStartFromSec,
 	var queryBuffer bytes.Buffer
 
 	if err := tmplQueryFilter.Execute(&queryBuffer, tmplArgs); err != nil {
-		return nil, 0, errors.Wrap(err, "cannot execute tmplQueryFilter"+queryBuffer.String())
+		return nil, 0, errors.Wrapf(err, "cannot execute tmplQueryFilter %s", queryBuffer.String())
 	}
 
 	rows, err := r.db.QueryContext(ctx, queryBuffer.String(), periodStartFromSec, periodStartToSec)
 	if err != nil {
-		return nil, 0, errors.Wrap(err, "failed to select for QueryFilter "+queryBuffer.String())
+		return nil, 0, errors.Wrapf(err, "failed to select for QueryFilter %s", queryBuffer.String())
 	}
 	defer rows.Close() //nolint:errcheck
 
@@ -507,13 +507,13 @@ func (r *Reporter) queryFilters(ctx context.Context, periodStartFromSec,
 		var label customLabel
 		err = rows.Scan(&label.key, &label.value, &label.mainMetricPerSec)
 		if err != nil {
-			return nil, 0, errors.Wrap(err, "failed to scan for QueryFilter "+queryBuffer.String())
+			return nil, 0, errors.Wrapf(err, "failed to scan for QueryFilter %s", queryBuffer.String())
 		}
 		label.mainMetricPerSec /= float32(durationSec)
 		labels = append(labels, &label)
 	}
 	if err = rows.Err(); err != nil {
-		return nil, 0, errors.Wrap(err, "failed to select for QueryFilter "+queryBuffer.String())
+		return nil, 0, errors.Wrapf(err, "failed to select for QueryFilter %s", queryBuffer.String())
 	}
 
 	totalMainMetricPerSec := float32(0)
@@ -523,12 +523,12 @@ func (r *Reporter) queryFilters(ctx context.Context, periodStartFromSec,
 		for rows.Next() {
 			err = rows.Scan(&labelTotal.key, &labelTotal.value, &labelTotal.mainMetricPerSec)
 			if err != nil {
-				return nil, 0, errors.Wrap(err, "failed to scan total for QueryFilter "+queryBuffer.String())
+				return nil, 0, errors.Wrapf(err, "failed to scan total for QueryFilter %s", queryBuffer.String())
 			}
 			totalMainMetricPerSec = labelTotal.mainMetricPerSec / float32(durationSec)
 		}
 		if err = rows.Err(); err != nil {
-			return nil, 0, errors.Wrap(err, "failed to select total for QueryFilter "+queryBuffer.String())
+			return nil, 0, errors.Wrapf(err, "failed to select total for QueryFilter %s", queryBuffer.String())
 		}
 	}
 
