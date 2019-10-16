@@ -166,7 +166,7 @@
   revision = "33a08ed8301ca0dd24269e3ebd903106a99d7492"
 
 [[projects]]
-  branch = "PMM-4063-reload-filters"
+  branch = "PMM-2.0"
   digest = "1:90ad33cd47224ad389249e5241ae0922a412168978e6cf120531d43384c8d0ac"
   name = "github.com/percona/pmm"
   packages = [
@@ -175,7 +175,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "78293c59e0c825b2c3a37655322cb0ad410b5b84"
+  revision = "70d751fb8362147c196868a141a788239c3375d6"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
