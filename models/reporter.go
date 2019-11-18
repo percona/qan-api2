@@ -440,7 +440,14 @@ func (r *Reporter) SelectFilters(ctx context.Context, periodStartFromSec, period
 	}
 
 	for dimensionName, dimensionQuery := range dimensionQueries {
-		values, mainMetricPerSec, err := r.queryFilters(ctx, periodStartFromSec, periodStartToSec, dimensionName, mainMetricName, dimensionQuery, dimensions, labels)
+		subDimensions := map[string][]string{}
+		for k, v := range dimensions {
+			if k == dimensionName {
+				continue
+			}
+			subDimensions[k] = v
+		}
+		values, mainMetricPerSec, err := r.queryFilters(ctx, periodStartFromSec, periodStartToSec, dimensionName, mainMetricName, dimensionQuery, subDimensions, labels)
 		if err != nil {
 			return nil, errors.Wrapf(err, "cannot select %s dimension", dimensionName)
 		}
