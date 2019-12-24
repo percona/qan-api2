@@ -34,6 +34,7 @@ import (
 	"sync"
 	"time"
 
+	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	grpc_gateway "github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/jmoiron/sqlx"
@@ -56,7 +57,7 @@ import (
 )
 
 const shutdownTimeout = 3 * time.Second
-const responseTimeout = 1 * time.Minute
+const responseTimeout = 2 * time.Minute
 
 // runGRPCServer runs gRPC server until context is canceled, then gracefully stops it.
 func runGRPCServer(ctx context.Context, db *sqlx.DB, bind string) {
@@ -71,14 +72,19 @@ func runGRPCServer(ctx context.Context, db *sqlx.DB, bind string) {
 	rm := models.NewReporter(db)
 	mm := models.NewMetrics(db)
 	grpcServer := grpc.NewServer(
+		grpc.StreamInterceptor(grpc_prometheus.StreamServerInterceptor),
 		grpc.UnaryInterceptor(
-			func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
-				newCtx, cancel := context.WithTimeout(ctx, responseTimeout)
-				defer cancel()
-				return handler(newCtx, req)
-			},
+			grpc_middleware.ChainUnaryServer(
+				func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+					newCtx, cancel := context.WithTimeout(ctx, responseTimeout)
+					defer cancel()
+					return handler(newCtx, req)
+				},
+				grpc_prometheus.UnaryServerInterceptor,
+			),
 		),
 	)
+
 	aserv := aservice.NewService(rm, mm)
 	qanpb.RegisterCollectorServer(grpcServer, rservice.NewService(mbm))
 	qanpb.RegisterProfileServer(grpcServer, aserv)
