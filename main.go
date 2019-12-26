@@ -142,7 +142,7 @@ func runJSONServer(ctx context.Context, grpcBind, jsonBind string) {
 }
 
 // runDebugServer runs debug server until context is canceled, then gracefully stops it.
-func runDebugServer(ctx context.Context, debugBindF string) {
+func runDebugServer(ctx context.Context, debugBind string) {
 	l := logrus.WithField("component", "debug")
 
 	handlers := []string{
@@ -150,7 +150,7 @@ func runDebugServer(ctx context.Context, debugBindF string) {
 		"/debug/pprof", // by net/http/pprof
 	}
 	for i, h := range handlers {
-		handlers[i] = "http://" + debugBindF + h
+		handlers[i] = "http://" + debugBind + h
 	}
 
 	var buf bytes.Buffer
@@ -171,10 +171,10 @@ func runDebugServer(ctx context.Context, debugBindF string) {
 	http.HandleFunc("/debug", func(rw http.ResponseWriter, req *http.Request) {
 		rw.Write(buf.Bytes())
 	})
-	l.Infof("Starting server on http://%s/debug\nRegistered handlers:\n\t%s", debugBindF, strings.Join(handlers, "\n\t"))
+	l.Infof("Starting server on http://%s/debug\nRegistered handlers:\n\t%s", debugBind, strings.Join(handlers, "\n\t"))
 
 	server := &http.Server{
-		Addr:     debugBindF,
+		Addr:     debugBind,
 		ErrorLog: log.New(os.Stderr, "runDebugServer: ", 0),
 	}
 	go func() {
@@ -197,7 +197,7 @@ func main() {
 	kingpin.HelpFlag.Short('h')
 	grpcBind := kingpin.Flag("grpc-bind", "GRPC bind address and port").Envar("QANAPI_GRPC_BIND").Default("127.0.0.1:9911").String()
 	jsonBind := kingpin.Flag("json-bind", "JSON bind address and port").Envar("QANAPI_JSON_BIND").Default("127.0.0.1:9922").String()
-	debugBindF := kingpin.Flag("listen-debug-addr", "Debug server listen address").Envar("QANAPI_DEBUG_BIND").Default("127.0.0.1:9933").String()
+	debugBind := kingpin.Flag("debug-addr", "Debug bind address and port").Envar("QANAPI_DEBUG_BIND").Default("127.0.0.1:9933").String()
 	dataRetention := kingpin.Flag("data-retention", "QAN data Retention (in days)").Envar("QANAPI_DATA_RETENTION").Default("30").Uint()
 	dsn := kingpin.Flag("dsn", "ClickHouse database DSN").Envar("QANAPI_DSN").Default("clickhouse://127.0.0.1:9000?database=pmm&debug=true").String()
 	kingpin.Parse()
@@ -233,7 +233,7 @@ func main() {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		runDebugServer(ctx, *debugBindF)
+		runDebugServer(ctx, *debugBind)
 	}()
 
 	ticker := time.NewTicker(24 * time.Hour)
