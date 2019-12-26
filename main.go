@@ -46,8 +46,10 @@ import (
 	rservice "github.com/percona/qan-api2/services/receiver"
 )
 
-const shutdownTimeout = 3 * time.Second
-const responseTimeout = 1 * time.Minute
+const (
+	shutdownTimeout = 3 * time.Second
+	responseTimeout = 1 * time.Minute
+)
 
 // runGRPCServer runs gRPC server until context is canceled, then gracefully stops it.
 func runGRPCServer(ctx context.Context, db *sqlx.DB, bind string) {
@@ -141,7 +143,6 @@ func runJSONServer(ctx context.Context, grpcBind, jsonBind string) {
 
 // runDebugServer runs debug server until context is canceled, then gracefully stops it.
 func runDebugServer(ctx context.Context, debugBindF string) {
-
 	l := logrus.WithField("component", "debug")
 
 	handlers := []string{
