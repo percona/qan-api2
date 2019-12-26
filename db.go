@@ -20,14 +20,13 @@ import (
 	"fmt"
 	"log"
 
-	_ "github.com/kshvakov/clickhouse"
+	"github.com/golang-migrate/migrate"
+	_ "github.com/golang-migrate/migrate/database/clickhouse" // register golang-migrate driver
+	bindata "github.com/golang-migrate/migrate/source/go_bindata"
+	"github.com/jmoiron/sqlx"          // TODO: research alternatives. Ex.: https://github.com/go-reform/reform
+	_ "github.com/kshvakov/clickhouse" // register database/sql driver
 
 	"github.com/percona/qan-api2/migrations"
-	// TODO: research alternatives. Ex.: https://github.com/go-reform/reform
-	"github.com/golang-migrate/migrate"
-	_ "github.com/golang-migrate/migrate/database/clickhouse"
-	bindata "github.com/golang-migrate/migrate/source/go_bindata"
-	"github.com/jmoiron/sqlx"
 )
 
 // NewDB return updated db.
@@ -36,6 +35,10 @@ func NewDB(dsn string) *sqlx.DB {
 	if err != nil {
 		log.Fatal("Connection: ", err)
 	}
+
+	db.SetConnMaxLifetime(0)
+	db.SetMaxIdleConns(5)
+	db.SetMaxOpenConns(5)
 
 	if err := runMigrations(dsn); err != nil {
 		log.Fatal("Migrations: ", err)
