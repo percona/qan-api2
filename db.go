@@ -19,11 +19,13 @@ package main
 import (
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/golang-migrate/migrate"
 	_ "github.com/golang-migrate/migrate/database/clickhouse" // register golang-migrate driver
 	bindata "github.com/golang-migrate/migrate/source/go_bindata"
-	"github.com/jmoiron/sqlx"          // TODO: research alternatives. Ex.: https://github.com/go-reform/reform
+	"github.com/jmoiron/sqlx" // TODO: research alternatives. Ex.: https://github.com/go-reform/reform
+	"github.com/jmoiron/sqlx/reflectx"
 	_ "github.com/kshvakov/clickhouse" // register database/sql driver
 
 	"github.com/percona/qan-api2/migrations"
@@ -35,6 +37,14 @@ func NewDB(dsn string, conns int) *sqlx.DB {
 	if err != nil {
 		log.Fatal("Connection: ", err)
 	}
+
+	// TODO: find solution with better performance
+	db.Mapper = reflectx.NewMapperTagFunc("json", strings.ToUpper, func(value string) string {
+		if strings.Contains(value, ",") {
+			return strings.Split(value, ",")[0]
+		}
+		return value
+	})
 
 	db.SetConnMaxLifetime(0)
 	db.SetMaxIdleConns(conns)
