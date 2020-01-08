@@ -56,8 +56,10 @@ import (
 	"github.com/percona/qan-api2/utils/logger"
 )
 
-const shutdownTimeout = 3 * time.Second
-const responseTimeout = 2 * time.Minute
+const (
+	shutdownTimeout = 3 * time.Second
+	responseTimeout = 2 * time.Minute
+)
 
 // runGRPCServer runs gRPC server until context is canceled, then gracefully stops it.
 func runGRPCServer(ctx context.Context, db *sqlx.DB, bind string) {
@@ -282,7 +284,7 @@ func main() {
 	ctx = logger.Set(ctx, "main")
 	defer l.Info("Done.")
 
-	db := NewDB(*dsnF)
+	db := NewDB(*dsnF, 5)
 
 	// handle termination signals
 	signals := make(chan os.Signal, 1)
