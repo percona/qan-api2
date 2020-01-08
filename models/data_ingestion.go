@@ -528,6 +528,7 @@ func mapToArrsStrStr(m map[string]string) (keys []string, values []string) {
 		keys = append(keys, k)
 		values = append(values, v)
 	}
+
 	return
 }
 
@@ -539,5 +540,6 @@ func mapToArrsIntInt(m map[uint64]uint64) (keys []uint64, values []uint64) {
 		keys = append(keys, k)
 		values = append(values, v)
 	}
+
 	return
 }
