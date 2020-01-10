@@ -27,6 +27,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 
 	"github.com/percona/pmm/api/qanpb"
 )
@@ -97,7 +98,7 @@ func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec 
 		result := make(M)
 		err = rows.MapScan(result)
 		if err != nil {
-			fmt.Printf("DimensionMetrics Scan error: %v", err)
+			logrus.Errorf("DimensionMetrics Scan error: %v", err)
 		}
 		results = append(results, result)
 	}
@@ -106,7 +107,7 @@ func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec 
 	for rows.Next() {
 		err = rows.MapScan(total)
 		if err != nil {
-			fmt.Printf("DimensionMetrics Scan TOTALS error: %v", err)
+			logrus.Errorf("DimensionMetrics Scan TOTALS error: %v", err)
 		}
 		results = append(results, total)
 	}
