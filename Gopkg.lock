@@ -205,15 +205,16 @@
 
 [[projects]]
   branch = "PMM-2.0"
-  digest = "1:5afea9d2d252a35e2b35b4c880d889348f6b21c328cab8328c9fb52c3e05d075"
+  digest = "1:db422b151994599760101e26bb87c22b1bfb2ecb9820fd031fcf369b0afe7e74"
   name = "github.com/percona/pmm"
   packages = [
     "api/inventorypb",
     "api/qanpb",
+    "utils/sqlmetrics",
     "version",
   ]
   pruneopts = "NUT"
-  revision = "06e137b6c1d78930b9ab73644e214096aa49389d"
+  revision = "559f6ba1560b492cc6d06f73dc75013208378ca6"
 
 [[projects]]
   digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
@@ -469,6 +470,7 @@
     "github.com/percona/go-mysql/query",
     "github.com/percona/pmm/api/inventorypb",
     "github.com/percona/pmm/api/qanpb",
+    "github.com/percona/pmm/utils/sqlmetrics",
     "github.com/percona/pmm/version",
     "github.com/pkg/errors",
     "github.com/prometheus/client_golang/prometheus",

@@ -39,6 +39,7 @@ import (
 	grpc_gateway "github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/jmoiron/sqlx"
 	"github.com/percona/pmm/api/qanpb"
+	"github.com/percona/pmm/utils/sqlmetrics"
 	"github.com/percona/pmm/version"
 	prom "github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -240,7 +241,7 @@ func main() {
 	jsonBindF := kingpin.Flag("json-bind", "JSON bind address and port").Envar("QANAPI_JSON_BIND").Default("127.0.0.1:9922").String()
 	debugBindF := kingpin.Flag("listen-debug-addr", "Debug server listen address").Envar("QANAPI_DEBUG_BIND").Default("127.0.0.1:9933").String()
 	dataRetentionF := kingpin.Flag("data-retention", "QAN data Retention (in days)").Envar("QANAPI_DATA_RETENTION").Default("30").Uint()
-	dsnF := kingpin.Flag("dsn", "ClickHouse database DSN").Envar("QANAPI_DSN").Default("clickhouse://127.0.0.1:9000?database=pmm&debug=true").String()
+	dsnF := kingpin.Flag("dsn", "ClickHouse database DSN").Envar("QANAPI_DSN").Default("clickhouse://127.0.0.1:9000?database=pmm&block_size=100000&pool_size=5").String()
 
 	debugF := kingpin.Flag("debug", "Enable debug logging").Bool()
 	traceF := kingpin.Flag("trace", "Enable trace logging (implies debug)").Bool()
@@ -284,7 +285,8 @@ func main() {
 	ctx = logger.Set(ctx, "main")
 	defer l.Info("Done.")
 
-	db := NewDB(*dsnF, 5)
+	db := NewDB(*dsnF, 5, 10)
+	prom.MustRegister(sqlmetrics.NewCollector("clickhouse", "qan-api2", db.DB))
 
 	// handle termination signals
 	signals := make(chan os.Signal, 1)
