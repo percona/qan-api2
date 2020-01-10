@@ -24,10 +24,9 @@ import (
 
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/ptypes/timestamp"
+	"github.com/percona/pmm/api/qanpb"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-
-	"github.com/percona/pmm/api/qanpb"
 
 	"github.com/percona/qan-api2/models"
 )

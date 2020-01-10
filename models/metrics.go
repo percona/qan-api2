@@ -26,10 +26,9 @@ import (
 	"time"
 
 	"github.com/jmoiron/sqlx"
+	"github.com/percona/pmm/api/qanpb"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-
-	"github.com/percona/pmm/api/qanpb"
 )
 
 const optimalAmountOfPoint = 120
