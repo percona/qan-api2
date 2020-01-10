@@ -175,6 +175,8 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 	if err != nil {
 		return nil, errors.Wrap(err, "QueryxContext error")
 	}
+	defer rows.Close()
+
 	for rows.Next() {
 		result := make(M)
 		err = rows.MapScan(result)
@@ -315,6 +317,7 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 	if err != nil {
 		return nil, errors.Wrap(err, "report query")
 	}
+	defer rows.Close()
 	resultsWithGaps := map[uint32]*qanpb.Point{}
 
 	mainMetricColumnName := "m_query_time_sum"
