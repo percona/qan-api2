@@ -17,13 +17,17 @@
 package models
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/jmoiron/sqlx"
 	"github.com/percona/pmm/api/qanpb"
 	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 )
+
+// TODO: do we need somehow count agents?
+const agentCount = 100
+const bulkSavePeriod = 5 * time.Second
 
 const insertSQL = `
   INSERT INTO metrics
@@ -433,12 +437,27 @@ const insertSQL = `
 
 // MetricsBucket implements models to store metrics bucket
 type MetricsBucket struct {
-	db *sqlx.DB
+	db       *sqlx.DB
+	ingestor chan *qanpb.CollectRequest
+	l        *logrus.Entry
 }
 
 // NewMetricsBucket initialize MetricsBucket with db instance.
 func NewMetricsBucket(db *sqlx.DB) MetricsBucket {
-	return MetricsBucket{db: db}
+	mb := MetricsBucket{
+		db:       db,
+		ingestor: make(chan *qanpb.CollectRequest, agentCount),
+		l:        logrus.WithField("component", "data_ingestion"),
+	}
+
+	// start bulkSave in background
+	go func() {
+		for {
+			mb.l.Infoln("Start bulkSave()")
+			mb.bulkSave()
+		}
+	}()
+	return mb
 }
 
 // MetricsBucketExtended  extends proto MetricsBucket to store converted data into db.
@@ -457,66 +476,92 @@ type MetricsBucketExtended struct {
 	*qanpb.MetricsBucket
 }
 
+func (mb *MetricsBucket) bulkSave() {
+	var committed bool
+	var tx *sqlx.Tx
+	var stmt *sqlx.NamedStmt
+	var ticker *time.Ticker
+	defer func() {
+		ticker.Stop()
+		if !committed {
+			tx.Rollback() //nolint:errcheck
+		}
+		stmt.Close() //nolint:errcheck
+		if r := recover(); r != nil {
+			mb.l.Infof("Recovered in bulkSave with panic: %v", r)
+		}
+	}()
+
+	ticker = time.NewTicker(bulkSavePeriod)
+	for range ticker.C {
+		chanlen := len(mb.ingestor)
+		if chanlen == 0 {
+			continue
+		}
+
+		tx, err := mb.db.Beginx()
+		committed = false
+		if err != nil {
+			mb.l.Errorf("begin transaction: %s", err.Error())
+		}
+
+		stmt, err = tx.PrepareNamed(insertSQL)
+		if err != nil {
+			mb.l.Errorf("prepare named: %s", err.Error())
+		}
+
+		bucketsCount := 0
+		for i := 0; i < chanlen; i++ {
+			agentMsg := <-mb.ingestor
+			var errs error
+			for _, metricsBucket := range agentMsg.MetricsBucket {
+				bucketsCount++
+				lk, lv := mapToArrsStrStr(metricsBucket.Labels)
+				wk, wv := mapToArrsIntInt(metricsBucket.Warnings)
+				ek, ev := mapToArrsIntInt(metricsBucket.Errors)
+
+				var truncated uint8
+				if metricsBucket.IsTruncated {
+					truncated = 1
+				}
+				q := MetricsBucketExtended{
+					time.Unix(int64(metricsBucket.GetPeriodStartUnixSecs()), 0).UTC(),
+					agentTypeToClickHouseEnum(metricsBucket.GetAgentType()),
+					metricsBucket.GetExampleType().String(),
+					metricsBucket.GetExampleFormat().String(),
+					lk,
+					lv,
+					wk,
+					wv,
+					ek,
+					ev,
+					truncated,
+					metricsBucket,
+				}
+
+				if _, err = stmt.Exec(q); err != nil {
+					mb.l.Errorf("%v; execute: %v;", errs, err)
+				}
+			}
+		}
+
+		if err = tx.Commit(); err != nil {
+			mb.l.Errorf("transaction commit %s", err.Error())
+			tx.Rollback() //nolint:errcheck
+		}
+		committed = true
+		stmt.Close() //nolint:errcheck
+		mb.l.Infof("Bulk save %d buckets in ClickHouse from %d agents", bucketsCount, chanlen)
+	}
+}
+
 // Save store metrics bucket received from agent into db.
 func (mb *MetricsBucket) Save(agentMsg *qanpb.CollectRequest) error {
 	if len(agentMsg.MetricsBucket) == 0 {
 		return errors.New("Nothing to save - no metrics buckets")
 	}
-
-	tx, err := mb.db.Beginx()
-	if err != nil {
-		return fmt.Errorf("begin transaction: %s", err.Error())
-	}
-	var committed bool
-	defer func() {
-		if !committed {
-			tx.Rollback() //nolint:errcheck
-		}
-	}()
-
-	stmt, err := tx.PrepareNamed(insertSQL)
-	if err != nil {
-		return fmt.Errorf("prepare named: %s", err.Error())
-	}
-	defer stmt.Close() //nolint:errcheck
-
-	var errs error
-	for _, mb := range agentMsg.MetricsBucket {
-		lk, lv := mapToArrsStrStr(mb.Labels)
-		wk, wv := mapToArrsIntInt(mb.Warnings)
-		ek, ev := mapToArrsIntInt(mb.Errors)
-
-		var truncated uint8
-		if mb.IsTruncated {
-			truncated = 1
-		}
-		q := MetricsBucketExtended{
-			time.Unix(int64(mb.GetPeriodStartUnixSecs()), 0).UTC(),
-			agentTypeToClickHouseEnum(mb.GetAgentType()),
-			mb.GetExampleType().String(),
-			mb.GetExampleFormat().String(),
-			lk,
-			lv,
-			wk,
-			wv,
-			ek,
-			ev,
-			truncated,
-			mb,
-		}
-
-		if _, err = stmt.Exec(q); err != nil {
-			errs = fmt.Errorf("%v; execute: %v;", errs, err)
-		}
-	}
-	if errs != nil {
-		return errs
-	}
-
-	if err = tx.Commit(); err != nil {
-		return fmt.Errorf("transaction commit %s", err.Error())
-	}
-	committed = true
+	mb.l.Infof("Send agent msg to queue to bulk save in clickhouse")
+	mb.ingestor <- agentMsg
 	return nil
 }
 
