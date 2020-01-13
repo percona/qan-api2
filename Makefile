@@ -85,7 +85,7 @@ _run:
 
 env-up:                         ## Run ClickHouse, MySQL Server and sysbench containers. Create pmm DB in ClickHouse.
 	mkdir -p logs
-	docker-compose up -d $(DCFLAGS) ch sysbench-ps --force-recreate --abort-on-container-exit --renew-anon-volumes --remove-orphans
+	docker-compose up -d $(DCFLAGS) --force-recreate --renew-anon-volumes --remove-orphans ch sysbench-ps
 	#docker-compose up $(DCFLAGS) ch sysbench-pstpcc
 	sleep 60
 	docker exec ch-server clickhouse client -h 127.0.0.1 --query="CREATE DATABASE IF NOT EXISTS pmm;"
@@ -95,7 +95,7 @@ env-down:                       ## Remove docker containers.
 	rm -rf logs
 
 pmm-env-up:                     ## Run PMM server, MySQL Server and sysbench containers.
-	docker-compose up -d pmm-server --force-recreate --abort-on-container-exit --renew-anon-volumes --remove-orphans
+	docker-compose up -d --force-recreate --renew-anon-volumes --remove-orphans pmm-server
 	docker exec pmm-server sed -i 's|<!-- <listen_host>0.0.0.0</listen_host> -->|<listen_host>0.0.0.0</listen_host>|g' /etc/clickhouse-server/config.xml
 	docker exec pmm-server supervisorctl restart clickhouse
 	docker exec pmm-server supervisorctl stop qan-api2
