@@ -608,6 +608,5 @@ func TestService_GetLabels(t *testing.T) {
 		_, err := s.GetLabels(tt.args.ctx, tt.args.in)
 		// errors start with same text.
 		require.Regexp(t, "^error in selecting object details labels:cannot select object details labels.*", err.Error())
-
 	})
 }
