@@ -79,6 +79,7 @@ func runGRPCServer(ctx context.Context, db *sqlx.DB, bind string) {
 			grpc_validator.UnaryServerInterceptor(),
 		)),
 		grpc.StreamInterceptor(grpc_middleware.ChainStreamServer(
+			interceptors.Stream,
 			grpc_validator.StreamServerInterceptor(),
 		)),
 	)

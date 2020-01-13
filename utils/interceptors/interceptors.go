@@ -23,6 +23,7 @@ import (
 	"runtime/pprof"
 	"time"
 
+	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
@@ -103,7 +104,29 @@ func Unary(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, han
 	return res, err
 }
 
+// Stream adds context logger and Prometheus metrics to stream server RPC.
+func Stream(srv interface{}, ss grpc.ServerStream, info *grpc.StreamServerInfo, handler grpc.StreamHandler) error {
+	ctx := ss.Context()
+
+	// add pprof labels for more useful profiles
+	defer pprof.SetGoroutineLabels(ctx)
+	ctx = pprof.WithLabels(ctx, pprof.Labels("method", info.FullMethod))
+	pprof.SetGoroutineLabels(ctx)
+
+	// set logger
+	l := logrus.WithField("request", logger.MakeRequestID())
+	ctx = logger.SetEntry(ctx, l)
+
+	err := logRequest(l, "Stream "+info.FullMethod, func() error {
+		wrapped := grpc_middleware.WrapServerStream(ss)
+		wrapped.WrappedContext = ctx
+		return grpc_prometheus.StreamServerInterceptor(srv, wrapped, info, handler)
+	})
+	return err
+}
+
 // check interfaces
 var (
-	_ grpc.UnaryServerInterceptor = Unary
+	_ grpc.UnaryServerInterceptor  = Unary
+	_ grpc.StreamServerInterceptor = Stream
 )
