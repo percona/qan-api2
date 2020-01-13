@@ -97,9 +97,12 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:432e8b04365b52add2d6256a42de45cebebf6b7a132d4eacb052602fe199a80a"
+  digest = "1:76f9ddd0d5e1b65c2edf3944d20bd68d2b68dbf9755302187d96c6de391b52a3"
   name = "github.com/grpc-ecosystem/go-grpc-middleware"
-  packages = ["."]
+  packages = [
+    ".",
+    "validator",
+  ]
   pruneopts = "NUT"
   revision = "dd15ed025b6054e5253963e355991f3070d4e593"
   version = "v1.1.0"
@@ -458,6 +461,7 @@
     "github.com/golang/protobuf/ptypes/timestamp",
     "github.com/google/uuid",
     "github.com/grpc-ecosystem/go-grpc-middleware",
+    "github.com/grpc-ecosystem/go-grpc-middleware/validator",
     "github.com/grpc-ecosystem/go-grpc-prometheus",
     "github.com/grpc-ecosystem/grpc-gateway/runtime",
     "github.com/jmoiron/sqlx",
@@ -483,8 +487,10 @@
     "golang.org/x/tools/cmd/goimports",
     "google.golang.org/grpc",
     "google.golang.org/grpc/channelz/service",
+    "google.golang.org/grpc/codes",
     "google.golang.org/grpc/grpclog",
     "google.golang.org/grpc/reflection",
+    "google.golang.org/grpc/status",
     "gopkg.in/alecthomas/kingpin.v2",
   ]
   solver-name = "gps-cdcl"
