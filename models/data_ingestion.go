@@ -31,7 +31,9 @@ const (
 	prometheusNamespace = "qan_api2"
 	prometheusSubsystem = "data_ingestion"
 
-	requestsCap = 1000
+	requestsCap     = 100
+	batchTimeout    = 500 * time.Millisecond
+	batchErrorDelay = time.Second
 )
 
 const insertSQL = `
@@ -538,8 +540,8 @@ func (mb *MetricsBucket) Run(ctx context.Context) {
 	}()
 
 	for ctx.Err() == nil {
-		if err := mb.insertBatch(time.Second); err != nil {
-			time.Sleep(time.Second)
+		if err := mb.insertBatch(batchTimeout); err != nil {
+			time.Sleep(batchErrorDelay)
 		}
 	}
 
