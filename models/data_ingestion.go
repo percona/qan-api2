@@ -495,13 +495,13 @@ func NewMetricsBucket(db *sqlx.DB) *MetricsBucket {
 			Namespace: prometheusNamespace,
 			Subsystem: prometheusSubsystem,
 			Name:      "requests_len",
-			Help:      "TODO.",
+			Help:      "Enqueued Collect requests.",
 		}, func() float64 { return float64(len(requestsCh)) }),
 		mRequestsCap: prometheus.NewGaugeFunc(prometheus.GaugeOpts{
 			Namespace: prometheusNamespace,
 			Subsystem: prometheusSubsystem,
 			Name:      "requests_cap",
-			Help:      "TODO.",
+			Help:      "Maximum number of Collect requests that can be enqueued.",
 		}, func() float64 { return float64(cap(requestsCh)) }),
 	}
 
@@ -528,6 +528,8 @@ func (mb *MetricsBucket) Collect(ch chan<- prometheus.Metric) {
 	mb.mRequestsCap.Collect(ch)
 }
 
+// Run stores incoming data until context is canceled.
+// It exits when all data is stored.
 func (mb *MetricsBucket) Run(ctx context.Context) {
 	go func() {
 		<-ctx.Done()
@@ -542,14 +544,14 @@ func (mb *MetricsBucket) Run(ctx context.Context) {
 	}
 
 	// insert one last final batch
-	mb.insertBatch(0)
+	_ = mb.insertBatch(0)
 }
 
 func (mb *MetricsBucket) insertBatch(timeout time.Duration) (err error) {
 	// wait for first request before doing anything, ignore timeout
 	req, ok := <-mb.requestsCh
 	if !ok {
-		mb.l.Warn("Requests channel closed, exiting.")
+		mb.l.Warn("Requests channel closed, nothing to store.")
 		return
 	}
 
