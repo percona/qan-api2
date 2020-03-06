@@ -730,3 +730,23 @@ func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, periodStartFrom
 
 	return &res, nil
 }
+
+const fingetprintByQueryId = `SELECT fingerprint FROM metrics WHERE queryid = ? LIMIT 1`
+
+func (m *Metrics) GetFingerprintByQueryID(ctx context.Context, queryID string) (string, error) {
+	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
+	defer cancel()
+
+	rows, err := m.db.QueryxContext(queryCtx, fingetprintByQueryId, []interface{}{queryID}...)
+	if err != nil {
+		return "", fmt.Errorf("QueryxContext error:%v", err)
+	}
+
+	var fingerprint string
+	if rows.Next() {
+		if err = rows.Scan(&fingerprint); err != nil {
+			return "", err
+		}
+	}
+	return fingerprint, nil
+}
