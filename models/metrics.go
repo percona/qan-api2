@@ -733,6 +733,7 @@ func (m *Metrics) SelectObjectDetailsLabels(ctx context.Context, periodStartFrom
 
 const fingerprintByQueryID = `SELECT fingerprint FROM metrics WHERE queryid = ? LIMIT 1`
 
+// GetFingerprintByQueryID returns the query fingerprint, used in query details.
 func (m *Metrics) GetFingerprintByQueryID(ctx context.Context, queryID string) (string, error) {
 	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
 	defer cancel()
