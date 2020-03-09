@@ -207,7 +207,7 @@
   revision = "33a08ed8301ca0dd24269e3ebd903106a99d7492"
 
 [[projects]]
-  branch = "PMM-5099-Add_Fingerprint_to_Metrics_response"
+  branch = "PMM-2.0"
   digest = "1:4417f0798c3edbfec7192b1fac0a07cd25e0466df3e596b1aae19b6bd6672c7b"
   name = "github.com/percona/pmm"
   packages = [
@@ -217,7 +217,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "13dc6d225a607c0f2faf816bd7a925d6ba858f7c"
+  revision = "b43e75ad8095ad5ac6d79cae4b7fe4eb5ac9cfbc"
 
 [[projects]]
   digest = "1:4047c378584616813d610c9f993bf90dd0d07aed8d94bd3bc299cd35ececdcba"

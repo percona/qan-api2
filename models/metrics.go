@@ -19,6 +19,7 @@ package models
 import (
 	"bytes"
 	"context"
+	"database/sql"
 	"fmt"
 	"log"
 	"sort"
@@ -735,19 +736,18 @@ const fingerprintByQueryID = `SELECT fingerprint FROM metrics WHERE queryid = ? 
 
 // GetFingerprintByQueryID returns the query fingerprint, used in query details.
 func (m *Metrics) GetFingerprintByQueryID(ctx context.Context, queryID string) (string, error) {
+	if queryID == "" {
+		return "", nil
+	}
+
 	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
 	defer cancel()
 
-	rows, err := m.db.QueryxContext(queryCtx, fingerprintByQueryID, []interface{}{queryID}...)
-	if err != nil {
+	var fingerprint string
+	err := m.db.GetContext(queryCtx, &fingerprint, fingerprintByQueryID, []interface{}{queryID}...)
+	if err != nil && err != sql.ErrNoRows {
 		return "", fmt.Errorf("QueryxContext error:%v", err)
 	}
 
-	var fingerprint string
-	if rows.Next() {
-		if err = rows.Scan(&fingerprint); err != nil {
-			return "", err
-		}
-	}
 	return fingerprint, nil
 }
