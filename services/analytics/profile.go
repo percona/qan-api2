@@ -97,7 +97,12 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	sumColumns := []string{}
 	commonColumns := []string{}
 	specialColumns := []string{}
+	timeColumns := []string{}
 	for _, col := range uniqColumns {
+		// append time metrics to timeColumns to select average values.
+		if isTimeMetric(col) {
+			timeColumns = append(timeColumns, col)
+		}
 		if isBoolMetric(col) {
 			sumColumns = append(sumColumns, col)
 			continue
@@ -131,6 +136,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		specialColumns,
 		commonColumns,
 		sumColumns,
+		timeColumns,
 	)
 	if err != nil {
 		return nil, err
@@ -205,7 +211,6 @@ func makeStats(metricNameRoot string, total, res models.M, numQueries float32, p
 		Rate:      rate,
 		Cnt:       interfaceToFloat32(res["m_"+metricNameRoot+"_cnt"]),
 		Sum:       sum,
-		Avg:       sum / numQueries,
 		SumPerSec: sum / float32(periodDurationSec),
 	}
 	if val, ok := res["m_"+metricNameRoot+"_min"]; ok {
@@ -213,6 +218,9 @@ func makeStats(metricNameRoot string, total, res models.M, numQueries float32, p
 	}
 	if val, ok := res["m_"+metricNameRoot+"_max"]; ok {
 		stat.Max = interfaceToFloat32(val)
+	}
+	if val, ok := res["m_"+metricNameRoot+"_avg"]; ok {
+		stat.Avg = interfaceToFloat32(val)
 	}
 	if val, ok := res["m_"+metricNameRoot+"_p99"]; ok {
 		stat.P99 = interfaceToFloat32(val)

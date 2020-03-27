@@ -54,7 +54,6 @@ SELECT
 {{range $j, $col := .CommonColumns}}
     SUM(m_{{ $col }}_cnt) AS m_{{ $col }}_cnt,
     SUM(m_{{ $col }}_sum) AS m_{{ $col }}_sum,
-    m_{{ $col }}_sum/m_{{ $col }}_cnt AS m_{{ $col }}_avg,
     MIN(m_{{ $col }}_min) AS m_{{ $col }}_min,
     MAX(m_{{ $col }}_max) AS m_{{ $col }}_max,
     AVG(m_{{ $col }}_p99) AS m_{{ $col }}_p99,
@@ -62,9 +61,11 @@ SELECT
 {{range $j, $col := .SumColumns}}
     SUM(m_{{ $col }}_cnt) AS m_{{ $col }}_cnt,
     SUM(m_{{ $col }}_sum) AS m_{{ $col }}_sum,
-    m_{{ $col }}_sum/m_{{ $col }}_cnt AS m_{{ $col }}_avg,
 {{ end }}
 SUM(num_queries) AS num_queries,
+{{range $j, $col := .TimeColumns}}
+    m_{{ $col }}_sum/num_queries AS m_{{ $col }}_avg,
+{{ end }}
 {{range $j, $col := .SpecialColumns}}
     {{ if eq $col "load" }}
         {{ if $.IsQueryTimeInSelect }}
@@ -111,7 +112,7 @@ func inSlice(slice []string, val string) bool {
 func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartToSec int64,
 	dimensions map[string][]string, labels map[string][]string,
 	group, order string, offset, limit uint32,
-	specialColumns, commonColumns, sumColumns []string) ([]M, error) {
+	specialColumns, commonColumns, sumColumns, timeColumns []string) ([]M, error) {
 
 	arg := map[string]interface{}{
 		"period_start_from": periodStartFromSec,
@@ -135,6 +136,7 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 		SpecialColumns      []string
 		CommonColumns       []string
 		SumColumns          []string
+		TimeColumns         []string
 		IsQueryTimeInSelect bool
 	}{
 		periodStartFromSec,
@@ -149,6 +151,7 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 		specialColumns,
 		commonColumns,
 		sumColumns,
+		timeColumns,
 		inSlice(commonColumns, "query_time"),
 	}
 
