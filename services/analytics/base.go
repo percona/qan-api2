@@ -144,3 +144,19 @@ func isDimension(name string) bool {
 	_, ok := dimensionColumnNames[name]
 	return ok
 }
+
+// isTimeMetric checks if a metric in the time metrics group.
+func isTimeMetric(name string) bool {
+	timeColumnNames := map[string]struct{}{
+		"query_time":           {},
+		"lock_time":            {},
+		"innodb_io_r_wait":     {},
+		"innodb_rec_lock_wait": {},
+		"innodb_queue_wait":    {},
+		"blk_read_time":        {},
+		"blk_write_time":       {},
+	}
+
+	_, ok := timeColumnNames[name]
+	return ok
+}

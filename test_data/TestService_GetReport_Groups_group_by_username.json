@@ -1887,6 +1887,934 @@
 		},
 		{
 			"rank": 2,
+			"dimension": "user82",
+			"metrics": {
+				"bytes_sent": {
+					"stats": {
+						"rate": 0.011154157,
+						"cnt": 181,
+						"sum": 237530,
+						"max": 249,
+						"p99": 131.23204,
+						"avg": 0.26131803,
+						"sumPerSec": 6.5980554
+					}
+				},
+				"docs_returned": {
+					"stats": {
+
+					}
+				},
+				"docs_scanned": {
+					"stats": {
+
+					}
+				},
+				"filesort": {
+					"stats": {
+						"cnt": 181
+					}
+				},
+				"filesort_on_disk": {
+					"stats": {
+						"cnt": 181
+					}
+				},
+				"full_join": {
+					"stats": {
+						"cnt": 181
+					}
+				},
+				"full_scan": {
+					"stats": {
+						"rate": 0.012880374,
+						"cnt": 181,
+						"sum": 800,
+						"avg": 0.00088011805,
+						"sumPerSec": 0.022222223
+					}
+				},
+				"innodb_io_r_bytes": {
+					"stats": {
+
+					}
+				},
+				"innodb_io_r_ops": {
+					"stats": {
+
+					}
+				},
+				"innodb_io_r_wait": {
+					"stats": {
+
+					}
+				},
+				"innodb_pages_distinct": {
+					"stats": {
+
+					}
+				},
+				"innodb_queue_wait": {
+					"stats": {
+
+					}
+				},
+				"innodb_rec_lock_wait": {
+					"stats": {
+
+					}
+				},
+				"lock_time": {
+					"stats": {
+						"rate": 0.012940217,
+						"cnt": 181,
+						"sum": 0.0715,
+						"max": 0.000135,
+						"p99": 0.000039502764,
+						"avg": 7.8660555e-8,
+						"sumPerSec": 0.000001986111
+					}
+				},
+				"merge_passes": {
+					"stats": {
+						"cnt": 181
+					}
+				},
+				"no_good_index_used": {
+					"stats": {
+
+					}
+				},
+				"no_index_used": {
+					"stats": {
+
+					}
+				},
+				"qc_hit": {
+					"stats": {
+						"cnt": 181
+					}
+				},
+				"query_length": {
+					"stats": {
+
+					}
+				},
+				"query_time": {
+					"stats": {
+						"rate": 0.012837786,
+						"cnt": 181,
+						"sum": 1.41356,
+						"min": 0.000003,
+						"max": 0.002173,
+						"p99": 0.00078097236,
+						"avg": 0.0000015551245,
+						"sumPerSec": 0.000039265557
+					}
+				},
+				"response_length": {
+					"stats": {
+
+					}
+				},
+				"rows_affected": {
+					"stats": {
+						"cnt": 181
+					}
+				},
+				"rows_examined": {
+					"stats": {
+						"rate": 0.012971312,
+						"cnt": 181,
+						"sum": 881920,
+						"max": 1268,
+						"p99": 487.24863,
+						"avg": 0.9702421,
+						"sumPerSec": 24.497778
+					}
+				},
+				"rows_read": {
+					"stats": {
+
+					}
+				},
+				"rows_sent": {
+					"stats": {
+						"rate": 0.010656198,
+						"cnt": 181,
+						"sum": 1330,
+						"max": 1,
+						"p99": 0.73480666,
+						"avg": 0.0014631962,
+						"sumPerSec": 0.036944445
+					}
+				},
+				"select_full_range_join": {
+					"stats": {
+
+					}
+				},
+				"select_range": {
+					"stats": {
+
+					}
+				},
+				"select_range_check": {
+					"stats": {
+
+					}
+				},
+				"sort_range": {
+					"stats": {
+
+					}
+				},
+				"sort_rows": {
+					"stats": {
+
+					}
+				},
+				"sort_scan": {
+					"stats": {
+
+					}
+				},
+				"tmp_disk_tables": {
+					"stats": {
+						"cnt": 181
+					}
+				},
+				"tmp_table": {
+					"stats": {
+						"rate": 0.012880374,
+						"cnt": 181,
+						"sum": 800,
+						"avg": 0.00088011805,
+						"sumPerSec": 0.022222223
+					}
+				},
+				"tmp_table_on_disk": {
+					"stats": {
+						"cnt": 181
+					}
+				},
+				"tmp_table_sizes": {
+					"stats": {
+						"cnt": 181
+					}
+				},
+				"tmp_tables": {
+					"stats": {
+						"rate": 0.012880374,
+						"cnt": 181,
+						"sum": 800,
+						"max": 1,
+						"p99": 0.44198895,
+						"avg": 0.00088011805,
+						"sumPerSec": 0.022222223
+					}
+				}
+			},
+			"sparkline": [
+				{
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T10:00:00Z"
+				},
+				{
+					"point": 1,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:55:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 2,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:50:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 3,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:45:00Z",
+					"mQueryTimeSumPerSec": 0.000006466667
+				},
+				{
+					"point": 4,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:40:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 5,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:35:00Z",
+					"mQueryTimeSumPerSec": 0.00006696667
+				},
+				{
+					"point": 6,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:30:00Z"
+				},
+				{
+					"point": 7,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:25:00Z",
+					"mQueryTimeSumPerSec": 0.000005133333
+				},
+				{
+					"point": 8,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:20:00Z",
+					"mQueryTimeSumPerSec": 0.000057233337
+				},
+				{
+					"point": 9,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:15:00Z",
+					"mQueryTimeSumPerSec": 0.00006666667
+				},
+				{
+					"point": 10,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:10:00Z",
+					"mQueryTimeSumPerSec": 0.0001137
+				},
+				{
+					"point": 11,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:05:00Z"
+				},
+				{
+					"point": 12,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:00:00Z",
+					"mQueryTimeSumPerSec": 0.00010906666
+				},
+				{
+					"point": 13,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:55:00Z"
+				},
+				{
+					"point": 14,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:50:00Z",
+					"mQueryTimeSumPerSec": 0.000062733336
+				},
+				{
+					"point": 15,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:45:00Z"
+				},
+				{
+					"point": 16,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:40:00Z",
+					"mQueryTimeSumPerSec": 0.000054566666
+				},
+				{
+					"point": 17,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:35:00Z",
+					"mQueryTimeSumPerSec": 0.0000691
+				},
+				{
+					"point": 18,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:30:00Z"
+				},
+				{
+					"point": 19,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:25:00Z",
+					"mQueryTimeSumPerSec": 0.000061499995
+				},
+				{
+					"point": 20,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:20:00Z",
+					"mQueryTimeSumPerSec": 0.000057766665
+				},
+				{
+					"point": 21,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:15:00Z"
+				},
+				{
+					"point": 22,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000064333335
+				},
+				{
+					"point": 23,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:05:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 24,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:00:00Z",
+					"mQueryTimeSumPerSec": 0.00005626667
+				},
+				{
+					"point": 25,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:55:00Z",
+					"mQueryTimeSumPerSec": 0.00018516666
+				},
+				{
+					"point": 26,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:50:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 27,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:45:00Z",
+					"mQueryTimeSumPerSec": 0.000055033335
+				},
+				{
+					"point": 28,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:40:00Z",
+					"mQueryTimeSumPerSec": 0.00012096667
+				},
+				{
+					"point": 29,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:35:00Z",
+					"mQueryTimeSumPerSec": 0.00011569999
+				},
+				{
+					"point": 30,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:30:00Z"
+				},
+				{
+					"point": 31,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:25:00Z",
+					"mQueryTimeSumPerSec": 0.00012253334
+				},
+				{
+					"point": 32,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:20:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 33,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:15:00Z"
+				},
+				{
+					"point": 34,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000617
+				},
+				{
+					"point": 35,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000544
+				},
+				{
+					"point": 36,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:00:00Z",
+					"mQueryTimeSumPerSec": 0.000058200003
+				},
+				{
+					"point": 37,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:55:00Z",
+					"mQueryTimeSumPerSec": 0.0000014666667
+				},
+				{
+					"point": 38,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:50:00Z"
+				},
+				{
+					"point": 39,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:45:00Z",
+					"mQueryTimeSumPerSec": 0.0000514
+				},
+				{
+					"point": 40,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:40:00Z",
+					"mQueryTimeSumPerSec": 0.000051733332
+				},
+				{
+					"point": 41,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:35:00Z",
+					"mQueryTimeSumPerSec": 0.0000038666667
+				},
+				{
+					"point": 42,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:30:00Z",
+					"mQueryTimeSumPerSec": 0.00005536667
+				},
+				{
+					"point": 43,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:25:00Z",
+					"mQueryTimeSumPerSec": 0.00005453333
+				},
+				{
+					"point": 44,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:20:00Z",
+					"mQueryTimeSumPerSec": 0.0001675
+				},
+				{
+					"point": 45,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:15:00Z",
+					"mQueryTimeSumPerSec": 0.0000532
+				},
+				{
+					"point": 46,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000041333333
+				},
+				{
+					"point": 47,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:05:00Z",
+					"mQueryTimeSumPerSec": 0.00016626668
+				},
+				{
+					"point": 48,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:00:00Z",
+					"mQueryTimeSumPerSec": 0.0000597
+				},
+				{
+					"point": 49,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:55:00Z",
+					"mQueryTimeSumPerSec": 0.000004533333
+				},
+				{
+					"point": 50,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000557
+				},
+				{
+					"point": 51,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:45:00Z",
+					"mQueryTimeSumPerSec": 0.0000044333333
+				},
+				{
+					"point": 52,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:40:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 53,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:35:00Z"
+				},
+				{
+					"point": 54,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:30:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 55,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000032
+				},
+				{
+					"point": 56,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:20:00Z",
+					"mQueryTimeSumPerSec": 0.00005986667
+				},
+				{
+					"point": 57,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:15:00Z"
+				},
+				{
+					"point": 58,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:10:00Z"
+				},
+				{
+					"point": 59,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:05:00Z",
+					"mQueryTimeSumPerSec": 0.000063
+				},
+				{
+					"point": 60,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:00:00Z"
+				},
+				{
+					"point": 61,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:55:00Z"
+				},
+				{
+					"point": 62,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:50:00Z",
+					"mQueryTimeSumPerSec": 0.000116300005
+				},
+				{
+					"point": 63,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:45:00Z",
+					"mQueryTimeSumPerSec": 1.9999999e-7
+				},
+				{
+					"point": 64,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:40:00Z",
+					"mQueryTimeSumPerSec": 0.000057200003
+				},
+				{
+					"point": 65,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:35:00Z",
+					"mQueryTimeSumPerSec": 0.000049666665
+				},
+				{
+					"point": 66,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:30:00Z",
+					"mQueryTimeSumPerSec": 0.000054233336
+				},
+				{
+					"point": 67,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:25:00Z",
+					"mQueryTimeSumPerSec": 0.000051566665
+				},
+				{
+					"point": 68,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:20:00Z",
+					"mQueryTimeSumPerSec": 0.0001246
+				},
+				{
+					"point": 69,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:15:00Z",
+					"mQueryTimeSumPerSec": 0.000006633333
+				},
+				{
+					"point": 70,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:10:00Z",
+					"mQueryTimeSumPerSec": 0.000054266664
+				},
+				{
+					"point": 71,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:05:00Z",
+					"mQueryTimeSumPerSec": 0.00005693333
+				},
+				{
+					"point": 72,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:00:00Z",
+					"mQueryTimeSumPerSec": 0.0000030333333
+				},
+				{
+					"point": 73,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:55:00Z",
+					"mQueryTimeSumPerSec": 0.00006403333
+				},
+				{
+					"point": 74,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000041333333
+				},
+				{
+					"point": 75,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:45:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 76,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:40:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 77,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:35:00Z",
+					"mQueryTimeSumPerSec": 0.00005713333
+				},
+				{
+					"point": 78,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:30:00Z",
+					"mQueryTimeSumPerSec": 0.0000031
+				},
+				{
+					"point": 79,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000026
+				},
+				{
+					"point": 80,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:20:00Z",
+					"mQueryTimeSumPerSec": 0.0000031
+				},
+				{
+					"point": 81,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:15:00Z",
+					"mQueryTimeSumPerSec": 0.00017106667
+				},
+				{
+					"point": 82,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000566
+				},
+				{
+					"point": 83,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:05:00Z",
+					"mQueryTimeSumPerSec": 0.000113199996
+				},
+				{
+					"point": 84,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:00:00Z",
+					"mQueryTimeSumPerSec": 0.00006423333
+				},
+				{
+					"point": 85,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:55:00Z"
+				},
+				{
+					"point": 86,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:50:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 87,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:45:00Z",
+					"mQueryTimeSumPerSec": 0.00006053333
+				},
+				{
+					"point": 88,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:40:00Z"
+				},
+				{
+					"point": 89,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:35:00Z",
+					"mQueryTimeSumPerSec": 0.0000488
+				},
+				{
+					"point": 90,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:30:00Z",
+					"mQueryTimeSumPerSec": 0.000056666668
+				},
+				{
+					"point": 91,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000031333334
+				},
+				{
+					"point": 92,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:20:00Z",
+					"mQueryTimeSumPerSec": 0.0000587
+				},
+				{
+					"point": 93,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:15:00Z"
+				},
+				{
+					"point": 94,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000029666667
+				},
+				{
+					"point": 95,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:05:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 96,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:00:00Z",
+					"mQueryTimeSumPerSec": 0.0000040333334
+				},
+				{
+					"point": 97,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:55:00Z",
+					"mQueryTimeSumPerSec": 0.0000589
+				},
+				{
+					"point": 98,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:50:00Z",
+					"mQueryTimeSumPerSec": 0.000058
+				},
+				{
+					"point": 99,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:45:00Z"
+				},
+				{
+					"point": 100,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:40:00Z",
+					"mQueryTimeSumPerSec": 0.000120000004
+				},
+				{
+					"point": 101,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:35:00Z",
+					"mQueryTimeSumPerSec": 0.000056366665
+				},
+				{
+					"point": 102,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:30:00Z",
+					"mQueryTimeSumPerSec": 0.0000031
+				},
+				{
+					"point": 103,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:25:00Z"
+				},
+				{
+					"point": 104,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:20:00Z",
+					"mQueryTimeSumPerSec": 0.000056499997
+				},
+				{
+					"point": 105,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:15:00Z",
+					"mQueryTimeSumPerSec": 0.0000029666667
+				},
+				{
+					"point": 106,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000061
+				},
+				{
+					"point": 107,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:05:00Z",
+					"mQueryTimeSumPerSec": 0.000057
+				},
+				{
+					"point": 108,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:00:00Z"
+				},
+				{
+					"point": 109,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:55:00Z",
+					"mQueryTimeSumPerSec": 0.00012473333
+				},
+				{
+					"point": 110,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:50:00Z",
+					"mQueryTimeSumPerSec": 0.000057966667
+				},
+				{
+					"point": 111,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:45:00Z"
+				},
+				{
+					"point": 112,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:40:00Z",
+					"mQueryTimeSumPerSec": 0.00010996666
+				},
+				{
+					"point": 113,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:35:00Z"
+				},
+				{
+					"point": 114,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:30:00Z"
+				},
+				{
+					"point": 115,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:25:00Z"
+				},
+				{
+					"point": 116,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:20:00Z"
+				},
+				{
+					"point": 117,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:15:00Z"
+				},
+				{
+					"point": 118,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:10:00Z",
+					"mQueryTimeSumPerSec": 0.0001082
+				},
+				{
+					"point": 119,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:05:00Z",
+					"mQueryTimeSumPerSec": 0.0001149
+				}
+			],
+			"numQueries": 908969,
+			"qps": 25.24914,
+			"load": 0.000039265557
+		},
+		{
+			"rank": 3,
 			"dimension": "user84",
 			"metrics": {
 				"bytes_sent": {
@@ -2820,946 +3748,18 @@
 			"load": 0.00004159972
 		},
 		{
-			"rank": 3,
-			"dimension": "user82",
-			"metrics": {
-				"bytes_sent": {
-					"stats": {
-						"rate": 0.011154157,
-						"cnt": 181,
-						"sum": 237530,
-						"max": 249,
-						"p99": 131.23204,
-						"avg": 0.26131803,
-						"sumPerSec": 6.5980554
-					}
-				},
-				"docs_returned": {
-					"stats": {
-
-					}
-				},
-				"docs_scanned": {
-					"stats": {
-
-					}
-				},
-				"filesort": {
-					"stats": {
-						"cnt": 181
-					}
-				},
-				"filesort_on_disk": {
-					"stats": {
-						"cnt": 181
-					}
-				},
-				"full_join": {
-					"stats": {
-						"cnt": 181
-					}
-				},
-				"full_scan": {
-					"stats": {
-						"rate": 0.012880374,
-						"cnt": 181,
-						"sum": 800,
-						"avg": 0.00088011805,
-						"sumPerSec": 0.022222223
-					}
-				},
-				"innodb_io_r_bytes": {
-					"stats": {
-
-					}
-				},
-				"innodb_io_r_ops": {
-					"stats": {
-
-					}
-				},
-				"innodb_io_r_wait": {
-					"stats": {
-
-					}
-				},
-				"innodb_pages_distinct": {
-					"stats": {
-
-					}
-				},
-				"innodb_queue_wait": {
-					"stats": {
-
-					}
-				},
-				"innodb_rec_lock_wait": {
-					"stats": {
-
-					}
-				},
-				"lock_time": {
-					"stats": {
-						"rate": 0.012940217,
-						"cnt": 181,
-						"sum": 0.0715,
-						"max": 0.000135,
-						"p99": 0.000039502764,
-						"avg": 7.8660555e-8,
-						"sumPerSec": 0.000001986111
-					}
-				},
-				"merge_passes": {
-					"stats": {
-						"cnt": 181
-					}
-				},
-				"no_good_index_used": {
-					"stats": {
-
-					}
-				},
-				"no_index_used": {
-					"stats": {
-
-					}
-				},
-				"qc_hit": {
-					"stats": {
-						"cnt": 181
-					}
-				},
-				"query_length": {
-					"stats": {
-
-					}
-				},
-				"query_time": {
-					"stats": {
-						"rate": 0.012837786,
-						"cnt": 181,
-						"sum": 1.41356,
-						"min": 0.000003,
-						"max": 0.002173,
-						"p99": 0.00078097236,
-						"avg": 0.0000015551245,
-						"sumPerSec": 0.000039265557
-					}
-				},
-				"response_length": {
-					"stats": {
-
-					}
-				},
-				"rows_affected": {
-					"stats": {
-						"cnt": 181
-					}
-				},
-				"rows_examined": {
-					"stats": {
-						"rate": 0.012971312,
-						"cnt": 181,
-						"sum": 881920,
-						"max": 1268,
-						"p99": 487.24863,
-						"avg": 0.9702421,
-						"sumPerSec": 24.497778
-					}
-				},
-				"rows_read": {
-					"stats": {
-
-					}
-				},
-				"rows_sent": {
-					"stats": {
-						"rate": 0.010656198,
-						"cnt": 181,
-						"sum": 1330,
-						"max": 1,
-						"p99": 0.73480666,
-						"avg": 0.0014631962,
-						"sumPerSec": 0.036944445
-					}
-				},
-				"select_full_range_join": {
-					"stats": {
-
-					}
-				},
-				"select_range": {
-					"stats": {
-
-					}
-				},
-				"select_range_check": {
-					"stats": {
-
-					}
-				},
-				"sort_range": {
-					"stats": {
-
-					}
-				},
-				"sort_rows": {
-					"stats": {
-
-					}
-				},
-				"sort_scan": {
-					"stats": {
-
-					}
-				},
-				"tmp_disk_tables": {
-					"stats": {
-						"cnt": 181
-					}
-				},
-				"tmp_table": {
-					"stats": {
-						"rate": 0.012880374,
-						"cnt": 181,
-						"sum": 800,
-						"avg": 0.00088011805,
-						"sumPerSec": 0.022222223
-					}
-				},
-				"tmp_table_on_disk": {
-					"stats": {
-						"cnt": 181
-					}
-				},
-				"tmp_table_sizes": {
-					"stats": {
-						"cnt": 181
-					}
-				},
-				"tmp_tables": {
-					"stats": {
-						"rate": 0.012880374,
-						"cnt": 181,
-						"sum": 800,
-						"max": 1,
-						"p99": 0.44198895,
-						"avg": 0.00088011805,
-						"sumPerSec": 0.022222223
-					}
-				}
-			},
-			"sparkline": [
-				{
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T10:00:00Z"
-				},
-				{
-					"point": 1,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:55:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 2,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:50:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 3,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:45:00Z",
-					"mQueryTimeSumPerSec": 0.000006466667
-				},
-				{
-					"point": 4,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:40:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 5,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:35:00Z",
-					"mQueryTimeSumPerSec": 0.00006696667
-				},
-				{
-					"point": 6,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:30:00Z"
-				},
-				{
-					"point": 7,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:25:00Z",
-					"mQueryTimeSumPerSec": 0.000005133333
-				},
-				{
-					"point": 8,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:20:00Z",
-					"mQueryTimeSumPerSec": 0.000057233337
-				},
-				{
-					"point": 9,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:15:00Z",
-					"mQueryTimeSumPerSec": 0.00006666667
-				},
-				{
-					"point": 10,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:10:00Z",
-					"mQueryTimeSumPerSec": 0.0001137
-				},
-				{
-					"point": 11,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:05:00Z"
-				},
-				{
-					"point": 12,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:00:00Z",
-					"mQueryTimeSumPerSec": 0.00010906666
-				},
-				{
-					"point": 13,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:55:00Z"
-				},
-				{
-					"point": 14,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:50:00Z",
-					"mQueryTimeSumPerSec": 0.000062733336
-				},
-				{
-					"point": 15,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:45:00Z"
-				},
-				{
-					"point": 16,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:40:00Z",
-					"mQueryTimeSumPerSec": 0.000054566666
-				},
-				{
-					"point": 17,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000691
-				},
-				{
-					"point": 18,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:30:00Z"
-				},
-				{
-					"point": 19,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:25:00Z",
-					"mQueryTimeSumPerSec": 0.000061499995
-				},
-				{
-					"point": 20,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:20:00Z",
-					"mQueryTimeSumPerSec": 0.000057766665
-				},
-				{
-					"point": 21,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:15:00Z"
-				},
-				{
-					"point": 22,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000064333335
-				},
-				{
-					"point": 23,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:05:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 24,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:00:00Z",
-					"mQueryTimeSumPerSec": 0.00005626667
-				},
-				{
-					"point": 25,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:55:00Z",
-					"mQueryTimeSumPerSec": 0.00018516666
-				},
-				{
-					"point": 26,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:50:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 27,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:45:00Z",
-					"mQueryTimeSumPerSec": 0.000055033335
-				},
-				{
-					"point": 28,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:40:00Z",
-					"mQueryTimeSumPerSec": 0.00012096667
-				},
-				{
-					"point": 29,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:35:00Z",
-					"mQueryTimeSumPerSec": 0.00011569999
-				},
-				{
-					"point": 30,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:30:00Z"
-				},
-				{
-					"point": 31,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:25:00Z",
-					"mQueryTimeSumPerSec": 0.00012253334
-				},
-				{
-					"point": 32,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:20:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 33,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:15:00Z"
-				},
-				{
-					"point": 34,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000617
-				},
-				{
-					"point": 35,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000544
-				},
-				{
-					"point": 36,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:00:00Z",
-					"mQueryTimeSumPerSec": 0.000058200003
-				},
-				{
-					"point": 37,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000014666667
-				},
-				{
-					"point": 38,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:50:00Z"
-				},
-				{
-					"point": 39,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000514
-				},
-				{
-					"point": 40,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:40:00Z",
-					"mQueryTimeSumPerSec": 0.000051733332
-				},
-				{
-					"point": 41,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000038666667
-				},
-				{
-					"point": 42,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:30:00Z",
-					"mQueryTimeSumPerSec": 0.00005536667
-				},
-				{
-					"point": 43,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:25:00Z",
-					"mQueryTimeSumPerSec": 0.00005453333
-				},
-				{
-					"point": 44,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:20:00Z",
-					"mQueryTimeSumPerSec": 0.0001675
-				},
-				{
-					"point": 45,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000532
-				},
-				{
-					"point": 46,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000041333333
-				},
-				{
-					"point": 47,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:05:00Z",
-					"mQueryTimeSumPerSec": 0.00016626668
-				},
-				{
-					"point": 48,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000597
-				},
-				{
-					"point": 49,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:55:00Z",
-					"mQueryTimeSumPerSec": 0.000004533333
-				},
-				{
-					"point": 50,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000557
-				},
-				{
-					"point": 51,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000044333333
-				},
-				{
-					"point": 52,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:40:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 53,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:35:00Z"
-				},
-				{
-					"point": 54,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:30:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 55,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000032
-				},
-				{
-					"point": 56,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:20:00Z",
-					"mQueryTimeSumPerSec": 0.00005986667
-				},
-				{
-					"point": 57,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:15:00Z"
-				},
-				{
-					"point": 58,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:10:00Z"
-				},
-				{
-					"point": 59,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:05:00Z",
-					"mQueryTimeSumPerSec": 0.000063
-				},
-				{
-					"point": 60,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:00:00Z"
-				},
-				{
-					"point": 61,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:55:00Z"
-				},
-				{
-					"point": 62,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:50:00Z",
-					"mQueryTimeSumPerSec": 0.000116300005
-				},
-				{
-					"point": 63,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:45:00Z",
-					"mQueryTimeSumPerSec": 1.9999999e-7
-				},
-				{
-					"point": 64,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:40:00Z",
-					"mQueryTimeSumPerSec": 0.000057200003
-				},
-				{
-					"point": 65,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:35:00Z",
-					"mQueryTimeSumPerSec": 0.000049666665
-				},
-				{
-					"point": 66,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:30:00Z",
-					"mQueryTimeSumPerSec": 0.000054233336
-				},
-				{
-					"point": 67,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:25:00Z",
-					"mQueryTimeSumPerSec": 0.000051566665
-				},
-				{
-					"point": 68,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:20:00Z",
-					"mQueryTimeSumPerSec": 0.0001246
-				},
-				{
-					"point": 69,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:15:00Z",
-					"mQueryTimeSumPerSec": 0.000006633333
-				},
-				{
-					"point": 70,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:10:00Z",
-					"mQueryTimeSumPerSec": 0.000054266664
-				},
-				{
-					"point": 71,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:05:00Z",
-					"mQueryTimeSumPerSec": 0.00005693333
-				},
-				{
-					"point": 72,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000030333333
-				},
-				{
-					"point": 73,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:55:00Z",
-					"mQueryTimeSumPerSec": 0.00006403333
-				},
-				{
-					"point": 74,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000041333333
-				},
-				{
-					"point": 75,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:45:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 76,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:40:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 77,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:35:00Z",
-					"mQueryTimeSumPerSec": 0.00005713333
-				},
-				{
-					"point": 78,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
-				},
-				{
-					"point": 79,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000026
-				},
-				{
-					"point": 80,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
-				},
-				{
-					"point": 81,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:15:00Z",
-					"mQueryTimeSumPerSec": 0.00017106667
-				},
-				{
-					"point": 82,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000566
-				},
-				{
-					"point": 83,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:05:00Z",
-					"mQueryTimeSumPerSec": 0.000113199996
-				},
-				{
-					"point": 84,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:00:00Z",
-					"mQueryTimeSumPerSec": 0.00006423333
-				},
-				{
-					"point": 85,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:55:00Z"
-				},
-				{
-					"point": 86,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:50:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 87,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:45:00Z",
-					"mQueryTimeSumPerSec": 0.00006053333
-				},
-				{
-					"point": 88,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:40:00Z"
-				},
-				{
-					"point": 89,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000488
-				},
-				{
-					"point": 90,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:30:00Z",
-					"mQueryTimeSumPerSec": 0.000056666668
-				},
-				{
-					"point": 91,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000031333334
-				},
-				{
-					"point": 92,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000587
-				},
-				{
-					"point": 93,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:15:00Z"
-				},
-				{
-					"point": 94,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000029666667
-				},
-				{
-					"point": 95,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:05:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 96,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000040333334
-				},
-				{
-					"point": 97,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000589
-				},
-				{
-					"point": 98,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:50:00Z",
-					"mQueryTimeSumPerSec": 0.000058
-				},
-				{
-					"point": 99,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:45:00Z"
-				},
-				{
-					"point": 100,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:40:00Z",
-					"mQueryTimeSumPerSec": 0.000120000004
-				},
-				{
-					"point": 101,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:35:00Z",
-					"mQueryTimeSumPerSec": 0.000056366665
-				},
-				{
-					"point": 102,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
-				},
-				{
-					"point": 103,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:25:00Z"
-				},
-				{
-					"point": 104,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:20:00Z",
-					"mQueryTimeSumPerSec": 0.000056499997
-				},
-				{
-					"point": 105,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000029666667
-				},
-				{
-					"point": 106,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000061
-				},
-				{
-					"point": 107,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:05:00Z",
-					"mQueryTimeSumPerSec": 0.000057
-				},
-				{
-					"point": 108,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:00:00Z"
-				},
-				{
-					"point": 109,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:55:00Z",
-					"mQueryTimeSumPerSec": 0.00012473333
-				},
-				{
-					"point": 110,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:50:00Z",
-					"mQueryTimeSumPerSec": 0.000057966667
-				},
-				{
-					"point": 111,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:45:00Z"
-				},
-				{
-					"point": 112,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:40:00Z",
-					"mQueryTimeSumPerSec": 0.00010996666
-				},
-				{
-					"point": 113,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:35:00Z"
-				},
-				{
-					"point": 114,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:30:00Z"
-				},
-				{
-					"point": 115,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:25:00Z"
-				},
-				{
-					"point": 116,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:20:00Z"
-				},
-				{
-					"point": 117,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:15:00Z"
-				},
-				{
-					"point": 118,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:10:00Z",
-					"mQueryTimeSumPerSec": 0.0001082
-				},
-				{
-					"point": 119,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:05:00Z",
-					"mQueryTimeSumPerSec": 0.0001149
-				}
-			],
-			"numQueries": 908969,
-			"qps": 25.24914,
-			"load": 0.000039265557
-		},
-		{
 			"rank": 4,
-			"dimension": "user85",
+			"dimension": "user42",
 			"metrics": {
 				"bytes_sent": {
 					"stats": {
-						"rate": 0.012501408,
-						"cnt": 207,
-						"sum": 266220,
+						"rate": 0.011435441,
+						"cnt": 177,
+						"sum": 243520,
 						"max": 249,
-						"p99": 128.60869,
-						"avg": 0.26918697,
-						"sumPerSec": 7.395
+						"p99": 137.58192,
+						"avg": 0.26292804,
+						"sumPerSec": 6.7644444
 					}
 				},
 				"docs_returned": {
@@ -3774,26 +3774,26 @@
 				},
 				"filesort": {
 					"stats": {
-						"cnt": 207
+						"cnt": 177
 					}
 				},
 				"filesort_on_disk": {
 					"stats": {
-						"cnt": 207
+						"cnt": 177
 					}
 				},
 				"full_join": {
 					"stats": {
-						"cnt": 207
+						"cnt": 177
 					}
 				},
 				"full_scan": {
 					"stats": {
-						"rate": 0.012880374,
-						"cnt": 207,
-						"sum": 800,
-						"avg": 0.0008089159,
-						"sumPerSec": 0.022222223
+						"rate": 0.011914345,
+						"cnt": 177,
+						"sum": 740,
+						"avg": 0.00079897646,
+						"sumPerSec": 0.020555556
 					}
 				},
 				"innodb_io_r_bytes": {
@@ -3828,18 +3828,18 @@
 				},
 				"lock_time": {
 					"stats": {
-						"rate": 0.0131465355,
-						"cnt": 207,
-						"sum": 0.07264,
-						"max": 0.000128,
-						"p99": 0.000035091787,
-						"avg": 7.344956e-8,
-						"sumPerSec": 0.000002017778
+						"rate": 0.011488739,
+						"cnt": 177,
+						"sum": 0.06348,
+						"max": 0.000124,
+						"p99": 0.000035864407,
+						"avg": 6.853922e-8,
+						"sumPerSec": 0.0000017633332
 					}
 				},
 				"merge_passes": {
 					"stats": {
-						"cnt": 207
+						"cnt": 177
 					}
 				},
 				"no_good_index_used": {
@@ -3854,7 +3854,7 @@
 				},
 				"qc_hit": {
 					"stats": {
-						"cnt": 207
+						"cnt": 177
 					}
 				},
 				"query_length": {
@@ -3864,14 +3864,14 @@
 				},
 				"query_time": {
 					"stats": {
-						"rate": 0.012739611,
-						"cnt": 207,
-						"sum": 1.40275,
+						"rate": 0.011675941,
+						"cnt": 177,
+						"sum": 1.28563,
 						"min": 0.000002,
-						"max": 0.002098,
-						"p99": 0.000677657,
-						"avg": 0.0000014183835,
-						"sumPerSec": 0.000038965278
+						"max": 0.001948,
+						"p99": 0.00072634465,
+						"avg": 0.000001388092,
+						"sumPerSec": 0.000035711942
 					}
 				},
 				"response_length": {
@@ -3881,18 +3881,18 @@
 				},
 				"rows_affected": {
 					"stats": {
-						"cnt": 207
+						"cnt": 177
 					}
 				},
 				"rows_examined": {
 					"stats": {
-						"rate": 0.01259008,
-						"cnt": 207,
-						"sum": 856000,
+						"rate": 0.011979402,
+						"cnt": 177,
+						"sum": 814480,
 						"max": 1268,
-						"p99": 413.52658,
-						"avg": 0.86553997,
-						"sumPerSec": 23.777779
+						"p99": 460.1582,
+						"avg": 0.8793923,
+						"sumPerSec": 22.624445
 					}
 				},
 				"rows_read": {
@@ -3902,13 +3902,13 @@
 				},
 				"rows_sent": {
 					"stats": {
-						"rate": 0.012338755,
-						"cnt": 207,
-						"sum": 1540,
+						"rate": 0.011297172,
+						"cnt": 177,
+						"sum": 1410,
 						"max": 1,
-						"p99": 0.74396133,
-						"avg": 0.0015571631,
-						"sumPerSec": 0.042777777
+						"p99": 0.7966102,
+						"avg": 0.001522374,
+						"sumPerSec": 0.039166667
 					}
 				},
 				"select_full_range_join": {
@@ -3943,37 +3943,37 @@
 				},
 				"tmp_disk_tables": {
 					"stats": {
-						"cnt": 207
+						"cnt": 177
 					}
 				},
 				"tmp_table": {
 					"stats": {
-						"rate": 0.012880374,
-						"cnt": 207,
-						"sum": 800,
-						"avg": 0.0008089159,
-						"sumPerSec": 0.022222223
+						"rate": 0.011914345,
+						"cnt": 177,
+						"sum": 740,
+						"avg": 0.00079897646,
+						"sumPerSec": 0.020555556
 					}
 				},
 				"tmp_table_on_disk": {
 					"stats": {
-						"cnt": 207
+						"cnt": 177
 					}
 				},
 				"tmp_table_sizes": {
 					"stats": {
-						"cnt": 207
+						"cnt": 177
 					}
 				},
 				"tmp_tables": {
 					"stats": {
-						"rate": 0.012880374,
-						"cnt": 207,
-						"sum": 800,
+						"rate": 0.011914345,
+						"cnt": 177,
+						"sum": 740,
 						"max": 1,
-						"p99": 0.38647342,
-						"avg": 0.0008089159,
-						"sumPerSec": 0.022222223
+						"p99": 0.4180791,
+						"avg": 0.00079897646,
+						"sumPerSec": 0.020555556
 					}
 				}
 			},
@@ -3981,1114 +3981,176 @@
 				{
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T10:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000014666667
+					"mQueryTimeSumPerSec": 0.00006366667
 				},
 				{
 					"point": 1,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000031666668
+					"timestamp": "2019-01-01T09:55:00Z"
 				},
 				{
 					"point": 2,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:50:00Z",
-					"mQueryTimeSumPerSec": 0.00011276667
-				},
-				{
-					"point": 3,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:45:00Z",
-					"mQueryTimeSumPerSec": 0.00005836667
-				},
-				{
-					"point": 4,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000070666665
-				},
-				{
-					"point": 5,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:35:00Z",
-					"mQueryTimeSumPerSec": 0.000053666667
-				},
-				{
-					"point": 6,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000556
-				},
-				{
-					"point": 7,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:25:00Z"
-				},
-				{
-					"point": 8,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:20:00Z",
-					"mQueryTimeSumPerSec": 1.9999999e-7
-				},
-				{
-					"point": 9,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:15:00Z",
-					"mQueryTimeSumPerSec": 0.00007136667
-				},
-				{
-					"point": 10,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:10:00Z",
-					"mQueryTimeSumPerSec": 0.00005536667
-				},
-				{
-					"point": 11,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000642
-				},
-				{
-					"point": 12,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:00:00Z",
-					"mQueryTimeSumPerSec": 0.0002203
-				},
-				{
-					"point": 13,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:55:00Z",
-					"mQueryTimeSumPerSec": 0.00005366667
-				},
-				{
-					"point": 14,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:50:00Z"
-				},
-				{
-					"point": 15,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:45:00Z",
-					"mQueryTimeSumPerSec": 0.00011136667
-				},
-				{
-					"point": 16,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:40:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 17,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000031666668
-				},
-				{
-					"point": 18,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:30:00Z"
-				},
-				{
-					"point": 19,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:25:00Z",
-					"mQueryTimeSumPerSec": 0.000055666667
-				},
-				{
-					"point": 20,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:20:00Z",
-					"mQueryTimeSumPerSec": 0.00011366667
-				},
-				{
-					"point": 21,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:15:00Z",
-					"mQueryTimeSumPerSec": 0.000115133334
-				},
-				{
-					"point": 22,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:10:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 23,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000029999999
-				},
-				{
-					"point": 24,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000515
-				},
-				{
-					"point": 25,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:55:00Z",
-					"mQueryTimeSumPerSec": 0.000059600003
-				},
-				{
-					"point": 26,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:50:00Z",
-					"mQueryTimeSumPerSec": 0.00010923333
-				},
-				{
-					"point": 27,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000623
-				},
-				{
-					"point": 28,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:40:00Z",
-					"mQueryTimeSumPerSec": 0.000056033332
-				},
-				{
-					"point": 29,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000014
-				},
-				{
-					"point": 30,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000031333334
-				},
-				{
-					"point": 31,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:25:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 32,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000037333334
-				},
-				{
-					"point": 33,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:15:00Z"
-				},
-				{
-					"point": 34,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:10:00Z",
-					"mQueryTimeSumPerSec": 0.000058633334
-				},
-				{
-					"point": 35,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:05:00Z",
-					"mQueryTimeSumPerSec": 0.00010803334
-				},
-				{
-					"point": 36,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:00:00Z"
-				},
-				{
-					"point": 37,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:55:00Z"
-				},
-				{
-					"point": 38,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000632
-				},
-				{
-					"point": 39,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:45:00Z"
-				},
-				{
-					"point": 40,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:40:00Z",
-					"mQueryTimeSumPerSec": 0.000058833335
-				},
-				{
-					"point": 41,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:35:00Z",
-					"mQueryTimeSumPerSec": 0.000057566664
-				},
-				{
-					"point": 42,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:30:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 43,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:25:00Z"
-				},
-				{
-					"point": 44,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:20:00Z",
-					"mQueryTimeSumPerSec": 1.9999999e-7
-				},
-				{
-					"point": 45,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:15:00Z",
-					"mQueryTimeSumPerSec": 0.00005863333
-				},
-				{
-					"point": 46,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:10:00Z",
-					"mQueryTimeSumPerSec": 0.00011186667
-				},
-				{
-					"point": 47,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:05:00Z",
-					"mQueryTimeSumPerSec": 0.00006233333
-				},
-				{
-					"point": 48,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:00:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 49,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000031666666
-				},
-				{
-					"point": 50,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:50:00Z"
-				},
-				{
-					"point": 51,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000606
-				},
-				{
-					"point": 52,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000029999999
-				},
-				{
-					"point": 53,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:35:00Z"
-				},
-				{
-					"point": 54,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:30:00Z",
-					"mQueryTimeSumPerSec": 0.00006566667
-				},
-				{
-					"point": 55,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000035333335
-				},
-				{
-					"point": 56,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:20:00Z",
-					"mQueryTimeSumPerSec": 0.000060066668
-				},
-				{
-					"point": 57,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:15:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 58,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000031666668
-				},
-				{
-					"point": 59,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:05:00Z"
-				},
-				{
-					"point": 60,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:00:00Z"
-				},
-				{
-					"point": 61,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:55:00Z"
-				},
-				{
-					"point": 62,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:50:00Z",
-					"mQueryTimeSumPerSec": 0.000058066667
-				},
-				{
-					"point": 63,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:45:00Z",
-					"mQueryTimeSumPerSec": 0.000007633334
-				},
-				{
-					"point": 64,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:40:00Z"
-				},
-				{
-					"point": 65,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:35:00Z"
-				},
-				{
-					"point": 66,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:30:00Z",
-					"mQueryTimeSumPerSec": 0.000063533334
-				},
-				{
-					"point": 67,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000573
-				},
-				{
-					"point": 68,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000032333332
-				},
-				{
-					"point": 69,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:15:00Z",
-					"mQueryTimeSumPerSec": 0.000051833333
-				},
-				{
-					"point": 70,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000589
-				},
-				{
-					"point": 71,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000014666667
-				},
-				{
-					"point": 72,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:00:00Z",
-					"mQueryTimeSumPerSec": 0.00010983333
-				},
-				{
-					"point": 73,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:55:00Z",
-					"mQueryTimeSumPerSec": 0.000056200002
-				},
-				{
-					"point": 74,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:50:00Z",
-					"mQueryTimeSumPerSec": 0.000053833333
-				},
-				{
-					"point": 75,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:45:00Z",
-					"mQueryTimeSumPerSec": 0.000057466666
-				},
-				{
-					"point": 76,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000062333334
-				},
-				{
-					"point": 77,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:35:00Z",
-					"mQueryTimeSumPerSec": 0.000056466666
-				},
-				{
-					"point": 78,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:30:00Z",
-					"mQueryTimeSumPerSec": 0.000058466667
-				},
-				{
-					"point": 79,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:25:00Z",
-					"mQueryTimeSumPerSec": 0.000058366666
-				},
-				{
-					"point": 80,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:20:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 81,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:15:00Z",
-					"mQueryTimeSumPerSec": 0.000061733335
-				},
-				{
-					"point": 82,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:10:00Z",
-					"mQueryTimeSumPerSec": 0.000055033335
-				},
-				{
-					"point": 83,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:05:00Z",
-					"mQueryTimeSumPerSec": 0.00011306667
-				},
-				{
-					"point": 84,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:00:00Z",
-					"mQueryTimeSumPerSec": 0.000114066665
-				},
-				{
-					"point": 85,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000029999999
-				},
-				{
-					"point": 86,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000046666664
-				},
-				{
-					"point": 87,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000549
-				},
-				{
-					"point": 88,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000071
-				},
-				{
-					"point": 89,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000032
-				},
-				{
-					"point": 90,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000031666668
-				},
-				{
-					"point": 91,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:25:00Z"
-				},
-				{
-					"point": 92,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:20:00Z",
-					"mQueryTimeSumPerSec": 0.0001136
-				},
-				{
-					"point": 93,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:15:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 94,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000014333333
-				},
-				{
-					"point": 95,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000014333333
-				},
-				{
-					"point": 96,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:00:00Z",
-					"mQueryTimeSumPerSec": 0.000052433334
-				},
-				{
-					"point": 97,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000519
-				},
-				{
-					"point": 98,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:50:00Z",
-					"mQueryTimeSumPerSec": 0.000057066667
-				},
-				{
-					"point": 99,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000614
-				},
-				{
-					"point": 100,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:40:00Z"
-				},
-				{
-					"point": 101,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:35:00Z",
-					"mQueryTimeSumPerSec": 2.6666666e-7
-				},
-				{
-					"point": 102,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:30:00Z",
-					"mQueryTimeSumPerSec": 0.000054633336
-				},
-				{
-					"point": 103,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:25:00Z",
 					"mQueryTimeSumPerSec": 0.000053900003
 				},
 				{
-					"point": 104,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000035333335
-				},
-				{
-					"point": 105,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:15:00Z",
-					"mQueryTimeSumPerSec": 0.0001843
-				},
-				{
-					"point": 106,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:10:00Z",
-					"mQueryTimeSumPerSec": 3.3333333e-7
-				},
-				{
-					"point": 107,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000035666667
-				},
-				{
-					"point": 108,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:00:00Z",
-					"mQueryTimeSumPerSec": 0.000053766667
-				},
-				{
-					"point": 109,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000633
-				},
-				{
-					"point": 110,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:50:00Z",
-					"mQueryTimeSumPerSec": 0.000061533334
-				},
-				{
-					"point": 111,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:45:00Z",
-					"mQueryTimeSumPerSec": 0.000006266667
-				},
-				{
-					"point": 112,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000031333334
-				},
-				{
-					"point": 113,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:35:00Z",
-					"mQueryTimeSumPerSec": 0.00021646667
-				},
-				{
-					"point": 114,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:30:00Z"
-				},
-				{
-					"point": 115,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:25:00Z",
-					"mQueryTimeSumPerSec": 0.000053166666
-				},
-				{
-					"point": 116,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:20:00Z",
-					"mQueryTimeSumPerSec": 0.000055866665
-				},
-				{
-					"point": 117,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000014666667
-				},
-				{
-					"point": 118,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000061666665
-				},
-				{
-					"point": 119,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000519
-				}
-			],
-			"numQueries": 988978,
-			"qps": 27.471611,
-			"load": 0.000038965278
-		},
-		{
-			"rank": 5,
-			"dimension": "user92",
-			"metrics": {
-				"bytes_sent": {
-					"stats": {
-						"rate": 0.012375089,
-						"cnt": 217,
-						"sum": 263530,
-						"max": 249,
-						"p99": 121.4424,
-						"avg": 0.23562305,
-						"sumPerSec": 7.3202777
-					}
-				},
-				"docs_returned": {
-					"stats": {
-
-					}
-				},
-				"docs_scanned": {
-					"stats": {
-
-					}
-				},
-				"filesort": {
-					"stats": {
-						"cnt": 217
-					}
-				},
-				"filesort_on_disk": {
-					"stats": {
-						"cnt": 217
-					}
-				},
-				"full_join": {
-					"stats": {
-						"cnt": 217
-					}
-				},
-				"full_scan": {
-					"stats": {
-						"rate": 0.012558364,
-						"cnt": 217,
-						"sum": 780,
-						"avg": 0.0006974006,
-						"sumPerSec": 0.021666666
-					}
-				},
-				"innodb_io_r_bytes": {
-					"stats": {
-
-					}
-				},
-				"innodb_io_r_ops": {
-					"stats": {
-
-					}
-				},
-				"innodb_io_r_wait": {
-					"stats": {
-
-					}
-				},
-				"innodb_pages_distinct": {
-					"stats": {
-
-					}
-				},
-				"innodb_queue_wait": {
-					"stats": {
-
-					}
-				},
-				"innodb_rec_lock_wait": {
-					"stats": {
-
-					}
-				},
-				"lock_time": {
-					"stats": {
-						"rate": 0.012149324,
-						"cnt": 217,
-						"sum": 0.06713,
-						"max": 0.00014,
-						"p99": 0.000030935484,
-						"avg": 6.002115e-8,
-						"sumPerSec": 0.0000018647222
-					}
-				},
-				"merge_passes": {
-					"stats": {
-						"cnt": 217
-					}
-				},
-				"no_good_index_used": {
-					"stats": {
-
-					}
-				},
-				"no_index_used": {
-					"stats": {
-
-					}
-				},
-				"qc_hit": {
-					"stats": {
-						"cnt": 217
-					}
-				},
-				"query_length": {
-					"stats": {
-
-					}
-				},
-				"query_time": {
-					"stats": {
-						"rate": 0.012511292,
-						"cnt": 217,
-						"sum": 1.37761,
-						"min": 0.000003,
-						"max": 0.001983,
-						"p99": 0.0006348433,
-						"avg": 0.0000012317256,
-						"sumPerSec": 0.000038266942
-					}
-				},
-				"response_length": {
-					"stats": {
-
-					}
-				},
-				"rows_affected": {
-					"stats": {
-						"cnt": 217
-					}
-				},
-				"rows_examined": {
-					"stats": {
-						"rate": 0.012810112,
-						"cnt": 217,
-						"sum": 870960,
-						"max": 1268,
-						"p99": 401.36404,
-						"avg": 0.7787282,
-						"sumPerSec": 24.193333
-					}
-				},
-				"rows_read": {
-					"stats": {
-
-					}
-				},
-				"rows_sent": {
-					"stats": {
-						"rate": 0.011938146,
-						"cnt": 217,
-						"sum": 1490,
-						"max": 1,
-						"p99": 0.686636,
-						"avg": 0.0013322139,
-						"sumPerSec": 0.041388888
-					}
-				},
-				"select_full_range_join": {
-					"stats": {
-
-					}
-				},
-				"select_range": {
-					"stats": {
-
-					}
-				},
-				"select_range_check": {
-					"stats": {
-
-					}
-				},
-				"sort_range": {
-					"stats": {
-
-					}
-				},
-				"sort_rows": {
-					"stats": {
-
-					}
-				},
-				"sort_scan": {
-					"stats": {
-
-					}
-				},
-				"tmp_disk_tables": {
-					"stats": {
-						"cnt": 217
-					}
-				},
-				"tmp_table": {
-					"stats": {
-						"rate": 0.012558364,
-						"cnt": 217,
-						"sum": 780,
-						"avg": 0.0006974006,
-						"sumPerSec": 0.021666666
-					}
-				},
-				"tmp_table_on_disk": {
-					"stats": {
-						"cnt": 217
-					}
-				},
-				"tmp_table_sizes": {
-					"stats": {
-						"cnt": 217
-					}
-				},
-				"tmp_tables": {
-					"stats": {
-						"rate": 0.012558364,
-						"cnt": 217,
-						"sum": 780,
-						"max": 1,
-						"p99": 0.359447,
-						"avg": 0.0006974006,
-						"sumPerSec": 0.021666666
-					}
-				}
-			},
-			"sparkline": [
-				{
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T10:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000062
-				},
-				{
-					"point": 1,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:55:00Z",
-					"mQueryTimeSumPerSec": 0.00005836667
-				},
-				{
-					"point": 2,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:50:00Z",
-					"mQueryTimeSumPerSec": 0.000112266665
-				},
-				{
 					"point": 3,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:45:00Z"
+					"timestamp": "2019-01-01T09:45:00Z",
+					"mQueryTimeSumPerSec": 0.000055866665
 				},
 				{
 					"point": 4,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:40:00Z",
-					"mQueryTimeSumPerSec": 0.00005516667
+					"mQueryTimeSumPerSec": 0.00012233332
 				},
 				{
 					"point": 5,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:35:00Z"
+					"timestamp": "2019-01-01T09:35:00Z",
+					"mQueryTimeSumPerSec": 0.000053633335
 				},
 				{
 					"point": 6,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:30:00Z",
-					"mQueryTimeSumPerSec": 0.000060966668
+					"mQueryTimeSumPerSec": 0.0000533
 				},
 				{
 					"point": 7,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:25:00Z",
-					"mQueryTimeSumPerSec": 0.000062466665
+					"mQueryTimeSumPerSec": 0.000051366667
 				},
 				{
 					"point": 8,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:20:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"timestamp": "2019-01-01T09:20:00Z"
 				},
 				{
 					"point": 9,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000032666667
+					"mQueryTimeSumPerSec": 0.0000617
 				},
 				{
 					"point": 10,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000581
+					"mQueryTimeSumPerSec": 0.0000039
 				},
 				{
 					"point": 11,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000045
+					"mQueryTimeSumPerSec": 0.00006383334
 				},
 				{
 					"point": 12,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:00:00Z",
-					"mQueryTimeSumPerSec": 0.000055066666
+					"timestamp": "2019-01-01T09:00:00Z"
 				},
 				{
 					"point": 13,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000036666665
+					"mQueryTimeSumPerSec": 0.0000029999999
 				},
 				{
 					"point": 14,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:50:00Z",
-					"mQueryTimeSumPerSec": 0.000052833333
+					"mQueryTimeSumPerSec": 0.0000039333336
 				},
 				{
 					"point": 15,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:45:00Z",
-					"mQueryTimeSumPerSec": 0.000058133333
+					"mQueryTimeSumPerSec": 0.000058566668
 				},
 				{
 					"point": 16,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:40:00Z"
+					"timestamp": "2019-01-01T08:40:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
 				},
 				{
 					"point": 17,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
+					"mQueryTimeSumPerSec": 0.0000073
 				},
 				{
 					"point": 18,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:30:00Z",
-					"mQueryTimeSumPerSec": 0.000055933335
+					"mQueryTimeSumPerSec": 0.0000031333334
 				},
 				{
 					"point": 19,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000037
+					"timestamp": "2019-01-01T08:25:00Z"
 				},
 				{
 					"point": 20,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000044333333
+					"mQueryTimeSumPerSec": 0.000060966664
 				},
 				{
 					"point": 21,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000031999998
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 22,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:10:00Z"
+					"timestamp": "2019-01-01T08:10:00Z",
+					"mQueryTimeSumPerSec": 0.000052933334
 				},
 				{
 					"point": 23,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:05:00Z",
-					"mQueryTimeSumPerSec": 2.3333332e-7
+					"mQueryTimeSumPerSec": 0.000058366666
 				},
 				{
 					"point": 24,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000021666667
+					"timestamp": "2019-01-01T08:00:00Z"
 				},
 				{
 					"point": 25,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:55:00Z",
-					"mQueryTimeSumPerSec": 0.00012056667
+					"mQueryTimeSumPerSec": 0.0000030666667
 				},
 				{
 					"point": 26,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:50:00Z",
-					"mQueryTimeSumPerSec": 0.000058366666
+					"mQueryTimeSumPerSec": 0.000048966667
 				},
 				{
 					"point": 27,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:45:00Z",
-					"mQueryTimeSumPerSec": 0.00022376666
+					"mQueryTimeSumPerSec": 0.000056899997
 				},
 				{
 					"point": 28,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000035666667
+					"mQueryTimeSumPerSec": 0.000051933333
 				},
 				{
 					"point": 29,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000636
+					"mQueryTimeSumPerSec": 0.00017403334
 				},
 				{
 					"point": 30,
@@ -5099,54 +4161,54 @@
 				{
 					"point": 31,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:25:00Z",
-					"mQueryTimeSumPerSec": 0.00012366666
+					"timestamp": "2019-01-01T07:25:00Z"
 				},
 				{
 					"point": 32,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:20:00Z",
-					"mQueryTimeSumPerSec": 0.00011066667
+					"mQueryTimeSumPerSec": 0.000052699997
 				},
 				{
 					"point": 33,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:15:00Z",
-					"mQueryTimeSumPerSec": 0.000051066665
+					"timestamp": "2019-01-01T07:15:00Z"
 				},
 				{
 					"point": 34,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000661
+					"mQueryTimeSumPerSec": 0.000112999995
 				},
 				{
 					"point": 35,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:05:00Z",
-					"mQueryTimeSumPerSec": 0.000055266668
+					"mQueryTimeSumPerSec": 0.000054300002
 				},
 				{
 					"point": 36,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:00:00Z"
+					"timestamp": "2019-01-01T07:00:00Z",
+					"mQueryTimeSumPerSec": 2.3333332e-7
 				},
 				{
 					"point": 37,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:55:00Z"
+					"timestamp": "2019-01-01T06:55:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 38,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
+					"mQueryTimeSumPerSec": 0.000055533335
 				},
 				{
 					"point": 39,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:45:00Z",
-					"mQueryTimeSumPerSec": 0.00005536667
+					"mQueryTimeSumPerSec": 0.00010486667
 				},
 				{
 					"point": 40,
@@ -5156,43 +4218,43 @@
 				{
 					"point": 41,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:35:00Z",
-					"mQueryTimeSumPerSec": 0.000049000002
+					"timestamp": "2019-01-01T06:35:00Z"
 				},
 				{
 					"point": 42,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:30:00Z",
-					"mQueryTimeSumPerSec": 1.9999999e-7
+					"mQueryTimeSumPerSec": 0.0000031999998
 				},
 				{
 					"point": 43,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:25:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"mQueryTimeSumPerSec": 0.0000583
 				},
 				{
 					"point": 44,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:20:00Z",
-					"mQueryTimeSumPerSec": 0.00011836667
+					"mQueryTimeSumPerSec": 0.0000016
 				},
 				{
 					"point": 45,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:15:00Z"
+					"timestamp": "2019-01-01T06:15:00Z",
+					"mQueryTimeSumPerSec": 0.000057699996
 				},
 				{
 					"point": 46,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:10:00Z",
-					"mQueryTimeSumPerSec": 0.000008466666
+					"mQueryTimeSumPerSec": 0.00010343333
 				},
 				{
 					"point": 47,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000567
+					"mQueryTimeSumPerSec": 0.00005553333
 				},
 				{
 					"point": 48,
@@ -5203,106 +4265,104 @@
 					"point": 49,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:55:00Z",
-					"mQueryTimeSumPerSec": 0.00005933333
+					"mQueryTimeSumPerSec": 0.0001304
 				},
 				{
 					"point": 50,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000032
+					"mQueryTimeSumPerSec": 0.0000628
 				},
 				{
 					"point": 51,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000029999999
+					"timestamp": "2019-01-01T05:45:00Z"
 				},
 				{
 					"point": 52,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:40:00Z"
+					"timestamp": "2019-01-01T05:40:00Z",
+					"mQueryTimeSumPerSec": 0.00016216666
 				},
 				{
 					"point": 53,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:35:00Z"
+					"timestamp": "2019-01-01T05:35:00Z",
+					"mQueryTimeSumPerSec": 0.00017086667
 				},
 				{
 					"point": 54,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:30:00Z",
-					"mQueryTimeSumPerSec": 0.00022736666
+					"mQueryTimeSumPerSec": 0.000054566666
 				},
 				{
 					"point": 55,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:25:00Z",
-					"mQueryTimeSumPerSec": 0.000002
+					"mQueryTimeSumPerSec": 0.000068166664
 				},
 				{
 					"point": 56,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000033000001
+					"timestamp": "2019-01-01T05:20:00Z"
 				},
 				{
 					"point": 57,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000073
+					"mQueryTimeSumPerSec": 2.6666666e-7
 				},
 				{
 					"point": 58,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000030666667
+					"timestamp": "2019-01-01T05:10:00Z"
 				},
 				{
 					"point": 59,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000039
+					"mQueryTimeSumPerSec": 0.0000015666667
 				},
 				{
 					"point": 60,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000052333335
+					"mQueryTimeSumPerSec": 0.0000030333333
 				},
 				{
 					"point": 61,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000032
+					"timestamp": "2019-01-01T04:55:00Z"
 				},
 				{
 					"point": 62,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:50:00Z",
-					"mQueryTimeSumPerSec": 0.000112500005
+					"mQueryTimeSumPerSec": 0.0000559
 				},
 				{
 					"point": 63,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:45:00Z",
-					"mQueryTimeSumPerSec": 0.000051866667
+					"timestamp": "2019-01-01T04:45:00Z"
 				},
 				{
 					"point": 64,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:40:00Z",
-					"mQueryTimeSumPerSec": 0.000060333336
+					"mQueryTimeSumPerSec": 0.0000624
 				},
 				{
 					"point": 65,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:35:00Z",
-					"mQueryTimeSumPerSec": 0.000060866667
+					"mQueryTimeSumPerSec": 0.0000064666665
 				},
 				{
 					"point": 66,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:30:00Z"
+					"timestamp": "2019-01-01T04:30:00Z",
+					"mQueryTimeSumPerSec": 0.000003566667
 				},
 				{
 					"point": 67,
@@ -5312,20 +4372,18 @@
 				{
 					"point": 68,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000016666667
+					"timestamp": "2019-01-01T04:20:00Z"
 				},
 				{
 					"point": 69,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:15:00Z",
-					"mQueryTimeSumPerSec": 1.6666667e-7
+					"timestamp": "2019-01-01T04:15:00Z"
 				},
 				{
 					"point": 70,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:10:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"mQueryTimeSumPerSec": 0.0000029999999
 				},
 				{
 					"point": 71,
@@ -5340,300 +4398,293 @@
 				{
 					"point": 73,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000033666668
+					"timestamp": "2019-01-01T03:55:00Z"
 				},
 				{
 					"point": 74,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:50:00Z",
-					"mQueryTimeSumPerSec": 2.6666666e-7
+					"mQueryTimeSumPerSec": 0.0000040666664
 				},
 				{
 					"point": 75,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:45:00Z",
-					"mQueryTimeSumPerSec": 0.000059166665
+					"mQueryTimeSumPerSec": 0.00011283333
 				},
 				{
 					"point": 76,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:40:00Z",
-					"mQueryTimeSumPerSec": 0.00023273333
+					"mQueryTimeSumPerSec": 0.0000046
 				},
 				{
 					"point": 77,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:35:00Z",
-					"mQueryTimeSumPerSec": 0.00016083333
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 78,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:30:00Z",
-					"mQueryTimeSumPerSec": 2.3333334e-7
+					"mQueryTimeSumPerSec": 0.00006106666
 				},
 				{
 					"point": 79,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:25:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"mQueryTimeSumPerSec": 0.000055
 				},
 				{
 					"point": 80,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000018333333
+					"mQueryTimeSumPerSec": 0.00005106667
 				},
 				{
 					"point": 81,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:15:00Z",
-					"mQueryTimeSumPerSec": 0.00016373333
+					"timestamp": "2019-01-01T03:15:00Z"
 				},
 				{
 					"point": 82,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:10:00Z",
-					"mQueryTimeSumPerSec": 2.6666666e-7
+					"mQueryTimeSumPerSec": 0.000054733333
 				},
 				{
 					"point": 83,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
+					"mQueryTimeSumPerSec": 0.0001103
 				},
 				{
 					"point": 84,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:00:00Z"
+					"timestamp": "2019-01-01T03:00:00Z",
+					"mQueryTimeSumPerSec": 0.0000030666667
 				},
 				{
 					"point": 85,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000035666667
+					"timestamp": "2019-01-01T02:55:00Z"
 				},
 				{
 					"point": 86,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000646
+					"mQueryTimeSumPerSec": 0.000058466667
 				},
 				{
 					"point": 87,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:45:00Z"
+					"timestamp": "2019-01-01T02:45:00Z",
+					"mQueryTimeSumPerSec": 0.00006326667
 				},
 				{
 					"point": 88,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:40:00Z",
-					"mQueryTimeSumPerSec": 0.000060233335
+					"mQueryTimeSumPerSec": 0.000064500004
 				},
 				{
 					"point": 89,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:35:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"mQueryTimeSumPerSec": 0.0000076
 				},
 				{
 					"point": 90,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000603
+					"timestamp": "2019-01-01T02:30:00Z"
 				},
 				{
 					"point": 91,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:25:00Z",
-					"mQueryTimeSumPerSec": 0.00011213333
+					"mQueryTimeSumPerSec": 0.000056133333
 				},
 				{
 					"point": 92,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:20:00Z",
-					"mQueryTimeSumPerSec": 0.000059933336
+					"mQueryTimeSumPerSec": 0.0000032666667
 				},
 				{
 					"point": 93,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:15:00Z",
-					"mQueryTimeSumPerSec": 0.00011936666
+					"timestamp": "2019-01-01T02:15:00Z"
 				},
 				{
 					"point": 94,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:10:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"mQueryTimeSumPerSec": 0.00005356667
 				},
 				{
 					"point": 95,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:05:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"mQueryTimeSumPerSec": 0.00011193333
 				},
 				{
 					"point": 96,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:00:00Z",
-					"mQueryTimeSumPerSec": 0.000066466666
+					"timestamp": "2019-01-01T02:00:00Z"
 				},
 				{
 					"point": 97,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:55:00Z",
-					"mQueryTimeSumPerSec": 0.000053666667
+					"timestamp": "2019-01-01T01:55:00Z"
 				},
 				{
 					"point": 98,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:50:00Z",
-					"mQueryTimeSumPerSec": 0.0001106
+					"mQueryTimeSumPerSec": 0.00005916667
 				},
 				{
 					"point": 99,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:45:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"mQueryTimeSumPerSec": 0.00010786667
 				},
 				{
 					"point": 100,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000014333333
+					"mQueryTimeSumPerSec": 0.000055666664
 				},
 				{
 					"point": 101,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
+					"mQueryTimeSumPerSec": 0.0000061
 				},
 				{
 					"point": 102,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000017666667
+					"timestamp": "2019-01-01T01:30:00Z"
 				},
 				{
 					"point": 103,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000075666667
+					"mQueryTimeSumPerSec": 0.000049533333
 				},
 				{
 					"point": 104,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:20:00Z",
-					"mQueryTimeSumPerSec": 0.000006933333
+					"mQueryTimeSumPerSec": 0.00006126666
 				},
 				{
 					"point": 105,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:15:00Z",
-					"mQueryTimeSumPerSec": 0.0001048
+					"mQueryTimeSumPerSec": 0.000057966667
 				},
 				{
 					"point": 106,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000517
+					"mQueryTimeSumPerSec": 0.0000060666666
 				},
 				{
 					"point": 107,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000031666668
+					"mQueryTimeSumPerSec": 0.000053733333
 				},
 				{
 					"point": 108,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000033666668
+					"timestamp": "2019-01-01T01:00:00Z"
 				},
 				{
 					"point": 109,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:55:00Z",
-					"mQueryTimeSumPerSec": 0.0001157
+					"mQueryTimeSumPerSec": 0.0000061666665
 				},
 				{
 					"point": 110,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:50:00Z",
-					"mQueryTimeSumPerSec": 0.00017136667
+					"mQueryTimeSumPerSec": 0.0000513
 				},
 				{
 					"point": 111,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:45:00Z",
-					"mQueryTimeSumPerSec": 0.00005196667
+					"mQueryTimeSumPerSec": 0.000115899995
 				},
 				{
 					"point": 112,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:40:00Z"
+					"timestamp": "2019-01-01T00:40:00Z",
+					"mQueryTimeSumPerSec": 0.0000031333334
 				},
 				{
 					"point": 113,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:35:00Z",
-					"mQueryTimeSumPerSec": 0.00005536667
+					"mQueryTimeSumPerSec": 0.000052533334
 				},
 				{
 					"point": 114,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:30:00Z",
-					"mQueryTimeSumPerSec": 0.000058666665
+					"mQueryTimeSumPerSec": 9.9999994e-8
 				},
 				{
 					"point": 115,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:25:00Z",
-					"mQueryTimeSumPerSec": 0.000059766666
+					"mQueryTimeSumPerSec": 0.00006303334
 				},
 				{
 					"point": 116,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000039666666
+					"mQueryTimeSumPerSec": 0.0001055
 				},
 				{
 					"point": 117,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000038333333
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 118,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:10:00Z",
-					"mQueryTimeSumPerSec": 0.0001131
+					"mQueryTimeSumPerSec": 9.9999994e-8
 				},
 				{
 					"point": 119,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:05:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"timestamp": "2019-01-01T00:05:00Z"
 				}
 			],
-			"numQueries": 1118439,
-			"qps": 31.06775,
-			"load": 0.000038266942
+			"numQueries": 926185,
+			"qps": 25.727362,
+			"load": 0.000035711942
 		},
 		{
-			"rank": 6,
-			"dimension": "user64",
+			"rank": 5,
+			"dimension": "user66",
 			"metrics": {
 				"bytes_sent": {
 					"stats": {
-						"rate": 0.011578196,
-						"cnt": 202,
-						"sum": 246560,
+						"rate": 0.01042911,
+						"cnt": 166,
+						"sum": 222090,
 						"max": 249,
-						"p99": 122.0594,
-						"avg": 0.24589951,
-						"sumPerSec": 6.848889
+						"p99": 133.78915,
+						"avg": 0.25914457,
+						"sumPerSec": 6.1691666
 					}
 				},
 				"docs_returned": {
@@ -5648,26 +4699,26 @@
 				},
 				"filesort": {
 					"stats": {
-						"cnt": 202
+						"cnt": 166
 					}
 				},
 				"filesort_on_disk": {
 					"stats": {
-						"cnt": 202
+						"cnt": 166
 					}
 				},
 				"full_join": {
 					"stats": {
-						"cnt": 202
+						"cnt": 166
 					}
 				},
 				"full_scan": {
 					"stats": {
-						"rate": 0.012558364,
-						"cnt": 202,
-						"sum": 780,
-						"avg": 0.0007779105,
-						"sumPerSec": 0.021666666
+						"rate": 0.010787313,
+						"cnt": 166,
+						"sum": 670,
+						"avg": 0.00078178605,
+						"sumPerSec": 0.01861111
 					}
 				},
 				"innodb_io_r_bytes": {
@@ -5702,18 +4753,18 @@
 				},
 				"lock_time": {
 					"stats": {
-						"rate": 0.0120896,
-						"cnt": 202,
-						"sum": 0.0668,
-						"max": 0.000176,
-						"p99": 0.000033069307,
-						"avg": 6.6621055e-8,
-						"sumPerSec": 0.0000018555555
+						"rate": 0.011063431,
+						"cnt": 166,
+						"sum": 0.06113,
+						"max": 0.000158,
+						"p99": 0.000036825302,
+						"avg": 7.132922e-8,
+						"sumPerSec": 0.0000016980555
 					}
 				},
 				"merge_passes": {
 					"stats": {
-						"cnt": 202
+						"cnt": 166
 					}
 				},
 				"no_good_index_used": {
@@ -5728,7 +4779,7 @@
 				},
 				"qc_hit": {
 					"stats": {
-						"cnt": 202
+						"cnt": 166
 					}
 				},
 				"query_length": {
@@ -5738,14 +4789,14 @@
 				},
 				"query_time": {
 					"stats": {
-						"rate": 0.012393409,
-						"cnt": 202,
-						"sum": 1.36463,
+						"rate": 0.01072525,
+						"cnt": 166,
+						"sum": 1.18095,
 						"min": 0.000002,
-						"max": 0.001939,
-						"p99": 0.0006755594,
-						"avg": 0.0000013609744,
-						"sumPerSec": 0.00003790639
+						"max": 0.00243,
+						"p99": 0.00071141566,
+						"avg": 0.0000013779854,
+						"sumPerSec": 0.000032804168
 					}
 				},
 				"response_length": {
@@ -5755,18 +4806,18 @@
 				},
 				"rows_affected": {
 					"stats": {
-						"cnt": 202
+						"cnt": 166
 					}
 				},
 				"rows_examined": {
 					"stats": {
-						"rate": 0.012810112,
-						"cnt": 202,
-						"sum": 870960,
+						"rate": 0.010589198,
+						"cnt": 166,
+						"sum": 719960,
 						"max": 1268,
-						"p99": 431.1683,
-						"avg": 0.8686269,
-						"sumPerSec": 24.193333
+						"p99": 433.71085,
+						"avg": 0.8400816,
+						"sumPerSec": 19.998888
 					}
 				},
 				"rows_read": {
@@ -5776,13 +4827,13 @@
 				},
 				"rows_sent": {
 					"stats": {
-						"rate": 0.011537537,
-						"cnt": 202,
-						"sum": 1440,
+						"rate": 0.010495954,
+						"cnt": 166,
+						"sum": 1310,
 						"max": 1,
-						"p99": 0.7128713,
-						"avg": 0.0014361425,
-						"sumPerSec": 0.04
+						"p99": 0.7891566,
+						"avg": 0.0015285667,
+						"sumPerSec": 0.03638889
 					}
 				},
 				"select_full_range_join": {
@@ -5817,37 +4868,37 @@
 				},
 				"tmp_disk_tables": {
 					"stats": {
-						"cnt": 202
+						"cnt": 166
 					}
 				},
 				"tmp_table": {
 					"stats": {
-						"rate": 0.012558364,
-						"cnt": 202,
-						"sum": 780,
-						"avg": 0.0007779105,
-						"sumPerSec": 0.021666666
+						"rate": 0.010787313,
+						"cnt": 166,
+						"sum": 670,
+						"avg": 0.00078178605,
+						"sumPerSec": 0.01861111
 					}
 				},
 				"tmp_table_on_disk": {
 					"stats": {
-						"cnt": 202
+						"cnt": 166
 					}
 				},
 				"tmp_table_sizes": {
 					"stats": {
-						"cnt": 202
+						"cnt": 166
 					}
 				},
 				"tmp_tables": {
 					"stats": {
-						"rate": 0.012558364,
-						"cnt": 202,
-						"sum": 780,
+						"rate": 0.010787313,
+						"cnt": 166,
+						"sum": 670,
 						"max": 1,
-						"p99": 0.38613862,
-						"avg": 0.0007779105,
-						"sumPerSec": 0.021666666
+						"p99": 0.40361446,
+						"avg": 0.00078178605,
+						"sumPerSec": 0.01861111
 					}
 				}
 			},
@@ -5855,130 +4906,130 @@
 				{
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T10:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000014333333
+					"mQueryTimeSumPerSec": 0.000053800002
 				},
 				{
 					"point": 1,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:55:00Z",
-					"mQueryTimeSumPerSec": 0.00012053333
+					"mQueryTimeSumPerSec": 0.0000024666667
 				},
 				{
 					"point": 2,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:50:00Z"
+					"timestamp": "2019-01-01T09:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000014999999
 				},
 				{
 					"point": 3,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:45:00Z",
-					"mQueryTimeSumPerSec": 1.6666667e-7
+					"mQueryTimeSumPerSec": 0.0000034333334
 				},
 				{
 					"point": 4,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:40:00Z",
-					"mQueryTimeSumPerSec": 0.000060633334
+					"mQueryTimeSumPerSec": 0.000054366665
 				},
 				{
 					"point": 5,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:35:00Z",
-					"mQueryTimeSumPerSec": 0.000058766665
+					"timestamp": "2019-01-01T09:35:00Z"
 				},
 				{
 					"point": 6,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:30:00Z"
+					"timestamp": "2019-01-01T09:30:00Z",
+					"mQueryTimeSumPerSec": 0.00011646666
 				},
 				{
 					"point": 7,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:25:00Z",
-					"mQueryTimeSumPerSec": 0.000008533333
+					"mQueryTimeSumPerSec": 0.0000058
 				},
 				{
 					"point": 8,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:20:00Z"
+					"timestamp": "2019-01-01T09:20:00Z",
+					"mQueryTimeSumPerSec": 0.0000101666665
 				},
 				{
 					"point": 9,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:15:00Z",
-					"mQueryTimeSumPerSec": 0.00017143333
+					"mQueryTimeSumPerSec": 0.00006316667
 				},
 				{
 					"point": 10,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000031333334
+					"mQueryTimeSumPerSec": 0.000049733335
 				},
 				{
 					"point": 11,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:05:00Z",
-					"mQueryTimeSumPerSec": 0.000112066664
+					"mQueryTimeSumPerSec": 0.000049766666
 				},
 				{
 					"point": 12,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:00:00Z",
-					"mQueryTimeSumPerSec": 0.000057666668
+					"mQueryTimeSumPerSec": 0.00021956667
 				},
 				{
 					"point": 13,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000618
+					"timestamp": "2019-01-01T08:55:00Z"
 				},
 				{
 					"point": 14,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:50:00Z",
-					"mQueryTimeSumPerSec": 0.000059833335
+					"mQueryTimeSumPerSec": 0.00011756667
 				},
 				{
 					"point": 15,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000031333334
+					"mQueryTimeSumPerSec": 0.000054166663
 				},
 				{
 					"point": 16,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:40:00Z",
-					"mQueryTimeSumPerSec": 0.000052833333
+					"mQueryTimeSumPerSec": 0.0000030666667
 				},
 				{
 					"point": 17,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:35:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"mQueryTimeSumPerSec": 0.000053066666
 				},
 				{
 					"point": 18,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:30:00Z",
-					"mQueryTimeSumPerSec": 0.000055099998
+					"timestamp": "2019-01-01T08:30:00Z"
 				},
 				{
 					"point": 19,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:25:00Z",
-					"mQueryTimeSumPerSec": 0.000056999997
+					"mQueryTimeSumPerSec": 0.00010996667
 				},
 				{
 					"point": 20,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000604
+					"mQueryTimeSumPerSec": 0.0000505
 				},
 				{
 					"point": 21,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000041333333
+					"mQueryTimeSumPerSec": 0.0001103
 				},
 				{
 					"point": 22,
@@ -5988,128 +5039,128 @@
 				{
 					"point": 23,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:05:00Z"
+					"timestamp": "2019-01-01T08:05:00Z",
+					"mQueryTimeSumPerSec": 0.00005196667
 				},
 				{
 					"point": 24,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000572
+					"mQueryTimeSumPerSec": 0.0000012333334
 				},
 				{
 					"point": 25,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:55:00Z"
+					"timestamp": "2019-01-01T07:55:00Z",
+					"mQueryTimeSumPerSec": 0.000061700004
 				},
 				{
 					"point": 26,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:50:00Z",
-					"mQueryTimeSumPerSec": 0.000058033333
+					"timestamp": "2019-01-01T07:50:00Z"
 				},
 				{
 					"point": 27,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:45:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 28,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:40:00Z",
-					"mQueryTimeSumPerSec": 0.000061666666
+					"mQueryTimeSumPerSec": 0.000055099998
 				},
 				{
 					"point": 29,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:35:00Z"
+					"timestamp": "2019-01-01T07:35:00Z",
+					"mQueryTimeSumPerSec": 0.00011736666
 				},
 				{
 					"point": 30,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:30:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"timestamp": "2019-01-01T07:30:00Z"
 				},
 				{
 					"point": 31,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:25:00Z",
-					"mQueryTimeSumPerSec": 0.000051766667
+					"mQueryTimeSumPerSec": 0.00011866666
 				},
 				{
 					"point": 32,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000041999997
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 33,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000535
+					"mQueryTimeSumPerSec": 0.000120966666
 				},
 				{
 					"point": 34,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:10:00Z"
+					"timestamp": "2019-01-01T07:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000073666665
 				},
 				{
 					"point": 35,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:05:00Z",
-					"mQueryTimeSumPerSec": 3.6666665e-7
+					"timestamp": "2019-01-01T07:05:00Z"
 				},
 				{
 					"point": 36,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000542
+					"mQueryTimeSumPerSec": 0.0000014333333
 				},
 				{
 					"point": 37,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:55:00Z"
+					"timestamp": "2019-01-01T06:55:00Z",
+					"mQueryTimeSumPerSec": 0.0000031
 				},
 				{
 					"point": 38,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:50:00Z",
-					"mQueryTimeSumPerSec": 0.000057533336
+					"timestamp": "2019-01-01T06:50:00Z"
 				},
 				{
 					"point": 39,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:45:00Z"
+					"timestamp": "2019-01-01T06:45:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 40,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:40:00Z",
-					"mQueryTimeSumPerSec": 0.00005443333
+					"mQueryTimeSumPerSec": 0.00005536667
 				},
 				{
 					"point": 41,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:35:00Z",
-					"mQueryTimeSumPerSec": 0.00011796667
+					"mQueryTimeSumPerSec": 0.00011193333
 				},
 				{
 					"point": 42,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:30:00Z",
-					"mQueryTimeSumPerSec": 0.000062466665
+					"mQueryTimeSumPerSec": 0.0000095333335
 				},
 				{
 					"point": 43,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000502
+					"timestamp": "2019-01-01T06:25:00Z"
 				},
 				{
 					"point": 44,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:20:00Z",
-					"mQueryTimeSumPerSec": 0.000054233333
+					"timestamp": "2019-01-01T06:20:00Z"
 				},
 				{
 					"point": 45,
@@ -6120,348 +5171,346 @@
 					"point": 46,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:10:00Z",
-					"mQueryTimeSumPerSec": 0.000055733333
+					"mQueryTimeSumPerSec": 0.0000072333337
 				},
 				{
 					"point": 47,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:05:00Z",
-					"mQueryTimeSumPerSec": 0.000051033334
+					"timestamp": "2019-01-01T06:05:00Z"
 				},
 				{
 					"point": 48,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:00:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"mQueryTimeSumPerSec": 0.000058399997
 				},
 				{
 					"point": 49,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000534
+					"mQueryTimeSumPerSec": 0.000059333335
 				},
 				{
 					"point": 50,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000031333334
+					"mQueryTimeSumPerSec": 0.0000031
 				},
 				{
 					"point": 51,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:45:00Z",
-					"mQueryTimeSumPerSec": 0.00005773333
+					"mQueryTimeSumPerSec": 0.0000058333335
 				},
 				{
 					"point": 52,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000061666665
+					"mQueryTimeSumPerSec": 0.000050833332
 				},
 				{
 					"point": 53,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000572
+					"mQueryTimeSumPerSec": 0.0000041333333
 				},
 				{
 					"point": 54,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:30:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"mQueryTimeSumPerSec": 0.0000029333335
 				},
 				{
 					"point": 55,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000598
+					"mQueryTimeSumPerSec": 0.000052833333
 				},
 				{
 					"point": 56,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:20:00Z",
-					"mQueryTimeSumPerSec": 0.00005826667
+					"timestamp": "2019-01-01T05:20:00Z"
 				},
 				{
 					"point": 57,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:15:00Z",
-					"mQueryTimeSumPerSec": 0.000111
+					"mQueryTimeSumPerSec": 1.6666667e-7
 				},
 				{
 					"point": 58,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:10:00Z",
-					"mQueryTimeSumPerSec": 0.00006903333
+					"timestamp": "2019-01-01T05:10:00Z"
 				},
 				{
 					"point": 59,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:05:00Z"
+					"timestamp": "2019-01-01T05:05:00Z",
+					"mQueryTimeSumPerSec": 0.000053866668
 				},
 				{
 					"point": 60,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:00:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"timestamp": "2019-01-01T05:00:00Z"
 				},
 				{
 					"point": 61,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:55:00Z",
-					"mQueryTimeSumPerSec": 0.000056366665
+					"mQueryTimeSumPerSec": 0.0000029666667
 				},
 				{
 					"point": 62,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:50:00Z",
-					"mQueryTimeSumPerSec": 0.000054600005
+					"mQueryTimeSumPerSec": 0.000057466666
 				},
 				{
 					"point": 63,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000069666667
+					"mQueryTimeSumPerSec": 0.000004533333
 				},
 				{
 					"point": 64,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000597
+					"mQueryTimeSumPerSec": 0.0000031
 				},
 				{
 					"point": 65,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:35:00Z",
-					"mQueryTimeSumPerSec": 0.00005926667
+					"timestamp": "2019-01-01T04:35:00Z"
 				},
 				{
 					"point": 66,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:30:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 67,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000029666667
+					"mQueryTimeSumPerSec": 0.000110466666
 				},
 				{
 					"point": 68,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000031666668
+					"mQueryTimeSumPerSec": 9.9999994e-8
 				},
 				{
 					"point": 69,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000035333333
+					"mQueryTimeSumPerSec": 0.000053833333
 				},
 				{
 					"point": 70,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:10:00Z",
-					"mQueryTimeSumPerSec": 6.6666665e-8
+					"mQueryTimeSumPerSec": 0.0000739
 				},
 				{
 					"point": 71,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:05:00Z",
-					"mQueryTimeSumPerSec": 0.00011543333
+					"mQueryTimeSumPerSec": 0.00011476666
 				},
 				{
 					"point": 72,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:00:00Z",
-					"mQueryTimeSumPerSec": 0.00006226667
+					"mQueryTimeSumPerSec": 0.0000072000003
 				},
 				{
 					"point": 73,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:55:00Z",
-					"mQueryTimeSumPerSec": 0.00006203333
+					"mQueryTimeSumPerSec": 0.0000564
 				},
 				{
 					"point": 74,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:50:00Z",
-					"mQueryTimeSumPerSec": 0.000058833335
+					"timestamp": "2019-01-01T03:50:00Z"
 				},
 				{
 					"point": 75,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000655
+					"timestamp": "2019-01-01T03:45:00Z"
 				},
 				{
 					"point": 76,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000032
+					"mQueryTimeSumPerSec": 9.9999994e-8
 				},
 				{
 					"point": 77,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:35:00Z",
-					"mQueryTimeSumPerSec": 0.000059566664
+					"mQueryTimeSumPerSec": 0.0000030666667
 				},
 				{
 					"point": 78,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:30:00Z",
-					"mQueryTimeSumPerSec": 0.00005553333
+					"mQueryTimeSumPerSec": 0.0000029999999
 				},
 				{
 					"point": 79,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:25:00Z",
-					"mQueryTimeSumPerSec": 0.00016643332
+					"timestamp": "2019-01-01T03:25:00Z"
 				},
 				{
 					"point": 80,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000045
+					"mQueryTimeSumPerSec": 9.9999994e-8
 				},
 				{
 					"point": 81,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:15:00Z",
-					"mQueryTimeSumPerSec": 0.000057700003
+					"mQueryTimeSumPerSec": 0.00010983333
 				},
 				{
 					"point": 82,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000586
+					"mQueryTimeSumPerSec": 0.0000037333334
 				},
 				{
 					"point": 83,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:05:00Z"
+					"timestamp": "2019-01-01T03:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000014
 				},
 				{
 					"point": 84,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:00:00Z",
-					"mQueryTimeSumPerSec": 0.000057533332
+					"mQueryTimeSumPerSec": 0.000004
 				},
 				{
 					"point": 85,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:55:00Z",
-					"mQueryTimeSumPerSec": 0.00011293333
+					"mQueryTimeSumPerSec": 0.000056
 				},
 				{
 					"point": 86,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:50:00Z"
+					"timestamp": "2019-01-01T02:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000032333332
 				},
 				{
 					"point": 87,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:45:00Z",
-					"mQueryTimeSumPerSec": 0.00005693333
+					"mQueryTimeSumPerSec": 0.000052666663
 				},
 				{
 					"point": 88,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:40:00Z"
+					"timestamp": "2019-01-01T02:40:00Z",
+					"mQueryTimeSumPerSec": 0.000058433332
 				},
 				{
 					"point": 89,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000567
+					"timestamp": "2019-01-01T02:35:00Z"
 				},
 				{
 					"point": 90,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000014333333
+					"mQueryTimeSumPerSec": 0.00011443333
 				},
 				{
 					"point": 91,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000060666666
+					"mQueryTimeSumPerSec": 0.00015793333
 				},
 				{
 					"point": 92,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000033000001
+					"mQueryTimeSumPerSec": 0.00011346667
 				},
 				{
 					"point": 93,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:15:00Z",
-					"mQueryTimeSumPerSec": 0.00010716667
+					"mQueryTimeSumPerSec": 0.00010676667
 				},
 				{
 					"point": 94,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:10:00Z",
-					"mQueryTimeSumPerSec": 0.00010713334
+					"mQueryTimeSumPerSec": 0.000055399996
 				},
 				{
 					"point": 95,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000519
+					"mQueryTimeSumPerSec": 0.0000031
 				},
 				{
 					"point": 96,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:00:00Z",
-					"mQueryTimeSumPerSec": 0.000055733337
+					"mQueryTimeSumPerSec": 0.000056066667
 				},
 				{
 					"point": 97,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:55:00Z"
+					"timestamp": "2019-01-01T01:55:00Z",
+					"mQueryTimeSumPerSec": 0.000051866667
 				},
 				{
 					"point": 98,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:50:00Z"
+					"timestamp": "2019-01-01T01:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000072333337
 				},
 				{
 					"point": 99,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000014333333
+					"mQueryTimeSumPerSec": 0.00008396667
 				},
 				{
 					"point": 100,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:40:00Z",
-					"mQueryTimeSumPerSec": 0.00005206667
+					"mQueryTimeSumPerSec": 0.0000014
 				},
 				{
 					"point": 101,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:35:00Z"
+					"timestamp": "2019-01-01T01:35:00Z",
+					"mQueryTimeSumPerSec": 0.0000014666667
 				},
 				{
 					"point": 102,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000585
+					"mQueryTimeSumPerSec": 0.0000069
 				},
 				{
 					"point": 103,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000592
+					"mQueryTimeSumPerSec": 0.00006263333
 				},
 				{
 					"point": 104,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:20:00Z",
-					"mQueryTimeSumPerSec": 0.000060833332
+					"mQueryTimeSumPerSec": 0.0000014666667
 				},
 				{
 					"point": 105,
@@ -6472,91 +5521,90 @@
 					"point": 106,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:10:00Z",
-					"mQueryTimeSumPerSec": 0.0001643
+					"mQueryTimeSumPerSec": 0.0000035666667
 				},
 				{
 					"point": 107,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:05:00Z",
-					"mQueryTimeSumPerSec": 0.00006073333
+					"timestamp": "2019-01-01T01:05:00Z"
 				},
 				{
 					"point": 108,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:00:00Z"
+					"timestamp": "2019-01-01T01:00:00Z",
+					"mQueryTimeSumPerSec": 0.00005536667
 				},
 				{
 					"point": 109,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000031333334
+					"mQueryTimeSumPerSec": 0.000057333335
 				},
 				{
 					"point": 110,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000030666667
+					"mQueryTimeSumPerSec": 0.0000014333333
 				},
 				{
 					"point": 111,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
+					"mQueryTimeSumPerSec": 0.0000031333334
 				},
 				{
 					"point": 112,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:40:00Z"
+					"timestamp": "2019-01-01T00:40:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 113,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000029666667
+					"mQueryTimeSumPerSec": 0.0000031999998
 				},
 				{
 					"point": 114,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:30:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"timestamp": "2019-01-01T00:30:00Z"
 				},
 				{
 					"point": 115,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000034999998
+					"mQueryTimeSumPerSec": 2.3333332e-7
 				},
 				{
 					"point": 116,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:20:00Z",
-					"mQueryTimeSumPerSec": 0.000059299997
+					"mQueryTimeSumPerSec": 0.000057333335
 				},
 				{
 					"point": 117,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000046666664
+					"timestamp": "2019-01-01T00:15:00Z"
 				},
 				{
 					"point": 118,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:10:00Z",
-					"mQueryTimeSumPerSec": 0.000053333333
+					"mQueryTimeSumPerSec": 0.0000034
 				},
 				{
 					"point": 119,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:05:00Z",
-					"mQueryTimeSumPerSec": 0.000055766664
+					"mQueryTimeSumPerSec": 0.0000031666668
 				}
 			],
-			"numQueries": 1002686,
-			"qps": 27.852388,
-			"load": 0.00003790639
+			"numQueries": 857012,
+			"qps": 23.80589,
+			"load": 0.000032804168
 		},
 		{
-			"rank": 7,
+			"rank": 6,
 			"dimension": "user63",
 			"metrics": {
 				"bytes_sent": {
@@ -7483,18 +6531,18 @@
 			"load": 0.000037869442
 		},
 		{
-			"rank": 8,
-			"dimension": "user12",
+			"rank": 7,
+			"dimension": "user4",
 			"metrics": {
 				"bytes_sent": {
 					"stats": {
-						"rate": 0.011495079,
-						"cnt": 209,
-						"sum": 244790,
+						"rate": 0.009419963,
+						"cnt": 162,
+						"sum": 200600,
 						"max": 249,
-						"p99": 117.124405,
-						"avg": 0.2489773,
-						"sumPerSec": 6.799722
+						"p99": 123.82716,
+						"avg": 0.24452798,
+						"sumPerSec": 5.572222
 					}
 				},
 				"docs_returned": {
@@ -7509,26 +6557,26 @@
 				},
 				"filesort": {
 					"stats": {
-						"cnt": 209
+						"cnt": 162
 					}
 				},
 				"filesort_on_disk": {
 					"stats": {
-						"cnt": 209
+						"cnt": 162
 					}
 				},
 				"full_join": {
 					"stats": {
-						"cnt": 209
+						"cnt": 162
 					}
 				},
 				"full_scan": {
 					"stats": {
-						"rate": 0.012558364,
-						"cnt": 209,
-						"sum": 780,
-						"avg": 0.0007933424,
-						"sumPerSec": 0.021666666
+						"rate": 0.010465303,
+						"cnt": 162,
+						"sum": 650,
+						"avg": 0.0007923389,
+						"sumPerSec": 0.018055556
 					}
 				},
 				"innodb_io_r_bytes": {
@@ -7563,18 +6611,18 @@
 				},
 				"lock_time": {
 					"stats": {
-						"rate": 0.012618068,
-						"cnt": 209,
-						"sum": 0.06972,
-						"max": 0.000133,
-						"p99": 0.00003335885,
-						"avg": 7.0912606e-8,
-						"sumPerSec": 0.0000019366666
+						"rate": 0.010440853,
+						"cnt": 162,
+						"sum": 0.05769,
+						"max": 0.000137,
+						"p99": 0.000035611112,
+						"avg": 7.0323125e-8,
+						"sumPerSec": 0.0000016025
 					}
 				},
 				"merge_passes": {
 					"stats": {
-						"cnt": 209
+						"cnt": 162
 					}
 				},
 				"no_good_index_used": {
@@ -7589,7 +6637,7 @@
 				},
 				"qc_hit": {
 					"stats": {
-						"cnt": 209
+						"cnt": 162
 					}
 				},
 				"query_length": {
@@ -7599,14 +6647,14 @@
 				},
 				"query_time": {
 					"stats": {
-						"rate": 0.012227574,
-						"cnt": 209,
-						"sum": 1.34637,
+						"rate": 0.010378775,
+						"cnt": 162,
+						"sum": 1.1428,
 						"min": 0.000002,
-						"max": 0.0019,
-						"p99": 0.0006441962,
-						"avg": 0.0000013694006,
-						"sumPerSec": 0.000037399168
+						"max": 0.002234,
+						"p99": 0.0007054321,
+						"avg": 0.0000013930537,
+						"sumPerSec": 0.000031744443
 					}
 				},
 				"response_length": {
@@ -7616,18 +6664,18 @@
 				},
 				"rows_affected": {
 					"stats": {
-						"cnt": 209
+						"cnt": 162
 					}
 				},
 				"rows_examined": {
 					"stats": {
-						"rate": 0.012301802,
-						"cnt": 209,
-						"sum": 836400,
+						"rate": 0.0105550755,
+						"cnt": 162,
+						"sum": 717640,
 						"max": 1268,
-						"p99": 400.19138,
-						"avg": 0.8507072,
-						"sumPerSec": 23.233334
+						"p99": 442.98764,
+						"avg": 0.87479097,
+						"sumPerSec": 19.934444
 					}
 				},
 				"rows_read": {
@@ -7637,13 +6685,13 @@
 				},
 				"rows_sent": {
 					"stats": {
-						"rate": 0.011537537,
-						"cnt": 209,
-						"sum": 1440,
+						"rate": 0.009294127,
+						"cnt": 162,
+						"sum": 1160,
 						"max": 1,
-						"p99": 0.68899524,
-						"avg": 0.0014646322,
-						"sumPerSec": 0.04
+						"p99": 0.7160494,
+						"avg": 0.0014140202,
+						"sumPerSec": 0.032222223
 					}
 				},
 				"select_full_range_join": {
@@ -7678,37 +6726,37 @@
 				},
 				"tmp_disk_tables": {
 					"stats": {
-						"cnt": 209
+						"cnt": 162
 					}
 				},
 				"tmp_table": {
 					"stats": {
-						"rate": 0.012558364,
-						"cnt": 209,
-						"sum": 780,
-						"avg": 0.0007933424,
-						"sumPerSec": 0.021666666
+						"rate": 0.010465303,
+						"cnt": 162,
+						"sum": 650,
+						"avg": 0.0007923389,
+						"sumPerSec": 0.018055556
 					}
 				},
 				"tmp_table_on_disk": {
 					"stats": {
-						"cnt": 209
+						"cnt": 162
 					}
 				},
 				"tmp_table_sizes": {
 					"stats": {
-						"cnt": 209
+						"cnt": 162
 					}
 				},
 				"tmp_tables": {
 					"stats": {
-						"rate": 0.012558364,
-						"cnt": 209,
-						"sum": 780,
+						"rate": 0.010465303,
+						"cnt": 162,
+						"sum": 650,
 						"max": 1,
-						"p99": 0.37320575,
-						"avg": 0.0007933424,
-						"sumPerSec": 0.021666666
+						"p99": 0.40123457,
+						"avg": 0.0007923389,
+						"sumPerSec": 0.018055556
 					}
 				}
 			},
@@ -7716,181 +6764,182 @@
 				{
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T10:00:00Z",
-					"mQueryTimeSumPerSec": 0.000052233332
+					"mQueryTimeSumPerSec": 0.00005866667
 				},
 				{
 					"point": 1,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:55:00Z"
+					"timestamp": "2019-01-01T09:55:00Z",
+					"mQueryTimeSumPerSec": 0.0001323
 				},
 				{
 					"point": 2,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000049666664
+					"timestamp": "2019-01-01T09:50:00Z"
 				},
 				{
 					"point": 3,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:45:00Z",
-					"mQueryTimeSumPerSec": 0.000053666667
+					"timestamp": "2019-01-01T09:45:00Z"
 				},
 				{
 					"point": 4,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:40:00Z"
+					"timestamp": "2019-01-01T09:40:00Z",
+					"mQueryTimeSumPerSec": 0.00005733333
 				},
 				{
 					"point": 5,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:35:00Z"
+					"timestamp": "2019-01-01T09:35:00Z",
+					"mQueryTimeSumPerSec": 0.00005776667
 				},
 				{
 					"point": 6,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:30:00Z",
-					"mQueryTimeSumPerSec": 0.000052333333
+					"mQueryTimeSumPerSec": 0.0001092
 				},
 				{
 					"point": 7,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:25:00Z"
+					"timestamp": "2019-01-01T09:25:00Z",
+					"mQueryTimeSumPerSec": 7.9999995e-7
 				},
 				{
 					"point": 8,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000032666667
+					"mQueryTimeSumPerSec": 0.00007153333
 				},
 				{
 					"point": 9,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:15:00Z",
-					"mQueryTimeSumPerSec": 0.00006116666
+					"mQueryTimeSumPerSec": 0.000056200002
 				},
 				{
 					"point": 10,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000557
+					"mQueryTimeSumPerSec": 0.000004533333
 				},
 				{
 					"point": 11,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:05:00Z"
+					"timestamp": "2019-01-01T09:05:00Z",
+					"mQueryTimeSumPerSec": 0.000052033334
 				},
 				{
 					"point": 12,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T09:00:00Z",
-					"mQueryTimeSumPerSec": 0.000059133334
+					"mQueryTimeSumPerSec": 0.0000031333332
 				},
 				{
 					"point": 13,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:55:00Z",
-					"mQueryTimeSumPerSec": 0.000055399996
+					"mQueryTimeSumPerSec": 0.00005303333
 				},
 				{
 					"point": 14,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000564
+					"mQueryTimeSumPerSec": 0.0000030333333
 				},
 				{
 					"point": 15,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000532
+					"timestamp": "2019-01-01T08:45:00Z"
 				},
 				{
 					"point": 16,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:40:00Z",
-					"mQueryTimeSumPerSec": 0.000053066666
+					"mQueryTimeSumPerSec": 0.000049666665
 				},
 				{
 					"point": 17,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:35:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"timestamp": "2019-01-01T08:35:00Z"
 				},
 				{
 					"point": 18,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000039333336
+					"mQueryTimeSumPerSec": 0.00010583334
 				},
 				{
 					"point": 19,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:25:00Z"
+					"timestamp": "2019-01-01T08:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000581
 				},
 				{
 					"point": 20,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:20:00Z",
-					"mQueryTimeSumPerSec": 0.000009433334
+					"mQueryTimeSumPerSec": 0.0000031333334
 				},
 				{
 					"point": 21,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:15:00Z",
-					"mQueryTimeSumPerSec": 0.00005733333
+					"mQueryTimeSumPerSec": 0.0000625
 				},
 				{
 					"point": 22,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:10:00Z",
-					"mQueryTimeSumPerSec": 0.000060966668
+					"timestamp": "2019-01-01T08:10:00Z"
 				},
 				{
 					"point": 23,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:05:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"mQueryTimeSumPerSec": 0.00006573334
 				},
 				{
 					"point": 24,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T08:00:00Z",
-					"mQueryTimeSumPerSec": 0.000054966666
+					"mQueryTimeSumPerSec": 0.00005536667
 				},
 				{
 					"point": 25,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:55:00Z",
-					"mQueryTimeSumPerSec": 0.00018293333
+					"mQueryTimeSumPerSec": 0.000056366665
 				},
 				{
 					"point": 26,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000014
+					"mQueryTimeSumPerSec": 0.000054433334
 				},
 				{
 					"point": 27,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000045
+					"mQueryTimeSumPerSec": 0.000003933333
 				},
 				{
 					"point": 28,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:40:00Z",
-					"mQueryTimeSumPerSec": 0.000053866668
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 29,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000050333333
+					"mQueryTimeSumPerSec": 1.9999999e-7
 				},
 				{
 					"point": 30,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:30:00Z",
-					"mQueryTimeSumPerSec": 2.6666666e-7
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 31,
@@ -7901,31 +6950,29 @@
 					"point": 32,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:20:00Z",
-					"mQueryTimeSumPerSec": 0.00016826666
+					"mQueryTimeSumPerSec": 6e-7
 				},
 				{
 					"point": 33,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:15:00Z",
-					"mQueryTimeSumPerSec": 0.00005063333
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 34,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T07:10:00Z",
-					"mQueryTimeSumPerSec": 0.000068333335
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 35,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:05:00Z",
-					"mQueryTimeSumPerSec": 0.0001051
+					"timestamp": "2019-01-01T07:05:00Z"
 				},
 				{
 					"point": 36,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:00:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"timestamp": "2019-01-01T07:00:00Z"
 				},
 				{
 					"point": 37,
@@ -7935,61 +6982,60 @@
 				{
 					"point": 38,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:50:00Z"
+					"timestamp": "2019-01-01T06:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000030333333
 				},
 				{
 					"point": 39,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000031333334
+					"mQueryTimeSumPerSec": 0.0001718
 				},
 				{
 					"point": 40,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000036333336
+					"mQueryTimeSumPerSec": 0.000061666666
 				},
 				{
 					"point": 41,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000034333334
+					"timestamp": "2019-01-01T06:35:00Z"
 				},
 				{
 					"point": 42,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:30:00Z",
-					"mQueryTimeSumPerSec": 0.000058933336
+					"mQueryTimeSumPerSec": 0.000059766666
 				},
 				{
 					"point": 43,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:25:00Z",
-					"mQueryTimeSumPerSec": 0.00005553333
+					"mQueryTimeSumPerSec": 5e-7
 				},
 				{
 					"point": 44,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:20:00Z",
-					"mQueryTimeSumPerSec": 0.00011493333
+					"mQueryTimeSumPerSec": 0.0000030666667
 				},
 				{
 					"point": 45,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:15:00Z",
-					"mQueryTimeSumPerSec": 0.000051433333
+					"mQueryTimeSumPerSec": 0.0000014
 				},
 				{
 					"point": 46,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:10:00Z",
-					"mQueryTimeSumPerSec": 0.000051933333
+					"timestamp": "2019-01-01T06:10:00Z"
 				},
 				{
 					"point": 47,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T06:05:00Z",
-					"mQueryTimeSumPerSec": 0.000062366664
+					"mQueryTimeSumPerSec": 0.0000589
 				},
 				{
 					"point": 48,
@@ -8001,205 +7047,204 @@
 					"point": 49,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:55:00Z",
-					"mQueryTimeSumPerSec": 0.000006333333
+					"mQueryTimeSumPerSec": 0.000056033336
 				},
 				{
 					"point": 50,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:50:00Z",
-					"mQueryTimeSumPerSec": 0.00010813333
+					"timestamp": "2019-01-01T05:50:00Z"
 				},
 				{
 					"point": 51,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:45:00Z",
-					"mQueryTimeSumPerSec": 0.0001069
+					"timestamp": "2019-01-01T05:45:00Z"
 				},
 				{
 					"point": 52,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:40:00Z",
-					"mQueryTimeSumPerSec": 0.00011196667
+					"timestamp": "2019-01-01T05:40:00Z"
 				},
 				{
 					"point": 53,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000579
+					"timestamp": "2019-01-01T05:35:00Z"
 				},
 				{
 					"point": 54,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:30:00Z",
-					"mQueryTimeSumPerSec": 0.00005276667
+					"mQueryTimeSumPerSec": 0.000059433332
 				},
 				{
 					"point": 55,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000062333334
+					"timestamp": "2019-01-01T05:25:00Z"
 				},
 				{
 					"point": 56,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:20:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"timestamp": "2019-01-01T05:20:00Z"
 				},
 				{
 					"point": 57,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:15:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"mQueryTimeSumPerSec": 0.000055399996
 				},
 				{
 					"point": 58,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:10:00Z"
+					"timestamp": "2019-01-01T05:10:00Z",
+					"mQueryTimeSumPerSec": 1.9999999e-7
 				},
 				{
 					"point": 59,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:05:00Z"
+					"timestamp": "2019-01-01T05:05:00Z",
+					"mQueryTimeSumPerSec": 0.000053733333
 				},
 				{
 					"point": 60,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T05:00:00Z",
-					"mQueryTimeSumPerSec": 0.00005763333
+					"mQueryTimeSumPerSec": 1.3333333e-7
 				},
 				{
 					"point": 61,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000029333335
+					"mQueryTimeSumPerSec": 0.000056133333
 				},
 				{
 					"point": 62,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:50:00Z"
+					"timestamp": "2019-01-01T04:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000552
 				},
 				{
 					"point": 63,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000547
+					"mQueryTimeSumPerSec": 0.0000015333333
 				},
 				{
 					"point": 64,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:40:00Z"
+					"timestamp": "2019-01-01T04:40:00Z",
+					"mQueryTimeSumPerSec": 0.0000060666666
 				},
 				{
 					"point": 65,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:35:00Z",
-					"mQueryTimeSumPerSec": 0.000054066666
+					"mQueryTimeSumPerSec": 0.0000031
 				},
 				{
 					"point": 66,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:30:00Z",
-					"mQueryTimeSumPerSec": 0.000056466666
+					"mQueryTimeSumPerSec": 0.000060433336
 				},
 				{
 					"point": 67,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:25:00Z",
-					"mQueryTimeSumPerSec": 0.000061666666
+					"mQueryTimeSumPerSec": 0.0000047
 				},
 				{
 					"point": 68,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000032
+					"mQueryTimeSumPerSec": 0.0000031666668
 				},
 				{
 					"point": 69,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:15:00Z"
+					"timestamp": "2019-01-01T04:15:00Z",
+					"mQueryTimeSumPerSec": 0.00011653333
 				},
 				{
 					"point": 70,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000581
+					"mQueryTimeSumPerSec": 9.9999994e-8
 				},
 				{
 					"point": 71,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:05:00Z",
-					"mQueryTimeSumPerSec": 0.000007966667
+					"mQueryTimeSumPerSec": 0.000057633333
 				},
 				{
 					"point": 72,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T04:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000033000001
+					"mQueryTimeSumPerSec": 0.0000023333332
 				},
 				{
 					"point": 73,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:55:00Z",
-					"mQueryTimeSumPerSec": 0.000058633334
+					"mQueryTimeSumPerSec": 0.00005516667
 				},
 				{
 					"point": 74,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:50:00Z",
-					"mQueryTimeSumPerSec": 0.000052333333
+					"timestamp": "2019-01-01T03:50:00Z"
 				},
 				{
 					"point": 75,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:45:00Z",
-					"mQueryTimeSumPerSec": 0.00011176667
+					"mQueryTimeSumPerSec": 0.0000567
 				},
 				{
 					"point": 76,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:40:00Z",
-					"mQueryTimeSumPerSec": 0.00012026666
+					"mQueryTimeSumPerSec": 0.000055166667
 				},
 				{
 					"point": 77,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000014666667
+					"mQueryTimeSumPerSec": 0.000060833332
 				},
 				{
 					"point": 78,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:30:00Z"
+					"timestamp": "2019-01-01T03:30:00Z",
+					"mQueryTimeSumPerSec": 0.0001071
 				},
 				{
 					"point": 79,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000021
+					"mQueryTimeSumPerSec": 0.000055833334
 				},
 				{
 					"point": 80,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:20:00Z",
-					"mQueryTimeSumPerSec": 1.6666667e-7
+					"mQueryTimeSumPerSec": 0.00012626666
 				},
 				{
 					"point": 81,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:15:00Z",
-					"mQueryTimeSumPerSec": 0.000115233335
+					"mQueryTimeSumPerSec": 0.000061499995
 				},
 				{
 					"point": 82,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:10:00Z",
-					"mQueryTimeSumPerSec": 0.000059199996
+					"mQueryTimeSumPerSec": 0.000059266666
 				},
 				{
 					"point": 83,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T03:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000029999999
+					"mQueryTimeSumPerSec": 0.000006566667
 				},
 				{
 					"point": 84,
@@ -8214,14 +7259,1872 @@
 				{
 					"point": 86,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:50:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"timestamp": "2019-01-01T02:50:00Z"
 				},
 				{
 					"point": 87,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:45:00Z",
-					"mQueryTimeSumPerSec": 0.00011546667
+					"mQueryTimeSumPerSec": 0.0001134
+				},
+				{
+					"point": 88,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:40:00Z",
+					"mQueryTimeSumPerSec": 0.000058966663
+				},
+				{
+					"point": 89,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:35:00Z",
+					"mQueryTimeSumPerSec": 0.0000029999999
+				},
+				{
+					"point": 90,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:30:00Z"
+				},
+				{
+					"point": 91,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:25:00Z",
+					"mQueryTimeSumPerSec": 0.00006713333
+				},
+				{
+					"point": 92,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:20:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 93,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:15:00Z",
+					"mQueryTimeSumPerSec": 0.000053466665
+				},
+				{
+					"point": 94,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:10:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 95,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:05:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 96,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:00:00Z"
+				},
+				{
+					"point": 97,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:55:00Z",
+					"mQueryTimeSumPerSec": 0.0000016333333
+				},
+				{
+					"point": 98,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:50:00Z",
+					"mQueryTimeSumPerSec": 0.000055700002
+				},
+				{
+					"point": 99,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:45:00Z",
+					"mQueryTimeSumPerSec": 0.00017083334
+				},
+				{
+					"point": 100,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:40:00Z",
+					"mQueryTimeSumPerSec": 0.000057699996
+				},
+				{
+					"point": 101,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:35:00Z",
+					"mQueryTimeSumPerSec": 0.000052166666
+				},
+				{
+					"point": 102,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:30:00Z",
+					"mQueryTimeSumPerSec": 0.0000014
+				},
+				{
+					"point": 103,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:25:00Z"
+				},
+				{
+					"point": 104,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:20:00Z"
+				},
+				{
+					"point": 105,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:15:00Z",
+					"mQueryTimeSumPerSec": 0.0000031333334
+				},
+				{
+					"point": 106,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:10:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 107,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000031666668
+				},
+				{
+					"point": 108,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:00:00Z",
+					"mQueryTimeSumPerSec": 0.0000032666667
+				},
+				{
+					"point": 109,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:55:00Z"
+				},
+				{
+					"point": 110,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000585
+				},
+				{
+					"point": 111,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:45:00Z",
+					"mQueryTimeSumPerSec": 0.000055033335
+				},
+				{
+					"point": 112,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:40:00Z",
+					"mQueryTimeSumPerSec": 0.0001076
+				},
+				{
+					"point": 113,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:35:00Z"
+				},
+				{
+					"point": 114,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:30:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 115,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:25:00Z",
+					"mQueryTimeSumPerSec": 0.000054433338
+				},
+				{
+					"point": 116,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:20:00Z",
+					"mQueryTimeSumPerSec": 0.000054499997
+				},
+				{
+					"point": 117,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:15:00Z",
+					"mQueryTimeSumPerSec": 0.0000014
+				},
+				{
+					"point": 118,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:10:00Z"
+				},
+				{
+					"point": 119,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000015333333
+				}
+			],
+			"numQueries": 820356,
+			"qps": 22.787666,
+			"load": 0.000031744443
+		},
+		{
+			"rank": 8,
+			"dimension": "user95",
+			"metrics": {
+				"bytes_sent": {
+					"stats": {
+						"rate": 0.010832958,
+						"cnt": 176,
+						"sum": 230690,
+						"max": 249,
+						"p99": 131.07387,
+						"avg": 0.25195336,
+						"sumPerSec": 6.408056
+					}
+				},
+				"docs_returned": {
+					"stats": {
+
+					}
+				},
+				"docs_scanned": {
+					"stats": {
+
+					}
+				},
+				"filesort": {
+					"stats": {
+						"cnt": 176
+					}
+				},
+				"filesort_on_disk": {
+					"stats": {
+						"cnt": 176
+					}
+				},
+				"full_join": {
+					"stats": {
+						"cnt": 176
+					}
+				},
+				"full_scan": {
+					"stats": {
+						"rate": 0.011431332,
+						"cnt": 176,
+						"sum": 710,
+						"avg": 0.0007754427,
+						"sumPerSec": 0.019722221
+					}
+				},
+				"innodb_io_r_bytes": {
+					"stats": {
+
+					}
+				},
+				"innodb_io_r_ops": {
+					"stats": {
+
+					}
+				},
+				"innodb_io_r_wait": {
+					"stats": {
+
+					}
+				},
+				"innodb_pages_distinct": {
+					"stats": {
+
+					}
+				},
+				"innodb_queue_wait": {
+					"stats": {
+
+					}
+				},
+				"innodb_rec_lock_wait": {
+					"stats": {
+
+					}
+				},
+				"lock_time": {
+					"stats": {
+						"rate": 0.010934935,
+						"cnt": 176,
+						"sum": 0.06042,
+						"max": 0.000159,
+						"p99": 0.000034329547,
+						"avg": 6.5989084e-8,
+						"sumPerSec": 0.0000016783333
+					}
+				},
+				"merge_passes": {
+					"stats": {
+						"cnt": 176
+					}
+				},
+				"no_good_index_used": {
+					"stats": {
+
+					}
+				},
+				"no_index_used": {
+					"stats": {
+
+					}
+				},
+				"qc_hit": {
+					"stats": {
+						"cnt": 176
+					}
+				},
+				"query_length": {
+					"stats": {
+
+					}
+				},
+				"query_time": {
+					"stats": {
+						"rate": 0.011273068,
+						"cnt": 176,
+						"sum": 1.24127,
+						"min": 0.000003,
+						"max": 0.001974,
+						"p99": 0.00070526707,
+						"avg": 0.0000013556813,
+						"sumPerSec": 0.00003447972
+					}
+				},
+				"response_length": {
+					"stats": {
+
+					}
+				},
+				"rows_affected": {
+					"stats": {
+						"cnt": 176
+					}
+				},
+				"rows_examined": {
+					"stats": {
+						"rate": 0.011716422,
+						"cnt": 176,
+						"sum": 796600,
+						"max": 1268,
+						"p99": 452.61365,
+						"avg": 0.87002486,
+						"sumPerSec": 22.127777
+					}
+				},
+				"rows_read": {
+					"stats": {
+
+					}
+				},
+				"rows_sent": {
+					"stats": {
+						"rate": 0.010495954,
+						"cnt": 176,
+						"sum": 1310,
+						"max": 1,
+						"p99": 0.7443182,
+						"avg": 0.0014307464,
+						"sumPerSec": 0.03638889
+					}
+				},
+				"select_full_range_join": {
+					"stats": {
+
+					}
+				},
+				"select_range": {
+					"stats": {
+
+					}
+				},
+				"select_range_check": {
+					"stats": {
+
+					}
+				},
+				"sort_range": {
+					"stats": {
+
+					}
+				},
+				"sort_rows": {
+					"stats": {
+
+					}
+				},
+				"sort_scan": {
+					"stats": {
+
+					}
+				},
+				"tmp_disk_tables": {
+					"stats": {
+						"cnt": 176
+					}
+				},
+				"tmp_table": {
+					"stats": {
+						"rate": 0.011431332,
+						"cnt": 176,
+						"sum": 710,
+						"avg": 0.0007754427,
+						"sumPerSec": 0.019722221
+					}
+				},
+				"tmp_table_on_disk": {
+					"stats": {
+						"cnt": 176
+					}
+				},
+				"tmp_table_sizes": {
+					"stats": {
+						"cnt": 176
+					}
+				},
+				"tmp_tables": {
+					"stats": {
+						"rate": 0.011431332,
+						"cnt": 176,
+						"sum": 710,
+						"max": 1,
+						"p99": 0.4034091,
+						"avg": 0.0007754427,
+						"sumPerSec": 0.019722221
+					}
+				}
+			},
+			"sparkline": [
+				{
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T10:00:00Z"
+				},
+				{
+					"point": 1,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:55:00Z",
+					"mQueryTimeSumPerSec": 0.0000074333334
+				},
+				{
+					"point": 2,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:50:00Z"
+				},
+				{
+					"point": 3,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:45:00Z",
+					"mQueryTimeSumPerSec": 0.000061700004
+				},
+				{
+					"point": 4,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:40:00Z",
+					"mQueryTimeSumPerSec": 0.000058033333
+				},
+				{
+					"point": 5,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:35:00Z",
+					"mQueryTimeSumPerSec": 0.000069166665
+				},
+				{
+					"point": 6,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:30:00Z",
+					"mQueryTimeSumPerSec": 0.000006333333
+				},
+				{
+					"point": 7,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:25:00Z",
+					"mQueryTimeSumPerSec": 0.000054566663
+				},
+				{
+					"point": 8,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:20:00Z",
+					"mQueryTimeSumPerSec": 0.0000016333333
+				},
+				{
+					"point": 9,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:15:00Z"
+				},
+				{
+					"point": 10,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:10:00Z",
+					"mQueryTimeSumPerSec": 0.000051199997
+				},
+				{
+					"point": 11,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:05:00Z"
+				},
+				{
+					"point": 12,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:00:00Z",
+					"mQueryTimeSumPerSec": 0.00005533333
+				},
+				{
+					"point": 13,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:55:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 14,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:50:00Z",
+					"mQueryTimeSumPerSec": 0.00011006666
+				},
+				{
+					"point": 15,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:45:00Z",
+					"mQueryTimeSumPerSec": 0.0000031333334
+				},
+				{
+					"point": 16,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:40:00Z",
+					"mQueryTimeSumPerSec": 0.00011103333
+				},
+				{
+					"point": 17,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:35:00Z",
+					"mQueryTimeSumPerSec": 0.0000033666668
+				},
+				{
+					"point": 18,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:30:00Z"
+				},
+				{
+					"point": 19,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:25:00Z",
+					"mQueryTimeSumPerSec": 0.0001135
+				},
+				{
+					"point": 20,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:20:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 21,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:15:00Z",
+					"mQueryTimeSumPerSec": 0.0000568
+				},
+				{
+					"point": 22,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000635
+				},
+				{
+					"point": 23,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:05:00Z",
+					"mQueryTimeSumPerSec": 0.000006566667
+				},
+				{
+					"point": 24,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:00:00Z"
+				},
+				{
+					"point": 25,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:55:00Z",
+					"mQueryTimeSumPerSec": 0.000057400004
+				},
+				{
+					"point": 26,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:50:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 27,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:45:00Z"
+				},
+				{
+					"point": 28,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:40:00Z"
+				},
+				{
+					"point": 29,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:35:00Z",
+					"mQueryTimeSumPerSec": 0.000054066666
+				},
+				{
+					"point": 30,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:30:00Z"
+				},
+				{
+					"point": 31,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:25:00Z",
+					"mQueryTimeSumPerSec": 0.0001198
+				},
+				{
+					"point": 32,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:20:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 33,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:15:00Z"
+				},
+				{
+					"point": 34,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:10:00Z"
+				},
+				{
+					"point": 35,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:05:00Z",
+					"mQueryTimeSumPerSec": 0.00010443333
+				},
+				{
+					"point": 36,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:00:00Z",
+					"mQueryTimeSumPerSec": 0.00010883333
+				},
+				{
+					"point": 37,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:55:00Z"
+				},
+				{
+					"point": 38,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:50:00Z",
+					"mQueryTimeSumPerSec": 0.00006586666
+				},
+				{
+					"point": 39,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:45:00Z",
+					"mQueryTimeSumPerSec": 0.00005626667
+				},
+				{
+					"point": 40,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:40:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 41,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:35:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 42,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:30:00Z",
+					"mQueryTimeSumPerSec": 0.000056633333
+				},
+				{
+					"point": 43,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:25:00Z",
+					"mQueryTimeSumPerSec": 0.000055466666
+				},
+				{
+					"point": 44,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:20:00Z",
+					"mQueryTimeSumPerSec": 0.0000044666667
+				},
+				{
+					"point": 45,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:15:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 46,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:10:00Z",
+					"mQueryTimeSumPerSec": 0.000057200003
+				},
+				{
+					"point": 47,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000582
+				},
+				{
+					"point": 48,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:00:00Z",
+					"mQueryTimeSumPerSec": 0.0000011333333
+				},
+				{
+					"point": 49,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:55:00Z",
+					"mQueryTimeSumPerSec": 0.0000052
+				},
+				{
+					"point": 50,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:50:00Z",
+					"mQueryTimeSumPerSec": 0.000059233334
+				},
+				{
+					"point": 51,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:45:00Z",
+					"mQueryTimeSumPerSec": 0.00011473333
+				},
+				{
+					"point": 52,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:40:00Z",
+					"mQueryTimeSumPerSec": 0.000006033333
+				},
+				{
+					"point": 53,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:35:00Z"
+				},
+				{
+					"point": 54,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:30:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 55,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:25:00Z",
+					"mQueryTimeSumPerSec": 0.0001129
+				},
+				{
+					"point": 56,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:20:00Z",
+					"mQueryTimeSumPerSec": 0.000055933335
+				},
+				{
+					"point": 57,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:15:00Z",
+					"mQueryTimeSumPerSec": 0.0000036
+				},
+				{
+					"point": 58,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:10:00Z",
+					"mQueryTimeSumPerSec": 0.0002152
+				},
+				{
+					"point": 59,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000603
+				},
+				{
+					"point": 60,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:00:00Z"
+				},
+				{
+					"point": 61,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:55:00Z",
+					"mQueryTimeSumPerSec": 0.00005933333
+				},
+				{
+					"point": 62,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:50:00Z",
+					"mQueryTimeSumPerSec": 0.0001073
+				},
+				{
+					"point": 63,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:45:00Z",
+					"mQueryTimeSumPerSec": 0.000009866667
+				},
+				{
+					"point": 64,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:40:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 65,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:35:00Z",
+					"mQueryTimeSumPerSec": 0.000004
+				},
+				{
+					"point": 66,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:30:00Z"
+				},
+				{
+					"point": 67,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000574
+				},
+				{
+					"point": 68,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:20:00Z"
+				},
+				{
+					"point": 69,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:15:00Z",
+					"mQueryTimeSumPerSec": 0.000062600004
+				},
+				{
+					"point": 70,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:10:00Z",
+					"mQueryTimeSumPerSec": 0.000051266667
+				},
+				{
+					"point": 71,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:05:00Z",
+					"mQueryTimeSumPerSec": 0.000054333334
+				},
+				{
+					"point": 72,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:00:00Z"
+				},
+				{
+					"point": 73,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:55:00Z",
+					"mQueryTimeSumPerSec": 0.00011749999
+				},
+				{
+					"point": 74,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:50:00Z"
+				},
+				{
+					"point": 75,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:45:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 76,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:40:00Z",
+					"mQueryTimeSumPerSec": 0.0000042333336
+				},
+				{
+					"point": 77,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:35:00Z",
+					"mQueryTimeSumPerSec": 0.0000061
+				},
+				{
+					"point": 78,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:30:00Z",
+					"mQueryTimeSumPerSec": 0.000054499997
+				},
+				{
+					"point": 79,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:25:00Z",
+					"mQueryTimeSumPerSec": 0.000053966665
+				},
+				{
+					"point": 80,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:20:00Z"
+				},
+				{
+					"point": 81,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:15:00Z",
+					"mQueryTimeSumPerSec": 0.0000032333332
+				},
+				{
+					"point": 82,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:10:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 83,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:05:00Z",
+					"mQueryTimeSumPerSec": 1.9999999e-7
+				},
+				{
+					"point": 84,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:00:00Z",
+					"mQueryTimeSumPerSec": 0.000056166667
+				},
+				{
+					"point": 85,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:55:00Z"
+				},
+				{
+					"point": 86,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000641
+				},
+				{
+					"point": 87,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:45:00Z",
+					"mQueryTimeSumPerSec": 0.000053966665
+				},
+				{
+					"point": 88,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:40:00Z",
+					"mQueryTimeSumPerSec": 0.00016996668
+				},
+				{
+					"point": 89,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:35:00Z",
+					"mQueryTimeSumPerSec": 0.0000031333334
+				},
+				{
+					"point": 90,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:30:00Z",
+					"mQueryTimeSumPerSec": 0.000004533333
+				},
+				{
+					"point": 91,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:25:00Z",
+					"mQueryTimeSumPerSec": 0.000059433332
+				},
+				{
+					"point": 92,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:20:00Z",
+					"mQueryTimeSumPerSec": 0.000047466667
+				},
+				{
+					"point": 93,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:15:00Z"
+				},
+				{
+					"point": 94,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:10:00Z",
+					"mQueryTimeSumPerSec": 0.000104566665
+				},
+				{
+					"point": 95,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:05:00Z",
+					"mQueryTimeSumPerSec": 0.000058800004
+				},
+				{
+					"point": 96,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:00:00Z",
+					"mQueryTimeSumPerSec": 0.000058566664
+				},
+				{
+					"point": 97,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:55:00Z"
+				},
+				{
+					"point": 98,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:50:00Z"
+				},
+				{
+					"point": 99,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:45:00Z",
+					"mQueryTimeSumPerSec": 0.0000041000003
+				},
+				{
+					"point": 100,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:40:00Z"
+				},
+				{
+					"point": 101,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:35:00Z"
+				},
+				{
+					"point": 102,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:30:00Z",
+					"mQueryTimeSumPerSec": 0.0000030666667
+				},
+				{
+					"point": 103,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000032
+				},
+				{
+					"point": 104,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:20:00Z",
+					"mQueryTimeSumPerSec": 0.000057933332
+				},
+				{
+					"point": 105,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:15:00Z",
+					"mQueryTimeSumPerSec": 0.00005623333
+				},
+				{
+					"point": 106,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000031999998
+				},
+				{
+					"point": 107,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:05:00Z",
+					"mQueryTimeSumPerSec": 0.000058166665
+				},
+				{
+					"point": 108,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T01:00:00Z",
+					"mQueryTimeSumPerSec": 0.000051666666
+				},
+				{
+					"point": 109,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:55:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 110,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000044333333
+				},
+				{
+					"point": 111,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:45:00Z",
+					"mQueryTimeSumPerSec": 0.0001738
+				},
+				{
+					"point": 112,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:40:00Z",
+					"mQueryTimeSumPerSec": 0.000058700003
+				},
+				{
+					"point": 113,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:35:00Z",
+					"mQueryTimeSumPerSec": 2.6666666e-7
+				},
+				{
+					"point": 114,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:30:00Z",
+					"mQueryTimeSumPerSec": 0.0000014
+				},
+				{
+					"point": 115,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000015333333
+				},
+				{
+					"point": 116,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:20:00Z",
+					"mQueryTimeSumPerSec": 2.3333332e-7
+				},
+				{
+					"point": 117,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:15:00Z"
+				},
+				{
+					"point": 118,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000040666664
+				},
+				{
+					"point": 119,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T00:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000614
+				}
+			],
+			"numQueries": 915606,
+			"qps": 25.4335,
+			"load": 0.00003447972
+		},
+		{
+			"rank": 9,
+			"dimension": "user88",
+			"metrics": {
+				"bytes_sent": {
+					"stats": {
+						"rate": 0.0096256435,
+						"cnt": 167,
+						"sum": 204980,
+						"max": 249,
+						"p99": 122.742516,
+						"avg": 0.25059783,
+						"sumPerSec": 5.6938887
+					}
+				},
+				"docs_returned": {
+					"stats": {
+
+					}
+				},
+				"docs_scanned": {
+					"stats": {
+
+					}
+				},
+				"filesort": {
+					"stats": {
+						"cnt": 167
+					}
+				},
+				"filesort_on_disk": {
+					"stats": {
+						"cnt": 167
+					}
+				},
+				"full_join": {
+					"stats": {
+						"cnt": 167
+					}
+				},
+				"full_scan": {
+					"stats": {
+						"rate": 0.010626309,
+						"cnt": 167,
+						"sum": 660,
+						"avg": 0.00080688146,
+						"sumPerSec": 0.018333333
+					}
+				},
+				"innodb_io_r_bytes": {
+					"stats": {
+
+					}
+				},
+				"innodb_io_r_ops": {
+					"stats": {
+
+					}
+				},
+				"innodb_io_r_wait": {
+					"stats": {
+
+					}
+				},
+				"innodb_pages_distinct": {
+					"stats": {
+
+					}
+				},
+				"innodb_queue_wait": {
+					"stats": {
+
+					}
+				},
+				"innodb_rec_lock_wait": {
+					"stats": {
+
+					}
+				},
+				"lock_time": {
+					"stats": {
+						"rate": 0.010634504,
+						"cnt": 167,
+						"sum": 0.05876,
+						"max": 0.000162,
+						"p99": 0.00003518563,
+						"avg": 7.18369e-8,
+						"sumPerSec": 0.0000016322222
+					}
+				},
+				"merge_passes": {
+					"stats": {
+						"cnt": 167
+					}
+				},
+				"no_good_index_used": {
+					"stats": {
+
+					}
+				},
+				"no_index_used": {
+					"stats": {
+
+					}
+				},
+				"qc_hit": {
+					"stats": {
+						"cnt": 167
+					}
+				},
+				"query_length": {
+					"stats": {
+
+					}
+				},
+				"query_time": {
+					"stats": {
+						"rate": 0.010494116,
+						"cnt": 167,
+						"sum": 1.1555,
+						"min": 0.000002,
+						"max": 0.002369,
+						"p99": 0.00069191615,
+						"avg": 0.0000014126539,
+						"sumPerSec": 0.000032097225
+					}
+				},
+				"response_length": {
+					"stats": {
+
+					}
+				},
+				"rows_affected": {
+					"stats": {
+						"cnt": 167
+					}
+				},
+				"rows_examined": {
+					"stats": {
+						"rate": 0.010572136,
+						"cnt": 167,
+						"sum": 718800,
+						"max": 1268,
+						"p99": 430.41916,
+						"avg": 0.87876725,
+						"sumPerSec": 19.966667
+					}
+				},
+				"rows_read": {
+					"stats": {
+
+					}
+				},
+				"rows_sent": {
+					"stats": {
+						"rate": 0.0094543705,
+						"cnt": 167,
+						"sum": 1180,
+						"max": 1,
+						"p99": 0.70658684,
+						"avg": 0.0014426063,
+						"sumPerSec": 0.03277778
+					}
+				},
+				"select_full_range_join": {
+					"stats": {
+
+					}
+				},
+				"select_range": {
+					"stats": {
+
+					}
+				},
+				"select_range_check": {
+					"stats": {
+
+					}
+				},
+				"sort_range": {
+					"stats": {
+
+					}
+				},
+				"sort_rows": {
+					"stats": {
+
+					}
+				},
+				"sort_scan": {
+					"stats": {
+
+					}
+				},
+				"tmp_disk_tables": {
+					"stats": {
+						"cnt": 167
+					}
+				},
+				"tmp_table": {
+					"stats": {
+						"rate": 0.010626309,
+						"cnt": 167,
+						"sum": 660,
+						"avg": 0.00080688146,
+						"sumPerSec": 0.018333333
+					}
+				},
+				"tmp_table_on_disk": {
+					"stats": {
+						"cnt": 167
+					}
+				},
+				"tmp_table_sizes": {
+					"stats": {
+						"cnt": 167
+					}
+				},
+				"tmp_tables": {
+					"stats": {
+						"rate": 0.010626309,
+						"cnt": 167,
+						"sum": 660,
+						"max": 1,
+						"p99": 0.39520958,
+						"avg": 0.00080688146,
+						"sumPerSec": 0.018333333
+					}
+				}
+			},
+			"sparkline": [
+				{
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T10:00:00Z",
+					"mQueryTimeSumPerSec": 0.00006616667
+				},
+				{
+					"point": 1,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:55:00Z",
+					"mQueryTimeSumPerSec": 0.000108466666
+				},
+				{
+					"point": 2,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:50:00Z",
+					"mQueryTimeSumPerSec": 0.0000035333335
+				},
+				{
+					"point": 3,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:45:00Z",
+					"mQueryTimeSumPerSec": 1.6666667e-7
+				},
+				{
+					"point": 4,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:40:00Z",
+					"mQueryTimeSumPerSec": 0.00005296667
+				},
+				{
+					"point": 5,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:35:00Z",
+					"mQueryTimeSumPerSec": 0.000054666667
+				},
+				{
+					"point": 6,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:30:00Z",
+					"mQueryTimeSumPerSec": 0.0000070333335
+				},
+				{
+					"point": 7,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:25:00Z",
+					"mQueryTimeSumPerSec": 0.000110366665
+				},
+				{
+					"point": 8,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:20:00Z",
+					"mQueryTimeSumPerSec": 0.00005633333
+				},
+				{
+					"point": 9,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:15:00Z",
+					"mQueryTimeSumPerSec": 0.000055999997
+				},
+				{
+					"point": 10,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:10:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 11,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:05:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 12,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T09:00:00Z",
+					"mQueryTimeSumPerSec": 0.0000038666667
+				},
+				{
+					"point": 13,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:55:00Z",
+					"mQueryTimeSumPerSec": 0.000056300003
+				},
+				{
+					"point": 14,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:50:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 15,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:45:00Z",
+					"mQueryTimeSumPerSec": 0.0000036666665
+				},
+				{
+					"point": 16,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:40:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 17,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:35:00Z",
+					"mQueryTimeSumPerSec": 0.0000029999999
+				},
+				{
+					"point": 18,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:30:00Z",
+					"mQueryTimeSumPerSec": 0.000056933335
+				},
+				{
+					"point": 19,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:25:00Z"
+				},
+				{
+					"point": 20,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:20:00Z",
+					"mQueryTimeSumPerSec": 0.0000067333335
+				},
+				{
+					"point": 21,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:15:00Z",
+					"mQueryTimeSumPerSec": 0.0000544
+				},
+				{
+					"point": 22,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000031
+				},
+				{
+					"point": 23,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:05:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 24,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T08:00:00Z",
+					"mQueryTimeSumPerSec": 0.0000032
+				},
+				{
+					"point": 25,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:55:00Z",
+					"mQueryTimeSumPerSec": 0.00011353333
+				},
+				{
+					"point": 26,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:50:00Z",
+					"mQueryTimeSumPerSec": 0.00007913334
+				},
+				{
+					"point": 27,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:45:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 28,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:40:00Z"
+				},
+				{
+					"point": 29,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:35:00Z"
+				},
+				{
+					"point": 30,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:30:00Z",
+					"mQueryTimeSumPerSec": 0.0000014333333
+				},
+				{
+					"point": 31,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000517
+				},
+				{
+					"point": 32,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:20:00Z"
+				},
+				{
+					"point": 33,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:15:00Z"
+				},
+				{
+					"point": 34,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:10:00Z",
+					"mQueryTimeSumPerSec": 0.000052466665
+				},
+				{
+					"point": 35,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:05:00Z"
+				},
+				{
+					"point": 36,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T07:00:00Z",
+					"mQueryTimeSumPerSec": 0.0000612
+				},
+				{
+					"point": 37,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:55:00Z",
+					"mQueryTimeSumPerSec": 0.000053166666
+				},
+				{
+					"point": 38,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:50:00Z",
+					"mQueryTimeSumPerSec": 0.000056566663
+				},
+				{
+					"point": 39,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:45:00Z",
+					"mQueryTimeSumPerSec": 0.0000031333334
+				},
+				{
+					"point": 40,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:40:00Z",
+					"mQueryTimeSumPerSec": 0.0000060666666
+				},
+				{
+					"point": 41,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:35:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 42,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:30:00Z",
+					"mQueryTimeSumPerSec": 0.00005486667
+				},
+				{
+					"point": 43,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000014333333
+				},
+				{
+					"point": 44,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:20:00Z",
+					"mQueryTimeSumPerSec": 0.000058966663
+				},
+				{
+					"point": 45,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:15:00Z",
+					"mQueryTimeSumPerSec": 0.0000057666666
+				},
+				{
+					"point": 46,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:10:00Z",
+					"mQueryTimeSumPerSec": 0.0000551
+				},
+				{
+					"point": 47,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000556
+				},
+				{
+					"point": 48,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T06:00:00Z"
+				},
+				{
+					"point": 49,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:55:00Z",
+					"mQueryTimeSumPerSec": 0.0000015666667
+				},
+				{
+					"point": 50,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:50:00Z"
+				},
+				{
+					"point": 51,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:45:00Z",
+					"mQueryTimeSumPerSec": 0.000006433333
+				},
+				{
+					"point": 52,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:40:00Z",
+					"mQueryTimeSumPerSec": 0.0000029999999
+				},
+				{
+					"point": 53,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:35:00Z",
+					"mQueryTimeSumPerSec": 9.9999994e-8
+				},
+				{
+					"point": 54,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:30:00Z",
+					"mQueryTimeSumPerSec": 0.0000502
+				},
+				{
+					"point": 55,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:25:00Z",
+					"mQueryTimeSumPerSec": 6.6666665e-8
+				},
+				{
+					"point": 56,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:20:00Z",
+					"mQueryTimeSumPerSec": 0.0000581
+				},
+				{
+					"point": 57,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:15:00Z"
+				},
+				{
+					"point": 58,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:10:00Z",
+					"mQueryTimeSumPerSec": 0.00006383333
+				},
+				{
+					"point": 59,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:05:00Z",
+					"mQueryTimeSumPerSec": 0.000053199998
+				},
+				{
+					"point": 60,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T05:00:00Z"
+				},
+				{
+					"point": 61,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:55:00Z",
+					"mQueryTimeSumPerSec": 0.000055166664
+				},
+				{
+					"point": 62,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:50:00Z",
+					"mQueryTimeSumPerSec": 1.6666667e-7
+				},
+				{
+					"point": 63,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:45:00Z"
+				},
+				{
+					"point": 64,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:40:00Z",
+					"mQueryTimeSumPerSec": 0.0000036666665
+				},
+				{
+					"point": 65,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:35:00Z",
+					"mQueryTimeSumPerSec": 0.00016786666
+				},
+				{
+					"point": 66,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:30:00Z",
+					"mQueryTimeSumPerSec": 0.0000021333333
+				},
+				{
+					"point": 67,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000035333335
+				},
+				{
+					"point": 68,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:20:00Z",
+					"mQueryTimeSumPerSec": 0.00006436667
+				},
+				{
+					"point": 69,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:15:00Z",
+					"mQueryTimeSumPerSec": 0.000057333335
+				},
+				{
+					"point": 70,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:10:00Z"
+				},
+				{
+					"point": 71,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:05:00Z"
+				},
+				{
+					"point": 72,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T04:00:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 73,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:55:00Z",
+					"mQueryTimeSumPerSec": 0.000060533333
+				},
+				{
+					"point": 74,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:50:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 75,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:45:00Z",
+					"mQueryTimeSumPerSec": 0.0000015333333
+				},
+				{
+					"point": 76,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:40:00Z"
+				},
+				{
+					"point": 77,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:35:00Z"
+				},
+				{
+					"point": 78,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:30:00Z"
+				},
+				{
+					"point": 79,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:25:00Z",
+					"mQueryTimeSumPerSec": 0.0000044333333
+				},
+				{
+					"point": 80,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:20:00Z"
+				},
+				{
+					"point": 81,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:15:00Z",
+					"mQueryTimeSumPerSec": 0.000050366667
+				},
+				{
+					"point": 82,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:10:00Z",
+					"mQueryTimeSumPerSec": 0.000052833333
+				},
+				{
+					"point": 83,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000032333332
+				},
+				{
+					"point": 84,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T03:00:00Z"
+				},
+				{
+					"point": 85,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:55:00Z",
+					"mQueryTimeSumPerSec": 1.3333333e-7
+				},
+				{
+					"point": 86,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:50:00Z",
+					"mQueryTimeSumPerSec": 0.000053300002
+				},
+				{
+					"point": 87,
+					"timeFrame": 300,
+					"timestamp": "2019-01-01T02:45:00Z",
+					"mQueryTimeSumPerSec": 0.000111233334
 				},
 				{
 					"point": 88,
@@ -8232,191 +9135,192 @@
 					"point": 89,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:35:00Z",
-					"mQueryTimeSumPerSec": 0.000055833334
+					"mQueryTimeSumPerSec": 0.00006686667
 				},
 				{
 					"point": 90,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:30:00Z",
-					"mQueryTimeSumPerSec": 0.000052633335
+					"mQueryTimeSumPerSec": 0.000055466666
 				},
 				{
 					"point": 91,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:25:00Z",
-					"mQueryTimeSumPerSec": 0.000056166667
+					"mQueryTimeSumPerSec": 0.0000031333334
 				},
 				{
 					"point": 92,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:20:00Z",
-					"mQueryTimeSumPerSec": 0.000053766667
+					"mQueryTimeSumPerSec": 0.000105
 				},
 				{
 					"point": 93,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000029999999
+					"mQueryTimeSumPerSec": 0.000057033332
 				},
 				{
 					"point": 94,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:10:00Z",
-					"mQueryTimeSumPerSec": 0.0001043
+					"mQueryTimeSumPerSec": 0.00016896667
 				},
 				{
 					"point": 95,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:05:00Z",
-					"mQueryTimeSumPerSec": 0.000055633333
+					"mQueryTimeSumPerSec": 0.00011823333
 				},
 				{
 					"point": 96,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T02:00:00Z",
-					"mQueryTimeSumPerSec": 0.00005196667
+					"mQueryTimeSumPerSec": 0.0000030666667
 				},
 				{
 					"point": 97,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000030333333
+					"mQueryTimeSumPerSec": 9.9999994e-8
 				},
 				{
 					"point": 98,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:50:00Z",
-					"mQueryTimeSumPerSec": 0.00005643333
+					"mQueryTimeSumPerSec": 0.00010403333
 				},
 				{
 					"point": 99,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000037666666
+					"mQueryTimeSumPerSec": 0.000060166665
 				},
 				{
 					"point": 100,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:40:00Z"
+					"timestamp": "2019-01-01T01:40:00Z",
+					"mQueryTimeSumPerSec": 0.0000033333333
 				},
 				{
 					"point": 101,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000014333333
+					"mQueryTimeSumPerSec": 0.000058233334
 				},
 				{
 					"point": 102,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:30:00Z",
-					"mQueryTimeSumPerSec": 0.00005313333
+					"mQueryTimeSumPerSec": 0.000057200003
 				},
 				{
 					"point": 103,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:25:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"timestamp": "2019-01-01T01:25:00Z"
 				},
 				{
 					"point": 104,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:20:00Z",
-					"mQueryTimeSumPerSec": 1.9999999e-7
+					"timestamp": "2019-01-01T01:20:00Z"
 				},
 				{
 					"point": 105,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:15:00Z",
-					"mQueryTimeSumPerSec": 0.00017056667
+					"mQueryTimeSumPerSec": 0.0000606
 				},
 				{
 					"point": 106,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:10:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
+					"mQueryTimeSumPerSec": 0.00005916667
 				},
 				{
 					"point": 107,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:05:00Z",
-					"mQueryTimeSumPerSec": 0.00011556667
+					"mQueryTimeSumPerSec": 0.0000568
 				},
 				{
 					"point": 108,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T01:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000031666666
+					"mQueryTimeSumPerSec": 0.0000015
 				},
 				{
 					"point": 109,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:55:00Z",
-					"mQueryTimeSumPerSec": 0.000056166667
+					"timestamp": "2019-01-01T00:55:00Z"
 				},
 				{
 					"point": 110,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:50:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
+					"mQueryTimeSumPerSec": 0.00011363333
 				},
 				{
 					"point": 111,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:45:00Z"
+					"timestamp": "2019-01-01T00:45:00Z",
+					"mQueryTimeSumPerSec": 0.00016456666
 				},
 				{
 					"point": 112,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000034666666
+					"mQueryTimeSumPerSec": 3.6666665e-7
 				},
 				{
 					"point": 113,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:35:00Z",
-					"mQueryTimeSumPerSec": 0.000102566664
+					"mQueryTimeSumPerSec": 0.000058166668
 				},
 				{
 					"point": 114,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:30:00Z"
+					"timestamp": "2019-01-01T00:30:00Z",
+					"mQueryTimeSumPerSec": 1.6666667e-7
 				},
 				{
 					"point": 115,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:25:00Z",
-					"mQueryTimeSumPerSec": 0.000055533335
+					"mQueryTimeSumPerSec": 0.0000037
 				},
 				{
 					"point": 116,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:20:00Z",
-					"mQueryTimeSumPerSec": 0.000055266668
+					"mQueryTimeSumPerSec": 0.0000599
 				},
 				{
 					"point": 117,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:15:00Z",
-					"mQueryTimeSumPerSec": 0.000121100005
+					"mQueryTimeSumPerSec": 0.0000031333334
 				},
 				{
 					"point": 118,
 					"timeFrame": 300,
 					"timestamp": "2019-01-01T00:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000033000001
+					"mQueryTimeSumPerSec": 0.000059666665
 				},
 				{
 					"point": 119,
 					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:05:00Z"
+					"timestamp": "2019-01-01T00:05:00Z",
+					"mQueryTimeSumPerSec": 0.0000030666667
 				}
 			],
-			"numQueries": 983182,
-			"qps": 27.310612,
-			"load": 0.000037399168
+			"numQueries": 817964,
+			"qps": 22.721222,
+			"load": 0.000032097225
 		},
 		{
-			"rank": 9,
+			"rank": 10,
 			"dimension": "user97",
 			"metrics": {
 				"bytes_sent": {
@@ -9345,936 +10249,6 @@
 			"numQueries": 1002937,
 			"qps": 27.859362,
 			"load": 0.00003682889
-		},
-		{
-			"rank": 10,
-			"dimension": "user70",
-			"metrics": {
-				"bytes_sent": {
-					"stats": {
-						"rate": 0.011871689,
-						"cnt": 205,
-						"sum": 252810,
-						"max": 249,
-						"p99": 123.32195,
-						"avg": 0.24188247,
-						"sumPerSec": 7.0225
-					}
-				},
-				"docs_returned": {
-					"stats": {
-
-					}
-				},
-				"docs_scanned": {
-					"stats": {
-
-					}
-				},
-				"filesort": {
-					"stats": {
-						"cnt": 205
-					}
-				},
-				"filesort_on_disk": {
-					"stats": {
-						"cnt": 205
-					}
-				},
-				"full_join": {
-					"stats": {
-						"cnt": 205
-					}
-				},
-				"full_scan": {
-					"stats": {
-						"rate": 0.011914345,
-						"cnt": 205,
-						"sum": 740,
-						"avg": 0.00070801406,
-						"sumPerSec": 0.020555556
-					}
-				},
-				"innodb_io_r_bytes": {
-					"stats": {
-
-					}
-				},
-				"innodb_io_r_ops": {
-					"stats": {
-
-					}
-				},
-				"innodb_io_r_wait": {
-					"stats": {
-
-					}
-				},
-				"innodb_pages_distinct": {
-					"stats": {
-
-					}
-				},
-				"innodb_queue_wait": {
-					"stats": {
-
-					}
-				},
-				"innodb_rec_lock_wait": {
-					"stats": {
-
-					}
-				},
-				"lock_time": {
-					"stats": {
-						"rate": 0.012017207,
-						"cnt": 205,
-						"sum": 0.0664,
-						"max": 0.000134,
-						"p99": 0.000032390242,
-						"avg": 6.352991e-8,
-						"sumPerSec": 0.0000018444445
-					}
-				},
-				"merge_passes": {
-					"stats": {
-						"cnt": 205
-					}
-				},
-				"no_good_index_used": {
-					"stats": {
-
-					}
-				},
-				"no_index_used": {
-					"stats": {
-
-					}
-				},
-				"qc_hit": {
-					"stats": {
-						"cnt": 205
-					}
-				},
-				"query_length": {
-					"stats": {
-
-					}
-				},
-				"query_time": {
-					"stats": {
-						"rate": 0.011968286,
-						"cnt": 205,
-						"sum": 1.31782,
-						"min": 0.000002,
-						"max": 0.00242,
-						"p99": 0.000642839,
-						"avg": 0.0000012608582,
-						"sumPerSec": 0.00003660611
-					}
-				},
-				"response_length": {
-					"stats": {
-
-					}
-				},
-				"rows_affected": {
-					"stats": {
-						"cnt": 205
-					}
-				},
-				"rows_examined": {
-					"stats": {
-						"rate": 0.011894683,
-						"cnt": 205,
-						"sum": 808720,
-						"max": 1268,
-						"p99": 394.49756,
-						"avg": 0.77376366,
-						"sumPerSec": 22.464445
-					}
-				},
-				"rows_read": {
-					"stats": {
-
-					}
-				},
-				"rows_sent": {
-					"stats": {
-						"rate": 0.011858025,
-						"cnt": 205,
-						"sum": 1480,
-						"max": 1,
-						"p99": 0.72195125,
-						"avg": 0.0014160281,
-						"sumPerSec": 0.04111111
-					}
-				},
-				"select_full_range_join": {
-					"stats": {
-
-					}
-				},
-				"select_range": {
-					"stats": {
-
-					}
-				},
-				"select_range_check": {
-					"stats": {
-
-					}
-				},
-				"sort_range": {
-					"stats": {
-
-					}
-				},
-				"sort_rows": {
-					"stats": {
-
-					}
-				},
-				"sort_scan": {
-					"stats": {
-
-					}
-				},
-				"tmp_disk_tables": {
-					"stats": {
-						"cnt": 205
-					}
-				},
-				"tmp_table": {
-					"stats": {
-						"rate": 0.011914345,
-						"cnt": 205,
-						"sum": 740,
-						"avg": 0.00070801406,
-						"sumPerSec": 0.020555556
-					}
-				},
-				"tmp_table_on_disk": {
-					"stats": {
-						"cnt": 205
-					}
-				},
-				"tmp_table_sizes": {
-					"stats": {
-						"cnt": 205
-					}
-				},
-				"tmp_tables": {
-					"stats": {
-						"rate": 0.011914345,
-						"cnt": 205,
-						"sum": 740,
-						"max": 1,
-						"p99": 0.36097562,
-						"avg": 0.00070801406,
-						"sumPerSec": 0.020555556
-					}
-				}
-			},
-			"sparkline": [
-				{
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T10:00:00Z",
-					"mQueryTimeSumPerSec": 0.000105700004
-				},
-				{
-					"point": 1,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:55:00Z",
-					"mQueryTimeSumPerSec": 0.00011453334
-				},
-				{
-					"point": 2,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:50:00Z"
-				},
-				{
-					"point": 3,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:45:00Z",
-					"mQueryTimeSumPerSec": 0.000059899998
-				},
-				{
-					"point": 4,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:40:00Z",
-					"mQueryTimeSumPerSec": 0.000060333332
-				},
-				{
-					"point": 5,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000014333333
-				},
-				{
-					"point": 6,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:30:00Z"
-				},
-				{
-					"point": 7,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000572
-				},
-				{
-					"point": 8,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000654
-				},
-				{
-					"point": 9,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:15:00Z",
-					"mQueryTimeSumPerSec": 0.000058533333
-				},
-				{
-					"point": 10,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:10:00Z",
-					"mQueryTimeSumPerSec": 0.000060566665
-				},
-				{
-					"point": 11,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:05:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 12,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T09:00:00Z",
-					"mQueryTimeSumPerSec": 0.00010876667
-				},
-				{
-					"point": 13,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000034666666
-				},
-				{
-					"point": 14,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:50:00Z",
-					"mQueryTimeSumPerSec": 0.00010526667
-				},
-				{
-					"point": 15,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:45:00Z",
-					"mQueryTimeSumPerSec": 9.666667e-7
-				},
-				{
-					"point": 16,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:40:00Z",
-					"mQueryTimeSumPerSec": 0.000055233333
-				},
-				{
-					"point": 17,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:35:00Z",
-					"mQueryTimeSumPerSec": 0.000054433334
-				},
-				{
-					"point": 18,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000030666667
-				},
-				{
-					"point": 19,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000571
-				},
-				{
-					"point": 20,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:20:00Z",
-					"mQueryTimeSumPerSec": 0.000061666666
-				},
-				{
-					"point": 21,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:15:00Z",
-					"mQueryTimeSumPerSec": 0.000054833334
-				},
-				{
-					"point": 22,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:10:00Z"
-				},
-				{
-					"point": 23,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:05:00Z",
-					"mQueryTimeSumPerSec": 0.0001699
-				},
-				{
-					"point": 24,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T08:00:00Z",
-					"mQueryTimeSumPerSec": 0.000050900002
-				},
-				{
-					"point": 25,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:55:00Z",
-					"mQueryTimeSumPerSec": 0.00010573333
-				},
-				{
-					"point": 26,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:50:00Z",
-					"mQueryTimeSumPerSec": 0.000059899998
-				},
-				{
-					"point": 27,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:45:00Z",
-					"mQueryTimeSumPerSec": 0.00005643333
-				},
-				{
-					"point": 28,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:40:00Z"
-				},
-				{
-					"point": 29,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000030666667
-				},
-				{
-					"point": 30,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:30:00Z",
-					"mQueryTimeSumPerSec": 0.00005356667
-				},
-				{
-					"point": 31,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:25:00Z"
-				},
-				{
-					"point": 32,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:20:00Z"
-				},
-				{
-					"point": 33,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:15:00Z"
-				},
-				{
-					"point": 34,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:10:00Z",
-					"mQueryTimeSumPerSec": 6.6666665e-8
-				},
-				{
-					"point": 35,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:05:00Z",
-					"mQueryTimeSumPerSec": 0.00010896666
-				},
-				{
-					"point": 36,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T07:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000033333333
-				},
-				{
-					"point": 37,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000091
-				},
-				{
-					"point": 38,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:50:00Z",
-					"mQueryTimeSumPerSec": 0.0001694
-				},
-				{
-					"point": 39,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:45:00Z",
-					"mQueryTimeSumPerSec": 0.00011736667
-				},
-				{
-					"point": 40,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:40:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 41,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:35:00Z"
-				},
-				{
-					"point": 42,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000033
-				},
-				{
-					"point": 43,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:25:00Z"
-				},
-				{
-					"point": 44,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:20:00Z",
-					"mQueryTimeSumPerSec": 0.00017423334
-				},
-				{
-					"point": 45,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:15:00Z",
-					"mQueryTimeSumPerSec": 0.00006103333
-				},
-				{
-					"point": 46,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:10:00Z"
-				},
-				{
-					"point": 47,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
-				},
-				{
-					"point": 48,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T06:00:00Z",
-					"mQueryTimeSumPerSec": 1.9999999e-7
-				},
-				{
-					"point": 49,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:55:00Z"
-				},
-				{
-					"point": 50,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:50:00Z"
-				},
-				{
-					"point": 51,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:45:00Z",
-					"mQueryTimeSumPerSec": 0.00011803333
-				},
-				{
-					"point": 52,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000038333333
-				},
-				{
-					"point": 53,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:35:00Z",
-					"mQueryTimeSumPerSec": 0.00005693333
-				},
-				{
-					"point": 54,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000031666668
-				},
-				{
-					"point": 55,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:25:00Z",
-					"mQueryTimeSumPerSec": 0.000059300004
-				},
-				{
-					"point": 56,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:20:00Z"
-				},
-				{
-					"point": 57,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:15:00Z",
-					"mQueryTimeSumPerSec": 0.0001411
-				},
-				{
-					"point": 58,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:10:00Z"
-				},
-				{
-					"point": 59,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:05:00Z",
-					"mQueryTimeSumPerSec": 0.000107500004
-				},
-				{
-					"point": 60,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T05:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000033333336
-				},
-				{
-					"point": 61,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:55:00Z"
-				},
-				{
-					"point": 62,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:50:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 63,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000014
-				},
-				{
-					"point": 64,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:40:00Z",
-					"mQueryTimeSumPerSec": 0.000057666668
-				},
-				{
-					"point": 65,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:35:00Z",
-					"mQueryTimeSumPerSec": 0.0000029666667
-				},
-				{
-					"point": 66,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:30:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 67,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:25:00Z"
-				},
-				{
-					"point": 68,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:20:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 69,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000032
-				},
-				{
-					"point": 70,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:10:00Z",
-					"mQueryTimeSumPerSec": 0.000065
-				},
-				{
-					"point": 71,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000063666666
-				},
-				{
-					"point": 72,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T04:00:00Z",
-					"mQueryTimeSumPerSec": 0.000060833336
-				},
-				{
-					"point": 73,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:55:00Z",
-					"mQueryTimeSumPerSec": 0.0000596
-				},
-				{
-					"point": 74,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:50:00Z",
-					"mQueryTimeSumPerSec": 0.0000064333335
-				},
-				{
-					"point": 75,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000039666666
-				},
-				{
-					"point": 76,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:40:00Z",
-					"mQueryTimeSumPerSec": 0.00005446667
-				},
-				{
-					"point": 77,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:35:00Z"
-				},
-				{
-					"point": 78,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:30:00Z",
-					"mQueryTimeSumPerSec": 0.00005683333
-				},
-				{
-					"point": 79,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:25:00Z"
-				},
-				{
-					"point": 80,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:20:00Z",
-					"mQueryTimeSumPerSec": 0.000008933333
-				},
-				{
-					"point": 81,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:15:00Z"
-				},
-				{
-					"point": 82,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:10:00Z",
-					"mQueryTimeSumPerSec": 0.0000015333333
-				},
-				{
-					"point": 83,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:05:00Z",
-					"mQueryTimeSumPerSec": 0.000006266667
-				},
-				{
-					"point": 84,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T03:00:00Z",
-					"mQueryTimeSumPerSec": 0.00006123333
-				},
-				{
-					"point": 85,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:55:00Z",
-					"mQueryTimeSumPerSec": 0.000063633335
-				},
-				{
-					"point": 86,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:50:00Z"
-				},
-				{
-					"point": 87,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:45:00Z",
-					"mQueryTimeSumPerSec": 0.000052933334
-				},
-				{
-					"point": 88,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:40:00Z",
-					"mQueryTimeSumPerSec": 0.000055200002
-				},
-				{
-					"point": 89,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:35:00Z"
-				},
-				{
-					"point": 90,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000057666666
-				},
-				{
-					"point": 91,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:25:00Z",
-					"mQueryTimeSumPerSec": 0.00011166667
-				},
-				{
-					"point": 92,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:20:00Z",
-					"mQueryTimeSumPerSec": 0.000115166666
-				},
-				{
-					"point": 93,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:15:00Z",
-					"mQueryTimeSumPerSec": 0.000055133332
-				},
-				{
-					"point": 94,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:10:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 95,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:05:00Z",
-					"mQueryTimeSumPerSec": 0.0000014333333
-				},
-				{
-					"point": 96,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T02:00:00Z",
-					"mQueryTimeSumPerSec": 0.00006366667
-				},
-				{
-					"point": 97,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:55:00Z",
-					"mQueryTimeSumPerSec": 6.6666665e-8
-				},
-				{
-					"point": 98,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:50:00Z",
-					"mQueryTimeSumPerSec": 1.3333333e-7
-				},
-				{
-					"point": 99,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:45:00Z"
-				},
-				{
-					"point": 100,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:40:00Z",
-					"mQueryTimeSumPerSec": 0.0000611
-				},
-				{
-					"point": 101,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:35:00Z",
-					"mQueryTimeSumPerSec": 9.9999994e-8
-				},
-				{
-					"point": 102,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:30:00Z",
-					"mQueryTimeSumPerSec": 0.0000031333334
-				},
-				{
-					"point": 103,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:25:00Z",
-					"mQueryTimeSumPerSec": 0.0000040333334
-				},
-				{
-					"point": 104,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:20:00Z"
-				},
-				{
-					"point": 105,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:15:00Z",
-					"mQueryTimeSumPerSec": 0.000056400004
-				},
-				{
-					"point": 106,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:10:00Z"
-				},
-				{
-					"point": 107,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:05:00Z"
-				},
-				{
-					"point": 108,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T01:00:00Z",
-					"mQueryTimeSumPerSec": 0.0000579
-				},
-				{
-					"point": 109,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:55:00Z",
-					"mQueryTimeSumPerSec": 0.000114200004
-				},
-				{
-					"point": 110,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:50:00Z",
-					"mQueryTimeSumPerSec": 0.00005623333
-				},
-				{
-					"point": 111,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:45:00Z",
-					"mQueryTimeSumPerSec": 0.0000031
-				},
-				{
-					"point": 112,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:40:00Z",
-					"mQueryTimeSumPerSec": 0.00006223333
-				},
-				{
-					"point": 113,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:35:00Z",
-					"mQueryTimeSumPerSec": 0.000006266667
-				},
-				{
-					"point": 114,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:30:00Z",
-					"mQueryTimeSumPerSec": 0.0001087
-				},
-				{
-					"point": 115,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:25:00Z",
-					"mQueryTimeSumPerSec": 0.000063466665
-				},
-				{
-					"point": 116,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:20:00Z",
-					"mQueryTimeSumPerSec": 0.0000037666666
-				},
-				{
-					"point": 117,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:15:00Z",
-					"mQueryTimeSumPerSec": 0.0000755
-				},
-				{
-					"point": 118,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:10:00Z",
-					"mQueryTimeSumPerSec": 1.9999999e-7
-				},
-				{
-					"point": 119,
-					"timeFrame": 300,
-					"timestamp": "2019-01-01T00:05:00Z",
-					"mQueryTimeSumPerSec": 0.000055766668
-				}
-			],
-			"numQueries": 1045177,
-			"qps": 29.032694,
-			"load": 0.00003660611
 		}
 	]
 }

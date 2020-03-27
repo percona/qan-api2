@@ -136,7 +136,11 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	_, isCommonCol := commonColumnNames[orderCol]
 
 	if isBoolCol || isCommonCol {
-		orderCol = fmt.Sprintf("m_%s_sum", orderCol)
+		if isTimeMetric(orderCol) {
+			orderCol = fmt.Sprintf("m_%s_avg", orderCol)
+		} else {
+			orderCol = fmt.Sprintf("m_%s_sum", orderCol)
+		}
 	}
 	order := fmt.Sprintf("%s %s", orderCol, direction)
 
