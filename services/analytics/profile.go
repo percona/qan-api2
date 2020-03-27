@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-package analitycs
+package analytics
 
 import (
 	"context"
@@ -60,7 +60,6 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		labels[label.Key] = label.Value
 	}
 
-	orderCol := in.OrderBy
 	columns := []string{}
 	for _, col := range in.Columns {
 		// TODO: remove when UI will use num_queries instead.
@@ -70,13 +69,11 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		columns = append(columns, col)
 	}
 
-	// TODO: remove this when UI done.
 	if strings.TrimPrefix(in.OrderBy, "-") == "load" {
 		columns = append([]string{"load", "num_queries", "query_time"}, columns...)
 	}
-	// TODO: remove this when UI done.
+
 	if strings.TrimPrefix(in.OrderBy, "-") == "count" {
-		orderCol = "num_queries"
 		columns = append([]string{"load", "num_queries"}, columns...)
 	}
 
@@ -100,49 +97,24 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	commonColumns := []string{}
 	specialColumns := []string{}
 	for _, col := range uniqColumns {
-		if _, ok := sumColumnNames[col]; ok {
+		if isBoolMetric(col) {
 			sumColumns = append(sumColumns, col)
 			continue
 		}
-		if _, ok := commonColumnNames[col]; ok {
+		if isCommonMetric(col) {
 			commonColumns = append(commonColumns, col)
 			continue
 		}
-		if _, ok := specialColumnNames[col]; ok {
+		if isSpecialMetric(col) {
 			specialColumns = append(specialColumns, col)
 			continue
 		}
 	}
 
-	if orderCol == "" {
-		orderCol = uniqColumns[0]
-	}
-
-	direction := "ASC"
-	if orderCol[0] == '-' {
-		orderCol = orderCol[1:]
-		direction = "DESC"
-	}
-	// TODO: remove this when UI done.
-	if orderCol == "load" {
-		orderCol = "query_time"
-	}
-
+	order, orderCol := getOrderBy(in.OrderBy, uniqColumns[0])
 	if _, ok := uniqColumnsMap[orderCol]; !ok {
 		return nil, fmt.Errorf("order column '%s' not in selected columns: [%s]", orderCol, strings.Join(uniqColumns, ", "))
 	}
-
-	_, isBoolCol := sumColumnNames[orderCol]
-	_, isCommonCol := commonColumnNames[orderCol]
-
-	if isBoolCol || isCommonCol {
-		if isTimeMetric(orderCol) {
-			orderCol = fmt.Sprintf("m_%s_avg", orderCol)
-		} else {
-			orderCol = fmt.Sprintf("m_%s_sum", orderCol)
-		}
-	}
-	order := fmt.Sprintf("%s %s", orderCol, direction)
 
 	resp := &qanpb.ReportReply{}
 	results, err := s.rm.Select(
@@ -245,4 +217,39 @@ func makeStats(metricNameRoot string, total, res models.M, numQueries float32, p
 		stat.P99 = interfaceToFloat32(val)
 	}
 	return stat
+}
+
+// getOrderBy creates an order by string to use in query and column name to check if it in select column list.
+func getOrderBy(reqOrder, defaultOrder string) (queryOrder string, orderCol string) {
+	direction := "ASC"
+	if strings.HasPrefix(reqOrder, "-") {
+		reqOrder = strings.TrimPrefix(reqOrder, "-")
+		direction = "DESC"
+	}
+
+	switch {
+	case reqOrder == "count":
+		orderCol = "num_queries"
+		queryOrder = fmt.Sprintf("%s %s", orderCol, direction)
+	case reqOrder == "load":
+		orderCol = "query_time"
+		queryOrder = fmt.Sprintf("m_%s_sum %s", orderCol, direction)
+	// order by average for time metrics.
+	case isTimeMetric(reqOrder):
+		orderCol = reqOrder
+		queryOrder = fmt.Sprintf("m_%s_avg %s", orderCol, direction)
+	// order by sum for all common not time metrics.
+	case isCommonMetric(reqOrder) || isBoolMetric(reqOrder):
+		orderCol = reqOrder
+		queryOrder = fmt.Sprintf("m_%s_sum %s", orderCol, direction)
+	case isSpecialMetric(reqOrder):
+		orderCol = reqOrder
+		queryOrder = fmt.Sprintf("%s %s", orderCol, direction)
+	// on empty - order by the first column.
+	default:
+		orderCol = defaultOrder
+		queryOrder = fmt.Sprintf("%s %s", orderCol, direction)
+	}
+
+	return queryOrder, orderCol
 }

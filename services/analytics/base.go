@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-package analitycs
+package analytics
 
 import (
 	"github.com/percona/qan-api2/models"
@@ -70,12 +70,22 @@ var sumColumnNames = map[string]struct{}{
 	"blk_write_time":         {},
 }
 
+func isBoolMetric(name string) bool {
+	_, ok := sumColumnNames[name]
+	return ok
+}
+
 //nolint
 var specialColumnNames = map[string]struct{}{
 	"load":                      {},
 	"num_queries":               {},
 	"num_queries_with_errors":   {},
 	"num_queries_with_warnings": {},
+}
+
+func isSpecialMetric(name string) bool {
+	_, ok := specialColumnNames[name]
+	return ok
 }
 
 var commonColumnNames = map[string]struct{}{
@@ -100,6 +110,11 @@ var commonColumnNames = map[string]struct{}{
 	"docs_returned":         {},
 	"response_length":       {},
 	"docs_scanned":          {},
+}
+
+func isCommonMetric(name string) bool {
+	_, ok := commonColumnNames[name]
+	return ok
 }
 
 func interfaceToFloat32(unk interface{}) float32 {
