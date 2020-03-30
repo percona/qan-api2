@@ -97,12 +97,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	sumColumns := []string{}
 	commonColumns := []string{}
 	specialColumns := []string{}
-	timeColumns := []string{}
 	for _, col := range uniqColumns {
-		// append time metrics to timeColumns to select average values.
-		if isTimeMetric(col) {
-			timeColumns = append(timeColumns, col)
-		}
 		if isBoolMetric(col) {
 			sumColumns = append(sumColumns, col)
 			continue
@@ -136,7 +131,6 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		specialColumns,
 		commonColumns,
 		sumColumns,
-		timeColumns,
 	)
 	if err != nil {
 		return nil, err
