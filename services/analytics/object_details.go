@@ -67,6 +67,7 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 			in.GroupBy,
 			dimensions,
 			labels,
+			in.Totals,
 		)
 		if err != nil {
 			return nil, fmt.Errorf("error in quering metrics:%v", err)
@@ -88,9 +89,10 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 		in.GroupBy,
 		dimensions,
 		labels,
+		in.Totals,
 	)
 	if err != nil {
-		return nil, fmt.Errorf("error in quering totals:%v", err)
+		return nil, errors.Wrapf(err, "cannot get get metrics totals")
 	}
 
 	totalLen := len(totalsList)
