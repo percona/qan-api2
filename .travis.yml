@@ -6,12 +6,11 @@ services:
 
 go:
   - 1.14.x
-  - 1.15.x
-  # - TODO master
+  - tip
 
 matrix:
   allow_failures:
-    - go: master
+    - go: tip
 
 env:
   global:
