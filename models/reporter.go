@@ -119,6 +119,7 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 	dimensions map[string][]string, labels map[string][]string,
 	group, order, search string, offset, limit uint32,
 	specialColumns, commonColumns, sumColumns []string) ([]M, error) {
+	search = strings.TrimSpace(search)
 
 	arg := map[string]interface{}{
 		"period_start_from": periodStartFromSec,

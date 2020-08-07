@@ -799,7 +799,7 @@ func TestService_GetReport_Search(t *testing.T) {
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
-		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
+		assert.JSONEq(t, string(expectedJSON), gotJSON)
 	})
 
 	t.Run("search_fingerprint", func(t *testing.T) {
@@ -830,7 +830,7 @@ func TestService_GetReport_Search(t *testing.T) {
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
-		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
+		assert.JSONEq(t, string(expectedJSON), gotJSON)
 	})
 
 	t.Run("search_service_name", func(t *testing.T) {
@@ -861,6 +861,6 @@ func TestService_GetReport_Search(t *testing.T) {
 		if err != nil {
 			t.Errorf("cannot marshal:%v", err)
 		}
-		assert.JSONEq(t, string(expectedJSON), string(gotJSON))
+		assert.JSONEq(t, string(expectedJSON), gotJSON)
 	})
 }

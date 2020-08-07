@@ -117,8 +117,6 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		return nil, fmt.Errorf("order column '%s' not in selected columns: [%s]", orderCol, strings.Join(uniqColumns, ", "))
 	}
 
-	search := strings.TrimSpace(in.Search)
-
 	resp := &qanpb.ReportReply{}
 	results, err := s.rm.Select(
 		ctx,
@@ -128,7 +126,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		labels,
 		group,
 		order,
-		search,
+		in.Search,
 		in.Offset,
 		limit,
 		specialColumns,
