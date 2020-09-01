@@ -82,6 +82,8 @@ var sparklinePointAllFields = []string{
 	"m_temp_blks_written_sum_per_sec",
 	"m_blk_read_time_sum_per_sec",
 	"m_blk_write_time_sum_per_sec",
+	"m_cpu_user_time_sum_per_sec",
+	"m_cpu_sys_time_sum_per_sec",
 }
 
 func getPointFieldsList(point *qanpb.Point, fields []string) []interface{} {
@@ -141,6 +143,8 @@ func getPointFieldsList(point *qanpb.Point, fields []string) []interface{} {
 		"m_temp_blks_written_sum_per_sec":      &point.MTempBlksWrittenSumPerSec,
 		"m_blk_read_time_sum_per_sec":          &point.MBlkReadTimeSumPerSec,
 		"m_blk_write_time_sum_per_sec":         &point.MBlkWriteTimeSumPerSec,
+		"m_cpu_user_time_sum_per_sec":          &point.MBlkWriteTimeSumPerSec, //TODO:
+		"m_cpu_sys_time_sum_per_sec":           &point.MBlkWriteTimeSumPerSec, //TODO:
 	}
 
 	sparklinePointValuesList := []interface{}{}
@@ -316,6 +320,10 @@ func isValidMetricColumn(name string) bool {
 		"m_blk_read_time_sum":          {},
 		"m_blk_write_time_cnt":         {},
 		"m_blk_write_time_sum":         {},
+		"m_cpu_user_time_cnt":          {},
+		"m_cpu_sys_time_cnt":           {},
+		"m_cpu_user_time_sum":          {},
+		"m_cpu_sys_time_sum":           {},
 	}
 	_, isValid := fields[name]
 	return isValid
@@ -329,6 +337,7 @@ func agentTypeToClickHouseEnum(agentType inventorypb.AgentType) string {
 		inventorypb.AgentType_QAN_MYSQL_SLOWLOG_AGENT:           "qan-mysql-slowlog-agent",
 		inventorypb.AgentType_QAN_MONGODB_PROFILER_AGENT:        "qan-mongodb-profiler-agent",
 		inventorypb.AgentType_QAN_POSTGRESQL_PGSTATEMENTS_AGENT: "qan-postgresql-pgstatements-agent",
+		// TODO PG Stat Monitor
 	}
 
 	if val, ok := agentTypes[agentType]; ok {
