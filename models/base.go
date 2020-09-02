@@ -143,8 +143,8 @@ func getPointFieldsList(point *qanpb.Point, fields []string) []interface{} {
 		"m_temp_blks_written_sum_per_sec":      &point.MTempBlksWrittenSumPerSec,
 		"m_blk_read_time_sum_per_sec":          &point.MBlkReadTimeSumPerSec,
 		"m_blk_write_time_sum_per_sec":         &point.MBlkWriteTimeSumPerSec,
-		"m_cpu_user_time_sum_per_sec":          &point.MBlkWriteTimeSumPerSec, //TODO:
-		"m_cpu_sys_time_sum_per_sec":           &point.MBlkWriteTimeSumPerSec, //TODO:
+		"m_cpu_user_time_sum_per_sec":          &point.MCpuUserTimeSumPerSec,
+		"m_cpu_sys_time_sum_per_sec":           &point.MCpuSysTimeSumPerSec,
 	}
 
 	sparklinePointValuesList := []interface{}{}
