@@ -469,9 +469,6 @@ var _bindata = map[string]func() (*asset, error){
 	"07_pg_stat_monitor_columns.up.sql":   _07_pg_stat_monitor_columnsUpSql,
 }
 
-// AssetDebug is true if the assets were built with the debug flag enabled.
-const AssetDebug = false
-
 // AssetDir returns the file names below a certain
 // directory embedded in the file by go-bindata.
 // For example if you run go-bindata on data/... and data contains the
