@@ -207,7 +207,7 @@
 
 [[projects]]
   branch = "PMM-6462-preparement-for-pg-stat-monitor"
-  digest = "1:396feedae3e06f9459f1cfb90081858d0a68865dbdff31ad02e68adeb667bf4b"
+  digest = "1:3b6340283f81a2e76f473be8fd5f91a3ce9923794c5bffe1f7b25f2e387c49e1"
   name = "github.com/percona/pmm"
   packages = [
     "api/inventorypb",
@@ -216,7 +216,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "f29d34b9c045dc964f86aab0d47764bf22d98d4b"
+  revision = "ff9ac5e3e59b68dcd270d712fdcb8443398c093d"
 
 [[projects]]
   digest = "1:4047c378584616813d610c9f993bf90dd0d07aed8d94bd3bc299cd35ececdcba"
