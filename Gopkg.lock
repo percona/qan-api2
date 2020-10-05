@@ -89,7 +89,7 @@
   version = "v3.5.4"
 
 [[projects]]
-  digest = "1:9dcdbb393061438abc4f71261d12384150cba5f1dd266d3cec15f8f32c8c8aea"
+  digest = "1:01a7dad6a8aacd6269a61fd08c0fe9e3ce0c57e45f2e4270aec5a284fb178936"
   name = "github.com/golang/protobuf"
   packages = [
     "descriptor",
@@ -99,7 +99,6 @@
     "ptypes",
     "ptypes/any",
     "ptypes/duration",
-    "ptypes/struct",
     "ptypes/timestamp",
     "ptypes/wrappers",
   ]
@@ -216,7 +215,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "9c15aa8bb877e4f1eab97f2fedcbf5c25150536b"
+  revision = "021e02b537cc5e39f39b659debb59d66efd17ee3"
 
 [[projects]]
   digest = "1:4047c378584616813d610c9f993bf90dd0d07aed8d94bd3bc299cd35ececdcba"
@@ -458,7 +457,7 @@
   version = "v1.32.0"
 
 [[projects]]
-  digest = "1:648f512fb65061c60482c7475d8ce146785e2e527f1b0b01d7187563e2d82129"
+  digest = "1:a6bca15378a84c9edbc6a46779f626103e13cc7504d66a113a211f407720f840"
   name = "google.golang.org/protobuf"
   packages = [
     "encoding/protojson",
@@ -493,7 +492,6 @@
     "types/descriptorpb",
     "types/known/anypb",
     "types/known/durationpb",
-    "types/known/structpb",
     "types/known/timestamppb",
     "types/known/wrapperspb",
   ]
