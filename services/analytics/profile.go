@@ -185,27 +185,25 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 }
 
 func makeStats(metricNameRoot string, total, res models.M, numQueries float32, periodDurationSec int64) *qanpb.Stat {
+	var stat qanpb.Stat
 	if metricNameRoot == "load" {
-		return &qanpb.Stat{
-			SumPerSec: interfaceToFloat32(res["load"]),
-		}
+		stat.SumPerSec = interfaceToFloat32(res["load"])
+		return &stat
 	}
+
 	if metricNameRoot == "num_queries" {
-		return &qanpb.Stat{
-			Sum:       numQueries,
-			SumPerSec: numQueries / float32(periodDurationSec),
-		}
+		stat.Sum = numQueries
+		stat.SumPerSec = numQueries / float32(periodDurationSec)
+		return &stat
 	}
 
 	if metricNameRoot == "num_queries_with_errors" {
-		stat := qanpb.Stat{}
 		stat.Sum = interfaceToFloat32(res["num_queries_with_errors"])
 		stat.SumPerSec = interfaceToFloat32(res["num_queries_with_errors"]) / float32(periodDurationSec)
 		return &stat
 	}
 
 	if metricNameRoot == "num_queries_with_warnings" {
-		stat := qanpb.Stat{}
 		stat.Sum = interfaceToFloat32(res["num_queries_with_warnings"])
 		stat.SumPerSec = interfaceToFloat32(res["num_queries_with_warnings"]) / float32(periodDurationSec)
 		return &stat
@@ -217,12 +215,12 @@ func makeStats(metricNameRoot string, total, res models.M, numQueries float32, p
 	if divider != 0 {
 		rate = sum / divider
 	}
-	stat := &qanpb.Stat{
-		Rate:      rate,
-		Cnt:       interfaceToFloat32(res["m_"+metricNameRoot+"_cnt"]),
-		Sum:       sum,
-		SumPerSec: sum / float32(periodDurationSec),
-	}
+
+	stat.Rate = rate
+	stat.Cnt = interfaceToFloat32(res["m_"+metricNameRoot+"_cnt"])
+	stat.Sum = sum
+	stat.SumPerSec = sum / float32(periodDurationSec)
+
 	if val, ok := res["m_"+metricNameRoot+"_min"]; ok {
 		stat.Min = interfaceToFloat32(val)
 	}
@@ -235,7 +233,7 @@ func makeStats(metricNameRoot string, total, res models.M, numQueries float32, p
 	if val, ok := res["m_"+metricNameRoot+"_p99"]; ok {
 		stat.P99 = interfaceToFloat32(val)
 	}
-	return stat
+	return &stat
 }
 
 // getOrderBy creates an order by string to use in query and column name to check if it in select column list.
