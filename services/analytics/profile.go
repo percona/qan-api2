@@ -196,6 +196,21 @@ func makeStats(metricNameRoot string, total, res models.M, numQueries float32, p
 			SumPerSec: numQueries / float32(periodDurationSec),
 		}
 	}
+
+	if metricNameRoot == "num_queries_with_errors" {
+		stat := qanpb.Stat{}
+		stat.Sum = interfaceToFloat32(res["num_queries_with_errors"])
+		stat.SumPerSec = interfaceToFloat32(res["num_queries_with_errors"]) / float32(periodDurationSec)
+		return &stat
+	}
+
+	if metricNameRoot == "num_queries_with_warnings" {
+		stat := qanpb.Stat{}
+		stat.Sum = interfaceToFloat32(res["num_queries_with_warnings"])
+		stat.SumPerSec = interfaceToFloat32(res["num_queries_with_warnings"]) / float32(periodDurationSec)
+		return &stat
+	}
+
 	rate := float32(0)
 	divider := interfaceToFloat32(total["m_"+metricNameRoot+"_sum"])
 	sum := interfaceToFloat32(res["m_"+metricNameRoot+"_sum"])
