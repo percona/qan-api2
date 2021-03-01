@@ -94,6 +94,7 @@ func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec 
 	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
 	defer cancel()
 
+	fmt.Printf("\nxxxxx  %s: %+v  xxxxxxx\n", query, args)
 	rows, err := m.db.QueryxContext(queryCtx, query, args...)
 	if err != nil {
 		return results, errors.Wrap(err, "cannot execute metrics query")
