@@ -78,7 +78,6 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		columns = append([]string{"load", "num_queries"}, columns...)
 	}
 
-	columns = append(columns, "database")
 	mainMetric := in.MainMetric
 	if mainMetric == "" {
 		mainMetric = columns[0]
