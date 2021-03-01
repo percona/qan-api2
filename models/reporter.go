@@ -192,7 +192,6 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 	for rows.Next() {
 		result := make(M)
 		err = rows.MapScan(result)
-		fmt.Printf("\n\n%+v\n\n", result)
 		if err != nil {
 			return nil, errors.Wrap(err, "DimensionReport Scan error")
 		}

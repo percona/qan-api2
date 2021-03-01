@@ -81,8 +81,6 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	}
 
 	columns = append(columns, "database")
-	fmt.Printf("\n\n\n\n\n\n\n\n %+v \n", columns)
-
 	mainMetric := in.MainMetric
 	if mainMetric == "" {
 		mainMetric = columns[0]
