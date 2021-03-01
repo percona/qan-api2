@@ -61,8 +61,6 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 		labels[label.Key] = label.Value
 	}
 
-	fmt.Printf("\n\n\n\n\n\n\n\n %+v \n", in.Columns)
-
 	columns := []string{}
 	for _, col := range in.Columns {
 		// TODO: remove when UI will use num_queries instead.
