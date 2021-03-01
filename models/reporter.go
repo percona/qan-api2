@@ -48,7 +48,7 @@ var funcMap = template.FuncMap{
 type M map[string]interface{}
 
 const queryReportTmpl = `
-SELECT
+SELECT database AS database,
 {{ .Group }} AS dimension,
 {{ if eq .Group "queryid" }} any(fingerprint) {{ else }} '' {{ end }} AS fingerprint,
 SUM(num_queries) AS num_queries,
@@ -96,7 +96,7 @@ WHERE period_start > :period_start_from AND period_start < :period_start_to
         {{ if gt $i 1}} OR {{ end }} has(['{{ StringsJoin $vals "', '" }}'], labels.value[indexOf(labels.key, '{{ $key }}')])
     {{ end }})
 {{ end }}
-GROUP BY {{ .Group }}
+GROUP BY database, {{ .Group }}
         WITH TOTALS
 ORDER BY {{ .Order }}
 LIMIT :offset, :limit
@@ -192,6 +192,7 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 	for rows.Next() {
 		result := make(M)
 		err = rows.MapScan(result)
+		fmt.Printf("\n\n%+v\n\n", result)
 		if err != nil {
 			return nil, errors.Wrap(err, "DimensionReport Scan error")
 		}
