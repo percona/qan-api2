@@ -48,8 +48,9 @@ var funcMap = template.FuncMap{
 type M map[string]interface{}
 
 const queryReportTmpl = `
-SELECT any(database) as database_name,
+SELECT
 {{ .Group }} AS dimension,
+any(database) as database_name,
 {{ if eq .Group "queryid" }} any(fingerprint) {{ else }} '' {{ end }} AS fingerprint,
 SUM(num_queries) AS num_queries,
 {{range $j, $col := .CommonColumns}}
