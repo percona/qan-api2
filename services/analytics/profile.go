@@ -145,7 +145,7 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 	for i, res := range results {
 		numQueries := interfaceToFloat32(res["num_queries"])
 		row := &qanpb.Row{
-			Database:    res["database"].(string),
+			Database:    res["database_name"].(string),
 			Rank:        uint32(i) + in.Offset,
 			Dimension:   res["dimension"].(string),
 			Fingerprint: res["fingerprint"].(string),
