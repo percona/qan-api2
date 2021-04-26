@@ -66,7 +66,7 @@ after_success:
 notifications:
   # perconacorp:token#channel
   slack:
-    on_success: change
+    on_success: always
     on_failure: always
     rooms:
       - secure: dhYrTsJIRIujGzMdK3LNxk9KwepEA8H9UeP1KB9l8gUcPw44hfuAe2Cx8f5mFRlBofy6Hk1KX9WNfd2UMH9w3EeWiqnmJDdoWy2IeEQloYbg2r47jpUVfrUTRdPtMCIqN5pVn8ik/cBnjWP1UN+442bnAVwENnhtTHHSCuc+TxdicxHCxluOQctbHrpkbBdZqzJe1yrbnC8U3tahF1Xp6+z/jD+ybENy6D5dzvY2CvVA1SvKEUoDmoEnCfIbDutS5j+0WKzmoSc7ZmTYJyM/kt2jHup7RyFxS0Jn+Bf/tQUKUo1lVCNlcSi3tVjSDo6XQ3mimYxG16j0/rJdYdFiKlyiseZrJ/1Vq0ITdC+QY72o5Z1q3JESvmu9PM9wWaxL1Wtwk4AXbyi48kC/GqD5Ldvivn4dYEakCAvBRk2GreQtUbKvaytLk0fjV23Dkjxaw5OjywluYlYen5YbRQJ7DvzpP2/gW2tX9VpC7iRKruj3FymwczlAVvuh4O6PggduUNhmNX92NrBICvjNV/YbO2VRxH1bKb2iPNNpDIY59CLKXWcgXfCTmYCCQ76LcHPR/1scmUnONi5Ax/KYXRYjfoih5FrMNg1XvAWx0u5obldMrQj9BpCVQ2vEa5u3heQehOz9uwwb4bJ8lRsgm7flWQZRp9YZkxX+OhfoF9HZtV0=
