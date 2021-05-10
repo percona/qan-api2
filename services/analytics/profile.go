@@ -160,10 +160,8 @@ func (s *Service) GetReport(ctx context.Context, in *qanpb.ReportRequest) (*qanp
 			row.Fingerprint = "TOTAL"
 		}
 
-		isTotal := false
-		if i == 0 {
-			isTotal = true
-		}
+		// The the row with index 0 is total.
+		isTotal := i == 0
 
 		sparklines, err := s.rm.SelectSparklines(
 			ctx,
