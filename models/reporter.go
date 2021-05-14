@@ -115,6 +115,10 @@ func inSlice(slice []string, val string) bool {
 	return false
 }
 
+func escapeColon(in string) string {
+	return strings.ReplaceAll(in, ":", "::")
+}
+
 // Select select metrics for report.
 func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartToSec int64,
 	dimensions map[string][]string, labels map[string][]string,
@@ -130,6 +134,16 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 		"search":            "%" + strings.ToLower(search) + "%",
 		"offset":            offset,
 		"limit":             limit,
+	}
+
+	// workaround to issues in closed PR https://github.com/jmoiron/sqlx/pull/579
+	escapedLabels := make(map[string][]string)
+	for k, v := range labels {
+		key := escapeColon(k)
+		escapedLabels[key] = make([]string, len(v))
+		for i, value := range v {
+			escapedLabels[key][i] = escapeColon(value)
+		}
 	}
 
 	tmplArgs := struct {
@@ -148,20 +162,20 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 		SumColumns          []string
 		IsQueryTimeInSelect bool
 	}{
-		periodStartFromSec,
-		periodStartToSec,
-		periodStartToSec - periodStartFromSec,
-		dimensions,
-		labels,
-		group,
-		order,
-		search,
-		offset,
-		limit,
-		specialColumns,
-		commonColumns,
-		sumColumns,
-		inSlice(commonColumns, "query_time"),
+		PeriodStartFrom:     periodStartFromSec,
+		PeriodStartTo:       periodStartToSec,
+		PeriodDuration:      periodStartToSec - periodStartFromSec,
+		Dimensions:          dimensions,
+		Labels:              labels,
+		Group:               group,
+		Order:               order,
+		Search:              search,
+		Offset:              offset,
+		Limit:               limit,
+		SpecialColumns:      specialColumns,
+		CommonColumns:       commonColumns,
+		SumColumns:          sumColumns,
+		IsQueryTimeInSelect: inSlice(commonColumns, "query_time"),
 	}
 
 	var queryBuffer bytes.Buffer
