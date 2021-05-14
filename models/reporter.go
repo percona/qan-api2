@@ -297,6 +297,16 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 		"time_frame":        timeFrame,
 	}
 
+	// workaround to issues in closed PR https://github.com/jmoiron/sqlx/pull/579
+	escapedLabels := make(map[string][]string)
+	for k, v := range labels {
+		key := escapeColon(k)
+		escapedLabels[key] = make([]string, len(v))
+		for i, value := range v {
+			escapedLabels[key][i] = escapeColon(value)
+		}
+	}
+
 	tmplArgs := struct {
 		DimensionVal    string
 		PeriodStartFrom int64
@@ -309,16 +319,16 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 		IsCommon        bool
 		TimeFrame       int64
 	}{
-		dimensionVal,
-		periodStartFromSec,
-		periodStartToSec,
-		periodStartToSec - periodStartFromSec,
-		dimensions,
-		labels,
-		group,
-		column,
-		!inSlice([]string{"load", "num_queries", "num_queries_with_errors", "num_queries_with_warnings"}, column),
-		timeFrame,
+		DimensionVal:    dimensionVal,
+		PeriodStartFrom: periodStartFromSec,
+		PeriodStartTo:   periodStartToSec,
+		PeriodDuration:  periodStartToSec - periodStartFromSec,
+		Dimensions:      dimensions,
+		Labels:          escapedLabels,
+		Group:           group,
+		Column:          column,
+		IsCommon:        !inSlice([]string{"load", "num_queries", "num_queries_with_errors", "num_queries_with_warnings"}, column),
+		TimeFrame:       timeFrame,
 	}
 
 	var results []*qanpb.Point
