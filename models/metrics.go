@@ -55,16 +55,6 @@ func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec 
 		"period_start_to":   periodStartToSec,
 	}
 
-	// workaround to issues in closed PR https://github.com/jmoiron/sqlx/pull/579
-	escapedLabels := make(map[string][]string)
-	for k, v := range labels {
-		key := escapeColon(k)
-		escapedLabels[key] = make([]string, len(v))
-		for i, value := range v {
-			escapedLabels[key][i] = escapeColon(value)
-		}
-	}
-
 	tmplArgs := struct {
 		PeriodStartFrom int64
 		PeriodStartTo   int64
@@ -79,7 +69,7 @@ func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec 
 		PeriodStartTo:   periodStartToSec,
 		PeriodDuration:  periodStartToSec - periodStartFromSec,
 		Dimensions:      dimensions,
-		Labels:          escapedLabels,
+		Labels:          escapeColonsInMap(labels),
 		DimensionVal:    filter,
 		Group:           group,
 		Totals:          totals,
@@ -423,16 +413,6 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 		"period_start_to":   periodStartToSec,
 	}
 
-	// workaround to issues in closed PR https://github.com/jmoiron/sqlx/pull/579
-	escapedLabels := make(map[string][]string)
-	for k, v := range labels {
-		key := escapeColon(k)
-		escapedLabels[key] = make([]string, len(v))
-		for i, value := range v {
-			escapedLabels[key][i] = escapeColon(value)
-		}
-	}
-
 	tmplArgs := struct {
 		PeriodStartFrom int64
 		PeriodStartTo   int64
@@ -447,7 +427,7 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 		PeriodStartTo:   periodStartToSec,
 		PeriodDuration:  periodStartToSec - periodStartFromSec,
 		Dimensions:      dimensions,
-		Labels:          escapedLabels,
+		Labels:          escapeColonsInMap(labels),
 		DimensionVal:    filter,
 		TimeFrame:       timeFrame,
 		Group:           group,
@@ -536,16 +516,6 @@ func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, peri
 		"limit":             limit,
 	}
 
-	// workaround to issues in closed PR https://github.com/jmoiron/sqlx/pull/579
-	escapedLabels := make(map[string][]string)
-	for k, v := range labels {
-		key := escapeColon(k)
-		escapedLabels[key] = make([]string, len(v))
-		for i, value := range v {
-			escapedLabels[key][i] = escapeColon(value)
-		}
-	}
-
 	tmplArgs := struct {
 		Dimensions   map[string][]string
 		Labels       map[string][]string
@@ -553,7 +523,7 @@ func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, peri
 		Group        string
 	}{
 		Dimensions:   dimensions,
-		Labels:       escapedLabels,
+		Labels:       escapeColonsInMap(labels),
 		DimensionVal: filter,
 		Group:        group,
 	}

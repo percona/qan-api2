@@ -115,8 +115,21 @@ func inSlice(slice []string, val string) bool {
 	return false
 }
 
-func escapeColon(in string) string {
+// workaround to issues in closed PR https://github.com/jmoiron/sqlx/pull/579
+func escapeColons(in string) string {
 	return strings.ReplaceAll(in, ":", "::")
+}
+
+func escapeColonsInMap(m map[string][]string) map[string][]string {
+	escapedMap := make(map[string][]string, len(m))
+	for k, v := range m {
+		key := escapeColons(k)
+		escapedMap[key] = make([]string, len(v))
+		for i, value := range v {
+			escapedMap[key][i] = escapeColons(value)
+		}
+	}
+	return escapedMap
 }
 
 // Select select metrics for report.
@@ -134,16 +147,6 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 		"search":            "%" + strings.ToLower(search) + "%",
 		"offset":            offset,
 		"limit":             limit,
-	}
-
-	// workaround to issues in closed PR https://github.com/jmoiron/sqlx/pull/579
-	escapedLabels := make(map[string][]string)
-	for k, v := range labels {
-		key := escapeColon(k)
-		escapedLabels[key] = make([]string, len(v))
-		for i, value := range v {
-			escapedLabels[key][i] = escapeColon(value)
-		}
 	}
 
 	tmplArgs := struct {
@@ -166,7 +169,7 @@ func (r *Reporter) Select(ctx context.Context, periodStartFromSec, periodStartTo
 		PeriodStartTo:       periodStartToSec,
 		PeriodDuration:      periodStartToSec - periodStartFromSec,
 		Dimensions:          dimensions,
-		Labels:              labels,
+		Labels:              escapeColonsInMap(labels),
 		Group:               group,
 		Order:               order,
 		Search:              search,
@@ -297,16 +300,6 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 		"time_frame":        timeFrame,
 	}
 
-	// workaround to issues in closed PR https://github.com/jmoiron/sqlx/pull/579
-	escapedLabels := make(map[string][]string)
-	for k, v := range labels {
-		key := escapeColon(k)
-		escapedLabels[key] = make([]string, len(v))
-		for i, value := range v {
-			escapedLabels[key][i] = escapeColon(value)
-		}
-	}
-
 	tmplArgs := struct {
 		DimensionVal    string
 		PeriodStartFrom int64
@@ -324,7 +317,7 @@ func (r *Reporter) SelectSparklines(ctx context.Context, dimensionVal string,
 		PeriodStartTo:   periodStartToSec,
 		PeriodDuration:  periodStartToSec - periodStartFromSec,
 		Dimensions:      dimensions,
-		Labels:          escapedLabels,
+		Labels:          escapeColonsInMap(labels),
 		Group:           group,
 		Column:          column,
 		IsCommon:        !inSlice([]string{"load", "num_queries", "num_queries_with_errors", "num_queries_with_warnings"}, column),
