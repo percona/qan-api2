@@ -23,11 +23,11 @@ release:                        ## Build qan-api2 release binary.
 init:                           ## Installs tools to $GOPATH/bin (which is expected to be in $PATH).
 	curl https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b bin/
 
-	go install ./vendor/github.com/kevinburke/go-bindata/go-bindata \
-				./vendor/golang.org/x/tools/cmd/goimports
+	go build -o bin/ ./vendor/github.com/kevinburke/go-bindata/go-bindata
+	go build -o bin/ ./vendor/golang.org/x/tools/cmd/goimports
 
 gen:                            ## Generate files.
-	go-bindata -nometadata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
+	bin/go-bindata -nometadata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
 	make format
 
 install:                        ## Install qan-api2 binary.
@@ -66,7 +66,7 @@ FILES = $(shell find . -type f -name '*.go' -not -path "./vendor/*")
 
 format:                         ## Format source code.
 	gofmt -w -s $(FILES)
-	goimports -local github.com/percona/qan-api2 -l -w $(FILES)
+	bin/goimports -local github.com/percona/qan-api2 -l -w $(FILES)
 
 RUN_FLAGS = ## -todo-use-kingpin-for-flags
 
