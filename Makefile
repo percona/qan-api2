@@ -67,7 +67,7 @@ FILES = $(shell find . -type f -name '*.go' -not -path "./vendor/*")
 
 format:                         ## Format source code.
 	gofmt -w -s $(FILES)
-	bin/goimports -local github.com/percona/qan-api2 -l -w $(FILES)
+	goimports -local github.com/percona/qan-api2 -l -w $(FILES)
 
 RUN_FLAGS = ## -todo-use-kingpin-for-flags
 
