@@ -27,7 +27,7 @@ init:                           ## Installs tools to $GOPATH/bin (which is expec
 	go build -mod=mod -modfile=tools/go.mod -o bin/reviewdog github.com/reviewdog/reviewdog/cmd/reviewdog
 
 gen:                            ## Generate files.
-	go-bindata -nometadata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
+	bin/go-bindata -nometadata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
 	make format
 
 install:                        ## Install qan-api2 binary.
@@ -66,7 +66,7 @@ FILES = $(shell find . -type f -name '*.go' -not -path "./vendor/*")
 
 format:                         ## Format source code.
 	gofmt -w -s $(FILES)
-	goimports -local github.com/percona/qan-api2 -l -w $(FILES)
+	bin/goimports -local github.com/percona/qan-api2 -l -w $(FILES)
 
 RUN_FLAGS = ## -todo-use-kingpin-for-flags
 
