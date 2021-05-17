@@ -26,7 +26,7 @@ init:                           ## Installs tools to $GOPATH/bin (which is expec
 
 	go get -u github.com/kevinburke/go-bindata/...
 	go get -u golang.org/x/tools/cmd/goimports
-	go build -o bin/reviewdog github.com/reviewdog/reviewdog/cmd/reviewdog
+	go get -u github.com/reviewdog/reviewdog/cmd/reviewdog
 
 gen:                            ## Generate files.
 	go-bindata -nometadata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
