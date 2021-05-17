@@ -23,11 +23,12 @@ release:                        ## Build qan-api2 release binary.
 init:                           ## Installs tools to $GOPATH/bin (which is expected to be in $PATH).
 	curl https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b bin/
 
-	go build -o bin/ ./vendor/github.com/kevinburke/go-bindata/go-bindata
-	go build -o bin/ ./vendor/golang.org/x/tools/cmd/goimports
+
+	go get -u github.com/kevinburke/go-bindata/...
+	go get -u golang.org/x/tools/cmd/goimports
 
 gen:                            ## Generate files.
-	bin/go-bindata -nometadata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
+	go-bindata -nometadata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
 	make format
 
 install:                        ## Install qan-api2 binary.
