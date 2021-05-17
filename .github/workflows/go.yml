@@ -1,0 +1,47 @@
+name: Go
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Test
+    strategy:
+      matrix:
+        go-version:
+          - 1.15
+        include:
+          - go-version: 1.16
+            os: ubuntu-latest
+            may-fail: true
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Go
+      uses: percona-platform/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: percona-platform/checkout@v2
+
+    - name: Prepare
+      run: |
+        make init gen format
+        git status
+        git diff --exit-code
+      
+    - name: Check
+      run: |
+        make ci-reviewdog
+        make install
+        make test-env-up
+        make test-race
+        make test-cover
+        make check
+
+    - name: Run debug commands on failure
+      if: ${{ failure() }}
+      run: |
+        env
+        go version
+        go env
+        pwd
+        git status
