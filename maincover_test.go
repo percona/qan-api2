@@ -15,6 +15,7 @@
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 //go:build maincover
+// +build maincover
 
 package main
 

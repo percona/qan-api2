@@ -21,12 +21,10 @@ release:                        ## Build qan-api2 release binary.
 		"
 
 init:                           ## Installs tools to $GOPATH/bin (which is expected to be in $PATH).
-	curl https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b bin/
-
-
-	go get -u github.com/kevinburke/go-bindata/...
-	go get -u golang.org/x/tools/cmd/goimports
-	go get -u github.com/reviewdog/reviewdog/cmd/reviewdog
+	go build -mod=mod -modfile=tools/go.mod -o bin/golangci-lint github.com/golangci/golangci-lint/cmd/golangci-lint
+	go build -mod=mod -modfile=tools/go.mod -o bin/go-bindata github.com/kevinburke/go-bindata/go-bindata
+	go build -mod=mod -modfile=tools/go.mod -o bin/goimports golang.org/x/tools/cmd/goimports
+	go build -mod=mod -modfile=tools/go.mod -o bin/reviewdog github.com/reviewdog/reviewdog/cmd/reviewdog
 
 gen:                            ## Generate files.
 	go-bindata -nometadata -pkg migrations -o migrations/bindata.go -prefix migrations/sql migrations/sql
@@ -112,9 +110,6 @@ deploy:
 	docker cp $(PMM_RELEASE_PATH)/qan-api2 pmm-server:/usr/sbin/percona-qan-api2
 	docker exec pmm-server supervisorctl start qan-api2
 	docker exec pmm-server supervisorctl status
-
-log:
-	docker exec pmm-server tail -f /srv/logs/qan-api2.log
 
 clean:                          ## Removes generated artifacts.
 	rm -Rf ./bin
