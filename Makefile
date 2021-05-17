@@ -21,7 +21,7 @@ release:                        ## Build qan-api2 release binary.
 		"
 
 init:                           ## Installs tools to $GOPATH/bin (which is expected to be in $PATH).
-	curl https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(GOPATH)/bin
+	curl https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b bin/
 
 	go install ./vendor/github.com/kevinburke/go-bindata/go-bindata \
 				./vendor/golang.org/x/tools/cmd/goimports
@@ -60,7 +60,7 @@ check:                          ## Run checkers and linters.
 	go run .github/check-license.go
 
 check-all: check                ## Run golang ci linter to check new changes from master.
-	golangci-lint run -c=.golangci.yml --new-from-rev=master
+	bin/golangci-lint run -c=.golangci.yml --new-from-rev=master
 
 FILES = $(shell find . -type f -name '*.go' -not -path "./vendor/*")
 
@@ -111,9 +111,12 @@ deploy:
 	docker exec pmm-server supervisorctl start qan-api2
 	docker exec pmm-server supervisorctl status
 
+log:
+	docker exec pmm-server tail -f /srv/logs/qan-api2.log
+
 clean:                          ## Removes generated artifacts.
 	rm -Rf ./bin
 
 ci-reviewdog:                   ## Runs reviewdog checks.
-	golangci-lint run -c=.golangci-required.yml --out-format=line-number | bin/reviewdog -f=golangci-lint -level=error -reporter=github-pr-check
-	golangci-lint run -c=.golangci.yml --out-format=line-number | bin/reviewdog -f=golangci-lint -level=error -reporter=github-pr-review
+	bin/golangci-lint run -c=.golangci-required.yml --out-format=line-number | bin/reviewdog -f=golangci-lint -level=error -reporter=github-pr-check
+	bin/golangci-lint run -c=.golangci.yml --out-format=line-number | bin/reviewdog -f=golangci-lint -level=error -reporter=github-pr-review
