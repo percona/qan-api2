@@ -286,6 +286,12 @@ SUM(m_blk_write_time_sum) AS m_blk_write_time_sum,
 SUM(m_cpu_user_time_sum) AS m_cpu_user_time_sum,
 SUM(m_cpu_sys_time_sum) AS m_cpu_sys_time_sum,
 
+SUM(m_plans_calls_sum) AS m_plans_calls_sum,
+SUM(m_plans_calls_cnt) AS m_plans_calls_cnt,
+
+SUM(m_wal_records_sum) AS m_wal_records_sum,
+SUM(m_wal_records_cnt) AS m_wal_records_cnt,
+
 SUM(m_wal_fpi_sum) AS m_wal_fpi_sum,
 SUM(m_wal_fpi_cnt) AS m_wal_fpi_cnt
 
@@ -366,6 +372,9 @@ if(SUM(m_blk_read_time_cnt) == 0, NaN, SUM(m_blk_read_time_sum) / time_frame) AS
 if(SUM(m_blk_write_time_cnt) == 0, NaN, SUM(m_blk_write_time_sum) / time_frame) AS m_blk_write_time_sum_per_sec,
 if(SUM(m_cpu_user_time_cnt) == 0, NaN, SUM(m_cpu_user_time_sum) / time_frame) AS m_cpu_user_time_sum_per_sec,
 if(SUM(m_cpu_sys_time_cnt) == 0, NaN, SUM(m_cpu_sys_time_sum) / time_frame) AS m_cpu_sys_time_sum_per_sec
+if(SUM(m_plans_calls_cnt) == 0, NaN, SUM(m_plans_calls_sum) / time_frame) AS m_plans_calls_sum_per_sec
+if(SUM(m_wal_records_cnt) == 0, NaN, SUM(m_wal_records_sum) / time_frame) AS m_wal_records_sum_per_sec
+if(SUM(m_wal_fpi_cnt) == 0, NaN, SUM(m_wal_fpi_sum) / time_frame) AS m_wal_fpi_sum_per_sec
 FROM metrics
 WHERE period_start >= :period_start_from AND period_start <= :period_start_to
 {{ if .DimensionVal }} AND {{ .Group }} = '{{ .DimensionVal }}' {{ end }}
