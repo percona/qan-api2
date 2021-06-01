@@ -70,6 +70,7 @@ var sumColumnNames = map[string]struct{}{
 	"blk_write_time":         {},
 	"cpu_user_time":          {},
 	"cpu_sys_time":           {},
+	"wal_fpi":                {},
 }
 
 func isBoolMetric(name string) bool {

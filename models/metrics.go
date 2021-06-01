@@ -284,7 +284,10 @@ SUM(m_blk_read_time_sum) AS m_blk_read_time_sum,
 SUM(m_blk_write_time_sum) AS m_blk_write_time_sum,
 
 SUM(m_cpu_user_time_sum) AS m_cpu_user_time_sum,
-SUM(m_cpu_sys_time_sum) AS m_cpu_sys_time_sum
+SUM(m_cpu_sys_time_sum) AS m_cpu_sys_time_sum,
+
+SUM(m_wal_fpi_sum) AS m_wal_fpi_sum,
+SUM(m_wal_fpi_cnt) AS m_wal_fpi_cnt
 
 FROM metrics
 WHERE period_start >= :period_start_from AND period_start <= :period_start_to
