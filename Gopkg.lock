@@ -206,7 +206,7 @@
 
 [[projects]]
   branch = "PMM-8116-pg-monitor09-metrics"
-  digest = "1:c4b4a29d7aef4acc5b24426f29e470c77f4ff729b717a31142bffa6d68217d39"
+  digest = "1:64e749f048a086fc5791dfa60b16f023367ffe336c9324c1b43d219201b00b5b"
   name = "github.com/percona/pmm"
   packages = [
     "api/inventorypb",
@@ -215,7 +215,7 @@
     "version",
   ]
   pruneopts = "NUT"
-  revision = "6933ed0de2a18bf71320435994dbe3d6d7f76d08"
+  revision = "9ede454b1944a35f7baa24e014a48569032683e1"
 
 [[projects]]
   digest = "1:4047c378584616813d610c9f993bf90dd0d07aed8d94bd3bc299cd35ececdcba"
