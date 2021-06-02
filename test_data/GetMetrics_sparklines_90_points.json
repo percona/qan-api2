@@ -92,6 +92,9 @@
 		"num_queries_with_warnings": {
 
 		},
+		"plans_calls": {
+
+		},
 		"qc_hit": {
 
 		},
@@ -178,6 +181,12 @@
 		},
 		"tmp_tables": {
 			"cnt": 13
+		},
+		"wal_fpi": {
+
+		},
+		"wal_records": {
+			
 		}
 	},
 	"sparkline": [
@@ -220,6 +229,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -234,6 +244,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -269,6 +281,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -283,6 +296,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -418,6 +433,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -432,6 +448,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -497,6 +515,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -511,6 +530,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",	
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -561,6 +582,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -575,6 +597,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -610,6 +634,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -624,6 +649,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -704,6 +731,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -718,6 +746,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -753,6 +783,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -767,6 +798,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -822,6 +855,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -836,6 +870,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -881,6 +917,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -895,6 +932,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -935,6 +974,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -949,6 +989,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -1024,6 +1066,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -1038,6 +1081,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -1108,6 +1153,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -1122,6 +1168,8 @@
 			"mLocalBlksWrittenSumPerSec": "NaN",
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
+			"mWalFpiSumPerSec": "NaN",
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
@@ -1237,6 +1285,9 @@
 		"num_queries_with_warnings": {
 
 		},
+		"plans_calls": {
+
+		},
 		"qc_hit": {
 
 		},
@@ -1334,6 +1385,12 @@
 			"max": 1,
 			"avg": 0.00069108914,
 			"p99": 0.3429091
+		},
+		"wal_fpi": {
+
+		},
+		"wal_records": {
+			
 		}
 	},
 	"fingerprint": "select @@global.slow_query_log_file"

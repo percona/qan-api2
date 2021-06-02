@@ -92,6 +92,9 @@
 		"num_queries_with_warnings": {
 
 		},
+		"plans_calls": {
+
+		},
 		"qc_hit": {
 
 		},
@@ -178,6 +181,12 @@
 		},
 		"tmp_tables": {
 			"cnt": 67
+		},
+		"wal_fpi": {
+
+		},
+		"wal_records": {
+			
 		}
 	},
 	"sparkline": [
@@ -552,6 +561,7 @@
 			"mSortRowsSumPerSec": "NaN",
 			"mSortScanSumPerSec": "NaN",
 			"mNoIndexUsedSumPerSec": "NaN",
+			"mPlansCallsSumPerSec": "NaN",
 			"mNoGoodIndexUsedSumPerSec": "NaN",
 			"mDocsReturnedSumPerSec": "NaN",
 			"mResponseLengthSumPerSec": "NaN",
@@ -3189,6 +3199,9 @@
 		"num_queries_with_warnings": {
 
 		},
+		"plans_calls": {
+
+		},
 		"qc_hit": {
 
 		},
@@ -3286,6 +3299,12 @@
 			"max": 1,
 			"avg": 0.0006997452,
 			"p99": 0.3487409
+		},
+		"wal_fpi": {
+
+		},
+		"wal_records": {
+			
 		}
 	},
 	"fingerprint": "select @@global.slow_query_log_file"
