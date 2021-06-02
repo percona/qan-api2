@@ -2380,7 +2380,7 @@
 			"mTempBlksReadSumPerSec": "NaN",
 			"mTempBlksWrittenSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalRecordsSumPerSec": "NaN",š
+			"mWalRecordsSumPerSec": "NaN",
 			"mBlkReadTimeSumPerSec": "NaN",
 			"mBlkWriteTimeSumPerSec": "NaN",
 			"mCpuUserTimeSumPerSec": "NaN",
