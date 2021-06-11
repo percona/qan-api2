@@ -248,7 +248,8 @@ const insertSQL = `
     m_wal_records_cnt,
     m_wal_fpi_sum,
     m_wal_fpi_cnt,
-    m_wal_bytes,
+    m_wal_bytes_sum,
+    m_wal_bytes_cnt,
     m_plan_time_sum,
     m_plan_time_min,
     m_plan_time_max
@@ -463,7 +464,8 @@ const insertSQL = `
     :m_wal_records_cnt,
     :m_wal_fpi_sum,
     :m_wal_fpi_cnt,
-    :m_wal_bytes,
+    :m_wal_bytes_sum,
+    :m_wal_bytes_cnt,
     :m_plan_time_sum,
     :m_plan_time_min,
     :m_plan_time_max
