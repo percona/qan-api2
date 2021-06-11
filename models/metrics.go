@@ -295,6 +295,7 @@ SUM(m_wal_records_cnt) AS m_wal_records_cnt,
 SUM(m_wal_fpi_sum) AS m_wal_fpi_sum,
 SUM(m_wal_fpi_cnt) AS m_wal_fpi_cnt,
 
+any(m_wal_bytes) as m_wal_bytes,
 SUM(m_plan_time_sum) AS m_plan_time_sum,
 MIN(m_plan_time_min) AS m_plan_time_min,
 MAX(m_plan_time_max) AS m_plan_time_max
