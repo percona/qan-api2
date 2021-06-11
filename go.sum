@@ -310,6 +310,8 @@ github.com/pelletier/go-toml v1.4.0 h1:u3Z1r+oOXJIkxqw34zVhyPgjBsm6X2wn21NWs/HfS
 github.com/pelletier/go-toml v1.4.0/go.mod h1:PN7xzY2wHTK0K9p34ErDQMlFxa51Fk0OUruD3k1mMwo=
 github.com/percona/pmm v0.0.0-20210604063507-19bb5e017d33 h1:mdXPBz57wb0UmDciv9xdbRcvKNGT9D1YOWqldadz2j8=
 github.com/percona/pmm v0.0.0-20210604063507-19bb5e017d33/go.mod h1:Cm2JKvJMlMimtAhmF/1BUvz3qVJZ2O2zxQXRvtQh93Q=
+github.com/percona/pmm v0.0.0-20210609115032-5650b2f161e1 h1:Esmn0Zurh+EmQQpk38DFJrIU4TbQeu6CCg+HKPQmi94=
+github.com/percona/pmm v0.0.0-20210609115032-5650b2f161e1/go.mod h1:Cm2JKvJMlMimtAhmF/1BUvz3qVJZ2O2zxQXRvtQh93Q=
 github.com/pierrec/lz4 v2.0.5+incompatible h1:2xWsjqPFWcplujydGg4WmhC/6fZqK42wMM8aXeqhl0I=
 github.com/pierrec/lz4 v2.0.5+incompatible/go.mod h1:pdkljMzZIN41W+lC3N2tnIh5sFi+IEE17M5jbnwPHcY=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
