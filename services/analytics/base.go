@@ -74,6 +74,7 @@ var sumColumnNames = map[string]struct{}{
 	"wal_records":            {},
 	"wal_fpi":                {},
 	"plan_time":              {},
+	"wal_bytes":              {},
 }
 
 func isBoolMetric(name string) bool {
