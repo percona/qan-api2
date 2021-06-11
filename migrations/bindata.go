@@ -18,6 +18,8 @@
 // migrations/sql/08_add_agent_type_pg_stat_monitor.up.sql (359B)
 // migrations/sql/09_pg_stat_monitor_09_columns.down.sql (222B)
 // migrations/sql/09_pg_stat_monitor_09_columns.up.sql (450B)
+// migrations/sql/10_pg_stat_monitor_09_columns_plan.down.sql (150B)
+// migrations/sql/10_pg_stat_monitor_09_columns_plan.sql (314B)
 
 package migrations
 
@@ -446,6 +448,46 @@ func _09_pg_stat_monitor_09_columnsUpSql() (*asset, error) {
 	return a, nil
 }
 
+var __10_pg_stat_monitor_09_columns_planDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\xc8\x8d\x2f\x4f\xcc\x89\x4f\xaa\x2c\x49\x2d\x4e\xd0\xc1\x94\x2c\xc8\x49\xcc\x8b\x2f\xc9\x2f\x49\xcc\x89\x2f\xc9\xcc\x4d\xc5\xa9\x24\x37\x33\x8f\x80\x82\xc4\x0a\x88\x02\x6b\x2e\x40\x00\x00\x00\xff\xff\x6c\x3b\x61\x9a\x96\x00\x00\x00")
+
+func _10_pg_stat_monitor_09_columns_planDownSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__10_pg_stat_monitor_09_columns_planDownSql,
+		"10_pg_stat_monitor_09_columns_plan.down.sql",
+	)
+}
+
+func _10_pg_stat_monitor_09_columns_planDownSql() (*asset, error) {
+	bytes, err := _10_pg_stat_monitor_09_columns_planDownSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "10_pg_stat_monitor_09_columns_plan.down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x41, 0x62, 0xce, 0x44, 0x6e, 0x5d, 0xce, 0x92, 0xf7, 0x9d, 0x8d, 0x84, 0xad, 0x79, 0x96, 0xce, 0x40, 0xd3, 0xd1, 0x4, 0x27, 0x3f, 0xd7, 0x44, 0xff, 0xfe, 0x20, 0x6b, 0xf2, 0x49, 0x45, 0xca}}
+	return a, nil
+}
+
+var __10_pg_stat_monitor_09_columns_planSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x8c\xcc\xbd\x4a\xc5\x30\x18\x87\xf1\xfd\x5c\xc5\x7f\x3b\x0a\xea\xa0\xa3\x53\xfa\xe1\x94\xb4\x60\x2b\x1d\xd3\xd7\x36\xc6\x40\x3e\x24\x7d\xc5\x7a\xf7\x92\x49\x50\x0a\x67\x7d\x78\xf8\x09\x39\xb6\xcf\x18\x45\x25\x5b\x04\xc3\xd9\x2d\xdb\x09\x10\x4d\x83\xba\x97\x2f\xaa\xc3\x1c\xf4\x17\x79\xfd\xfa\xcd\x66\x9b\x31\x70\x76\xd1\xa2\xee\x95\x6a\xbb\x11\xe7\xaa\x64\xa4\x37\x4c\x42\xe2\x6a\xca\x8e\xcd\x2d\xbd\x1b\x5a\xe1\x93\xb5\x2e\xda\x6b\x64\xb3\xa4\xbc\x6e\xe7\x9b\x7f\xee\x87\xa7\xa8\x39\x31\x79\xcd\x2e\x98\x19\x4f\x3e\x11\x3f\xdc\xff\xf2\xc3\x67\x28\x78\x19\x51\x96\xbb\x23\x25\xb8\x78\x64\x28\x17\x2f\x34\x68\x3f\x34\x68\xff\x63\x3c\x9e\x7e\x02\x00\x00\xff\xff\x71\x9e\xa5\xf1\x3a\x01\x00\x00")
+
+func _10_pg_stat_monitor_09_columns_planSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__10_pg_stat_monitor_09_columns_planSql,
+		"10_pg_stat_monitor_09_columns_plan.sql",
+	)
+}
+
+func _10_pg_stat_monitor_09_columns_planSql() (*asset, error) {
+	bytes, err := _10_pg_stat_monitor_09_columns_planSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "10_pg_stat_monitor_09_columns_plan.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xdb, 0x9b, 0xe6, 0xa, 0x50, 0xfb, 0x24, 0x81, 0x23, 0xe7, 0x4e, 0xd4, 0x1, 0x9c, 0xbd, 0x8e, 0x99, 0x60, 0xd5, 0x7e, 0x34, 0xc5, 0x9e, 0xcc, 0xa5, 0x8a, 0x17, 0x17, 0x4f, 0xd, 0x32, 0xca}}
+	return a, nil
+}
+
 // Asset loads and returns the asset for the given name.
 // It returns an error if the asset could not be found or
 // could not be loaded.
@@ -537,24 +579,26 @@ func AssetNames() []string {
 
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
-	"01_init.down.sql":                           _01_initDownSql,
-	"01_init.up.sql":                             _01_initUpSql,
-	"02_postgresql_columns.down.sql":             _02_postgresql_columnsDownSql,
-	"02_postgresql_columns.up.sql":               _02_postgresql_columnsUpSql,
-	"03_add_agent_type.down.sql":                 _03_add_agent_typeDownSql,
-	"03_add_agent_type.up.sql":                   _03_add_agent_typeUpSql,
-	"04_add_tables_column.down.sql":              _04_add_tables_columnDownSql,
-	"04_add_tables_column.up.sql":                _04_add_tables_columnUpSql,
-	"05_add_more_std_labels.down.sql":            _05_add_more_std_labelsDownSql,
-	"05_add_more_std_labels.up.sql":              _05_add_more_std_labelsUpSql,
-	"06_change_agent_type.down.sql":              _06_change_agent_typeDownSql,
-	"06_change_agent_type.up.sql":                _06_change_agent_typeUpSql,
-	"07_pg_stat_monitor_columns.down.sql":        _07_pg_stat_monitor_columnsDownSql,
-	"07_pg_stat_monitor_columns.up.sql":          _07_pg_stat_monitor_columnsUpSql,
-	"08_add_agent_type_pg_stat_monitor.down.sql": _08_add_agent_type_pg_stat_monitorDownSql,
-	"08_add_agent_type_pg_stat_monitor.up.sql":   _08_add_agent_type_pg_stat_monitorUpSql,
-	"09_pg_stat_monitor_09_columns.down.sql":     _09_pg_stat_monitor_09_columnsDownSql,
-	"09_pg_stat_monitor_09_columns.up.sql":       _09_pg_stat_monitor_09_columnsUpSql,
+	"01_init.down.sql":                            _01_initDownSql,
+	"01_init.up.sql":                              _01_initUpSql,
+	"02_postgresql_columns.down.sql":              _02_postgresql_columnsDownSql,
+	"02_postgresql_columns.up.sql":                _02_postgresql_columnsUpSql,
+	"03_add_agent_type.down.sql":                  _03_add_agent_typeDownSql,
+	"03_add_agent_type.up.sql":                    _03_add_agent_typeUpSql,
+	"04_add_tables_column.down.sql":               _04_add_tables_columnDownSql,
+	"04_add_tables_column.up.sql":                 _04_add_tables_columnUpSql,
+	"05_add_more_std_labels.down.sql":             _05_add_more_std_labelsDownSql,
+	"05_add_more_std_labels.up.sql":               _05_add_more_std_labelsUpSql,
+	"06_change_agent_type.down.sql":               _06_change_agent_typeDownSql,
+	"06_change_agent_type.up.sql":                 _06_change_agent_typeUpSql,
+	"07_pg_stat_monitor_columns.down.sql":         _07_pg_stat_monitor_columnsDownSql,
+	"07_pg_stat_monitor_columns.up.sql":           _07_pg_stat_monitor_columnsUpSql,
+	"08_add_agent_type_pg_stat_monitor.down.sql":  _08_add_agent_type_pg_stat_monitorDownSql,
+	"08_add_agent_type_pg_stat_monitor.up.sql":    _08_add_agent_type_pg_stat_monitorUpSql,
+	"09_pg_stat_monitor_09_columns.down.sql":      _09_pg_stat_monitor_09_columnsDownSql,
+	"09_pg_stat_monitor_09_columns.up.sql":        _09_pg_stat_monitor_09_columnsUpSql,
+	"10_pg_stat_monitor_09_columns_plan.down.sql": _10_pg_stat_monitor_09_columns_planDownSql,
+	"10_pg_stat_monitor_09_columns_plan.sql":      _10_pg_stat_monitor_09_columns_planSql,
 }
 
 // AssetDebug is true if the assets were built with the debug flag enabled.
@@ -601,24 +645,26 @@ type bintree struct {
 }
 
 var _bintree = &bintree{nil, map[string]*bintree{
-	"01_init.down.sql":                           {_01_initDownSql, map[string]*bintree{}},
-	"01_init.up.sql":                             {_01_initUpSql, map[string]*bintree{}},
-	"02_postgresql_columns.down.sql":             {_02_postgresql_columnsDownSql, map[string]*bintree{}},
-	"02_postgresql_columns.up.sql":               {_02_postgresql_columnsUpSql, map[string]*bintree{}},
-	"03_add_agent_type.down.sql":                 {_03_add_agent_typeDownSql, map[string]*bintree{}},
-	"03_add_agent_type.up.sql":                   {_03_add_agent_typeUpSql, map[string]*bintree{}},
-	"04_add_tables_column.down.sql":              {_04_add_tables_columnDownSql, map[string]*bintree{}},
-	"04_add_tables_column.up.sql":                {_04_add_tables_columnUpSql, map[string]*bintree{}},
-	"05_add_more_std_labels.down.sql":            {_05_add_more_std_labelsDownSql, map[string]*bintree{}},
-	"05_add_more_std_labels.up.sql":              {_05_add_more_std_labelsUpSql, map[string]*bintree{}},
-	"06_change_agent_type.down.sql":              {_06_change_agent_typeDownSql, map[string]*bintree{}},
-	"06_change_agent_type.up.sql":                {_06_change_agent_typeUpSql, map[string]*bintree{}},
-	"07_pg_stat_monitor_columns.down.sql":        {_07_pg_stat_monitor_columnsDownSql, map[string]*bintree{}},
-	"07_pg_stat_monitor_columns.up.sql":          {_07_pg_stat_monitor_columnsUpSql, map[string]*bintree{}},
-	"08_add_agent_type_pg_stat_monitor.down.sql": {_08_add_agent_type_pg_stat_monitorDownSql, map[string]*bintree{}},
-	"08_add_agent_type_pg_stat_monitor.up.sql":   {_08_add_agent_type_pg_stat_monitorUpSql, map[string]*bintree{}},
-	"09_pg_stat_monitor_09_columns.down.sql":     {_09_pg_stat_monitor_09_columnsDownSql, map[string]*bintree{}},
-	"09_pg_stat_monitor_09_columns.up.sql":       {_09_pg_stat_monitor_09_columnsUpSql, map[string]*bintree{}},
+	"01_init.down.sql":                            {_01_initDownSql, map[string]*bintree{}},
+	"01_init.up.sql":                              {_01_initUpSql, map[string]*bintree{}},
+	"02_postgresql_columns.down.sql":              {_02_postgresql_columnsDownSql, map[string]*bintree{}},
+	"02_postgresql_columns.up.sql":                {_02_postgresql_columnsUpSql, map[string]*bintree{}},
+	"03_add_agent_type.down.sql":                  {_03_add_agent_typeDownSql, map[string]*bintree{}},
+	"03_add_agent_type.up.sql":                    {_03_add_agent_typeUpSql, map[string]*bintree{}},
+	"04_add_tables_column.down.sql":               {_04_add_tables_columnDownSql, map[string]*bintree{}},
+	"04_add_tables_column.up.sql":                 {_04_add_tables_columnUpSql, map[string]*bintree{}},
+	"05_add_more_std_labels.down.sql":             {_05_add_more_std_labelsDownSql, map[string]*bintree{}},
+	"05_add_more_std_labels.up.sql":               {_05_add_more_std_labelsUpSql, map[string]*bintree{}},
+	"06_change_agent_type.down.sql":               {_06_change_agent_typeDownSql, map[string]*bintree{}},
+	"06_change_agent_type.up.sql":                 {_06_change_agent_typeUpSql, map[string]*bintree{}},
+	"07_pg_stat_monitor_columns.down.sql":         {_07_pg_stat_monitor_columnsDownSql, map[string]*bintree{}},
+	"07_pg_stat_monitor_columns.up.sql":           {_07_pg_stat_monitor_columnsUpSql, map[string]*bintree{}},
+	"08_add_agent_type_pg_stat_monitor.down.sql":  {_08_add_agent_type_pg_stat_monitorDownSql, map[string]*bintree{}},
+	"08_add_agent_type_pg_stat_monitor.up.sql":    {_08_add_agent_type_pg_stat_monitorUpSql, map[string]*bintree{}},
+	"09_pg_stat_monitor_09_columns.down.sql":      {_09_pg_stat_monitor_09_columnsDownSql, map[string]*bintree{}},
+	"09_pg_stat_monitor_09_columns.up.sql":        {_09_pg_stat_monitor_09_columnsUpSql, map[string]*bintree{}},
+	"10_pg_stat_monitor_09_columns_plan.down.sql": {_10_pg_stat_monitor_09_columns_planDownSql, map[string]*bintree{}},
+	"10_pg_stat_monitor_09_columns_plan.sql":      {_10_pg_stat_monitor_09_columns_planSql, map[string]*bintree{}},
 }}
 
 // RestoreAsset restores an asset under the given directory.
