@@ -73,7 +73,6 @@ var sumColumnNames = map[string]struct{}{
 	"plans_calls":            {},
 	"wal_records":            {},
 	"wal_fpi":                {},
-	"wal_bytes":              {},
 	"plan_time":              {},
 }
 
@@ -179,6 +178,7 @@ func isTimeMetric(name string) bool {
 		"blk_write_time":       {},
 		"cpu_user_time":        {},
 		"cpu_sys_time":         {},
+		"plan_time":            {},
 	}
 
 	_, ok := timeColumnNames[name]
