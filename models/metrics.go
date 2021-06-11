@@ -297,7 +297,7 @@ SUM(m_wal_fpi_cnt) AS m_wal_fpi_cnt,
 
 SUM(m_plan_time_sum) AS m_plan_time_sum,
 MIN(m_plan_time_min) AS m_plan_time_min,
-MAX(m_plan_time_max) AS m_plan_time_max,
+MAX(m_plan_time_max) AS m_plan_time_max
 
 FROM metrics
 WHERE period_start >= :period_start_from AND period_start <= :period_start_to
