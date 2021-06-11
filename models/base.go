@@ -87,6 +87,7 @@ var sparklinePointAllFields = []string{
 	"m_plans_calls_sum_per_sec",
 	"m_wal_records_sum_per_sec",
 	"m_wal_fpi_sum_per_sec",
+	"m_plan_time_per_sec",
 }
 
 func getPointFieldsList(point *qanpb.Point, fields []string) []interface{} {
@@ -151,6 +152,7 @@ func getPointFieldsList(point *qanpb.Point, fields []string) []interface{} {
 		"m_plans_calls_sum_per_sec":            &point.MPlansCallsSumPerSec,
 		"m_wal_records_sum_per_sec":            &point.MWalRecordsSumPerSec,
 		"m_wal_fpi_sum_per_sec":                &point.MWalFpiSumPerSec,
+		"m_plan_time_per_sec":                  &point.MPlanTimePerSec,
 	}
 
 	sparklinePointValuesList := []interface{}{}
@@ -336,6 +338,10 @@ func isValidMetricColumn(name string) bool {
 		"m_wal_records_sum":            {},
 		"m_wal_fpi_cnt":                {},
 		"m_wal_fpi_sum":                {},
+		"m_wal_bytes":                  {},
+		"m_plan_total_time":            {},
+		"m_plan_min_time":              {},
+		"m_plan_max_time":              {},
 	}
 	_, isValid := fields[name]
 	return isValid
