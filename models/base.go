@@ -87,7 +87,7 @@ var sparklinePointAllFields = []string{
 	"m_plans_calls_sum_per_sec",
 	"m_wal_records_sum_per_sec",
 	"m_wal_fpi_sum_per_sec",
-	"m_plan_time_per_sec",
+	"m_plan_time_sum_per_sec",
 }
 
 func getPointFieldsList(point *qanpb.Point, fields []string) []interface{} {
@@ -152,7 +152,7 @@ func getPointFieldsList(point *qanpb.Point, fields []string) []interface{} {
 		"m_plans_calls_sum_per_sec":            &point.MPlansCallsSumPerSec,
 		"m_wal_records_sum_per_sec":            &point.MWalRecordsSumPerSec,
 		"m_wal_fpi_sum_per_sec":                &point.MWalFpiSumPerSec,
-		"m_plan_time_per_sec":                  &point.MPlanTimePerSec,
+		"m_plan_time_sum_per_sec":              &point.MPlanTimePerSec,
 	}
 
 	sparklinePointValuesList := []interface{}{}
