@@ -320,6 +320,8 @@ github.com/percona/pmm v0.0.0-20210611181103-83b8fb9fc7f0 h1:ktF7UqqJBrmvbbC0nS+
 github.com/percona/pmm v0.0.0-20210611181103-83b8fb9fc7f0/go.mod h1:Cm2JKvJMlMimtAhmF/1BUvz3qVJZ2O2zxQXRvtQh93Q=
 github.com/percona/pmm v0.0.0-20210611192800-46e984f2b818 h1:tA1/b7h1koerGpFOwJtG6hpzLU9acS5ZCwrTiV/VB7k=
 github.com/percona/pmm v0.0.0-20210611192800-46e984f2b818/go.mod h1:Cm2JKvJMlMimtAhmF/1BUvz3qVJZ2O2zxQXRvtQh93Q=
+github.com/percona/pmm v0.0.0-20210615051259-59bfdfd79fd9 h1:9ha80AKPuM5M4nq9x0Bs5Or2vj22dJ1wDmAKQ4eU2Zg=
+github.com/percona/pmm v0.0.0-20210615051259-59bfdfd79fd9/go.mod h1:Cm2JKvJMlMimtAhmF/1BUvz3qVJZ2O2zxQXRvtQh93Q=
 github.com/pierrec/lz4 v2.0.5+incompatible h1:2xWsjqPFWcplujydGg4WmhC/6fZqK42wMM8aXeqhl0I=
 github.com/pierrec/lz4 v2.0.5+incompatible/go.mod h1:pdkljMzZIN41W+lC3N2tnIh5sFi+IEE17M5jbnwPHcY=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
