@@ -50,7 +50,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 1,
@@ -103,7 +104,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 2,
@@ -156,7 +158,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 3,
@@ -209,7 +212,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 4,
@@ -262,7 +266,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 5,
@@ -315,7 +320,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 6,
@@ -368,7 +374,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 7,
@@ -421,7 +428,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 8,
@@ -474,7 +482,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 9,
@@ -527,7 +536,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 10,
@@ -580,7 +590,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 11,
@@ -633,7 +644,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 12,
@@ -686,7 +698,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 13,
@@ -739,7 +752,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 14,
@@ -792,7 +806,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 15,
@@ -845,7 +860,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 16,
@@ -898,7 +914,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 17,
@@ -951,7 +968,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 18,
@@ -1004,7 +1022,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 19,
@@ -1057,7 +1076,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 20,
@@ -1110,7 +1130,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 21,
@@ -1163,7 +1184,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 22,
@@ -1216,7 +1238,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 23,
@@ -1269,7 +1292,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 24,
@@ -1322,7 +1346,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 25,
@@ -1375,7 +1400,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 26,
@@ -1428,7 +1454,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 27,
@@ -1481,7 +1508,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 28,
@@ -1534,7 +1562,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 29,
@@ -1587,7 +1616,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 30,
@@ -1640,7 +1670,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 31,
@@ -1693,7 +1724,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 32,
@@ -1746,7 +1778,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 33,
@@ -1799,7 +1832,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 34,
@@ -1852,7 +1886,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 35,
@@ -1905,7 +1940,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 36,
@@ -1958,7 +1994,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 37,
@@ -2011,7 +2048,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 38,
@@ -2064,7 +2102,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 39,
@@ -2117,7 +2156,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 40,
@@ -2170,7 +2210,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 41,
@@ -2223,7 +2264,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 42,
@@ -2276,7 +2318,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 43,
@@ -2329,7 +2372,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 44,
@@ -2382,7 +2426,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 45,
@@ -2435,7 +2480,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 46,
@@ -2488,7 +2534,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 47,
@@ -2541,7 +2588,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 48,
@@ -2594,7 +2642,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 49,
@@ -2647,7 +2696,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 50,
@@ -2700,7 +2750,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 51,
@@ -2753,7 +2804,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 52,
@@ -2806,7 +2858,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 53,
@@ -2859,7 +2912,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 54,
@@ -2912,7 +2966,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 55,
@@ -2965,7 +3020,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 56,
@@ -3018,7 +3074,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 57,
@@ -3071,7 +3128,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 58,
@@ -3124,7 +3182,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 59,
@@ -3177,7 +3236,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 60,
@@ -3230,7 +3290,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 61,
@@ -3283,7 +3344,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 62,
@@ -3336,7 +3398,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 63,
@@ -3389,7 +3452,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 64,
@@ -3442,7 +3506,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 65,
@@ -3495,7 +3560,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 66,
@@ -3548,7 +3614,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 67,
@@ -3601,7 +3668,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 68,
@@ -3654,7 +3722,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 69,
@@ -3707,7 +3776,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 70,
@@ -3760,7 +3830,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 71,
@@ -3813,7 +3884,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 72,
@@ -3866,7 +3938,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 73,
@@ -3919,7 +3992,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 74,
@@ -3972,7 +4046,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 75,
@@ -4025,7 +4100,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 76,
@@ -4078,7 +4154,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 77,
@@ -4131,7 +4208,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 78,
@@ -4184,7 +4262,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 79,
@@ -4237,7 +4316,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 80,
@@ -4290,7 +4370,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 81,
@@ -4343,7 +4424,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 82,
@@ -4396,7 +4478,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 83,
@@ -4449,7 +4532,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 84,
@@ -4502,7 +4586,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 85,
@@ -4555,7 +4640,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 86,
@@ -4608,7 +4694,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 87,
@@ -4661,7 +4748,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 88,
@@ -4714,7 +4802,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 89,
@@ -4767,7 +4856,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 90,
@@ -4820,7 +4910,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 91,
@@ -4873,7 +4964,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 92,
@@ -4926,7 +5018,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 93,
@@ -4979,7 +5072,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 94,
@@ -5032,7 +5126,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 95,
@@ -5085,7 +5180,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 96,
@@ -5138,7 +5234,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 97,
@@ -5191,7 +5288,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 98,
@@ -5244,7 +5342,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 99,
@@ -5297,7 +5396,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 100,
@@ -5350,7 +5450,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 101,
@@ -5403,7 +5504,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 102,
@@ -5456,7 +5558,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 103,
@@ -5509,7 +5612,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 104,
@@ -5562,7 +5666,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 105,
@@ -5615,7 +5720,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 106,
@@ -5668,7 +5774,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 107,
@@ -5721,7 +5828,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 108,
@@ -5774,7 +5882,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 109,
@@ -5827,7 +5936,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 110,
@@ -5880,7 +5990,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 111,
@@ -5933,7 +6044,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 112,
@@ -5986,7 +6098,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 113,
@@ -6039,7 +6152,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 114,
@@ -6092,7 +6206,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 115,
@@ -6145,7 +6260,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 116,
@@ -6198,7 +6314,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 117,
@@ -6251,7 +6368,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 118,
@@ -6304,7 +6422,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		},
 		{
 			"point": 119,
@@ -6357,7 +6476,8 @@
 			"mPlansCallsSumPerSec": "NaN",
 			"mWalRecordsSumPerSec": "NaN",
 			"mWalFpiSumPerSec": "NaN",
-			"mWalBytesSumPerSec": "NaN"
+			"mWalBytesSumPerSec": "NaN",
+			"mPlanTimeSumPerSec": "NaN"
 		}
 	],
 	"totals": {
