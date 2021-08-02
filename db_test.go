@@ -108,7 +108,7 @@ func TestDropOldPartition(t *testing.T) {
 	cleanup()
 }
 
-func TestCreateDbIfNoExist(t *testing.T) {
+func TestCreateDbIfNotExists(t *testing.T) {
 	t.Run("create new databases and reconnect to it", func(t *testing.T) {
 		dsn, ok := os.LookupEnv("QANAPI_DSN_TEST")
 

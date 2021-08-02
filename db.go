@@ -33,16 +33,15 @@ import (
 )
 
 const (
-	databaseNoExist = 81
+	databaseNotExist = 81
 )
 
 // NewDB return updated db.
 func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
-
 	db, err := sqlx.Connect("clickhouse", dsn)
 	if err != nil {
 		if exception, ok := err.(*clickhouse.Exception); ok {
-			if exception.Code == databaseNoExist {
+			if exception.Code == databaseNotExist {
 				log.Println("Creating database")
 				clickhouseURL, err := url.Parse(dsn)
 				if err != nil {
@@ -62,9 +61,9 @@ func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
 				if err != nil {
 					log.Fatalf("Create database. Result: %v, Error: %v", result, err)
 				}
-				log.Println("Database was created. Rerun qan-api2")
+				log.Println("Database was created. Now we should restart qan-api2")
 				return nil
-				// The qan-api2 will crash after creating the database, but it's ok, it'll restarted by supervisor
+				// The qan-api2 will exit after creating the database, it'll be restarted by supervisor
 			}
 		}
 		log.Fatal("Connection: ", err)
