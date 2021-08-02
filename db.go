@@ -19,8 +19,8 @@ package main
 import (
 	"fmt"
 	"log"
+	"net/url"
 	"strings"
-    "net/url"
 
 	"github.com/ClickHouse/clickhouse-go" // register database/sql driver
 	"github.com/golang-migrate/migrate"
@@ -82,7 +82,6 @@ func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
 	db.SetConnMaxLifetime(0)
 	db.SetMaxIdleConns(maxIdleConns)
 	db.SetMaxOpenConns(maxOpenConns)
-
 
 	if err := runMigrations(dsn); err != nil {
 		log.Fatal("Migrations: ", err)
