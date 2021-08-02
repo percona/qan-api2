@@ -58,7 +58,7 @@ func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
 				if err != nil {
 					log.Fatal("Connection: ", err)
 				}
-				result, err := defaultDB.Exec(fmt.Sprintf(`CREATE DATABASE %s`, databaseName))
+				result, err := defaultDB.Exec(fmt.Sprintf(`CREATE DATABASE %s ENGINE = Ordinary`, databaseName))
 				if err != nil {
 					log.Fatalf("Create database. Result: %v, Error: %v", result, err)
 				}
