@@ -20,8 +20,9 @@ import (
 	"fmt"
 	"log"
 	"strings"
+    "net/url"
 
-	_ "github.com/ClickHouse/clickhouse-go" // register database/sql driver
+	"github.com/ClickHouse/clickhouse-go" // register database/sql driver
 	"github.com/golang-migrate/migrate"
 	_ "github.com/golang-migrate/migrate/database/clickhouse" // register golang-migrate driver
 	bindata "github.com/golang-migrate/migrate/source/go_bindata"
@@ -31,11 +32,43 @@ import (
 	"github.com/percona/qan-api2/migrations"
 )
 
+const (
+	databaseNoExist = 81
+)
+
 // NewDB return updated db.
 func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
+
 	db, err := sqlx.Connect("clickhouse", dsn)
 	if err != nil {
-		log.Fatal("Connection: ", err)
+		if exception, ok := err.(*clickhouse.Exception); ok {
+			if exception.Code == databaseNoExist {
+				log.Println("Creating database")
+				clickhouseURL, err := url.Parse(dsn)
+				if err != nil {
+					log.Fatal(err)
+				}
+				q := clickhouseURL.Query()
+				databaseName := q.Get("database")
+				q.Set("database", "default")
+
+				clickhouseURL.RawQuery = q.Encode()
+
+				defaultDB, err := sqlx.Connect("clickhouse", clickhouseURL.String())
+				if err != nil {
+					log.Fatal("Connection: ", err)
+				}
+				result, err := defaultDB.Exec(fmt.Sprintf(`CREATE DATABASE %s`, databaseName))
+				if err != nil {
+					log.Fatalf("Create database. Result: %v, Error: %v", result, err)
+				}
+				log.Println("Database was created. Rerun qan-api2")
+				return nil
+				// The qan-api2 will crash after creating the database, but it's ok, it'll restarted by supervisor
+			}
+		} else {
+			log.Fatal("Connection: ", err)
+		}
 	}
 
 	// TODO: find solution with better performance
@@ -49,6 +82,7 @@ func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
 	db.SetConnMaxLifetime(0)
 	db.SetMaxIdleConns(maxIdleConns)
 	db.SetMaxOpenConns(maxOpenConns)
+
 
 	if err := runMigrations(dsn); err != nil {
 		log.Fatal("Migrations: ", err)

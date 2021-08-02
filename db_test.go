@@ -107,3 +107,20 @@ func TestDropOldPartition(t *testing.T) {
 	})
 	cleanup()
 }
+
+func TestCreateDbIfNoExist(t *testing.T) {
+	t.Run("create new databases and reconnect to it", func(t *testing.T) {
+		dsn, ok := os.LookupEnv("QANAPI_DSN_TEST")
+
+		dsn = strings.Replace(dsn, "?database=pmm_test", "?database=pmm_created_db", 1)
+		if !ok {
+			dsn = "clickhouse://127.0.0.1:19000?database=pmm_created_db"
+		}
+
+		NewDB(dsn, 5, 10) // create new db and exit
+
+		db := NewDB(dsn, 5, 10)
+
+		require.NotEqual(t, db, nil, "Check connection after we create database")
+	})
+}
