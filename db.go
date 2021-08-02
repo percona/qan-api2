@@ -66,9 +66,8 @@ func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
 				return nil
 				// The qan-api2 will crash after creating the database, but it's ok, it'll restarted by supervisor
 			}
-		} else {
-			log.Fatal("Connection: ", err)
 		}
+		log.Fatal("Connection: ", err)
 	}
 
 	// TODO: find solution with better performance
