@@ -17,6 +17,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"math"
 	"os"
@@ -61,10 +62,14 @@ func setup() *sqlx.DB {
 }
 
 func cleanup() {
-	cmdStr := `docker exec pmm-clickhouse-test clickhouse client --query='DROP DATABASE IF EXISTS pmm_test_parts;'`
-	if out, err := exec.Command("/bin/sh", "-c", cmdStr).Output(); err != nil {
-		log.Fatalf("Docker drop db: %v, %v", out, err)
+	cleanupDatabases := []string{"pmm_test_parts", "pmm_created_db"}
+	for _, database := range cleanupDatabases {
+		cmdStr := fmt.Sprintf(`docker exec pmm-clickhouse-test clickhouse client --query='DROP DATABASE IF EXISTS %s;'`, database)
+		if out, err := exec.Command("/bin/sh", "-c", cmdStr).Output(); err != nil {
+			log.Fatalf("Docker drop db: %v, %v", out, err)
+		}
 	}
+
 }
 
 func TestDropOldPartition(t *testing.T) {
@@ -109,7 +114,7 @@ func TestDropOldPartition(t *testing.T) {
 }
 
 func TestCreateDbIfNotExists(t *testing.T) {
-	t.Run("create new databases and reconnect to it", func(t *testing.T) {
+	t.Run("connect to db that doesnt exist", func(t *testing.T) {
 		dsn, ok := os.LookupEnv("QANAPI_DSN_TEST")
 
 		dsn = strings.Replace(dsn, "?database=pmm_test", "?database=pmm_created_db", 1)
@@ -117,10 +122,8 @@ func TestCreateDbIfNotExists(t *testing.T) {
 			dsn = "clickhouse://127.0.0.1:19000?database=pmm_created_db"
 		}
 
-		NewDB(dsn, 5, 10) // create new db and exit
+		db := createDB(dsn)
 
-		db := NewDB(dsn, 5, 10)
-
-		require.NotEqual(t, db, nil, "Check connection after we create database")
+		require.Equal(t, db, nil, "Check connection after we create database")
 	})
 }

@@ -289,10 +289,7 @@ func main() {
 	defer l.Info("Done.")
 
 	db := NewDB(*dsnF, 5, 10)
-	if db == nil {
-		// we use this if only if database not exist
-		os.Exit(0)
-	}
+
 	prom.MustRegister(sqlmetrics.NewCollector("clickhouse", "qan-api2", db.DB))
 
 	// handle termination signals
