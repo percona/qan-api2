@@ -43,7 +43,7 @@ func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
 		if exception, ok := err.(*clickhouse.Exception); ok && exception.Code == databaseNotExistErrorCode {
 			err = createDB(dsn)
 			if err != nil {
-				log.Fatalf("Database wasn't created: %s", err)
+				log.Fatalf("Database wasn't created: %v", err)
 			}
 			db, err = sqlx.Connect("clickhouse", dsn)
 			if err != nil {
@@ -90,6 +90,7 @@ func createDB(dsn string) error {
 		return err
 	}
 	defer defaultDB.Close()
+
 	result, err := defaultDB.Exec(fmt.Sprintf(`CREATE DATABASE %s ENGINE = Ordinary`, databaseName))
 	if err != nil {
 		log.Printf("Result: %v", result)
