@@ -33,38 +33,36 @@ import (
 )
 
 const (
-	databaseNotExist = 81
+	databaseNotExistErrorCode = 81
 )
 
 // NewDB return updated db.
 func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
 	db, err := sqlx.Connect("clickhouse", dsn)
 	if err != nil {
-		if exception, ok := err.(*clickhouse.Exception); ok {
-			if exception.Code == databaseNotExist {
-				log.Println("Creating database")
-				clickhouseURL, err := url.Parse(dsn)
-				if err != nil {
-					log.Fatal(err)
-				}
-				q := clickhouseURL.Query()
-				databaseName := q.Get("database")
-				q.Set("database", "default")
-
-				clickhouseURL.RawQuery = q.Encode()
-
-				defaultDB, err := sqlx.Connect("clickhouse", clickhouseURL.String())
-				if err != nil {
-					log.Fatal("Connection: ", err)
-				}
-				result, err := defaultDB.Exec(fmt.Sprintf(`CREATE DATABASE %s ENGINE = Ordinary`, databaseName))
-				if err != nil {
-					log.Fatalf("Create database. Result: %v, Error: %v", result, err)
-				}
-				log.Println("Database was created. Now we should restart qan-api2")
-				return nil
-				// The qan-api2 will exit after creating the database, it'll be restarted by supervisor
+		if exception, ok := err.(*clickhouse.Exception); ok && exception.Code == databaseNotExistErrorCode {
+			log.Println("Creating database")
+			clickhouseURL, err := url.Parse(dsn)
+			if err != nil {
+				log.Fatal(err)
 			}
+			q := clickhouseURL.Query()
+			databaseName := q.Get("database")
+			q.Set("database", "default")
+
+			clickhouseURL.RawQuery = q.Encode()
+
+			defaultDB, err := sqlx.Connect("clickhouse", clickhouseURL.String())
+			if err != nil {
+				log.Fatal("Connection: ", err)
+			}
+			result, err := defaultDB.Exec(fmt.Sprintf(`CREATE DATABASE %s ENGINE = Ordinary`, databaseName))
+			if err != nil {
+				log.Fatalf("Create database. Result: %v, Error: %v", result, err)
+			}
+			log.Println("Database was created. Now we should restart qan-api2")
+			return nil
+			// The qan-api2 will exit after creating the database, it'll be restarted by supervisor
 		}
 		log.Fatal("Connection: ", err)
 	}
