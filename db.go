@@ -50,8 +50,9 @@ func NewDB(dsn string, maxIdleConns, maxOpenConns int) *sqlx.DB {
 			if err != nil {
 				log.Fatalf("Connection: %v", err)
 			}
+		} else {
+			log.Fatalf("Connection: %v", err)
 		}
-		log.Fatalf("Connection: %v", err)
 	}
 
 	// TODO: find solution with better performance
