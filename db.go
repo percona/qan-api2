@@ -34,7 +34,6 @@ import (
 
 const (
 	databaseNotExistErrorCode = 81
-
 )
 
 // NewDB return updated db.
