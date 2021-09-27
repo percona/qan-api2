@@ -247,7 +247,10 @@ const insertSQL = `
     m_wal_records_sum,
     m_wal_records_cnt,
     m_wal_fpi_sum,
-    m_wal_fpi_cnt
+    m_wal_fpi_cnt,
+    top_queryid,
+    application_name,
+    planid
    )
   VALUES (
     :queryid,
@@ -458,7 +461,10 @@ const insertSQL = `
     :m_wal_records_sum,
     :m_wal_records_cnt,
     :m_wal_fpi_sum,
-    :m_wal_fpi_cnt
+    :m_wal_fpi_cnt,
+    :top_queryid,
+    :application_name,
+    :planid
   )
 `
 
