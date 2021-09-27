@@ -1,4 +1,4 @@
 ALTER TABLE metrics
-  ADD COLUMN `top_queryid` HighCardinality(String),
-  ADD COLUMN `application_name` NormalCardinality(String),
-  ADD COLUMN `planid` HighCardinality(String);
+  ADD COLUMN `top_queryid` LowCardinality(String),
+  ADD COLUMN `application_name` LowCardinality(String),
+  ADD COLUMN `planid` LowCardinality(String);
