@@ -255,6 +255,7 @@ const insertSQL = `
     m_plan_time_min,
     m_plan_time_max,
     top_queryid,
+    top_query,
     application_name,
     planid
    )
@@ -475,6 +476,7 @@ const insertSQL = `
     :m_plan_time_min,
     :m_plan_time_max,
     :top_queryid,
+    :top_query,
     :application_name,
     :planid
   )
