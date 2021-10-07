@@ -20,9 +20,9 @@
 // migrations/sql/09_pg_stat_monitor_09_columns.up.sql (450B)
 // migrations/sql/10_pg_stat_monitor_09_columns_plan.down.sql (218B)
 // migrations/sql/10_pg_stat_monitor_09_columns_plan.up.sql (433B)
-// migrations/sql/11_pg_stat_monitor_09_dimensions.down.sql (47B)
+// migrations/sql/11_pg_stat_monitor_09_dimensions.down.sql (107B)
 // migrations/sql/11_pg_stat_monitor_09_dimensions.up.sql (173B)
-// migrations/sql/12_pg_stat_monitor_09_topquery.down.sql (107B)
+// migrations/sql/12_pg_stat_monitor_09_topquery.down.sql (47B)
 // migrations/sql/12_pg_stat_monitor_09_topquery.up.sql (69B)
 
 package migrations
@@ -492,7 +492,7 @@ func _10_pg_stat_monitor_09_columns_planUpSql() (*asset, error) {
 	return a, nil
 }
 
-var __11_pg_stat_monitor_09_dimensionsDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\xb0\xe6\x02\x04\x00\x00\xff\xff\x55\x5d\x6f\x26\x2f\x00\x00\x00")
+var __11_pg_stat_monitor_09_dimensionsDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\xcc\x4c\x49\xd0\x41\x97\x4c\x2c\x28\xc8\xc9\x4c\x4e\x2c\xc9\xcc\xcf\x8b\xcf\x4b\xcc\x4d\xc5\x54\x51\x90\x93\x98\x97\x99\x92\x60\xcd\x05\x08\x00\x00\xff\xff\x8a\xfb\x0e\x54\x6b\x00\x00\x00")
 
 func _11_pg_stat_monitor_09_dimensionsDownSqlBytes() ([]byte, error) {
 	return bindataRead(
@@ -508,7 +508,7 @@ func _11_pg_stat_monitor_09_dimensionsDownSql() (*asset, error) {
 	}
 
 	info := bindataFileInfo{name: "11_pg_stat_monitor_09_dimensions.down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
-	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x9d, 0xa9, 0x4f, 0x76, 0x84, 0xa3, 0xce, 0xb5, 0x1f, 0x11, 0xd8, 0xc7, 0x2, 0xfb, 0x17, 0xdc, 0x9c, 0x1b, 0x1a, 0xf, 0x52, 0xe2, 0xe7, 0xbe, 0xc6, 0xa1, 0x36, 0x2c, 0xfb, 0x6f, 0x40, 0xbb}}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xd6, 0x90, 0x93, 0x43, 0x9a, 0x86, 0x37, 0x6a, 0x9b, 0xae, 0x6f, 0xb6, 0xdd, 0x4b, 0x2f, 0x1a, 0x0, 0xf3, 0xab, 0x71, 0x91, 0x2, 0x80, 0xaa, 0xa1, 0x9d, 0xd1, 0xcf, 0x85, 0xbd, 0x81, 0xa}}
 	return a, nil
 }
 
@@ -532,7 +532,7 @@ func _11_pg_stat_monitor_09_dimensionsUpSql() (*asset, error) {
 	return a, nil
 }
 
-var __12_pg_stat_monitor_09_topqueryDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\xcc\x4c\x49\xd0\x41\x97\x4c\x2c\x28\xc8\xc9\x4c\x4e\x2c\xc9\xcc\xcf\x8b\xcf\x4b\xcc\x4d\xc5\x54\x51\x90\x93\x98\x97\x99\x92\x60\xcd\x05\x08\x00\x00\xff\xff\x8a\xfb\x0e\x54\x6b\x00\x00\x00")
+var __12_pg_stat_monitor_09_topqueryDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\xb0\xe6\x02\x04\x00\x00\xff\xff\x55\x5d\x6f\x26\x2f\x00\x00\x00")
 
 func _12_pg_stat_monitor_09_topqueryDownSqlBytes() ([]byte, error) {
 	return bindataRead(
@@ -548,11 +548,11 @@ func _12_pg_stat_monitor_09_topqueryDownSql() (*asset, error) {
 	}
 
 	info := bindataFileInfo{name: "12_pg_stat_monitor_09_topquery.down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
-	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xd6, 0x90, 0x93, 0x43, 0x9a, 0x86, 0x37, 0x6a, 0x9b, 0xae, 0x6f, 0xb6, 0xdd, 0x4b, 0x2f, 0x1a, 0x0, 0xf3, 0xab, 0x71, 0x91, 0x2, 0x80, 0xaa, 0xa1, 0x9d, 0xd1, 0xcf, 0x85, 0xbd, 0x81, 0xa}}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x9d, 0xa9, 0x4f, 0x76, 0x84, 0xa3, 0xce, 0xb5, 0x1f, 0x11, 0xd8, 0xc7, 0x2, 0xfb, 0x17, 0xdc, 0x9c, 0x1b, 0x1a, 0xf, 0x52, 0xe2, 0xe7, 0xbe, 0xc6, 0xa1, 0x36, 0x2c, 0xfb, 0x6f, 0x40, 0xbb}}
 	return a, nil
 }
 
-var __12_pg_stat_monitor_09_topqueryUpSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\x50\xf0\xc9\x2f\x77\x4e\x2c\x4a\xc9\xcc\x4b\xcc\xc9\x2c\xa9\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xd4\xe1\x02\x04\x00\x00\xff\xff\x6c\x7d\x1d\x1a\x45\x00\x00\x00")
+var __12_pg_stat_monitor_09_topqueryUpSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\x50\xf0\xc9\x2f\x77\x4e\x2c\x4a\xc9\xcc\x4b\xcc\xc9\x2c\xa9\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xb4\xe6\x02\x04\x00\x00\xff\xff\xfa\xf9\x9e\x1f\x45\x00\x00\x00")
 
 func _12_pg_stat_monitor_09_topqueryUpSqlBytes() ([]byte, error) {
 	return bindataRead(
@@ -568,7 +568,7 @@ func _12_pg_stat_monitor_09_topqueryUpSql() (*asset, error) {
 	}
 
 	info := bindataFileInfo{name: "12_pg_stat_monitor_09_topquery.up.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
-	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xe, 0x23, 0xda, 0x3, 0xb3, 0x5d, 0xbe, 0x25, 0xbf, 0xdc, 0xbe, 0x1f, 0xc7, 0x6f, 0xc2, 0xa7, 0x89, 0x54, 0x42, 0xf8, 0x37, 0x22, 0xda, 0xd4, 0xb3, 0xee, 0x7b, 0x46, 0xa1, 0x7f, 0xa4, 0xe3}}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xb2, 0xf1, 0x95, 0x3e, 0xc4, 0xb0, 0xd6, 0x65, 0x71, 0xc3, 0xfa, 0xd2, 0xbb, 0xac, 0xcd, 0xfd, 0x70, 0x65, 0xda, 0x79, 0x31, 0xa0, 0x6e, 0xc0, 0x63, 0x19, 0x8a, 0xdf, 0xd4, 0xd3, 0x89, 0xf6}}
 	return a, nil
 }
 
