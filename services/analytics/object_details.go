@@ -141,8 +141,8 @@ func (s *Service) GetMetrics(ctx context.Context, in *qanpb.MetricsRequest) (*qa
 func makeTextMetrics(mm models.M) map[string]string {
 	m := make(map[string]string)
 
-	m["top_query"] = interfaceToString(mm["top_query"])
 	m["top_queryid"] = interfaceToString(mm["top_queryid"])
+	m["top_query"] = interfaceToString(mm["top_query"])
 
 	return m
 }
