@@ -12,7 +12,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
 	github.com/grpc-ecosystem/grpc-gateway v1.15.0
 	github.com/jmoiron/sqlx v1.2.0
-	github.com/percona/pmm v0.0.0-20211008071939-594014dc9090
+	github.com/percona/pmm v0.0.0-20211008174932-3cb0b782d076
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.1.0
 	github.com/sirupsen/logrus v1.6.0
