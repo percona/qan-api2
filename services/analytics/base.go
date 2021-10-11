@@ -163,6 +163,7 @@ func isDimension(name string) bool {
 		"machine_id":      {},
 		"container_name":  {},
 		"container_id":    {},
+		"cmd_type":        {},
 	}
 
 	_, ok := dimensionColumnNames[name]
