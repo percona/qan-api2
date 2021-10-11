@@ -801,3 +801,80 @@ func (m *Metrics) GetFingerprintByQueryID(ctx context.Context, queryID string) (
 
 	return fingerprint, nil
 }
+
+const queryPlanTmpl = `
+SELECT planid, query_plan
+  FROM metrics
+ WHERE period_start >= :period_start_from AND period_start <= :period_start_to
+ {{ if .DimensionVal }} AND {{ .Group }} = :filter {{ end }}
+ {{ if .Dimensions }}
+    {{range $key, $vals := .Dimensions }}
+        AND {{ $key }} IN ( '{{ StringsJoin $vals "', '" }}' )
+    {{ end }}
+ {{ end }}
+ {{ if .Labels }}{{$i := 0}}
+    AND ({{range $key, $vals := .Labels }}{{ $i = inc $i}}
+        {{ if gt $i 1}} OR {{ end }} has(['{{ StringsJoin $vals "', '" }}'], labels.value[indexOf(labels.key, '{{ $key }}')])
+        {{ end }})
+ {{ end }}
+ LIMIT :limit
+`
+
+//nolint
+var tmplQueryPlan = template.Must(template.New("queryPlanTmpl").Funcs(funcMap).Parse(queryPlanTmpl))
+
+// SelectQueryPlan selects query plan and related stuff for given time range.
+func (m *Metrics) SelectQueryPlan(ctx context.Context, periodStartFrom, periodStartTo time.Time, filter,
+	group string, limit uint32, dimensions, labels map[string][]string) (*qanpb.QueryPlanReply, error) {
+	arg := map[string]interface{}{
+		"filter":            filter,
+		"group":             group,
+		"period_start_to":   periodStartTo,
+		"period_start_from": periodStartFrom,
+		"limit":             limit,
+	}
+
+	tmplArgs := struct {
+		Dimensions   map[string][]string
+		Labels       map[string][]string
+		DimensionVal string
+		Group        string
+	}{
+		Dimensions:   escapeColonsInMap(dimensions),
+		Labels:       escapeColonsInMap(labels),
+		DimensionVal: escapeColons(filter),
+		Group:        group,
+	}
+
+	var queryBuffer bytes.Buffer
+	if err := tmplQueryPlan.Execute(&queryBuffer, tmplArgs); err != nil {
+		return nil, errors.Wrap(err, "cannot execute queryPlanTmpl")
+	}
+
+	query, queryArgs, err := sqlx.Named(queryBuffer.String(), arg)
+	if err != nil {
+		return nil, errors.Wrap(err, "prepare named")
+	}
+	query = m.db.Rebind(query)
+	rows, err := m.db.QueryContext(ctx, query, queryArgs...)
+	if err != nil {
+		return nil, errors.Wrap(err, "cannot select object details labels")
+	}
+	defer rows.Close() //nolint:errcheck
+
+	res := qanpb.QueryPlanReply{}
+
+	for rows.Next() {
+		var row qanpb.QueryPlan
+		err = rows.Scan(
+			&row.Planid,
+			&row.QueryPlan,
+		)
+		if err != nil {
+			return nil, errors.Wrap(err, "failed to scan query example for object details")
+		}
+		res.QueryPlans = append(res.QueryPlans, &row)
+	}
+
+	return &res, nil
+}
