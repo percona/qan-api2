@@ -387,10 +387,7 @@ if(SUM(m_plans_calls_cnt) == 0, NaN, SUM(m_plans_calls_sum) / time_frame) AS m_p
 if(SUM(m_wal_records_cnt) == 0, NaN, SUM(m_wal_records_sum) / time_frame) AS m_wal_records_sum_per_sec,
 if(SUM(m_wal_fpi_cnt) == 0, NaN, SUM(m_wal_fpi_sum) / time_frame) AS m_wal_fpi_sum_per_sec,
 if(SUM(m_wal_bytes_cnt) == 0, NaN, SUM(m_wal_bytes_sum) / time_frame) AS m_wal_bytes_sum_per_sec,
-if(SUM(m_plan_time_cnt) == 0, NaN, SUM(m_plan_time_sum) / time_frame) AS m_plan_time_sum_per_sec,
-
-any(top_queryid) as top_queryid,
-any(top_query) as top_query
+if(SUM(m_plan_time_cnt) == 0, NaN, SUM(m_plan_time_sum) / time_frame) AS m_plan_time_sum_per_sec
 
 FROM metrics
 WHERE period_start >= :period_start_from AND period_start <= :period_start_to
