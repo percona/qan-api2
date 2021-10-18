@@ -799,24 +799,6 @@ func (m *Metrics) GetFingerprintByQueryID(ctx context.Context, queryID string) (
 	return fingerprint, nil
 }
 
-const queryPlanTmpl = `
-SELECT planid, query_plan
-  FROM metrics
- WHERE period_start >= :period_start_from AND period_start <= :period_start_to
- {{ if .DimensionVal }} AND {{ .Group }} = :filter {{ end }}
- {{ if .Dimensions }}
-    {{range $key, $vals := .Dimensions }}
-        AND {{ $key }} IN ( '{{ StringsJoin $vals "', '" }}' )
-    {{ end }}
- {{ end }}
- {{ if .Labels }}{{$i := 0}}
-    AND ({{range $key, $vals := .Labels }}{{ $i = inc $i}}
-        {{ if gt $i 1}} OR {{ end }} has(['{{ StringsJoin $vals "', '" }}'], labels.value[indexOf(labels.key, '{{ $key }}')])
-        {{ end }})
- {{ end }}
- LIMIT :limit
-`
-
 const planByQueryID = `SELECT planid, query_plan FROM metrics WHERE queryid = ? LIMIT 1`
 
 // SelectQueryPlan selects query plan and related stuff for given time range.
