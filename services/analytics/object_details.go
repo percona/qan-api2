@@ -293,45 +293,9 @@ func (s *Service) GetLabels(ctx context.Context, in *qanpb.ObjectDetailsLabelsRe
 
 // GetQueryPlan gets query plan and plan ID in given time range for queryid.
 func (s *Service) GetQueryPlan(ctx context.Context, in *qanpb.QueryPlanRequest) (*qanpb.QueryPlanReply, error) {
-	if in.PeriodStartFrom == nil {
-		return nil, fmt.Errorf("period_start_from is required:%v", in.PeriodStartFrom)
-	}
-	if in.PeriodStartTo == nil {
-		return nil, fmt.Errorf("period_start_to is required:%v", in.PeriodStartTo)
-	}
-
-	from := time.Unix(in.PeriodStartFrom.Seconds, 0)
-	to := time.Unix(in.PeriodStartTo.Seconds, 0)
-
-	labels := map[string][]string{}
-	dimensions := map[string][]string{}
-
-	for _, label := range in.GetLabels() {
-		if isDimension(label.Key) {
-			dimensions[label.Key] = label.Value
-			continue
-		}
-		labels[label.Key] = label.Value
-	}
-
-	limit := uint32(1)
-	if in.Limit > 1 {
-		limit = in.Limit
-	}
-
-	group := "queryid"
-	if in.GroupBy != "" {
-		group = in.GroupBy
-	}
 	resp, err := s.mm.SelectQueryPlan(
 		ctx,
-		from,
-		to,
-		in.FilterBy,
-		group,
-		limit,
-		dimensions,
-		labels,
+		in.Queryid,
 	)
 	if err != nil {
 		return nil, errors.Wrap(err, "error in selecting query plans")

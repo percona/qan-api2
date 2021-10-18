@@ -817,60 +817,17 @@ SELECT planid, query_plan
  LIMIT :limit
 `
 
-//nolint
-var tmplQueryPlan = template.Must(template.New("queryPlanTmpl").Funcs(funcMap).Parse(queryPlanTmpl))
+const planByQueryID = `SELECT planid, query_plan FROM metrics WHERE queryid = ? LIMIT 1`
 
 // SelectQueryPlan selects query plan and related stuff for given time range.
-func (m *Metrics) SelectQueryPlan(ctx context.Context, periodStartFrom, periodStartTo time.Time, filter,
-	group string, limit uint32, dimensions, labels map[string][]string) (*qanpb.QueryPlanReply, error) {
-	arg := map[string]interface{}{
-		"filter":            filter,
-		"group":             group,
-		"period_start_to":   periodStartTo,
-		"period_start_from": periodStartFrom,
-		"limit":             limit,
-	}
+func (m *Metrics) SelectQueryPlan(ctx context.Context, queryID string) (*qanpb.QueryPlanReply, error) {
+	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
+	defer cancel()
 
-	tmplArgs := struct {
-		Dimensions   map[string][]string
-		Labels       map[string][]string
-		DimensionVal string
-		Group        string
-	}{
-		Dimensions:   escapeColonsInMap(dimensions),
-		Labels:       escapeColonsInMap(labels),
-		DimensionVal: escapeColons(filter),
-		Group:        group,
-	}
-
-	var queryBuffer bytes.Buffer
-	if err := tmplQueryPlan.Execute(&queryBuffer, tmplArgs); err != nil {
-		return nil, errors.Wrap(err, "cannot execute queryPlanTmpl")
-	}
-
-	query, queryArgs, err := sqlx.Named(queryBuffer.String(), arg)
-	if err != nil {
-		return nil, errors.Wrap(err, "prepare named")
-	}
-	query = m.db.Rebind(query)
-	rows, err := m.db.QueryContext(ctx, query, queryArgs...)
-	if err != nil {
-		return nil, errors.Wrap(err, "cannot select object details labels")
-	}
-	defer rows.Close() //nolint:errcheck
-
-	res := qanpb.QueryPlanReply{}
-
-	for rows.Next() {
-		var row qanpb.QueryPlan
-		err = rows.Scan(
-			&row.Planid,
-			&row.QueryPlan,
-		)
-		if err != nil {
-			return nil, errors.Wrap(err, "failed to scan query example for object details")
-		}
-		res.QueryPlans = append(res.QueryPlans, &row)
+	var res qanpb.QueryPlanReply
+	err := m.db.GetContext(queryCtx, &res, planByQueryID, []interface{}{queryID})
+	if err != nil && err != sql.ErrNoRows {
+		return nil, fmt.Errorf("QueryxContext error:%v", err)
 	}
 
 	return &res, nil
