@@ -801,7 +801,7 @@ func (m *Metrics) GetFingerprintByQueryID(ctx context.Context, queryID string) (
 
 const planByQueryID = `SELECT planid, query_plan FROM metrics WHERE queryid = ? LIMIT 1`
 
-// SelectQueryPlan selects query plan and related stuff for given time range.
+// SelectQueryPlan selects query plan and related stuff for given queryid.
 func (m *Metrics) SelectQueryPlan(ctx context.Context, queryID string) (*qanpb.QueryPlanReply, error) {
 	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
 	defer cancel()
