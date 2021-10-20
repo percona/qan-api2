@@ -23,6 +23,7 @@ import (
 	"fmt"
 	"log"
 	"sort"
+	"strconv"
 	"text/template"
 	"time"
 
@@ -815,18 +816,56 @@ func (m *Metrics) SelectQueryPlan(ctx context.Context, queryID string) (*qanpb.Q
 	return &res, nil
 }
 
-const planByQueryID = `SELECT resp_calls, query_plan FROM metrics WHERE queryid = ? LIMIT 1`
+const histogramByQueryID = `SELECT resp_calls FROM metrics WHERE queryid = ?`
 
 // SelectHistogram selects histogram for given queryid.
-func (m *Metrics) SelectHistogram(ctx context.Context, queryID string) (*qanpb.QueryPlanReply, error) {
-	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
-	defer cancel()
+func (m *Metrics) SelectHistogram(ctx context.Context, queryID string) (*qanpb.HistogramReply, error) {
+	rows, err := m.db.QueryContext(ctx, histogramByQueryID, queryID)
+	if err != nil {
+		return nil, errors.Wrap(err, "cannot select object histogram")
+	}
+	defer rows.Close() //nolint:errcheck
 
-	var res qanpb.QueryPlanReply
-	err := m.db.GetContext(queryCtx, &res, planByQueryID, []interface{}{queryID})
-	if err != nil && err != sql.ErrNoRows {
-		return nil, fmt.Errorf("QueryxContext error:%v", err)
+	histogram := []*qanpb.HistogramItem{
+		{Range: "(0 - 3)"},
+		{Range: "(3 - 10)"},
+		{Range: "(10 - 31)"},
+		{Range: "(31 - 100)"},
+		{Range: "(100 - 316)"},
+		{Range: "(316 - 1000)"},
+		{Range: "(1000 - 3162)"},
+		{Range: "(3162 - 10000)"},
+		{Range: "(10000 - 31622)"},
+		{Range: "(31622 - 100000)"},
 	}
 
-	return &res, nil
+	for rows.Next() {
+		var respCalls []string
+		err = rows.Scan(
+			&respCalls,
+		)
+		if err != nil {
+			return nil, errors.Wrap(err, "failed to scan histogram")
+		}
+
+		for k, v := range respCalls {
+			val, err := strconv.ParseInt(v, 10, 32)
+			if err != nil {
+				return nil, errors.Wrap(err, "failed to parse histogram")
+			}
+
+			if histogram[k].Frequency >= int32(val) {
+				continue
+			}
+
+			histogram[k].Frequency = int32(val)
+		}
+	}
+	if err = rows.Err(); err != nil {
+		return nil, errors.Wrap(err, "failed to select histogram")
+	}
+
+	return &qanpb.HistogramReply{
+		HistogramItems: histogram,
+	}, nil
 }
