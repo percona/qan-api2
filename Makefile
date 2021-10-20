@@ -107,10 +107,10 @@ pmm-env-up:                     ## Run PMM server, MySQL Server and sysbench con
 	cat fixture/metrics.part_*.json | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --query="INSERT INTO metrics FORMAT JSONEachRow"
 
 deploy:
-	docker exec pmm-managed-server supervisorctl stop qan-api2
-	docker cp bin/qan-api2 pmm-managed-server:/usr/sbin/percona-qan-api2
-	docker exec pmm-managed-server supervisorctl start qan-api2
-	docker exec pmm-managed-server supervisorctl status
+	docker exec pmm-server supervisorctl stop qan-api2
+	docker cp $(PMM_RELEASE_PATH)/qan-api2 pmm-server:/usr/sbin/percona-qan-api2
+	docker exec pmm-server supervisorctl start qan-api2
+	docker exec pmm-server supervisorctl status
 
 clean:                          ## Removes generated artifacts.
 	rm -Rf ./bin
