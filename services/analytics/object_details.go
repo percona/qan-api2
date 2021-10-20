@@ -291,7 +291,7 @@ func (s *Service) GetLabels(ctx context.Context, in *qanpb.ObjectDetailsLabelsRe
 	return resp, nil
 }
 
-// GetQueryPlan gets query plan and plan ID in given time range for queryid.
+// GetQueryPlan gets query plan and plan ID for given queryid.
 func (s *Service) GetQueryPlan(ctx context.Context, in *qanpb.QueryPlanRequest) (*qanpb.QueryPlanReply, error) {
 	resp, err := s.mm.SelectQueryPlan(
 		ctx,
