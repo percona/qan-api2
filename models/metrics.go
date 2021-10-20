@@ -814,3 +814,19 @@ func (m *Metrics) SelectQueryPlan(ctx context.Context, queryID string) (*qanpb.Q
 
 	return &res, nil
 }
+
+const planByQueryID = `SELECT resp_calls, query_plan FROM metrics WHERE queryid = ? LIMIT 1`
+
+// SelectHistogram selects histogram for given queryid.
+func (m *Metrics) SelectHistogram(ctx context.Context, queryID string) (*qanpb.QueryPlanReply, error) {
+	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
+	defer cancel()
+
+	var res qanpb.QueryPlanReply
+	err := m.db.GetContext(queryCtx, &res, planByQueryID, []interface{}{queryID})
+	if err != nil && err != sql.ErrNoRows {
+		return nil, fmt.Errorf("QueryxContext error:%v", err)
+	}
+
+	return &res, nil
+}

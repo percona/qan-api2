@@ -302,3 +302,15 @@ func (s *Service) GetQueryPlan(ctx context.Context, in *qanpb.QueryPlanRequest) 
 	}
 	return resp, nil
 }
+
+// GetHistogram gets histogram for given queryid.
+func (s *Service) GetHistogram(ctx context.Context, in *qanpb.HistogramRequest) (*qanpb.HistogramReply, error) {
+	resp, err := s.mm.SelectHistogram(
+		ctx,
+		in.Queryid,
+	)
+	if err != nil {
+		return nil, errors.Wrap(err, "error in selecting histogram")
+	}
+	return resp, nil
+}
