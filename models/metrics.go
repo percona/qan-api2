@@ -99,6 +99,8 @@ func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec 
 	if err != nil {
 		return results, errors.Wrap(err, "cannot execute metrics query")
 	}
+	defer rows.Close() //nolint:errcheck
+
 	for rows.Next() {
 		result := make(M)
 		err = rows.MapScan(result)
@@ -482,6 +484,8 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 	if err != nil {
 		return nil, errors.Wrap(err, "metrics sparklines query")
 	}
+	defer rows.Close() //nolint:errcheck
+
 	resultsWithGaps := map[uint32]*qanpb.Point{}
 	for rows.Next() {
 		p := qanpb.Point{}
@@ -875,6 +879,7 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 	if err != nil {
 		return results, errors.Wrap(err, "cannot execute metrics query")
 	}
+	defer rows.Close() //nolint:errcheck
 
 	// We can define min, max time and number of buckets in pg_stat_monitor.
 	// Not values of ranges itself.
