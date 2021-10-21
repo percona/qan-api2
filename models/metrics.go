@@ -876,7 +876,7 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 		return results, errors.Wrap(err, "cannot execute metrics query")
 	}
 
-	// We can define min, max and number of buckets in pg_stat_monitor.
+	// We can define min, max time and number of buckets in pg_stat_monitor.
 	// Not values of ranges itself.
 	// https://github.com/percona/pg_stat_monitor/blob/master/docs/USER_GUIDE.md#configuration
 	// Ranges with default values (ms):
