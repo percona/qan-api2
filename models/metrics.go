@@ -816,16 +816,70 @@ func (m *Metrics) SelectQueryPlan(ctx context.Context, queryID string) (*qanpb.Q
 	return &res, nil
 }
 
-const histogramByQueryID = `SELECT resp_calls FROM metrics WHERE queryid = ?`
+const histogramTmpl = `SELECT resp_calls FROM metrics
+WHERE period_start >= :period_start_from AND period_start <= :period_start_to
+{{ if .Dimensions }}
+    {{range $key, $vals := .Dimensions }}
+        AND {{ $key }} IN ( '{{ StringsJoin $vals "', '" }}' )
+    {{ end }}
+{{ end }}
+{{ if .Labels }}{{$i := 0}}
+    AND ({{range $key, $vals := .Labels }}{{ $i = inc $i}}
+        {{ if gt $i 1}} OR {{ end }} has(['{{ StringsJoin $vals "', '" }}'], labels.value[indexOf(labels.key, '{{ $key }}')])
+    {{ end }})
+{{ end }}
+AND queryid = :queryid
+ORDER BY period_start DESC LIMIT 1;
+`
 
 // SelectHistogram selects histogram for given queryid.
-func (m *Metrics) SelectHistogram(ctx context.Context, queryID string) (*qanpb.HistogramReply, error) {
-	rows, err := m.db.QueryContext(ctx, histogramByQueryID, queryID)
-	if err != nil {
-		return nil, errors.Wrap(err, "cannot select object histogram")
+func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, periodStartToSec int64,
+	dimensions, labels map[string][]string, queryID string) (*qanpb.HistogramReply, error) {
+	arg := map[string]interface{}{
+		"period_start_from": periodStartFromSec,
+		"period_start_to":   periodStartToSec,
+		"queryid":           queryID,
 	}
-	defer rows.Close() //nolint:errcheck
 
+	tmplArgs := struct {
+		Dimensions map[string][]string
+		Labels     map[string][]string
+	}{
+		Dimensions: escapeColonsInMap(dimensions),
+		Labels:     escapeColonsInMap(labels),
+	}
+	var queryBuffer bytes.Buffer
+	if tmpl, err := template.New("histogramTmpl").Funcs(funcMap).Parse(histogramTmpl); err != nil {
+		log.Fatalln(err)
+	} else if err = tmpl.Execute(&queryBuffer, tmplArgs); err != nil {
+		log.Fatalln(err)
+	}
+
+	results := &qanpb.HistogramReply{
+		HistogramItems: []*qanpb.HistogramItem{},
+	}
+	query, args, err := sqlx.Named(queryBuffer.String(), arg)
+	if err != nil {
+		return results, errors.Wrap(err, "cannot prepare query")
+	}
+	query, args, err = sqlx.In(query, args...)
+	if err != nil {
+		return results, errors.Wrap(err, "cannot populate query arguments")
+	}
+	query = m.db.Rebind(query)
+
+	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
+	defer cancel()
+
+	rows, err := m.db.QueryxContext(queryCtx, query, args...)
+	if err != nil {
+		return results, errors.Wrap(err, "cannot execute metrics query")
+	}
+
+	// We can define min, max and number of buckets in pg_stat_monitor.
+	// Not values of ranges itself.
+	// https://github.com/percona/pg_stat_monitor/blob/master/docs/USER_GUIDE.md#configuration
+	// Ranges with default values (ms):
 	histogram := []*qanpb.HistogramItem{
 		{Range: "(0 - 3)"},
 		{Range: "(3 - 10)"},
@@ -845,27 +899,20 @@ func (m *Metrics) SelectHistogram(ctx context.Context, queryID string) (*qanpb.H
 			&respCalls,
 		)
 		if err != nil {
-			return nil, errors.Wrap(err, "failed to scan histogram")
+			return nil, errors.Wrap(err, "failed to scan")
 		}
 
 		for k, v := range respCalls {
 			val, err := strconv.ParseInt(v, 10, 32)
 			if err != nil {
-				return nil, errors.Wrap(err, "failed to parse histogram")
-			}
-
-			if histogram[k].Frequency >= int32(val) {
-				continue
+				return nil, errors.Wrap(err, "failed to parse")
 			}
 
 			histogram[k].Frequency = int32(val)
 		}
 	}
-	if err = rows.Err(); err != nil {
-		return nil, errors.Wrap(err, "failed to select histogram")
-	}
 
-	return &qanpb.HistogramReply{
-		HistogramItems: histogram,
-	}, nil
+	results.HistogramItems = histogram
+
+	return results, err
 }
