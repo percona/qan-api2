@@ -829,7 +829,7 @@ WHERE period_start >= :period_start_from AND period_start <= :period_start_to
     {{ end }})
 {{ end }}
 AND queryid = :queryid
-ORDER BY period_start DESC LIMIT 1;
+ORDER BY period_start DESC;
 `
 
 // SelectHistogram selects histogram for given queryid.
@@ -908,7 +908,7 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 				return nil, errors.Wrap(err, "failed to parse")
 			}
 
-			histogram[k].Frequency = int32(val)
+			histogram[k].Frequency += int32(val)
 		}
 	}
 
