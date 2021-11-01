@@ -23,7 +23,6 @@ import (
 	"fmt"
 	"log"
 	"sort"
-	"strconv"
 	"text/template"
 	"time"
 
@@ -824,7 +823,7 @@ func (m *Metrics) SelectQueryPlan(ctx context.Context, queryID string) (*qanpb.Q
 	return &res, nil
 }
 
-const histogramTmpl = `SELECT resp_calls FROM metrics
+const histogramTmpl = `SELECT histogram FROM metrics
 WHERE period_start >= :period_start_from AND period_start <= :period_start_to
 {{ if .Dimensions }}
     {{range $key, $vals := .Dimensions }}
@@ -864,7 +863,7 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 	}
 
 	results := &qanpb.HistogramReply{
-		HistogramItems: []*qanpb.HistogramItem{},
+		HistogramItems: []*qanpb.Histogram{},
 	}
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
@@ -885,43 +884,28 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 	}
 	defer rows.Close() //nolint:errcheck
 
-	// We can define min, max time and number of buckets in pg_stat_monitor.
-	// Not values of ranges itself.
-	// https://github.com/percona/pg_stat_monitor/blob/master/docs/USER_GUIDE.md#configuration
-	// Ranges with default values (ms):
-	histogram := []*qanpb.HistogramItem{
-		{Range: "(0 - 3)"},
-		{Range: "(3 - 10)"},
-		{Range: "(10 - 31)"},
-		{Range: "(31 - 100)"},
-		{Range: "(100 - 316)"},
-		{Range: "(316 - 1000)"},
-		{Range: "(1000 - 3162)"},
-		{Range: "(3162 - 10000)"},
-		{Range: "(10000 - 31622)"},
-		{Range: "(31622 - 100000)"},
-	}
-
 	for rows.Next() {
-		var respCalls []string
+		var histogram []string
 		err = rows.Scan(
-			&respCalls,
+			&histogram,
 		)
 		if err != nil {
 			return nil, errors.Wrap(err, "failed to scan")
 		}
 
-		for k, v := range respCalls {
-			val, err := strconv.ParseInt(v, 10, 32)
-			if err != nil {
-				return nil, errors.Wrap(err, "failed to parse")
-			}
+		// for k, v := range histogram {
+		// 	val, err := strconv.ParseInt(v, 10, 32)
+		// 	if err != nil {
+		// 		return nil, errors.Wrap(err, "failed to parse")
+		// 	}
 
-			histogram[k].Frequency += int32(val)
-		}
+		// 	histogram[k].Frequency += int32(val)
+		// }
+
+		//json.Unmarshal([]byte(histogram[]))
 	}
 
-	results.HistogramItems = histogram
+	//results.HistogramItems = histogram
 
 	return results, err
 }
