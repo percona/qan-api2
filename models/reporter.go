@@ -462,6 +462,7 @@ var dimensionQueries = map[string]*template.Template{
 	"machine_id":       queryDimensionTmpl,
 	"container_name":   queryDimensionTmpl,
 	"container_id":     queryDimensionTmpl,
+	"cmd_type":         queryDimensionTmpl,
 	"top_queryid":      queryDimensionTmpl,
 	"application_name": queryDimensionTmpl,
 	"planid":           queryDimensionTmpl,
