@@ -18,6 +18,7 @@ package models
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	"github.com/jmoiron/sqlx"
@@ -667,6 +668,7 @@ func (mb *MetricsBucket) insertBatch(timeout time.Duration) (err error) {
 			wk, wv := mapToArrsIntInt(metricsBucket.Warnings)
 			ek, ev := mapToArrsIntInt(metricsBucket.Errors)
 
+			fmt.Printf("\n\n\n\n\n\n\n\n\n\n %+v \n\n\n\n\n\n\n\n\n\n", metricsBucket.HistogramItems)
 			var truncated uint8
 			if metricsBucket.IsTruncated {
 				truncated = 1
