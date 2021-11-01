@@ -32,25 +32,16 @@ func NewService(rm models.Reporter, mm models.Metrics) *Service {
 }
 
 var standartDimensions = map[string]struct{}{
-<<<<<<< HEAD
 	"queryid":          {},
 	"service_name":     {},
 	"database":         {},
 	"schema":           {},
 	"username":         {},
 	"client_host":      {},
+	"cmd_type":         {},
 	"application_name": {},
 	"top_queryid":      {},
 	"planid":           {},
-=======
-	"queryid":      {},
-	"service_name": {},
-	"database":     {},
-	"schema":       {},
-	"username":     {},
-	"client_host":  {},
-	"cmd_type":     {},
->>>>>>> main
 }
 
 var sumColumnNames = map[string]struct{}{
@@ -184,7 +175,7 @@ func isDimension(name string) bool {
 		"machine_id":       {},
 		"container_name":   {},
 		"container_id":     {},
-		"cmd_type":        {},
+		"cmd_type":         {},
 		"application_name": {},
 		"top_queryid":      {},
 		"planid":           {},
