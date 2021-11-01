@@ -38,6 +38,7 @@ var standartDimensions = map[string]struct{}{
 	"schema":           {},
 	"username":         {},
 	"client_host":      {},
+	"cmd_type":         {},
 	"application_name": {},
 	"top_queryid":      {},
 	"planid":           {},
@@ -78,6 +79,7 @@ var sumColumnNames = map[string]struct{}{
 	"wal_fpi":                {},
 	"plan_time":              {},
 	"wal_bytes":              {},
+	"cmd_type":               {},
 }
 
 func isBoolMetric(name string) bool {
@@ -164,6 +166,7 @@ func isDimension(name string) bool {
 		"machine_id":       {},
 		"container_name":   {},
 		"container_id":     {},
+		"cmd_type":         {},
 		"application_name": {},
 		"top_queryid":      {},
 		"planid":           {},

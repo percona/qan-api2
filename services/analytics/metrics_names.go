@@ -82,6 +82,7 @@ var metricsNames = map[string]string{
 	"m_wal_fpi":              "Total number of FPI (full page images) in WAL (Write-ahead logging) records",
 	"m_wal_bytes":            "Total bytes of WAL (Write-ahead logging) records",
 	"m_plan_time":            "Total plan time spent in query",
+	"cmd_type":               "Type of SQL command used in the query",
 	"top_queryid":            "Top parent query ID",
 	"application_name":       "Name provided by pg_stat_monitor",
 	"planid":                 "Plan ID for query",
