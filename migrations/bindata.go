@@ -22,6 +22,10 @@
 // migrations/sql/10_pg_stat_monitor_09_columns_plan.up.sql (433B)
 // migrations/sql/11_pg_stat_monitor_09_dimensions.down.sql (107B)
 // migrations/sql/11_pg_stat_monitor_09_dimensions.up.sql (173B)
+// migrations/sql/12_add_cmd_type_pg_stat_monitor.down.sql (46B)
+// migrations/sql/12_add_cmd_type_pg_stat_monitor.up.sql (68B)
+// migrations/sql/13_pg_stat_monitor_09_topquery.down.sql (47B)
+// migrations/sql/13_pg_stat_monitor_09_topquery.up.sql (69B)
 
 package migrations
 
@@ -530,6 +534,86 @@ func _11_pg_stat_monitor_09_dimensionsUpSql() (*asset, error) {
 	return a, nil
 }
 
+var __12_add_cmd_type_pg_stat_monitorDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x48\xce\x4d\x89\x2f\xa9\x2c\x48\x4d\xb0\xe6\x02\x04\x00\x00\xff\xff\x46\x1f\x41\x90\x2e\x00\x00\x00")
+
+func _12_add_cmd_type_pg_stat_monitorDownSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__12_add_cmd_type_pg_stat_monitorDownSql,
+		"12_add_cmd_type_pg_stat_monitor.down.sql",
+	)
+}
+
+func _12_add_cmd_type_pg_stat_monitorDownSql() (*asset, error) {
+	bytes, err := _12_add_cmd_type_pg_stat_monitorDownSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "12_add_cmd_type_pg_stat_monitor.down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xcd, 0x93, 0x79, 0xa3, 0xc8, 0xdd, 0x6d, 0xf1, 0xbc, 0x5f, 0x5e, 0xdc, 0xf5, 0xeb, 0xb1, 0xbd, 0xc0, 0xc5, 0xb7, 0xea, 0xd5, 0x59, 0x7c, 0x46, 0x9f, 0x33, 0x43, 0x25, 0xf5, 0x4, 0x5, 0x74}}
+	return a, nil
+}
+
+var __12_add_cmd_type_pg_stat_monitorUpSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x48\xce\x4d\x89\x2f\xa9\x2c\x48\x4d\x50\xf0\xc9\x2f\x77\x4e\x2c\x4a\xc9\xcc\x4b\xcc\xc9\x2c\xa9\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xb4\xe6\x02\x04\x00\x00\xff\xff\xd1\xbb\x6d\x17\x44\x00\x00\x00")
+
+func _12_add_cmd_type_pg_stat_monitorUpSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__12_add_cmd_type_pg_stat_monitorUpSql,
+		"12_add_cmd_type_pg_stat_monitor.up.sql",
+	)
+}
+
+func _12_add_cmd_type_pg_stat_monitorUpSql() (*asset, error) {
+	bytes, err := _12_add_cmd_type_pg_stat_monitorUpSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "12_add_cmd_type_pg_stat_monitor.up.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xa8, 0x1c, 0x52, 0x5e, 0xa7, 0x48, 0xef, 0xc7, 0x98, 0x8, 0x11, 0xb5, 0xe6, 0xc8, 0xcf, 0x9, 0xbd, 0xa4, 0x4, 0x6d, 0x54, 0xa7, 0xc1, 0x18, 0xb9, 0xf7, 0x4a, 0xcf, 0x9b, 0xd0, 0x6a, 0x8}}
+	return a, nil
+}
+
+var __13_pg_stat_monitor_09_topqueryDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\xb0\xe6\x02\x04\x00\x00\xff\xff\x55\x5d\x6f\x26\x2f\x00\x00\x00")
+
+func _13_pg_stat_monitor_09_topqueryDownSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__13_pg_stat_monitor_09_topqueryDownSql,
+		"13_pg_stat_monitor_09_topquery.down.sql",
+	)
+}
+
+func _13_pg_stat_monitor_09_topqueryDownSql() (*asset, error) {
+	bytes, err := _13_pg_stat_monitor_09_topqueryDownSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "13_pg_stat_monitor_09_topquery.down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x9d, 0xa9, 0x4f, 0x76, 0x84, 0xa3, 0xce, 0xb5, 0x1f, 0x11, 0xd8, 0xc7, 0x2, 0xfb, 0x17, 0xdc, 0x9c, 0x1b, 0x1a, 0xf, 0x52, 0xe2, 0xe7, 0xbe, 0xc6, 0xa1, 0x36, 0x2c, 0xfb, 0x6f, 0x40, 0xbb}}
+	return a, nil
+}
+
+var __13_pg_stat_monitor_09_topqueryUpSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\x50\xf0\xc9\x2f\x77\x4e\x2c\x4a\xc9\xcc\x4b\xcc\xc9\x2c\xa9\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xb4\xe6\x02\x04\x00\x00\xff\xff\xfa\xf9\x9e\x1f\x45\x00\x00\x00")
+
+func _13_pg_stat_monitor_09_topqueryUpSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__13_pg_stat_monitor_09_topqueryUpSql,
+		"13_pg_stat_monitor_09_topquery.up.sql",
+	)
+}
+
+func _13_pg_stat_monitor_09_topqueryUpSql() (*asset, error) {
+	bytes, err := _13_pg_stat_monitor_09_topqueryUpSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "13_pg_stat_monitor_09_topquery.up.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xb2, 0xf1, 0x95, 0x3e, 0xc4, 0xb0, 0xd6, 0x65, 0x71, 0xc3, 0xfa, 0xd2, 0xbb, 0xac, 0xcd, 0xfd, 0x70, 0x65, 0xda, 0x79, 0x31, 0xa0, 0x6e, 0xc0, 0x63, 0x19, 0x8a, 0xdf, 0xd4, 0xd3, 0x89, 0xf6}}
+	return a, nil
+}
+
 // Asset loads and returns the asset for the given name.
 // It returns an error if the asset could not be found or
 // could not be loaded.
@@ -643,6 +727,10 @@ var _bindata = map[string]func() (*asset, error){
 	"10_pg_stat_monitor_09_columns_plan.up.sql":   _10_pg_stat_monitor_09_columns_planUpSql,
 	"11_pg_stat_monitor_09_dimensions.down.sql":   _11_pg_stat_monitor_09_dimensionsDownSql,
 	"11_pg_stat_monitor_09_dimensions.up.sql":     _11_pg_stat_monitor_09_dimensionsUpSql,
+	"12_add_cmd_type_pg_stat_monitor.down.sql":    _12_add_cmd_type_pg_stat_monitorDownSql,
+	"12_add_cmd_type_pg_stat_monitor.up.sql":      _12_add_cmd_type_pg_stat_monitorUpSql,
+	"13_pg_stat_monitor_09_topquery.down.sql":     _13_pg_stat_monitor_09_topqueryDownSql,
+	"13_pg_stat_monitor_09_topquery.up.sql":       _13_pg_stat_monitor_09_topqueryUpSql,
 }
 
 // AssetDebug is true if the assets were built with the debug flag enabled.
@@ -711,6 +799,10 @@ var _bintree = &bintree{nil, map[string]*bintree{
 	"10_pg_stat_monitor_09_columns_plan.up.sql":   {_10_pg_stat_monitor_09_columns_planUpSql, map[string]*bintree{}},
 	"11_pg_stat_monitor_09_dimensions.down.sql":   {_11_pg_stat_monitor_09_dimensionsDownSql, map[string]*bintree{}},
 	"11_pg_stat_monitor_09_dimensions.up.sql":     {_11_pg_stat_monitor_09_dimensionsUpSql, map[string]*bintree{}},
+	"12_add_cmd_type_pg_stat_monitor.down.sql":    {_12_add_cmd_type_pg_stat_monitorDownSql, map[string]*bintree{}},
+	"12_add_cmd_type_pg_stat_monitor.up.sql":      {_12_add_cmd_type_pg_stat_monitorUpSql, map[string]*bintree{}},
+	"13_pg_stat_monitor_09_topquery.down.sql":     {_13_pg_stat_monitor_09_topqueryDownSql, map[string]*bintree{}},
+	"13_pg_stat_monitor_09_topquery.up.sql":       {_13_pg_stat_monitor_09_topqueryUpSql, map[string]*bintree{}},
 }}
 
 // RestoreAsset restores an asset under the given directory.
