@@ -1,3 +1,6 @@
+{
+	"metrics": {
+		"blk_read_time": {
 
 		},
 		"blk_write_time": {
@@ -11,9 +14,6 @@
 			"max": 113,
 			"avg": 0.22221701,
 			"p99": 113
-		},
-		"cmd_type": {
-
 		},
 		"cpu_sys_time": {
 
@@ -3234,9 +3234,6 @@
 			"max": 249,
 			"avg": 0.24002416,
 			"p99": 119.62389
-		},
-		"cmd_type": {
-
 		},
 		"cpu_sys_time": {
 
