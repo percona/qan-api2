@@ -26,8 +26,10 @@
 // migrations/sql/12_add_cmd_type_pg_stat_monitor.up.sql (68B)
 // migrations/sql/13_pg_stat_monitor_09_queryplan.down.sql (48B)
 // migrations/sql/13_pg_stat_monitor_09_queryplan.up.sql (70B)
-// migrations/sql/14_pg_stat_monitor_09_topquery.down.sql (47B)
-// migrations/sql/14_pg_stat_monitor_09_topquery.up.sql (69B)
+// migrations/sql/13_pg_stat_monitor_09_topquery.down.sql (47B)
+// migrations/sql/13_pg_stat_monitor_09_topquery.up.sql (69B)
+// migrations/sql/14_pg_stat_monitor_09_queryplan.down.sql (48B)
+// migrations/sql/14_pg_stat_monitor_09_queryplan.up.sql (70B)
 // migrations/sql/15_pg_stat_monitor_09_histogram.down.sql (53B)
 // migrations/sql/15_pg_stat_monitor_09_histogram.up.sql (66B)
 
@@ -618,43 +620,83 @@ func _13_pg_stat_monitor_09_queryplanUpSql() (*asset, error) {
 	return a, nil
 }
 
-var __14_pg_stat_monitor_09_topqueryDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\xb0\xe6\x02\x04\x00\x00\xff\xff\x55\x5d\x6f\x26\x2f\x00\x00\x00")
+var __13_pg_stat_monitor_09_topqueryDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\xb0\xe6\x02\x04\x00\x00\xff\xff\x55\x5d\x6f\x26\x2f\x00\x00\x00")
 
-func _14_pg_stat_monitor_09_topqueryDownSqlBytes() ([]byte, error) {
+func _13_pg_stat_monitor_09_topqueryDownSqlBytes() ([]byte, error) {
 	return bindataRead(
-		__14_pg_stat_monitor_09_topqueryDownSql,
-		"14_pg_stat_monitor_09_topquery.down.sql",
+		__13_pg_stat_monitor_09_topqueryDownSql,
+		"13_pg_stat_monitor_09_topquery.down.sql",
 	)
 }
 
-func _14_pg_stat_monitor_09_topqueryDownSql() (*asset, error) {
-	bytes, err := _14_pg_stat_monitor_09_topqueryDownSqlBytes()
+func _13_pg_stat_monitor_09_topqueryDownSql() (*asset, error) {
+	bytes, err := _13_pg_stat_monitor_09_topqueryDownSqlBytes()
 	if err != nil {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "14_pg_stat_monitor_09_topquery.down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	info := bindataFileInfo{name: "13_pg_stat_monitor_09_topquery.down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x9d, 0xa9, 0x4f, 0x76, 0x84, 0xa3, 0xce, 0xb5, 0x1f, 0x11, 0xd8, 0xc7, 0x2, 0xfb, 0x17, 0xdc, 0x9c, 0x1b, 0x1a, 0xf, 0x52, 0xe2, 0xe7, 0xbe, 0xc6, 0xa1, 0x36, 0x2c, 0xfb, 0x6f, 0x40, 0xbb}}
 	return a, nil
 }
 
-var __14_pg_stat_monitor_09_topqueryUpSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\x50\xf0\xc9\x2f\x77\x4e\x2c\x4a\xc9\xcc\x4b\xcc\xc9\x2c\xa9\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xb4\xe6\x02\x04\x00\x00\xff\xff\xfa\xf9\x9e\x1f\x45\x00\x00\x00")
+var __13_pg_stat_monitor_09_topqueryUpSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\xc9\x2f\x88\x2f\x2c\x4d\x2d\xaa\x4c\x50\xf0\xc9\x2f\x77\x4e\x2c\x4a\xc9\xcc\x4b\xcc\xc9\x2c\xa9\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xb4\xe6\x02\x04\x00\x00\xff\xff\xfa\xf9\x9e\x1f\x45\x00\x00\x00")
 
-func _14_pg_stat_monitor_09_topqueryUpSqlBytes() ([]byte, error) {
+func _13_pg_stat_monitor_09_topqueryUpSqlBytes() ([]byte, error) {
 	return bindataRead(
-		__14_pg_stat_monitor_09_topqueryUpSql,
-		"14_pg_stat_monitor_09_topquery.up.sql",
+		__13_pg_stat_monitor_09_topqueryUpSql,
+		"13_pg_stat_monitor_09_topquery.up.sql",
 	)
 }
 
-func _14_pg_stat_monitor_09_topqueryUpSql() (*asset, error) {
-	bytes, err := _14_pg_stat_monitor_09_topqueryUpSqlBytes()
+func _13_pg_stat_monitor_09_topqueryUpSql() (*asset, error) {
+	bytes, err := _13_pg_stat_monitor_09_topqueryUpSqlBytes()
 	if err != nil {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "14_pg_stat_monitor_09_topquery.up.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	info := bindataFileInfo{name: "13_pg_stat_monitor_09_topquery.up.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xb2, 0xf1, 0x95, 0x3e, 0xc4, 0xb0, 0xd6, 0x65, 0x71, 0xc3, 0xfa, 0xd2, 0xbb, 0xac, 0xcd, 0xfd, 0x70, 0x65, 0xda, 0x79, 0x31, 0xa0, 0x6e, 0xc0, 0x63, 0x19, 0x8a, 0xdf, 0xd4, 0xd3, 0x89, 0xf6}}
+	return a, nil
+}
+
+var __14_pg_stat_monitor_09_queryplanDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\x2c\x4d\x2d\xaa\x8c\x2f\xc8\x49\xcc\x4b\xb0\xe6\x02\x04\x00\x00\xff\xff\x45\xfb\x5d\x7e\x30\x00\x00\x00")
+
+func _14_pg_stat_monitor_09_queryplanDownSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__14_pg_stat_monitor_09_queryplanDownSql,
+		"14_pg_stat_monitor_09_queryplan.down.sql",
+	)
+}
+
+func _14_pg_stat_monitor_09_queryplanDownSql() (*asset, error) {
+	bytes, err := _14_pg_stat_monitor_09_queryplanDownSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "14_pg_stat_monitor_09_queryplan.down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x6c, 0x16, 0x77, 0x73, 0xcd, 0x9a, 0xea, 0x32, 0xd5, 0x40, 0xa0, 0x49, 0x1d, 0x19, 0x98, 0xf6, 0xc0, 0xf3, 0xc4, 0x84, 0xa3, 0x46, 0xb8, 0x38, 0x9f, 0x9c, 0x9d, 0xf5, 0x44, 0x8b, 0x2e, 0x62}}
+	return a, nil
+}
+
+var __14_pg_stat_monitor_09_queryplanUpSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x28\x2c\x4d\x2d\xaa\x8c\x2f\xc8\x49\xcc\x4b\x50\xf0\xc9\x2f\x77\x4e\x2c\x4a\xc9\xcc\x4b\xcc\xc9\x2c\xa9\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xb4\xe6\x02\x04\x00\x00\xff\xff\x2e\x4a\x70\xe3\x46\x00\x00\x00")
+
+func _14_pg_stat_monitor_09_queryplanUpSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__14_pg_stat_monitor_09_queryplanUpSql,
+		"14_pg_stat_monitor_09_queryplan.up.sql",
+	)
+}
+
+func _14_pg_stat_monitor_09_queryplanUpSql() (*asset, error) {
+	bytes, err := _14_pg_stat_monitor_09_queryplanUpSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "14_pg_stat_monitor_09_queryplan.up.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x6c, 0x0, 0x49, 0x65, 0xf, 0x54, 0x20, 0x47, 0x91, 0x41, 0x36, 0x1a, 0x53, 0x86, 0x6c, 0xb4, 0x66, 0x27, 0x64, 0x9b, 0x5f, 0x7f, 0xee, 0xfe, 0x2c, 0xc9, 0xfa, 0xa7, 0x69, 0x46, 0x6, 0x23}}
 	return a, nil
 }
 
@@ -815,8 +857,10 @@ var _bindata = map[string]func() (*asset, error){
 	"12_add_cmd_type_pg_stat_monitor.up.sql":      _12_add_cmd_type_pg_stat_monitorUpSql,
 	"13_pg_stat_monitor_09_queryplan.down.sql":    _13_pg_stat_monitor_09_queryplanDownSql,
 	"13_pg_stat_monitor_09_queryplan.up.sql":      _13_pg_stat_monitor_09_queryplanUpSql,
-	"14_pg_stat_monitor_09_topquery.down.sql":     _14_pg_stat_monitor_09_topqueryDownSql,
-	"14_pg_stat_monitor_09_topquery.up.sql":       _14_pg_stat_monitor_09_topqueryUpSql,
+	"13_pg_stat_monitor_09_topquery.down.sql":     _13_pg_stat_monitor_09_topqueryDownSql,
+	"13_pg_stat_monitor_09_topquery.up.sql":       _13_pg_stat_monitor_09_topqueryUpSql,
+	"14_pg_stat_monitor_09_queryplan.down.sql":    _14_pg_stat_monitor_09_queryplanDownSql,
+	"14_pg_stat_monitor_09_queryplan.up.sql":      _14_pg_stat_monitor_09_queryplanUpSql,
 	"15_pg_stat_monitor_09_histogram.down.sql":    _15_pg_stat_monitor_09_histogramDownSql,
 	"15_pg_stat_monitor_09_histogram.up.sql":      _15_pg_stat_monitor_09_histogramUpSql,
 }
@@ -891,8 +935,10 @@ var _bintree = &bintree{nil, map[string]*bintree{
 	"12_add_cmd_type_pg_stat_monitor.up.sql":      {_12_add_cmd_type_pg_stat_monitorUpSql, map[string]*bintree{}},
 	"13_pg_stat_monitor_09_queryplan.down.sql":    {_13_pg_stat_monitor_09_queryplanDownSql, map[string]*bintree{}},
 	"13_pg_stat_monitor_09_queryplan.up.sql":      {_13_pg_stat_monitor_09_queryplanUpSql, map[string]*bintree{}},
-	"14_pg_stat_monitor_09_topquery.down.sql":     {_14_pg_stat_monitor_09_topqueryDownSql, map[string]*bintree{}},
-	"14_pg_stat_monitor_09_topquery.up.sql":       {_14_pg_stat_monitor_09_topqueryUpSql, map[string]*bintree{}},
+	"13_pg_stat_monitor_09_topquery.down.sql":     {_13_pg_stat_monitor_09_topqueryDownSql, map[string]*bintree{}},
+	"13_pg_stat_monitor_09_topquery.up.sql":       {_13_pg_stat_monitor_09_topqueryUpSql, map[string]*bintree{}},
+	"14_pg_stat_monitor_09_queryplan.down.sql":    {_14_pg_stat_monitor_09_queryplanDownSql, map[string]*bintree{}},
+	"14_pg_stat_monitor_09_queryplan.up.sql":      {_14_pg_stat_monitor_09_queryplanUpSql, map[string]*bintree{}},
 	"15_pg_stat_monitor_09_histogram.down.sql":    {_15_pg_stat_monitor_09_histogramDownSql, map[string]*bintree{}},
 	"15_pg_stat_monitor_09_histogram.up.sql":      {_15_pg_stat_monitor_09_histogramUpSql, map[string]*bintree{}},
 }}
