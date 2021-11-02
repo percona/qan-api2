@@ -1,2 +1,2 @@
 ALTER TABLE metrics
-  DROP COLUMN `histogram`;
+  DROP COLUMN `histogram_items`;

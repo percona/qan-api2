@@ -1,2 +1,2 @@
 ALTER TABLE metrics
-  ADD COLUMN `histogram` Array(String);
+  ADD COLUMN `histogram_items` Array(String);

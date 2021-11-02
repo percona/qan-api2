@@ -20,6 +20,7 @@ import (
 	"bytes"
 	"context"
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"log"
 	"sort"
@@ -823,7 +824,7 @@ func (m *Metrics) SelectQueryPlan(ctx context.Context, queryID string) (*qanpb.Q
 	return &res, nil
 }
 
-const histogramTmpl = `SELECT histogram FROM metrics
+const histogramTmpl = `SELECT histogram_items FROM metrics
 WHERE period_start >= :period_start_from AND period_start <= :period_start_to
 {{ if .Dimensions }}
     {{range $key, $vals := .Dimensions }}
@@ -884,28 +885,45 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 	}
 	defer rows.Close() //nolint:errcheck
 
+	histogram := []*qanpb.Histogram{}
 	for rows.Next() {
-		var histogram []string
+		var histogramItems []string
 		err = rows.Scan(
-			&histogram,
+			&histogramItems,
 		)
 		if err != nil {
-			return nil, errors.Wrap(err, "failed to scan")
+			return nil, errors.Wrap(err, "failed to scan histogram items")
 		}
 
-		// for k, v := range histogram {
-		// 	val, err := strconv.ParseInt(v, 10, 32)
-		// 	if err != nil {
-		// 		return nil, errors.Wrap(err, "failed to parse")
-		// 	}
+		for _, v := range histogramItems {
+			item := &qanpb.Histogram{}
+			err := json.Unmarshal([]byte(v), item)
+			if err != nil {
+				return nil, errors.Wrap(err, "failed to unmarshal histogram item")
+			}
 
-		// 	histogram[k].Frequency += int32(val)
-		// }
-
-		//json.Unmarshal([]byte(histogram[]))
+			keyExists, position := histogramHasKey(histogram, item.Range)
+			if keyExists {
+				existedItem := histogram[position]
+				item.Frequency += existedItem.Frequency
+				histogram[position] = item
+			} else {
+				histogram = append(histogram, item)
+			}
+		}
 	}
 
-	//results.HistogramItems = histogram
+	results.HistogramItems = histogram
 
 	return results, err
+}
+
+func histogramHasKey(h []*qanpb.Histogram, key string) (bool, int) {
+	for k, v := range h {
+		if key == v.Range {
+			return true, k
+		}
+	}
+
+	return false, 0
 }

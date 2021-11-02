@@ -28,8 +28,8 @@
 // migrations/sql/13_pg_stat_monitor_09_queryplan.up.sql (70B)
 // migrations/sql/14_pg_stat_monitor_09_topquery.down.sql (47B)
 // migrations/sql/14_pg_stat_monitor_09_topquery.up.sql (69B)
-// migrations/sql/15_pg_stat_monitor_09_histogram.down.sql (47B)
-// migrations/sql/15_pg_stat_monitor_09_histogram.up.sql (60B)
+// migrations/sql/15_pg_stat_monitor_09_histogram.down.sql (53B)
+// migrations/sql/15_pg_stat_monitor_09_histogram.up.sql (66B)
 
 package migrations
 
@@ -658,7 +658,7 @@ func _14_pg_stat_monitor_09_topqueryUpSql() (*asset, error) {
 	return a, nil
 }
 
-var __15_pg_stat_monitor_09_histogramDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\xc8\xc8\x2c\x2e\xc9\x4f\x2f\x4a\xcc\x4d\xb0\xe6\x02\x04\x00\x00\xff\xff\x51\x21\xc3\x53\x2f\x00\x00\x00")
+var __15_pg_stat_monitor_09_histogramDownSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\xc8\xc8\x2c\x2e\xc9\x4f\x2f\x4a\xcc\x8d\xcf\x2c\x49\xcd\x2d\x4e\xb0\xe6\x02\x04\x00\x00\xff\xff\xeb\x12\xce\x0e\x35\x00\x00\x00")
 
 func _15_pg_stat_monitor_09_histogramDownSqlBytes() ([]byte, error) {
 	return bindataRead(
@@ -674,11 +674,11 @@ func _15_pg_stat_monitor_09_histogramDownSql() (*asset, error) {
 	}
 
 	info := bindataFileInfo{name: "15_pg_stat_monitor_09_histogram.down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
-	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xc6, 0x6, 0x4b, 0xe7, 0xfe, 0xd6, 0x5e, 0x13, 0x0, 0x4c, 0x96, 0xf8, 0x9f, 0x62, 0x5d, 0x5f, 0xe3, 0x93, 0xe5, 0xef, 0xc4, 0xf, 0x78, 0x60, 0x1f, 0x65, 0x26, 0x29, 0xec, 0xb4, 0x13, 0x98}}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xf2, 0x73, 0xbc, 0x81, 0x31, 0x3d, 0xca, 0x4e, 0x6a, 0xac, 0xe6, 0x9a, 0xc5, 0xb5, 0xc5, 0x5, 0xcc, 0xca, 0x13, 0xe9, 0x95, 0x76, 0xf, 0x59, 0x65, 0xd6, 0x56, 0x12, 0x28, 0xd0, 0x3d, 0x7e}}
 	return a, nil
 }
 
-var __15_pg_stat_monitor_09_histogramUpSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\xc8\xc8\x2c\x2e\xc9\x4f\x2f\x4a\xcc\x4d\x50\x70\x2c\x2a\x4a\xac\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xb4\xe6\x02\x04\x00\x00\xff\xff\x19\x90\xc5\xa6\x3c\x00\x00\x00")
+var __15_pg_stat_monitor_09_histogramUpSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\xc8\xc8\x2c\x2e\xc9\x4f\x2f\x4a\xcc\x8d\xcf\x2c\x49\xcd\x2d\x4e\x50\x70\x2c\x2a\x4a\xac\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xb4\xe6\x02\x04\x00\x00\xff\xff\xb2\xc5\x08\x13\x42\x00\x00\x00")
 
 func _15_pg_stat_monitor_09_histogramUpSqlBytes() ([]byte, error) {
 	return bindataRead(
@@ -694,7 +694,7 @@ func _15_pg_stat_monitor_09_histogramUpSql() (*asset, error) {
 	}
 
 	info := bindataFileInfo{name: "15_pg_stat_monitor_09_histogram.up.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
-	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x98, 0x8b, 0xe5, 0x6e, 0xc7, 0x24, 0xec, 0x8c, 0x14, 0xbe, 0xb8, 0x31, 0x4f, 0xf8, 0xaf, 0x59, 0x92, 0x24, 0x4e, 0x15, 0x79, 0x99, 0x8a, 0xe2, 0xd5, 0xd8, 0x4f, 0x5b, 0x52, 0x31, 0xaa, 0x74}}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x30, 0x8a, 0xb, 0x86, 0xa4, 0x12, 0xcb, 0x8b, 0xd9, 0x47, 0x38, 0xc0, 0x8, 0x37, 0x6b, 0x7e, 0x2, 0x72, 0x85, 0xf, 0xea, 0xf1, 0xc6, 0x1a, 0xaa, 0x3, 0x9b, 0x70, 0x65, 0x96, 0x87, 0x54}}
 	return a, nil
 }
 
