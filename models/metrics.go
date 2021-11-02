@@ -864,7 +864,7 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 	}
 
 	results := &qanpb.HistogramReply{
-		HistogramItems: []*qanpb.Histogram{},
+		HistogramItems: []*qanpb.HistogramItem{},
 	}
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
@@ -885,7 +885,7 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 	}
 	defer rows.Close() //nolint:errcheck
 
-	histogram := []*qanpb.Histogram{}
+	histogram := []*qanpb.HistogramItem{}
 	for rows.Next() {
 		var histogramItems []string
 		err = rows.Scan(
@@ -896,7 +896,7 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 		}
 
 		for _, v := range histogramItems {
-			item := &qanpb.Histogram{}
+			item := &qanpb.HistogramItem{}
 			err := json.Unmarshal([]byte(v), item)
 			if err != nil {
 				return nil, errors.Wrap(err, "failed to unmarshal histogram item")
@@ -918,7 +918,7 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 	return results, err
 }
 
-func histogramHasKey(h []*qanpb.Histogram, key string) (bool, int) {
+func histogramHasKey(h []*qanpb.HistogramItem, key string) (bool, int) {
 	for k, v := range h {
 		if key == v.Range {
 			return true, k
