@@ -255,7 +255,7 @@ const insertSQL = `
     m_plan_time_sum,
     m_plan_time_min,
     m_plan_time_max,
-    cmd_type
+    cmd_type,
     top_queryid,
     top_query,
     application_name,
@@ -479,7 +479,7 @@ const insertSQL = `
     :m_plan_time_sum,
     :m_plan_time_min,
     :m_plan_time_max,
-    :cmd_type
+    :cmd_type,
     :top_queryid,
     :top_query,
     :application_name,
