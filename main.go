@@ -22,7 +22,6 @@ import (
 	_ "expvar" // register /debug/vars
 	"fmt"
 	"html/template"
-	text_template "text/template"
 	"log"
 	"net"
 	"net/http"
@@ -33,6 +32,7 @@ import (
 	"runtime"
 	"strings"
 	"sync"
+	text_template "text/template"
 	"time"
 
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
@@ -309,8 +309,8 @@ func main() {
 			l.Panic(err)
 		}
 		dsnValues := ClickHouseInfo{
-			Hostname : *clickhouseHostF,
-			Port: *clickhousePortF,
+			Hostname:     *clickhouseHostF,
+			Port:         *clickhousePortF,
 			DatabaseName: *clickHouseDatabaseF,
 		}
 		var dsn_buffer bytes.Buffer
