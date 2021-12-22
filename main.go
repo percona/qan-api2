@@ -65,6 +65,7 @@ const (
 	defaultDsnF     = "clickhouse://{{ .Hostname }}:{{ .Port }}?database={{ .DatabaseName }}&block_size=10000&pool_size=2"
 )
 
+// ClickHouseInfo clickhosue dsn parts
 type ClickHouseInfo struct {
 	Hostname     string
 	Port         string
@@ -313,9 +314,12 @@ func main() {
 			Port:         *clickhousePortF,
 			DatabaseName: *clickHouseDatabaseF,
 		}
-		var dsn_buffer bytes.Buffer
-		dsnTemplate.Execute(&dsn_buffer, dsnValues)
-		dsn = dsn_buffer.String()
+		var dsnBuffer bytes.Buffer
+		err = dsnTemplate.Execute(&dsnBuffer, dsnValues)
+		if err != nil {
+			l.Panic(err)
+		}
+		dsn = dsnBuffer.String()
 	} else {
 		dsn = *dsnF
 	}
