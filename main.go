@@ -65,7 +65,7 @@ const (
 	defaultDsnF     = "clickhouse://{{ .Hostname }}:{{ .Port }}?database={{ .DatabaseName }}&block_size=10000&pool_size=2"
 )
 
-// ClickHouseInfo clickhosue dsn parts
+// ClickHouseInfo clickhouse dsn parts
 type ClickHouseInfo struct {
 	Hostname     string
 	Port         string
