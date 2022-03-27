@@ -64,7 +64,7 @@ const (
 	defaultDsnF     = "clickhouse://%s?database=%s&block_size=10000&pool_size=2"
 )
 
-// ClickHouseInfo clickhosue dsn parts
+// ClickHouseInfo clickhouse dsn parts
 type ClickHouseInfo struct {
 	Addr         string
 	DatabaseName string
