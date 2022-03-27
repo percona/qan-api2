@@ -32,7 +32,6 @@ import (
 	"runtime"
 	"strings"
 	"sync"
-	text_template "text/template"
 	"time"
 
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
@@ -62,13 +61,12 @@ import (
 
 const (
 	shutdownTimeout = 3 * time.Second
-	defaultDsnF     = "clickhouse://{{ .Hostname }}:{{ .Port }}?database={{ .DatabaseName }}&block_size=10000&pool_size=2"
+	defaultDsnF     = "clickhouse://%s?database=%s&block_size=10000&pool_size=2"
 )
 
 // ClickHouseInfo clickhosue dsn parts
 type ClickHouseInfo struct {
-	Hostname     string
-	Port         string
+	Addr         string
 	DatabaseName string
 }
 
@@ -258,8 +256,7 @@ func main() {
 	dataRetentionF := kingpin.Flag("data-retention", "QAN data Retention (in days)").Default("30").Uint()
 	dsnF := kingpin.Flag("dsn", "ClickHouse database DSN. Can be override with database/host/port options").Default(defaultDsnF).String()
 	clickHouseDatabaseF := kingpin.Flag("clickhouse-name", "Clickhouse database name").Default("pmm").Envar("PMM_CLICKHOUSE_DATABASE").String()
-	clickhouseHostF := kingpin.Flag("clickhouse-host", "Clickhouse database hostname").Default("127.0.0.1").Envar("PMM_CLICKHOUSE_HOST").String()
-	clickhousePortF := kingpin.Flag("clickhouse-port", "Clickhouse database port").Default("9000").Envar("PMM_CLICKHOUSE_PORT").String()
+	clickhouseAddrF := kingpin.Flag("clickhouse-addr", "Clickhouse database address").Default("127.0.0.1:9000").Envar("PMM_CLICKHOUSE_ADDR").String()
 
 	debugF := kingpin.Flag("debug", "Enable debug logging").Bool()
 	traceF := kingpin.Flag("trace", "Enable trace logging (implies debug)").Bool()
@@ -305,21 +302,7 @@ func main() {
 
 	var dsn string
 	if *dsnF == defaultDsnF {
-		dsnTemplate, err := text_template.New("dsn").Parse(defaultDsnF)
-		if err != nil {
-			l.Panic(err)
-		}
-		dsnValues := ClickHouseInfo{
-			Hostname:     *clickhouseHostF,
-			Port:         *clickhousePortF,
-			DatabaseName: *clickHouseDatabaseF,
-		}
-		var dsnBuffer bytes.Buffer
-		err = dsnTemplate.Execute(&dsnBuffer, dsnValues)
-		if err != nil {
-			l.Panic(err)
-		}
-		dsn = dsnBuffer.String()
+		dsn = fmt.Sprintf(defaultDsnF, *clickhouseAddrF, *clickHouseDatabaseF)
 	} else {
 		dsn = *dsnF
 	}
