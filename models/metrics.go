@@ -927,3 +927,89 @@ func histogramHasKey(h []*qanpb.HistogramItem, key string) (bool, int) {
 
 	return false, 0
 }
+
+const settingsTmpl = `SELECT settings_items FROM metrics
+WHERE period_start >= :period_start_from AND period_start <= :period_start_to
+{{ if .Dimensions }}
+    {{range $key, $vals := .Dimensions }}
+        AND {{ $key }} IN ( '{{ StringsJoin $vals "', '" }}' )
+    {{ end }}
+{{ end }}
+{{ if .Labels }}{{$i := 0}}
+    AND ({{range $key, $vals := .Labels }}{{ $i = inc $i}}
+        {{ if gt $i 1}} OR {{ end }} has(['{{ StringsJoin $vals "', '" }}'], labels.value[indexOf(labels.key, '{{ $key }}')])
+    {{ end }})
+{{ end }}
+AND queryid = :queryid
+ORDER BY period_start DESC;`
+
+// SelectPGSMSettings selects settings for given queryid.
+func (m *Metrics) SelectPGSMSettings(ctx context.Context, periodStartFromSec, periodStartToSec int64,
+	dimensions, labels map[string][]string, queryID string) (*qanpb.SettingsReply, error) {
+	arg := map[string]interface{}{
+		"period_start_from": periodStartFromSec,
+		"period_start_to":   periodStartToSec,
+		"queryid":           queryID,
+	}
+
+	tmplArgs := struct {
+		Dimensions map[string][]string
+		Labels     map[string][]string
+	}{
+		Dimensions: escapeColonsInMap(dimensions),
+		Labels:     escapeColonsInMap(labels),
+	}
+	var queryBuffer bytes.Buffer
+	if tmpl, err := template.New("settingsTmpl").Funcs(funcMap).Parse(settingsTmpl); err != nil {
+		log.Fatalln(err)
+	} else if err = tmpl.Execute(&queryBuffer, tmplArgs); err != nil {
+		log.Fatalln(err)
+	}
+
+	results := &qanpb.SettingsReply{
+		SettingsItems: []*qanpb.SettingsItem{},
+	}
+	query, args, err := sqlx.Named(queryBuffer.String(), arg)
+	if err != nil {
+		return results, errors.Wrap(err, "cannot prepare query")
+	}
+	query, args, err = sqlx.In(query, args...)
+	if err != nil {
+		return results, errors.Wrap(err, "cannot populate query arguments")
+	}
+	query = m.db.Rebind(query)
+
+	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
+	defer cancel()
+
+	rows, err := m.db.QueryxContext(queryCtx, query, args...)
+	if err != nil {
+		return results, errors.Wrap(err, "cannot execute metrics query")
+	}
+	defer rows.Close() //nolint:errcheck
+
+	settings := []*qanpb.SettingsItem{}
+	for rows.Next() {
+		var settingsItems []string
+		err = rows.Scan(
+			&settingsItems,
+		)
+		if err != nil {
+			return nil, errors.Wrap(err, "failed to scan settings items")
+		}
+
+		for _, v := range settingsItems {
+			item := &qanpb.SettingsItem{}
+			err := json.Unmarshal([]byte(v), item)
+			if err != nil {
+				return nil, errors.Wrap(err, "failed to unmarshal histogram item")
+			}
+
+			settings = append(settings, item)
+		}
+	}
+
+	results.SettingsItems = settings
+
+	return results, err
+}
