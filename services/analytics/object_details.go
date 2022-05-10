@@ -344,6 +344,7 @@ func (s *Service) GetHistogram(ctx context.Context, in *qanpb.HistogramRequest) 
 	return resp, nil
 }
 
+// GetPGSMSettings gets pg_stat_monitor settings for given queryid.
 func (s *Service) GetPGSMSettings(ctx context.Context, in *qanpb.SettingsRequest) (*qanpb.SettingsReply, error) { //nolint:dupl
 	if in.PeriodStartFrom == nil {
 		return nil, fmt.Errorf("period_start_from is required:%v", in.PeriodStartFrom)
