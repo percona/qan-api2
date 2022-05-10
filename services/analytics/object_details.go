@@ -344,8 +344,7 @@ func (s *Service) GetHistogram(ctx context.Context, in *qanpb.HistogramRequest) 
 	return resp, nil
 }
 
-//nolint:dupl
-func (s *Service) GetPGSMSettings(ctx context.Context, in *qanpb.SettingsRequest) (*qanpb.SettingsReply, error) {
+func (s *Service) GetPGSMSettings(ctx context.Context, in *qanpb.SettingsRequest) (*qanpb.SettingsReply, error) { //nolint:dupl
 	if in.PeriodStartFrom == nil {
 		return nil, fmt.Errorf("period_start_from is required:%v", in.PeriodStartFrom)
 	}
