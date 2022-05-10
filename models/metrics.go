@@ -944,8 +944,8 @@ AND queryid = :queryid
 ORDER BY period_start DESC;`
 
 // SelectPGSMSettings selects settings for given queryid.
-func (m *Metrics) SelectPGSMSettings(ctx context.Context, periodStartFromSec, periodStartToSec int64,
-	dimensions, labels map[string][]string, queryID string) (*qanpb.SettingsReply, error) {
+func (m *Metrics) SelectPGSMSettings(ctx context.Context, periodStartFromSec,
+	periodStartToSec int64, dimensions, labels map[string][]string, queryID string) (*qanpb.SettingsReply, error) {
 	arg := map[string]interface{}{
 		"period_start_from": periodStartFromSec,
 		"period_start_to":   periodStartToSec,
@@ -999,10 +999,10 @@ func (m *Metrics) SelectPGSMSettings(ctx context.Context, periodStartFromSec, pe
 		}
 
 		for _, v := range settingsItems {
-			item := &qanpb.SettingsItem{}
+			var item *qanpb.SettingsItem
 			err := json.Unmarshal([]byte(v), item)
 			if err != nil {
-				return nil, errors.Wrap(err, "failed to unmarshal histogram item")
+				return nil, errors.Wrap(err, "failed to unmarshal settings item")
 			}
 
 			settings = append(settings, item)
@@ -1011,5 +1011,5 @@ func (m *Metrics) SelectPGSMSettings(ctx context.Context, periodStartFromSec, pe
 
 	results.SettingsItems = settings
 
-	return results, err
+	return results, nil
 }

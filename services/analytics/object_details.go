@@ -344,6 +344,7 @@ func (s *Service) GetHistogram(ctx context.Context, in *qanpb.HistogramRequest) 
 	return resp, nil
 }
 
+//nolint:dupl
 func (s *Service) GetPGSMSettings(ctx context.Context, in *qanpb.SettingsRequest) (*qanpb.SettingsReply, error) {
 	if in.PeriodStartFrom == nil {
 		return nil, fmt.Errorf("period_start_from is required:%v", in.PeriodStartFrom)
@@ -355,7 +356,7 @@ func (s *Service) GetPGSMSettings(ctx context.Context, in *qanpb.SettingsRequest
 	periodStartToSec := in.PeriodStartTo.Seconds
 
 	if in.Queryid == "" {
-		return nil, fmt.Errorf("queryid is required:%v", in.Queryid)
+		return nil, fmt.Errorf("queryid is required:%v", in.Queryid) //nolint
 	}
 
 	labels := map[string][]string{}
