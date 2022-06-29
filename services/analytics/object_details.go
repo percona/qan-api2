@@ -23,6 +23,7 @@ import (
 
 	qanpb "github.com/percona/pmm/api/qanpb"
 	"github.com/pkg/errors"
+	"google.golang.org/protobuf/types/known/wrapperspb"
 
 	"github.com/percona/qan-api2/models"
 )
@@ -342,4 +343,9 @@ func (s *Service) GetHistogram(ctx context.Context, in *qanpb.HistogramRequest) 
 	}
 
 	return resp, nil
+}
+
+// QueryExists TODO.
+func (s *Service) QueryExists(ctx context.Context, in *qanpb.QueryExistsRequest) (*wrapperspb.BoolValue, error) {
+	return wrapperspb.Bool(true), nil
 }
