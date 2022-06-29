@@ -927,3 +927,47 @@ func histogramHasKey(h []*qanpb.HistogramItem, key string) (bool, int) {
 
 	return false, 0
 }
+
+const queryExistsTmpl = `SELECT histogram_items FROM metrics
+WHERE service_id = :service_id AND fingerprint = :query;
+`
+
+// QueryExists TODO.
+func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (bool, error) {
+	arg := map[string]interface{}{
+		"service_id": serviceID,
+		"query":      query,
+	}
+
+	var queryBuffer bytes.Buffer
+	if tmpl, err := template.New("queryExistsTmpl").Funcs(funcMap).Parse(queryExistsTmpl); err != nil {
+		log.Fatalln(err)
+	} else if err = tmpl.Execute(&queryBuffer, nil); err != nil {
+		log.Fatalln(err)
+	}
+
+	query, args, err := sqlx.Named(queryBuffer.String(), arg)
+	if err != nil {
+		return false, errors.Wrap(err, "cannot prepare query")
+	}
+	query, args, err = sqlx.In(query, args...)
+	if err != nil {
+		return false, errors.Wrap(err, "cannot populate query arguments")
+	}
+	query = m.db.Rebind(query)
+
+	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
+	defer cancel()
+
+	rows, err := m.db.QueryxContext(queryCtx, query, args...)
+	if err != nil {
+		return false, errors.Wrap(err, "cannot execute query exists query")
+	}
+	defer rows.Close() //nolint:errcheck
+
+	for rows.Next() {
+		return true, nil
+	}
+
+	return false, err
+}
