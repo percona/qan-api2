@@ -143,13 +143,13 @@ func runJSONServer(ctx context.Context, grpcBindF, jsonBindF string) {
 	l.Infof("Starting server on http://%s/ ...", jsonBindF)
 
 	marshaller := &grpc_gateway.JSONPb{
-		MarshalOptions: protojson.MarshalOptions{
+		MarshalOptions: protojson.MarshalOptions{ //nolint:exhaustivestruct
 			UseEnumNumbers:  false,
 			EmitUnpopulated: false,
 			UseProtoNames:   true,
 			Indent:          "  ",
 		},
-		UnmarshalOptions: protojson.UnmarshalOptions{
+		UnmarshalOptions: protojson.UnmarshalOptions{ //nolint:exhaustivestruct
 			DiscardUnknown: true,
 		},
 	}
