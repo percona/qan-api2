@@ -940,12 +940,7 @@ func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (boo
 	}
 
 	var queryBuffer bytes.Buffer
-	if tmpl, err := template.New("queryExistsTmpl").Funcs(funcMap).Parse(queryExistsTmpl); err != nil {
-		log.Fatalln(err)
-	} else if err = tmpl.Execute(&queryBuffer, nil); err != nil {
-		log.Fatalln(err)
-	}
-
+	queryBuffer.WriteString(queryExistsTmpl)
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
 		return false, errors.Wrap(err, "cannot prepare query")
