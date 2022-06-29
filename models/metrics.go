@@ -33,8 +33,13 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-const optimalAmountOfPoint = 120
-const minFullTimeFrame = 2 * time.Hour
+const (
+	optimalAmountOfPoint = 120
+	minFullTimeFrame     = 2 * time.Hour
+	cannotPrepare        = "cannot prepare query"
+	cannotPopulate       = "cannot populate query arguments"
+	cannotExecute        = "cannot execute metrics query"
+)
 
 // Metrics represents methods to work with metrics.
 type Metrics struct {
@@ -84,11 +89,11 @@ func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec 
 	var results []M
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
-		return results, errors.Wrap(err, "cannot prepare query")
+		return results, errors.Wrap(err, cannotPrepare)
 	}
 	query, args, err = sqlx.In(query, args...)
 	if err != nil {
-		return results, errors.Wrap(err, "cannot populate query arguments")
+		return results, errors.Wrap(err, cannotPopulate)
 	}
 	query = m.db.Rebind(query)
 
@@ -97,7 +102,7 @@ func (m *Metrics) Get(ctx context.Context, periodStartFromSec, periodStartToSec 
 
 	rows, err := m.db.QueryxContext(queryCtx, query, args...)
 	if err != nil {
-		return results, errors.Wrap(err, "cannot execute metrics query")
+		return results, errors.Wrap(err, cannotExecute)
 	}
 	defer rows.Close() //nolint:errcheck
 
@@ -868,11 +873,11 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 	}
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
-		return results, errors.Wrap(err, "cannot prepare query")
+		return results, errors.Wrap(err, cannotPrepare)
 	}
 	query, args, err = sqlx.In(query, args...)
 	if err != nil {
-		return results, errors.Wrap(err, "cannot populate query arguments")
+		return results, errors.Wrap(err, cannotPopulate)
 	}
 	query = m.db.Rebind(query)
 
@@ -881,7 +886,7 @@ func (m *Metrics) SelectHistogram(ctx context.Context, periodStartFromSec, perio
 
 	rows, err := m.db.QueryxContext(queryCtx, query, args...)
 	if err != nil {
-		return results, errors.Wrap(err, "cannot execute metrics query")
+		return results, errors.Wrap(err, cannotExecute)
 	}
 	defer rows.Close() //nolint:errcheck
 
@@ -944,11 +949,11 @@ func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (boo
 
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
-		return false, errors.Wrap(err, "cannot prepare query")
+		return false, errors.Wrap(err, cannotPrepare)
 	}
 	query, args, err = sqlx.In(query, args...)
 	if err != nil {
-		return false, errors.Wrap(err, "cannot populate query arguments")
+		return false, errors.Wrap(err, cannotPopulate)
 	}
 	query = m.db.Rebind(query)
 
@@ -957,7 +962,7 @@ func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (boo
 
 	rows, err := m.db.QueryxContext(queryCtx, query, args...)
 	if err != nil {
-		return false, errors.Wrap(err, "cannot execute query exists query")
+		return false, errors.Wrap(err, cannotExecute)
 	}
 	defer rows.Close() //nolint:errcheck
 
