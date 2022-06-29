@@ -345,7 +345,7 @@ func (s *Service) GetHistogram(ctx context.Context, in *qanpb.HistogramRequest) 
 	return resp, nil
 }
 
-// QueryExists TODO.
+// QueryExists check if query value in request exists in clickhouse.
 func (s *Service) QueryExists(ctx context.Context, in *qanpb.QueryExistsRequest) (*wrapperspb.BoolValue, error) {
 	resp, err := s.mm.QueryExists(
 		ctx,
@@ -353,7 +353,7 @@ func (s *Service) QueryExists(ctx context.Context, in *qanpb.QueryExistsRequest)
 		in.Query,
 	)
 	if err != nil {
-		return nil, fmt.Errorf("error in selecting histogram:%v", err)
+		return nil, fmt.Errorf("error in checking query:%v", err)
 	}
 
 	return wrapperspb.Bool(resp), nil

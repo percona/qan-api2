@@ -932,7 +932,7 @@ const queryExistsTmpl = `SELECT queryid FROM metrics
 WHERE service_id = :service_id AND fingerprint = :query;
 `
 
-// QueryExists TODO.
+// QueryExists check if query value in request exists in clickhouse.
 func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (bool, error) {
 	arg := map[string]interface{}{
 		"service_id": serviceID,
@@ -941,6 +941,7 @@ func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (boo
 
 	var queryBuffer bytes.Buffer
 	queryBuffer.WriteString(queryExistsTmpl)
+
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
 		return false, errors.Wrap(err, "cannot prepare query")
@@ -964,5 +965,5 @@ func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (boo
 		return true, nil
 	}
 
-	return false, err
+	return false, nil
 }
