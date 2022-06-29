@@ -934,10 +934,10 @@ func histogramHasKey(h []*qanpb.HistogramItem, key string) (bool, int) {
 }
 
 const queryExistsTmpl = `SELECT queryid FROM metrics
-WHERE service_id = :service_id AND fingerprint = :query LIMIT 1;
+WHERE service_id = :service_id AND example = :query LIMIT 1;
 `
 
-// QueryExists check if query value in request exists in clickhouse.
+// QueryExists check if query value in request exists by example in clickhouse.
 func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (bool, error) {
 	arg := map[string]interface{}{
 		"service_id": serviceID,
