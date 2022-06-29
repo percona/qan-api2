@@ -928,7 +928,7 @@ func histogramHasKey(h []*qanpb.HistogramItem, key string) (bool, int) {
 	return false, 0
 }
 
-const queryExistsTmpl = `SELECT histogram_items FROM metrics
+const queryExistsTmpl = `SELECT queryid FROM metrics
 WHERE service_id = :service_id AND fingerprint = :query;
 `
 
