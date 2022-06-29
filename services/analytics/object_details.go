@@ -347,5 +347,14 @@ func (s *Service) GetHistogram(ctx context.Context, in *qanpb.HistogramRequest) 
 
 // QueryExists TODO.
 func (s *Service) QueryExists(ctx context.Context, in *qanpb.QueryExistsRequest) (*wrapperspb.BoolValue, error) {
-	return wrapperspb.Bool(true), nil
+	resp, err := s.mm.QueryExists(
+		ctx,
+		in.Serviceid,
+		in.Query,
+	)
+	if err != nil {
+		return nil, fmt.Errorf("error in selecting histogram:%v", err)
+	}
+
+	return wrapperspb.Bool(resp), nil
 }
