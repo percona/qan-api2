@@ -21,7 +21,6 @@ import (
 	"context"
 	_ "expvar" // register /debug/vars
 	"fmt"
-	"google.golang.org/grpc/credentials/insecure"
 	"html/template"
 	"log"
 	"net"
@@ -49,8 +48,10 @@ import (
 	"golang.org/x/sys/unix"
 	"google.golang.org/grpc"
 	channelz "google.golang.org/grpc/channelz/service"
+	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/grpclog"
 	"google.golang.org/grpc/reflection"
+	"google.golang.org/protobuf/encoding/protojson"
 	"gopkg.in/alecthomas/kingpin.v2"
 
 	"github.com/percona/qan-api2/models"
@@ -142,7 +143,21 @@ func runJSONServer(ctx context.Context, grpcBindF, jsonBindF string) {
 	l := logrus.WithField("component", "JSON")
 	l.Infof("Starting server on http://%s/ ...", jsonBindF)
 
-	proxyMux := grpc_gateway.NewServeMux()
+	marshaller := &grpc_gateway.JSONPb{
+		MarshalOptions: protojson.MarshalOptions{ //nolint:exhaustivestruct
+			UseEnumNumbers:  false,
+			EmitUnpopulated: false,
+			UseProtoNames:   true,
+			Indent:          "  ",
+		},
+		UnmarshalOptions: protojson.UnmarshalOptions{ //nolint:exhaustivestruct
+			DiscardUnknown: true,
+		},
+	}
+
+	proxyMux := grpc_gateway.NewServeMux(
+		grpc_gateway.WithMarshalerOption(grpc_gateway.MIMEWildcard, marshaller),
+	)
 	opts := []grpc.DialOption{grpc.WithTransportCredentials(insecure.NewCredentials())}
 
 	type registrar func(context.Context, *grpc_gateway.ServeMux, string, []grpc.DialOption) error
