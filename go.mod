@@ -12,7 +12,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.10.3
 	github.com/jmoiron/sqlx v1.3.5
-	github.com/percona/pmm v0.0.0-20220629124526-77b59d94b02c
+	github.com/percona/pmm v0.0.0-20220701073443-67c3185e5a50
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.12.2
 	github.com/sirupsen/logrus v1.8.1
