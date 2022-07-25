@@ -37,8 +37,8 @@ install-race:                   ## Install qan-api2 binary with race detector.
 	go install -v -race ./...
 
 test-env-up:					## Start docker containers used for testing
-	docker run -d --name pmm-clickhouse-test -p19000:9000 yandex/clickhouse-server:21.3.14
-	sleep 10s
+	docker run -d --platform=linux/amd64 --name pmm-clickhouse-test -p19000:9000 yandex/clickhouse-server:21.3.20
+	sleep 10
 	docker exec pmm-clickhouse-test clickhouse client --query="CREATE DATABASE IF NOT EXISTS pmm_test;"
 	cat migrations/sql/*.up.sql | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --multiline --multiquery
 	cat fixture/metrics.part_*.json | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --query="INSERT INTO metrics FORMAT JSONEachRow"
