@@ -10,6 +10,8 @@ PMM_RELEASE_TIMESTAMP ?= $(shell date '+%s')
 PMM_RELEASE_FULLCOMMIT ?= $(shell git rev-parse HEAD)
 PMM_RELEASE_BRANCH ?= $(shell git describe --always --contains --all)
 
+PMM_DEVCONTAINER_NAME ?= pmm-managed-server
+
 release:                        ## Build qan-api2 release binary.
 	env CGO_ENABLED=0 go build -v -o $(PMM_RELEASE_PATH)/qan-api2 -ldflags " \
 		-X 'github.com/percona/pmm/version.ProjectName=qan-api2' \
@@ -105,10 +107,12 @@ pmm-env-up:                     ## Run PMM server, MySQL Server and sysbench con
 	cat fixture/metrics.part_*.json | docker exec -i pmm-clickhouse-test clickhouse client -d pmm_test --query="INSERT INTO metrics FORMAT JSONEachRow"
 
 deploy:
-	docker exec pmm-server supervisorctl stop qan-api2
-	docker cp $(PMM_RELEASE_PATH)/qan-api2 pmm-server:/usr/sbin/percona-qan-api2
-	docker exec pmm-server supervisorctl start qan-api2
-	docker exec pmm-server supervisorctl status
+	GOOS=linux GOARCH=amd64 make release
+	docker exec $(PMM_DEVCONTAINER_NAME) supervisorctl stop qan-api2
+	docker cp $(PMM_RELEASE_PATH)/qan-api2 $(PMM_DEVCONTAINER_NAME):/usr/sbin/percona-qan-api2
+	docker exec $(PMM_DEVCONTAINER_NAME) supervisorctl start qan-api2
+	docker exec $(PMM_DEVCONTAINER_NAME) supervisorctl status
+	docker exec $(PMM_DEVCONTAINER_NAME) supervisorctl tail -f qan-api2
 
 clean:                          ## Removes generated artifacts.
 	rm -Rf ./bin
