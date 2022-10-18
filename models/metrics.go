@@ -612,7 +612,7 @@ func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, peri
 func mysqlParser(example string) (string, uint32, error) {
 	normalizedQuery, _, err := sqlparser.Parse2(example)
 	if err != nil {
-		return "", 0, err
+		return "", 0, errors.Wrap(err, "cannot parse query")
 	}
 
 	bindVars := sqlparser.GetBindvars(normalizedQuery)
