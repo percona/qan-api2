@@ -4,6 +4,7 @@
 			"example": "SELECT @@GLOBAL.slow_query_log_file",
 			"exampleFormat": "EXAMPLE",
 			"exampleType": "RANDOM",
+			"fingerprint": "select @@GLOBAL.slow_query_log_file from dual",
 			"serviceId": "service_id1",
 			"serviceType": "service_type1",
 			"schema": "schema29",
