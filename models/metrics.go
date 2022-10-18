@@ -31,6 +31,7 @@ import (
 	qanpb "github.com/percona/pmm/api/qanpb"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
+	"vitess.io/vitess/go/vt/sqlparser"
 )
 
 const (
@@ -414,7 +415,7 @@ GROUP BY point
 	ORDER BY point ASC;
 `
 
-//nolint
+// nolint
 var tmplMetricsSparklines = template.Must(template.New("queryMetricsSparklines").Funcs(funcMap).Parse(queryMetricsSparklinesTmpl))
 
 // SelectSparklines selects datapoint for sparklines.
@@ -538,7 +539,7 @@ SELECT schema AS schema, tables, service_id, service_type, example, toUInt8(exam
  LIMIT :limit
 `
 
-//nolint
+// nolint
 var tmplQueryExample = template.Must(template.New("queryExampleTmpl").Funcs(funcMap).Parse(queryExampleTmpl))
 
 // SelectQueryExamples selects query examples and related stuff for given time range.
@@ -596,10 +597,28 @@ func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, peri
 		if err != nil {
 			return nil, errors.Wrap(err, "failed to scan query example for object details")
 		}
+
+		row.Fingerprint, row.PlaceholdersCount, err = mysqlParser(row.Example)
+		if err != nil {
+			return nil, err
+		}
+
 		res.QueryExamples = append(res.QueryExamples, &row)
 	}
 
 	return &res, nil
+}
+
+func mysqlParser(example string) (string, uint32, error) {
+	normalizedQuery, _, err := sqlparser.Parse2(example)
+	if err != nil {
+		return "", 0, err
+	}
+
+	bindVars := sqlparser.GetBindvars(normalizedQuery)
+	parsedQuery := sqlparser.NewParsedQuery(normalizedQuery)
+
+	return parsedQuery.Query, uint32(len(bindVars)), nil
 }
 
 const queryObjectDetailsLabelsTmpl = `
@@ -618,7 +637,7 @@ SELECT service_name, database, schema, username, client_host, replication_set, c
        container_id, agent_id, agent_type, labels.key, labels.value, cmd_type, top_queryid, application_name, planid
 `
 
-//nolint
+// nolint
 var tmplObjectDetailsLabels = template.Must(template.New("queryObjectDetailsLabelsTmpl").Funcs(funcMap).Parse(queryObjectDetailsLabelsTmpl))
 
 type queryRowsLabels struct {
