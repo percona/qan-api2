@@ -31,6 +31,7 @@ import (
 	qanpb "github.com/percona/pmm/api/qanpb"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
+	"vitess.io/vitess/go/vt/proto/query"
 	"vitess.io/vitess/go/vt/sqlparser"
 )
 
@@ -615,8 +616,14 @@ func mysqlParser(example string) (string, uint32, error) {
 		return "", 0, errors.Wrap(err, "cannot parse query")
 	}
 
-	bindVars := sqlparser.GetBindvars(normalizedQuery)
+	bv := make(map[string]*query.BindVariable)
+	err = sqlparser.Normalize(normalizedQuery, sqlparser.NewReservedVars("", sqlparser.GetBindvars(normalizedQuery)), bv)
+	if err != nil {
+		return "", 0, err
+	}
+
 	parsedQuery := sqlparser.NewParsedQuery(normalizedQuery)
+	bindVars := sqlparser.GetBindvars(normalizedQuery)
 
 	return parsedQuery.Query, uint32(len(bindVars)), nil
 }
