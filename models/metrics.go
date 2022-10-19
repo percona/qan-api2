@@ -619,7 +619,7 @@ func mysqlParser(example string) (string, uint32, error) {
 	bv := make(map[string]*query.BindVariable)
 	err = sqlparser.Normalize(normalizedQuery, sqlparser.NewReservedVars("", sqlparser.GetBindvars(normalizedQuery)), bv)
 	if err != nil {
-		return "", 0, err
+		return "", 0, errors.Wrap(err, "cannot normalize query")
 	}
 
 	parsedQuery := sqlparser.NewParsedQuery(normalizedQuery)
