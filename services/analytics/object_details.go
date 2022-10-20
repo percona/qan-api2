@@ -358,3 +358,17 @@ func (s *Service) QueryExists(ctx context.Context, in *qanpb.QueryExistsRequest)
 
 	return wrapperspb.Bool(resp), nil
 }
+
+// QueryByQueryID get query by query ID.
+func (s *Service) QueryByQueryID(ctx context.Context, in *qanpb.QueryExistsRequest) (*wrapperspb.StringValue, error) {
+	query, err := s.mm.QueryByQueryID(
+		ctx,
+		in.Serviceid,
+		in.Query,
+	)
+	if err != nil {
+		return nil, fmt.Errorf("error in checking query:%v", err)
+	}
+
+	return wrapperspb.String(query), nil
+}

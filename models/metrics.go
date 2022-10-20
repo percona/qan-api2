@@ -998,3 +998,51 @@ func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (boo
 
 	return false, nil
 }
+
+const queryByQueryIDTmpl = `SELECT queryid FROM metrics
+WHERE service_id = :service_id AND query_id = :query_id LIMIT 1;
+`
+
+// QueryByQueryID check if query exists by given query ID.
+func (m *Metrics) QueryByQueryID(ctx context.Context, serviceID, queryID string) (string, error) {
+	arg := map[string]interface{}{
+		"service_id": serviceID,
+		"query_id":   queryID,
+	}
+
+	var queryBuffer bytes.Buffer
+	queryBuffer.WriteString(queryByQueryIDTmpl)
+
+	query, args, err := sqlx.Named(queryBuffer.String(), arg)
+	if err != nil {
+		return "", errors.Wrap(err, cannotPrepare)
+	}
+	query, args, err = sqlx.In(query, args...)
+	if err != nil {
+		return "", errors.Wrap(err, cannotPopulate)
+	}
+	query = m.db.Rebind(query)
+
+	queryCtx, cancel := context.WithTimeout(ctx, queryTimeout)
+	defer cancel()
+
+	rows, err := m.db.QueryxContext(queryCtx, query, args...)
+	if err != nil {
+		return "", errors.Wrap(err, cannotExecute)
+	}
+	defer rows.Close() //nolint:errcheck
+
+	for rows.Next() {
+		var query string
+		err = rows.Scan(
+			&query,
+		)
+		if err != nil {
+			return "", errors.Wrap(err, "failed to scan query")
+		}
+
+		return query, nil
+	}
+
+	return "", nil
+}
