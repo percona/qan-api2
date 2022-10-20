@@ -360,11 +360,11 @@ func (s *Service) QueryExists(ctx context.Context, in *qanpb.QueryExistsRequest)
 }
 
 // QueryByQueryID get query by query ID.
-func (s *Service) QueryByQueryID(ctx context.Context, in *qanpb.QueryExistsRequest) (*wrapperspb.StringValue, error) {
+func (s *Service) QueryByQueryID(ctx context.Context, in *qanpb.QueryByQueryIDRequest) (*wrapperspb.StringValue, error) {
 	query, err := s.mm.QueryByQueryID(
 		ctx,
 		in.Serviceid,
-		in.Query,
+		in.QueryId,
 	)
 	if err != nil {
 		return nil, fmt.Errorf("error in checking query:%v", err)
