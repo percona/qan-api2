@@ -272,6 +272,8 @@ github.com/percona/pmm v0.0.0-20221020121319-0455d1ee141c h1:LUhuC5R/dQk5XXF1Xzd
 github.com/percona/pmm v0.0.0-20221020121319-0455d1ee141c/go.mod h1:ow7ccC40C1MbwXB1wYq5pjP6ElAXFTFWCTIWdd5rfXg=
 github.com/percona/pmm v0.0.0-20221031100348-6c527443fdc5 h1:siFFEQkJ5IX0NEL+ikfU8G8avurk/sWFTwfhKJVMkvw=
 github.com/percona/pmm v0.0.0-20221031100348-6c527443fdc5/go.mod h1:EZLHKIJZe0USuRRY+i3eKuD+gt2DRhJHaNe5pDlyAEg=
+github.com/percona/pmm v0.0.0-20221031130626-cba18f399551 h1:9t2hwDpeP2lLS5uxu8mZGUEDr1vzVGBInHSCvtTKJHQ=
+github.com/percona/pmm v0.0.0-20221031130626-cba18f399551/go.mod h1:EZLHKIJZe0USuRRY+i3eKuD+gt2DRhJHaNe5pDlyAEg=
 github.com/philhofer/fwd v1.0.0 h1:UbZqGr5Y38ApvM/V/jEljVxwocdweyH+vmYvRPBnbqQ=
 github.com/philhofer/fwd v1.0.0/go.mod h1:gk3iGcWd9+svBvR0sR+KPcfE+RNWozjowpeBVG3ZVNU=
 github.com/pierrec/lz4 v2.0.5+incompatible h1:2xWsjqPFWcplujydGg4WmhC/6fZqK42wMM8aXeqhl0I=
