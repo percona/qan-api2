@@ -999,8 +999,8 @@ func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (boo
 	return false, nil
 }
 
-const queryByQueryIDTmpl = `SELECT queryid FROM metrics
-WHERE service_id = :service_id AND query_id = :query_id LIMIT 1;
+const queryByQueryIDTmpl = `SELECT example FROM metrics
+WHERE service_id = :service_id AND queryid = :query_id LIMIT 1;
 `
 
 // QueryByQueryID check if query exists by given query ID.
