@@ -1,2 +1,2 @@
 ALTER TABLE metrics
-  ADD COLUMN `query` Array(String);
+  ADD COLUMN `query` String;
