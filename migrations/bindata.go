@@ -30,6 +30,8 @@
 // migrations/sql/14_pg_stat_monitor_09_queryplan.up.sql (70B)
 // migrations/sql/15_pg_stat_monitor_09_histogram.down.sql (53B)
 // migrations/sql/15_pg_stat_monitor_09_histogram.up.sql (66B)
+// migrations/sql/16_query_column_down.sql (53B)
+// migrations/sql/16_query_column_up.sql (66B)
 
 package migrations
 
@@ -698,6 +700,46 @@ func _15_pg_stat_monitor_09_histogramUpSql() (*asset, error) {
 	return a, nil
 }
 
+var __16_query_column_downSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\xc8\xc8\x2c\x2e\xc9\x4f\x2f\x4a\xcc\x8d\xcf\x2c\x49\xcd\x2d\x4e\xb0\xe6\x02\x04\x00\x00\xff\xff\xeb\x12\xce\x0e\x35\x00\x00\x00")
+
+func _16_query_column_downSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__16_query_column_downSql,
+		"16_query_column_down.sql",
+	)
+}
+
+func _16_query_column_downSql() (*asset, error) {
+	bytes, err := _16_query_column_downSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "16_query_column_down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xf2, 0x73, 0xbc, 0x81, 0x31, 0x3d, 0xca, 0x4e, 0x6a, 0xac, 0xe6, 0x9a, 0xc5, 0xb5, 0xc5, 0x5, 0xcc, 0xca, 0x13, 0xe9, 0x95, 0x76, 0xf, 0x59, 0x65, 0xd6, 0x56, 0x12, 0x28, 0xd0, 0x3d, 0x7e}}
+	return a, nil
+}
+
+var __16_query_column_upSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\xc8\xc8\x2c\x2e\xc9\x4f\x2f\x4a\xcc\x8d\xcf\x2c\x49\xcd\x2d\x4e\x50\x70\x2c\x2a\x4a\xac\xd4\x08\x2e\x29\xca\xcc\x4b\xd7\xb4\xe6\x02\x04\x00\x00\xff\xff\xb2\xc5\x08\x13\x42\x00\x00\x00")
+
+func _16_query_column_upSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__16_query_column_upSql,
+		"16_query_column_up.sql",
+	)
+}
+
+func _16_query_column_upSql() (*asset, error) {
+	bytes, err := _16_query_column_upSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "16_query_column_up.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x30, 0x8a, 0xb, 0x86, 0xa4, 0x12, 0xcb, 0x8b, 0xd9, 0x47, 0x38, 0xc0, 0x8, 0x37, 0x6b, 0x7e, 0x2, 0x72, 0x85, 0xf, 0xea, 0xf1, 0xc6, 0x1a, 0xaa, 0x3, 0x9b, 0x70, 0x65, 0x96, 0x87, 0x54}}
+	return a, nil
+}
+
 // Asset loads and returns the asset for the given name.
 // It returns an error if the asset could not be found or
 // could not be loaded.
@@ -819,6 +861,8 @@ var _bindata = map[string]func() (*asset, error){
 	"14_pg_stat_monitor_09_queryplan.up.sql":      _14_pg_stat_monitor_09_queryplanUpSql,
 	"15_pg_stat_monitor_09_histogram.down.sql":    _15_pg_stat_monitor_09_histogramDownSql,
 	"15_pg_stat_monitor_09_histogram.up.sql":      _15_pg_stat_monitor_09_histogramUpSql,
+	"16_query_column_down.sql":                    _16_query_column_downSql,
+	"16_query_column_up.sql":                      _16_query_column_upSql,
 }
 
 // AssetDebug is true if the assets were built with the debug flag enabled.
@@ -828,11 +872,13 @@ const AssetDebug = false
 // directory embedded in the file by go-bindata.
 // For example if you run go-bindata on data/... and data contains the
 // following hierarchy:
-//     data/
-//       foo.txt
-//       img/
-//         a.png
-//         b.png
+//
+//	data/
+//	  foo.txt
+//	  img/
+//	    a.png
+//	    b.png
+//
 // then AssetDir("data") would return []string{"foo.txt", "img"},
 // AssetDir("data/img") would return []string{"a.png", "b.png"},
 // AssetDir("foo.txt") and AssetDir("notexist") would return an error, and
@@ -895,6 +941,8 @@ var _bintree = &bintree{nil, map[string]*bintree{
 	"14_pg_stat_monitor_09_queryplan.up.sql":      {_14_pg_stat_monitor_09_queryplanUpSql, map[string]*bintree{}},
 	"15_pg_stat_monitor_09_histogram.down.sql":    {_15_pg_stat_monitor_09_histogramDownSql, map[string]*bintree{}},
 	"15_pg_stat_monitor_09_histogram.up.sql":      {_15_pg_stat_monitor_09_histogramUpSql, map[string]*bintree{}},
+	"16_query_column_down.sql":                    {_16_query_column_downSql, map[string]*bintree{}},
+	"16_query_column_up.sql":                      {_16_query_column_upSql, map[string]*bintree{}},
 }}
 
 // RestoreAsset restores an asset under the given directory.

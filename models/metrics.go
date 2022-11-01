@@ -522,7 +522,7 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 }
 
 const queryExampleTmpl = `
-SELECT schema AS schema, tables, service_id, service_type, queryid, example, toUInt8(example_format) AS example_format,
+SELECT schema AS schema, tables, service_id, service_type, queryid, query, example, toUInt8(example_format) AS example_format,
        is_truncated, toUInt8(example_type) AS example_type, example_metrics
   FROM metrics
  WHERE period_start >= :period_start_from AND period_start <= :period_start_to
@@ -584,11 +584,14 @@ func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, peri
 	res := qanpb.QueryExampleReply{}
 	for rows.Next() {
 		var row qanpb.QueryExample
+		var query string
+
 		err = rows.Scan(
 			&row.Schema,
 			&row.Tables,
 			&row.ServiceId,
 			&row.ServiceType,
+			&query,
 			&row.QueryId,
 			&row.Example,
 			&row.ExampleFormat,
@@ -600,11 +603,17 @@ func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, peri
 			return nil, errors.Wrap(err, "failed to scan query example for object details")
 		}
 
-		row.Fingerprint, row.PlaceholdersCount, err = mysqlParser(row.Example)
-		if err != nil {
-			return nil, err
+		var queryToParse string
+		switch {
+		case row.Example == "" && query == "":
+			continue
+		case row.Example == "":
+			queryToParse = query
+		default:
+			queryToParse = row.Example
 		}
 
+		row.Fingerprint, row.PlaceholdersCount, _ = mysqlParser(queryToParse)
 		res.QueryExamples = append(res.QueryExamples, &row)
 	}
 
@@ -1000,7 +1009,7 @@ func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (boo
 	return false, nil
 }
 
-const queryByQueryIDTmpl = `SELECT example FROM metrics
+const queryByQueryIDTmpl = `SELECT example, query FROM metrics
 WHERE service_id = :service_id AND queryid = :query_id LIMIT 1;
 `
 
@@ -1034,15 +1043,20 @@ func (m *Metrics) QueryByQueryID(ctx context.Context, serviceID, queryID string)
 	defer rows.Close() //nolint:errcheck
 
 	for rows.Next() {
-		var query string
+		var example, query string
 		err = rows.Scan(
+			&example,
 			&query,
 		)
 		if err != nil {
 			return "", errors.Wrap(err, "failed to scan query")
 		}
 
-		return query, nil
+		if example == "" {
+			return query, nil
+		}
+
+		return example, nil
 	}
 
 	return "", nil
