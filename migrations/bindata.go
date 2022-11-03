@@ -30,8 +30,8 @@
 // migrations/sql/14_pg_stat_monitor_09_queryplan.up.sql (70B)
 // migrations/sql/15_pg_stat_monitor_09_histogram.down.sql (53B)
 // migrations/sql/15_pg_stat_monitor_09_histogram.up.sql (66B)
+// migrations/sql/16_explain_columns_down.sql (93B)
 // migrations/sql/16_explain_columns_up.sql (105B)
-// migrations/sql/16_explains_columns_down.sql (93B)
 
 package migrations
 
@@ -700,6 +700,26 @@ func _15_pg_stat_monitor_09_histogramUpSql() (*asset, error) {
 	return a, nil
 }
 
+var __16_explain_columns_downSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x48\xad\x28\xc8\x49\xcc\xcc\x8b\x4f\xcb\xcc\x4b\x4f\x2d\x2a\x28\xca\xcc\x2b\x49\xd0\x41\x57\x54\x90\x93\x98\x9c\x9a\x91\x9f\x93\x92\x5a\x54\x1c\x9f\x9c\x5f\x9a\x57\x92\x60\xcd\x05\x08\x00\x00\xff\xff\xfc\xd6\x40\x5a\x5d\x00\x00\x00")
+
+func _16_explain_columns_downSqlBytes() ([]byte, error) {
+	return bindataRead(
+		__16_explain_columns_downSql,
+		"16_explain_columns_down.sql",
+	)
+}
+
+func _16_explain_columns_downSql() (*asset, error) {
+	bytes, err := _16_explain_columns_downSqlBytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindataFileInfo{name: "16_explain_columns_down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xd7, 0xe6, 0x76, 0x94, 0xed, 0x1, 0x6f, 0xe6, 0x78, 0x55, 0xc8, 0x10, 0xb6, 0x74, 0xc1, 0xf7, 0xe, 0xd3, 0xde, 0xc9, 0x5a, 0x3, 0x54, 0x8e, 0x38, 0xb, 0x34, 0x1, 0xb2, 0xae, 0xe, 0x8a}}
+	return a, nil
+}
+
 var __16_explain_columns_upSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x74\x71\x51\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x48\xad\x28\xc8\x49\xcc\xcc\x8b\x4f\xcb\xcc\x4b\x4f\x2d\x2a\x28\xca\xcc\x2b\x49\x50\x08\x2e\x29\xca\xcc\x4b\xd7\x41\x53\x5a\x90\x93\x98\x9c\x9a\x91\x9f\x93\x92\x5a\x54\x1c\x9f\x9c\x5f\x0a\x52\x19\xea\x99\x57\x62\x6c\x64\xcd\x05\x08\x00\x00\xff\xff\x42\x82\x28\x5b\x69\x00\x00\x00")
 
 func _16_explain_columns_upSqlBytes() ([]byte, error) {
@@ -717,26 +737,6 @@ func _16_explain_columns_upSql() (*asset, error) {
 
 	info := bindataFileInfo{name: "16_explain_columns_up.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
 	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0x57, 0x70, 0x98, 0x77, 0xcb, 0x32, 0x68, 0x7d, 0x96, 0x9f, 0x63, 0x81, 0xa0, 0xc5, 0xd9, 0x81, 0x82, 0xfd, 0xcd, 0x5a, 0x89, 0xa6, 0x1, 0x1a, 0x4c, 0xb3, 0x2, 0xab, 0xfd, 0x2f, 0x14, 0x6b}}
-	return a, nil
-}
-
-var __16_explains_columns_downSql = []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x72\xf4\x09\x71\x0d\x52\x08\x71\x74\xf2\x71\x55\xc8\x4d\x2d\x29\xca\x4c\x2e\xe6\x52\x50\x70\x09\xf2\x0f\x50\x70\xf6\xf7\x09\xf5\xf5\x53\x48\x48\xad\x28\xc8\x49\xcc\xcc\x8b\x4f\xcb\xcc\x4b\x4f\x2d\x2a\x28\xca\xcc\x2b\x49\xd0\x41\x57\x54\x90\x93\x98\x9c\x9a\x91\x9f\x93\x92\x5a\x54\x1c\x9f\x9c\x5f\x9a\x57\x92\x60\xcd\x05\x08\x00\x00\xff\xff\xfc\xd6\x40\x5a\x5d\x00\x00\x00")
-
-func _16_explains_columns_downSqlBytes() ([]byte, error) {
-	return bindataRead(
-		__16_explains_columns_downSql,
-		"16_explains_columns_down.sql",
-	)
-}
-
-func _16_explains_columns_downSql() (*asset, error) {
-	bytes, err := _16_explains_columns_downSqlBytes()
-	if err != nil {
-		return nil, err
-	}
-
-	info := bindataFileInfo{name: "16_explains_columns_down.sql", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
-	a := &asset{bytes: bytes, info: info, digest: [32]uint8{0xd7, 0xe6, 0x76, 0x94, 0xed, 0x1, 0x6f, 0xe6, 0x78, 0x55, 0xc8, 0x10, 0xb6, 0x74, 0xc1, 0xf7, 0xe, 0xd3, 0xde, 0xc9, 0x5a, 0x3, 0x54, 0x8e, 0x38, 0xb, 0x34, 0x1, 0xb2, 0xae, 0xe, 0x8a}}
 	return a, nil
 }
 
@@ -861,8 +861,8 @@ var _bindata = map[string]func() (*asset, error){
 	"14_pg_stat_monitor_09_queryplan.up.sql":      _14_pg_stat_monitor_09_queryplanUpSql,
 	"15_pg_stat_monitor_09_histogram.down.sql":    _15_pg_stat_monitor_09_histogramDownSql,
 	"15_pg_stat_monitor_09_histogram.up.sql":      _15_pg_stat_monitor_09_histogramUpSql,
+	"16_explain_columns_down.sql":                 _16_explain_columns_downSql,
 	"16_explain_columns_up.sql":                   _16_explain_columns_upSql,
-	"16_explains_columns_down.sql":                _16_explains_columns_downSql,
 }
 
 // AssetDebug is true if the assets were built with the debug flag enabled.
@@ -939,8 +939,8 @@ var _bintree = &bintree{nil, map[string]*bintree{
 	"14_pg_stat_monitor_09_queryplan.up.sql":      {_14_pg_stat_monitor_09_queryplanUpSql, map[string]*bintree{}},
 	"15_pg_stat_monitor_09_histogram.down.sql":    {_15_pg_stat_monitor_09_histogramDownSql, map[string]*bintree{}},
 	"15_pg_stat_monitor_09_histogram.up.sql":      {_15_pg_stat_monitor_09_histogramUpSql, map[string]*bintree{}},
+	"16_explain_columns_down.sql":                 {_16_explain_columns_downSql, map[string]*bintree{}},
 	"16_explain_columns_up.sql":                   {_16_explain_columns_upSql, map[string]*bintree{}},
-	"16_explains_columns_down.sql":                {_16_explains_columns_downSql, map[string]*bintree{}},
 }}
 
 // RestoreAsset restores an asset under the given directory.
