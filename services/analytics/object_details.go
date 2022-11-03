@@ -359,9 +359,9 @@ func (s *Service) QueryExists(ctx context.Context, in *qanpb.QueryExistsRequest)
 	return wrapperspb.Bool(resp), nil
 }
 
-// QueryByQueryID get query by query ID.
-func (s *Service) QueryByQueryID(ctx context.Context, in *qanpb.QueryByQueryIDRequest) (*wrapperspb.StringValue, error) {
-	query, err := s.mm.QueryByQueryID(
+// ExplainFingerprintByQueryID get explain fingerprint and placeholders count by query ID.
+func (s *Service) ExplainFingerprintByQueryID(ctx context.Context, in *qanpb.ExplainFingerprintByQueryIDRequest) (*qanpb.ExplainFingerprintByQueryIDReply, error) {
+	res, err := s.mm.ExplainFingerprintByQueryID(
 		ctx,
 		in.Serviceid,
 		in.QueryId,
@@ -370,5 +370,5 @@ func (s *Service) QueryByQueryID(ctx context.Context, in *qanpb.QueryByQueryIDRe
 		return nil, fmt.Errorf("error in checking query:%v", err)
 	}
 
-	return wrapperspb.String(query), nil
+	return res, nil
 }

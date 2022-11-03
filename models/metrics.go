@@ -31,8 +31,6 @@ import (
 	qanpb "github.com/percona/pmm/api/qanpb"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"vitess.io/vitess/go/vt/proto/query"
-	"vitess.io/vitess/go/vt/sqlparser"
 )
 
 const (
@@ -522,7 +520,7 @@ func (m *Metrics) SelectSparklines(ctx context.Context, periodStartFromSec, peri
 }
 
 const queryExampleTmpl = `
-SELECT schema AS schema, tables, service_id, service_type, queryid, query, example, toUInt8(example_format) AS example_format,
+SELECT schema AS schema, tables, service_id, service_type, queryid, explain_fingerprint, placeholders_count, example, toUInt8(example_format) AS example_format,
        is_truncated, toUInt8(example_type) AS example_type, example_metrics
   FROM metrics
  WHERE period_start >= :period_start_from AND period_start <= :period_start_to
@@ -584,15 +582,14 @@ func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, peri
 	res := qanpb.QueryExampleReply{}
 	for rows.Next() {
 		var row qanpb.QueryExample
-		var query string
-
 		err = rows.Scan(
 			&row.Schema,
 			&row.Tables,
 			&row.ServiceId,
 			&row.ServiceType,
-			&query,
 			&row.QueryId,
+			&row.ExplainFingerprint,
+			&row.PlaceholdersCount,
 			&row.Example,
 			&row.ExampleFormat,
 			&row.IsTruncated,
@@ -603,39 +600,10 @@ func (m *Metrics) SelectQueryExamples(ctx context.Context, periodStartFrom, peri
 			return nil, errors.Wrap(err, "failed to scan query example for object details")
 		}
 
-		var queryToParse string
-		switch {
-		case row.Example == "" && query == "":
-			continue
-		case row.Example == "":
-			queryToParse = query
-		default:
-			queryToParse = row.Example
-		}
-
-		row.Fingerprint, row.PlaceholdersCount, _ = mysqlParser(queryToParse)
 		res.QueryExamples = append(res.QueryExamples, &row)
 	}
 
 	return &res, nil
-}
-
-func mysqlParser(example string) (string, uint32, error) {
-	normalizedQuery, _, err := sqlparser.Parse2(example)
-	if err != nil {
-		return "", 0, errors.Wrap(err, "cannot parse query")
-	}
-
-	bv := make(map[string]*query.BindVariable)
-	err = sqlparser.Normalize(normalizedQuery, sqlparser.NewReservedVars("", sqlparser.GetBindvars(normalizedQuery)), bv)
-	if err != nil {
-		return "", 0, errors.Wrap(err, "cannot normalize query")
-	}
-
-	parsedQuery := sqlparser.NewParsedQuery(normalizedQuery)
-	bindVars := sqlparser.GetBindvars(normalizedQuery)
-
-	return parsedQuery.Query, uint32(len(bindVars)), nil
 }
 
 const queryObjectDetailsLabelsTmpl = `
@@ -1009,12 +977,12 @@ func (m *Metrics) QueryExists(ctx context.Context, serviceID, query string) (boo
 	return false, nil
 }
 
-const queryByQueryIDTmpl = `SELECT example, query FROM metrics
+const queryByQueryIDTmpl = `SELECT explain_fingerprint, placeholders_count FROM metrics
 WHERE service_id = :service_id AND queryid = :query_id LIMIT 1;
 `
 
-// QueryByQueryID check if query exists by given query ID.
-func (m *Metrics) QueryByQueryID(ctx context.Context, serviceID, queryID string) (string, error) {
+// ExplainFingerprintByQueryID get explain fingerprint and placeholders count for given queryid.
+func (m *Metrics) ExplainFingerprintByQueryID(ctx context.Context, serviceID, queryID string) (*qanpb.ExplainFingerprintByQueryIDReply, error) {
 	arg := map[string]interface{}{
 		"service_id": serviceID,
 		"query_id":   queryID,
@@ -1023,13 +991,14 @@ func (m *Metrics) QueryByQueryID(ctx context.Context, serviceID, queryID string)
 	var queryBuffer bytes.Buffer
 	queryBuffer.WriteString(queryByQueryIDTmpl)
 
+	res := &qanpb.ExplainFingerprintByQueryIDReply{}
 	query, args, err := sqlx.Named(queryBuffer.String(), arg)
 	if err != nil {
-		return "", errors.Wrap(err, cannotPrepare)
+		return res, errors.Wrap(err, cannotPrepare)
 	}
 	query, args, err = sqlx.In(query, args...)
 	if err != nil {
-		return "", errors.Wrap(err, cannotPopulate)
+		return res, errors.Wrap(err, cannotPopulate)
 	}
 	query = m.db.Rebind(query)
 
@@ -1038,26 +1007,22 @@ func (m *Metrics) QueryByQueryID(ctx context.Context, serviceID, queryID string)
 
 	rows, err := m.db.QueryxContext(queryCtx, query, args...)
 	if err != nil {
-		return "", errors.Wrap(err, cannotExecute)
+		return res, errors.Wrap(err, cannotExecute)
 	}
 	defer rows.Close() //nolint:errcheck
 
 	for rows.Next() {
-		var example, query string
 		err = rows.Scan(
-			&example,
-			&query,
+			&res.ExplainFingerprint,
+			&res.PlaceholdersCount,
 		)
+
 		if err != nil {
-			return "", errors.Wrap(err, "failed to scan query")
+			return res, errors.Wrap(err, "failed to scan query")
 		}
 
-		if example == "" {
-			return query, nil
-		}
-
-		return example, nil
+		return res, nil
 	}
 
-	return "", nil
+	return res, nil
 }
